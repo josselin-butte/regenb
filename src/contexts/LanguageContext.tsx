@@ -28,6 +28,7 @@ const translations: Translations = {
   // Services
   'services.title': { fr: 'Nos Services', en: 'Our Services' },
   'services.subtitle': { fr: 'Quatre chemins pour transformer votre pratique', en: 'Four paths to transform your practice' },
+  'services.intro': { fr: 'Si vous sentez que l\'ancienne histoire ne tient plus, vous n\'êtes pas \'perdu\', vous êtes en transition. Tous les accompagnements vous aident à écrire l\'histoire suivante, pour la vivre à chaque instant.', en: 'If you feel the old story no longer holds, you are not \'lost\', you are in transition. All our support helps you write the next story, to live it in every moment.' },
   
   'services.leadership.title': { fr: 'Leadership avec le Vivant', en: 'Leadership with the Living' },
   'services.leadership.desc': { fr: 'Développez un leadership régénératif inspiré par les systèmes vivants et les écosystèmes naturels.', en: 'Develop regenerative leadership inspired by living systems and natural ecosystems.' },
