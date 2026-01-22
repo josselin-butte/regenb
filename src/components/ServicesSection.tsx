@@ -40,8 +40,11 @@ const ServicesSection = () => {
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-semibold text-foreground mb-6">
             {t('services.title')}
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground">
+          <p className="text-lg sm:text-xl text-muted-foreground mb-6">
             {t('services.subtitle')}
+          </p>
+          <p className="text-base sm:text-lg text-muted-foreground/90 italic">
+            {t('services.intro')}
           </p>
         </div>
 
