@@ -60,7 +60,7 @@ const ServicesSection = () => {
               >
                 <CardContent className="p-8 sm:p-10">
                   {/* Icon */}
-                  <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br ${service.gradient} text-primary-foreground mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${service.gradient} text-primary-foreground mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <Icon className="w-7 h-7" />
                   </div>
 
@@ -82,7 +82,7 @@ const ServicesSection = () => {
                   </a>
 
                   {/* Decorative corner */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-muted/50 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-muted/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </CardContent>
               </Card>
             );

@@ -22,7 +22,7 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Icon */}
-          <div className="inline-flex items-center justify-center w-16 h-16 mb-8 rounded-full bg-primary-foreground/10 backdrop-blur-sm animate-float">
+          <div className="inline-flex items-center justify-center w-16 h-16 mb-8 bg-primary-foreground/10 backdrop-blur-sm animate-float">
             <Leaf className="w-8 h-8 text-primary-foreground" />
           </div>
 
@@ -52,7 +52,7 @@ const HeroSection = () => {
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <a
           href="#services"
-          className="flex items-center justify-center w-10 h-10 rounded-full bg-primary-foreground/20 backdrop-blur-sm text-primary-foreground hover:bg-primary-foreground/30 transition-colors"
+          className="flex items-center justify-center w-10 h-10 bg-primary-foreground/20 backdrop-blur-sm text-primary-foreground hover:bg-primary-foreground/30 transition-colors"
           aria-label="Scroll down"
         >
           <ArrowDown className="w-5 h-5" />

@@ -23,7 +23,7 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image */}
           <div className="relative order-2 lg:order-1">
-            <div className="relative rounded-3xl overflow-hidden shadow-nature">
+            <div className="relative overflow-hidden shadow-nature">
               <img
                 src={groupImage}
                 alt="Group coaching session in nature"

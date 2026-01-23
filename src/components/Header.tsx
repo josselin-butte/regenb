@@ -49,7 +49,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <button
               onClick={toggleLanguage}
-              className="flex items-center space-x-1.5 px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 rounded-md hover:bg-muted"
+              className="flex items-center space-x-1.5 px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 hover:bg-muted"
             >
               <Globe className="w-4 h-4" />
               <span>{language.toUpperCase()}</span>
