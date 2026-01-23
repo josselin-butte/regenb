@@ -30,11 +30,11 @@ const RetreatsCTA = () => {
 
           {/* Info badges */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary-foreground/10 backdrop-blur-sm text-primary-foreground">
+            <div className="inline-flex items-center px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm text-primary-foreground">
               <Calendar className="w-4 h-4 mr-2" />
               <span className="text-sm font-medium">2025</span>
             </div>
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary-foreground/10 backdrop-blur-sm text-primary-foreground">
+            <div className="inline-flex items-center px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm text-primary-foreground">
               <MapPin className="w-4 h-4 mr-2" />
               <span className="text-sm font-medium">France</span>
             </div>
