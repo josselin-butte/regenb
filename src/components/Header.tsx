@@ -12,10 +12,10 @@ const Header = () => {
   };
 
   const navItems = [
-    { key: 'nav.services', href: '#services' },
-    { key: 'nav.about', href: '#about' },
-    { key: 'nav.retreats', href: '#retreats' },
-    { key: 'nav.contact', href: '#contact' },
+    { key: 'nav.services', href: '/#services' },
+    { key: 'nav.about', href: '/#about' },
+    { key: 'nav.retreats', href: '/#retreats' },
+    { key: 'nav.contact', href: '/contact' },
   ];
 
   return (
@@ -55,7 +55,7 @@ const Header = () => {
               <span>{language.toUpperCase()}</span>
             </button>
             <Button variant="default" size="sm" asChild>
-              <a href="#contact">{t('nav.contact')}</a>
+              <a href="/contact">{t('nav.contact')}</a>
             </Button>
           </div>
 
@@ -92,7 +92,7 @@ const Header = () => {
                   <span>{language === 'fr' ? 'English' : 'Français'}</span>
                 </button>
                 <Button variant="default" size="sm" asChild>
-                  <a href="#contact">{t('nav.contact')}</a>
+                  <a href="/contact">{t('nav.contact')}</a>
                 </Button>
               </div>
             </nav>

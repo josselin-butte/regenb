@@ -61,6 +61,34 @@ const translations: Translations = {
   'footer.rights': { fr: 'Tous droits réservés', en: 'All rights reserved' },
   'footer.privacy': { fr: 'Confidentialité', en: 'Privacy' },
   'footer.terms': { fr: 'Mentions légales', en: 'Terms' },
+
+  // Contact Page
+  'contact.title': { fr: 'Contactez-nous', en: 'Contact Us' },
+  'contact.subtitle': { fr: 'Nous serions ravis d\'échanger avec vous sur votre parcours de transformation.', en: 'We would love to discuss your transformation journey with you.' },
+  
+  'contact.info.title': { fr: 'Restons en contact', en: 'Let\'s Stay Connected' },
+  'contact.info.description': { fr: 'Que vous ayez des questions sur nos services, nos retraites ou que vous souhaitiez simplement échanger, n\'hésitez pas à nous contacter.', en: 'Whether you have questions about our services, retreats, or simply want to connect, don\'t hesitate to reach out.' },
+  'contact.info.email': { fr: 'E-mail', en: 'Email' },
+  'contact.info.location': { fr: 'Localisation', en: 'Location' },
+  
+  'contact.form.title': { fr: 'Envoyez-nous un message', en: 'Send us a message' },
+  'contact.form.name': { fr: 'Nom complet', en: 'Full Name' },
+  'contact.form.name.placeholder': { fr: 'Votre nom', en: 'Your name' },
+  'contact.form.email': { fr: 'Adresse e-mail', en: 'Email Address' },
+  'contact.form.email.placeholder': { fr: 'votre@email.com', en: 'your@email.com' },
+  'contact.form.subject': { fr: 'Sujet', en: 'Subject' },
+  'contact.form.subject.placeholder': { fr: 'Comment pouvons-nous vous aider ?', en: 'How can we help you?' },
+  'contact.form.message': { fr: 'Message', en: 'Message' },
+  'contact.form.message.placeholder': { fr: 'Décrivez votre demande...', en: 'Describe your request...' },
+  'contact.form.submit': { fr: 'Envoyer le message', en: 'Send Message' },
+  'contact.form.sending': { fr: 'Envoi en cours...', en: 'Sending...' },
+  
+  'contact.success.title': { fr: 'Message envoyé !', en: 'Message Sent!' },
+  'contact.success.description': { fr: 'Merci pour votre message. Nous vous répondrons dans les plus brefs délais.', en: 'Thank you for your message. We will get back to you as soon as possible.' },
+  'contact.success.button': { fr: 'Envoyer un autre message', en: 'Send another message' },
+  
+  'contact.toast.title': { fr: 'Succès', en: 'Success' },
+  'contact.toast.description': { fr: 'Votre message a été envoyé avec succès.', en: 'Your message has been sent successfully.' },
 };
 
 interface LanguageContextType {
