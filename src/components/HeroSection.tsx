@@ -45,6 +45,15 @@ const HeroSection = () => {
               <a href="#retreats">{t('hero.secondary')}</a>
             </Button>
           </div>
+          
+          {/* Values CTA */}
+          <div className="mt-6 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <Button variant="heroOutline" size="lg" asChild>
+              <a href="https://nature-values-quest.lovable.app" target="_blank" rel="noopener noreferrer">
+                {t('hero.values')}
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
 

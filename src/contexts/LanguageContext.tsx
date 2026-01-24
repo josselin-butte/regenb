@@ -24,6 +24,7 @@ const translations: Translations = {
   },
   'hero.cta': { fr: 'Découvrir nos services', en: 'Discover our services' },
   'hero.secondary': { fr: 'Prochaines retraites', en: 'Upcoming retreats' },
+  'hero.values': { fr: 'Identifier mes valeurs', en: 'Identify my values' },
   
   // Services
   'services.title': { fr: 'Nos Services', en: 'Our Services' },
