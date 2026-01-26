@@ -71,30 +71,26 @@ const translations: Translations = {
   
   // Partner Types
   'partners.type.network': { fr: 'Réseau', en: 'Network' },
-  'partners.type.training': { fr: 'Formation', en: 'Training' },
-  'partners.type.venue': { fr: 'Lieu d\'accueil', en: 'Venue' },
-  'partners.type.certification': { fr: 'Certification', en: 'Certification' },
-  'partners.type.association': { fr: 'Association', en: 'Association' },
-  'partners.type.consulting': { fr: 'Conseil', en: 'Consulting' },
+  'partners.type.therapy': { fr: 'Thérapie', en: 'Therapy' },
+  'partners.type.nature': { fr: 'Nature', en: 'Nature' },
+  'partners.type.leadership': { fr: 'Leadership', en: 'Leadership' },
+  'partners.type.permaculture': { fr: 'Permaculture', en: 'Permaculture' },
   
   // Partners Data
-  'partners.regenb.name': { fr: 'RegenB Global', en: 'RegenB Global' },
+  'partners.celine.name': { fr: 'Céline Butté', en: 'Céline Butté' },
+  'partners.celine.description': { fr: 'Psychothérapeute spécialisée en danse-mouvement thérapie, accompagnant l\'expression corporelle et émotionnelle à travers le mouvement.', en: 'Dance movement psychotherapist, supporting bodily and emotional expression through movement.' },
+  
+  'partners.xmnaturae.name': { fr: 'Eric Prido - XM Naturae', en: 'Eric Prido - XM Naturae' },
+  'partners.xmnaturae.description': { fr: 'Accompagnement et formation aux pratiques de connexion avec la nature pour le développement personnel et professionnel.', en: 'Coaching and training in nature connection practices for personal and professional development.' },
+  
+  'partners.impact.name': { fr: 'Impact International', en: 'Impact International' },
+  'partners.impact.description': { fr: 'Cabinet de conseil international spécialisé dans le développement du leadership et la transformation organisationnelle.', en: 'International consulting firm specializing in leadership development and organizational transformation.' },
+  
+  'partners.regenb.name': { fr: 'RegenB', en: 'RegenB' },
   'partners.regenb.description': { fr: 'Notre réseau international de coachs et facilitateurs dédiés au leadership régénératif et à l\'accompagnement avec le vivant.', en: 'Our international network of coaches and facilitators dedicated to regenerative leadership and accompanying with the living.' },
   
-  'partners.naturecoaching.name': { fr: 'Nature Coaching Academy', en: 'Nature Coaching Academy' },
-  'partners.naturecoaching.description': { fr: 'Centre de formation spécialisé dans l\'intégration de la nature dans les pratiques d\'accompagnement professionnel.', en: 'Training center specialized in integrating nature into professional coaching practices.' },
-  
-  'partners.ecoretreats.name': { fr: 'Éco-Retraites', en: 'Eco-Retreats' },
-  'partners.ecoretreats.description': { fr: 'Lieux d\'accueil en pleine nature sélectionnés pour leur engagement écologique et leur capacité à favoriser la reconnexion au vivant.', en: 'Nature venues selected for their ecological commitment and ability to foster reconnection with the living.' },
-  
-  'partners.leadership.name': { fr: 'Institut du Leadership Vivant', en: 'Living Leadership Institute' },
-  'partners.leadership.description': { fr: 'Organisme de certification pour les approches de leadership inspirées par les systèmes vivants et la pensée régénérative.', en: 'Certification body for leadership approaches inspired by living systems and regenerative thinking.' },
-  
-  'partners.foresttherapy.name': { fr: 'Association Forest Therapy France', en: 'Forest Therapy France Association' },
-  'partners.foresttherapy.description': { fr: 'Association promouvant les bienfaits thérapeutiques de l\'immersion en forêt et les pratiques de sylvothérapie.', en: 'Association promoting the therapeutic benefits of forest immersion and forest therapy practices.' },
-  
-  'partners.mindfulbusiness.name': { fr: 'Mindful Business Consulting', en: 'Mindful Business Consulting' },
-  'partners.mindfulbusiness.description': { fr: 'Cabinet de conseil accompagnant les entreprises dans leur transition vers des modèles plus durables et régénératifs.', en: 'Consulting firm supporting businesses in their transition to more sustainable and regenerative models.' },
+  'partners.alveoles.name': { fr: 'L\'Atelier des Alvéoles', en: 'L\'Atelier des Alvéoles' },
+  'partners.alveoles.description': { fr: 'Centre de formation en permaculture proposant des formations pour concevoir des systèmes durables et régénératifs.', en: 'Permaculture training center offering courses to design sustainable and regenerative systems.' },
   
   // Partners Page
   'partners.page.title': { fr: 'Nos Partenaires', en: 'Our Partners' },
