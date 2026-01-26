@@ -14,6 +14,7 @@ const translations: Translations = {
   'nav.home': { fr: 'Accueil', en: 'Home' },
   'nav.services': { fr: 'Nos Services', en: 'Our Services' },
   'nav.about': { fr: 'À Propos', en: 'About' },
+  'nav.partners': { fr: 'Partenaires', en: 'Partners' },
   'nav.retreats': { fr: 'Retraites', en: 'Retreats' },
   'nav.contact': { fr: 'Contact', en: 'Contact' },
   
@@ -61,6 +62,47 @@ const translations: Translations = {
   'footer.rights': { fr: 'Tous droits réservés', en: 'All rights reserved' },
   'footer.privacy': { fr: 'Confidentialité', en: 'Privacy' },
   'footer.terms': { fr: 'Mentions légales', en: 'Terms' },
+
+  // Partners Section
+  'partners.title': { fr: 'Nos Partenaires', en: 'Our Partners' },
+  'partners.subtitle': { fr: 'Un réseau de professionnels engagés pour accompagner la transition vers le vivant', en: 'A network of engaged professionals supporting the transition to living systems' },
+  'partners.visit': { fr: 'Visiter le site', en: 'Visit website' },
+  'partners.seeAll': { fr: 'Voir tous nos partenaires', en: 'See all our partners' },
+  
+  // Partner Types
+  'partners.type.network': { fr: 'Réseau', en: 'Network' },
+  'partners.type.training': { fr: 'Formation', en: 'Training' },
+  'partners.type.venue': { fr: 'Lieu d\'accueil', en: 'Venue' },
+  'partners.type.certification': { fr: 'Certification', en: 'Certification' },
+  'partners.type.association': { fr: 'Association', en: 'Association' },
+  'partners.type.consulting': { fr: 'Conseil', en: 'Consulting' },
+  
+  // Partners Data
+  'partners.regenb.name': { fr: 'RegenB Global', en: 'RegenB Global' },
+  'partners.regenb.description': { fr: 'Notre réseau international de coachs et facilitateurs dédiés au leadership régénératif et à l\'accompagnement avec le vivant.', en: 'Our international network of coaches and facilitators dedicated to regenerative leadership and accompanying with the living.' },
+  
+  'partners.naturecoaching.name': { fr: 'Nature Coaching Academy', en: 'Nature Coaching Academy' },
+  'partners.naturecoaching.description': { fr: 'Centre de formation spécialisé dans l\'intégration de la nature dans les pratiques d\'accompagnement professionnel.', en: 'Training center specialized in integrating nature into professional coaching practices.' },
+  
+  'partners.ecoretreats.name': { fr: 'Éco-Retraites', en: 'Eco-Retreats' },
+  'partners.ecoretreats.description': { fr: 'Lieux d\'accueil en pleine nature sélectionnés pour leur engagement écologique et leur capacité à favoriser la reconnexion au vivant.', en: 'Nature venues selected for their ecological commitment and ability to foster reconnection with the living.' },
+  
+  'partners.leadership.name': { fr: 'Institut du Leadership Vivant', en: 'Living Leadership Institute' },
+  'partners.leadership.description': { fr: 'Organisme de certification pour les approches de leadership inspirées par les systèmes vivants et la pensée régénérative.', en: 'Certification body for leadership approaches inspired by living systems and regenerative thinking.' },
+  
+  'partners.foresttherapy.name': { fr: 'Association Forest Therapy France', en: 'Forest Therapy France Association' },
+  'partners.foresttherapy.description': { fr: 'Association promouvant les bienfaits thérapeutiques de l\'immersion en forêt et les pratiques de sylvothérapie.', en: 'Association promoting the therapeutic benefits of forest immersion and forest therapy practices.' },
+  
+  'partners.mindfulbusiness.name': { fr: 'Mindful Business Consulting', en: 'Mindful Business Consulting' },
+  'partners.mindfulbusiness.description': { fr: 'Cabinet de conseil accompagnant les entreprises dans leur transition vers des modèles plus durables et régénératifs.', en: 'Consulting firm supporting businesses in their transition to more sustainable and regenerative models.' },
+  
+  // Partners Page
+  'partners.page.title': { fr: 'Nos Partenaires', en: 'Our Partners' },
+  'partners.page.subtitle': { fr: 'Découvrez les organisations et professionnels avec lesquels nous collaborons pour transformer l\'accompagnement et le leadership.', en: 'Discover the organizations and professionals we collaborate with to transform coaching and leadership.' },
+  
+  'partners.cta.title': { fr: 'Devenir partenaire', en: 'Become a partner' },
+  'partners.cta.subtitle': { fr: 'Vous partagez notre vision d\'un accompagnement aligné au vivant ? Rejoignez notre réseau de partenaires.', en: 'Do you share our vision of coaching aligned with the living? Join our partner network.' },
+  'partners.cta.button': { fr: 'Nous contacter', en: 'Contact us' },
 
   // Contact Page
   'contact.title': { fr: 'Contactez-nous', en: 'Contact Us' },
