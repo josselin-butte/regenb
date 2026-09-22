@@ -3,13 +3,17 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { ExternalLink } from 'lucide-react';
+import xmNaturaeLogo from '@/assets/partners/xmnaturae-logo.png.asset.json';
+import impactLogo from '@/assets/partners/impact-international-logo.png.asset.json';
+import regenBLogo from '@/assets/partners/regenb-logo.jpg.asset.json';
+import alveolesLogo from '@/assets/partners/alveoles-logo.png.asset.json';
 
 interface Partner {
   id: string;
   nameKey: string;
   descriptionKey: string;
   typeKey: string;
-  logo: string;
+  logo?: string;
   url: string;
 }
 
@@ -19,7 +23,6 @@ const partners: Partner[] = [
     nameKey: 'partners.celine.name',
     descriptionKey: 'partners.celine.description',
     typeKey: 'partners.type.therapy',
-    logo: '💃',
     url: '#',
   },
   {
@@ -27,7 +30,7 @@ const partners: Partner[] = [
     nameKey: 'partners.xmnaturae.name',
     descriptionKey: 'partners.xmnaturae.description',
     typeKey: 'partners.type.nature',
-    logo: '🌿',
+    logo: xmNaturaeLogo.url,
     url: 'https://www.xmnaturae.com/about-us',
   },
   {
@@ -35,7 +38,7 @@ const partners: Partner[] = [
     nameKey: 'partners.impact.name',
     descriptionKey: 'partners.impact.description',
     typeKey: 'partners.type.leadership',
-    logo: '🌍',
+    logo: impactLogo.url,
     url: 'https://www.impactinternational.com/',
   },
   {
@@ -43,7 +46,7 @@ const partners: Partner[] = [
     nameKey: 'partners.regenb.name',
     descriptionKey: 'partners.regenb.description',
     typeKey: 'partners.type.network',
-    logo: '🌱',
+    logo: regenBLogo.url,
     url: 'https://regenb.com',
   },
   {
@@ -51,7 +54,7 @@ const partners: Partner[] = [
     nameKey: 'partners.alveoles.name',
     descriptionKey: 'partners.alveoles.description',
     typeKey: 'partners.type.permaculture',
-    logo: '🐝',
+    logo: alveolesLogo.url,
     url: 'https://alveoles.fr/atelier',
   },
 ];
@@ -88,9 +91,21 @@ const Partners = () => {
                 >
                   <CardContent className="p-8">
                     {/* Logo & Type */}
-                    <div className="flex items-start justify-between mb-6">
-                      <div className="text-5xl">{partner.logo}</div>
-                      <span className="text-xs font-medium px-3 py-1 bg-primary/10 text-primary rounded-full">
+                    <div className="flex min-h-24 items-start justify-between gap-5 mb-6">
+                      <div className="flex h-24 min-w-0 flex-1 items-center">
+                        {partner.logo ? (
+                          <img
+                            src={partner.logo}
+                            alt={`${t(partner.nameKey)} logo`}
+                            className="max-h-20 max-w-52 object-contain object-left"
+                          />
+                        ) : (
+                          <span className="text-2xl font-serif font-semibold text-foreground">
+                            {t(partner.nameKey)}
+                          </span>
+                        )}
+                      </div>
+                      <span className="shrink-0 text-xs font-medium px-3 py-1 bg-primary/10 text-primary">
                         {t(partner.typeKey)}
                       </span>
                     </div>
@@ -133,7 +148,7 @@ const Partners = () => {
             </p>
             <a
               href="mailto:josselin@regenb.com"
-              className="inline-flex items-center px-6 py-3 bg-primary-foreground text-primary font-medium rounded-md hover:bg-primary-foreground/90 transition-colors"
+              className="inline-flex items-center px-6 py-3 bg-primary-foreground text-primary font-medium hover:bg-primary-foreground/90 transition-colors"
             >
               {t('partners.cta.button')}
             </a>
