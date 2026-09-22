@@ -76,6 +76,7 @@ const translations: Translations = {
   'partners.type.leadership': { fr: 'Leadership', en: 'Leadership' },
   'partners.type.permaculture': { fr: 'Permaculture', en: 'Permaculture' },
   'partners.type.hospitality': { fr: 'Accueil en nature', en: 'Nature retreat' },
+  'partners.type.transformation': { fr: 'Transformation', en: 'Transformation' },
   
   // Partners Data
   'partners.celine.name': { fr: 'Céline Butté', en: 'Céline Butté' },
@@ -98,6 +99,12 @@ const translations: Translations = {
 
   'partners.earthconverse.name': { fr: 'Earth Converse', en: 'Earth Converse' },
   'partners.earthconverse.description': { fr: 'Un collectif qui accompagne les leaders autour de l’autorité intérieure, du leadership relationnel et de l’impact régénératif par le coaching et les pratiques en nature.', en: 'A collaborative supporting leaders through inner authority, relational leadership and regenerative impact with coaching and nature-based practice.' },
+
+  'partners.ecodomaine.name': { fr: 'Éco-Domaine La Fontaine', en: 'Éco-Domaine La Fontaine' },
+  'partners.ecodomaine.description': { fr: 'Un éco-domaine à Pornic dédié au tourisme régénératif, réunissant hôtel, restaurant locavore, spa et ferme en permaculture.', en: 'A regenerative tourism destination in Pornic bringing together a hotel, locavore restaurant, sensory spa and permaculture farm.' },
+
+  'partners.inovon.name': { fr: 'inov-On Expérience', en: 'inov-On Experience' },
+  'partners.inovon.description': { fr: 'Une équipe qui accompagne les organisations dans leur transformation managériale vers l’intelligence collective et l’autonomie.', en: 'A team supporting organizations in their managerial transformation towards collective intelligence and autonomy.' },
   
   // Partners Page
   'partners.page.title': { fr: 'Nos Partenaires', en: 'Our Partners' },
