@@ -75,6 +75,7 @@ const translations: Translations = {
   'partners.type.nature': { fr: 'Nature', en: 'Nature' },
   'partners.type.leadership': { fr: 'Leadership', en: 'Leadership' },
   'partners.type.permaculture': { fr: 'Permaculture', en: 'Permaculture' },
+  'partners.type.hospitality': { fr: 'Accueil en nature', en: 'Nature retreat' },
   
   // Partners Data
   'partners.celine.name': { fr: 'Céline Butté', en: 'Céline Butté' },
@@ -91,6 +92,12 @@ const translations: Translations = {
   
   'partners.alveoles.name': { fr: 'L\'Atelier des Alvéoles', en: 'L\'Atelier des Alvéoles' },
   'partners.alveoles.description': { fr: 'Centre de formation en permaculture proposant des formations pour concevoir des systèmes durables et régénératifs.', en: 'Permaculture training center offering courses to design sustainable and regenerative systems.' },
+
+  'partners.oulan.name': { fr: 'La Ferme d’Oulan Bât', en: 'La Ferme d’Oulan Bât' },
+  'partners.oulan.description': { fr: 'Élevage d’ânes des Pyrénées, camping en yourtes et randonnées avec âne de bât, dans un lieu paisible au cœur de la nature.', en: 'Pyrenean donkey breeding, yurt camping and pack donkey trekking in a peaceful farm setting surrounded by nature.' },
+
+  'partners.earthconverse.name': { fr: 'Earth Converse', en: 'Earth Converse' },
+  'partners.earthconverse.description': { fr: 'Un collectif qui accompagne les leaders autour de l’autorité intérieure, du leadership relationnel et de l’impact régénératif par le coaching et les pratiques en nature.', en: 'A collaborative supporting leaders through inner authority, relational leadership and regenerative impact with coaching and nature-based practice.' },
   
   // Partners Page
   'partners.page.title': { fr: 'Nos Partenaires', en: 'Our Partners' },
