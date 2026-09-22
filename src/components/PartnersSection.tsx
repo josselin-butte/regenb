@@ -5,6 +5,8 @@ import { ExternalLink, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import xmNaturaeLogo from '@/assets/partners/xmnaturae-logo.png.asset.json';
 import impactLogo from '@/assets/partners/impact-international-logo.png.asset.json';
+import oulanBatLogo from '@/assets/partners/oulan-bat-logo.jpg.asset.json';
+import earthConverseLogo from '@/assets/partners/earthconverse-logo.png.asset.json';
 
 interface Partner {
   id: string;
@@ -52,6 +54,22 @@ const partners: Partner[] = [
     descriptionKey: 'partners.alveoles.description',
     typeKey: 'partners.type.permaculture',
     url: 'https://alveoles.fr/atelier',
+  },
+  {
+    id: 'ferme-oulan-bat',
+    nameKey: 'partners.oulan.name',
+    descriptionKey: 'partners.oulan.description',
+    typeKey: 'partners.type.hospitality',
+    logo: oulanBatLogo.url,
+    url: 'https://www.lafermedoulanbat.fr/',
+  },
+  {
+    id: 'earth-converse',
+    nameKey: 'partners.earthconverse.name',
+    descriptionKey: 'partners.earthconverse.description',
+    typeKey: 'partners.type.leadership',
+    logo: earthConverseLogo.url,
+    url: 'https://earthconverse.com/',
   },
 ];
 
