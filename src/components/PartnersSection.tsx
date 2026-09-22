@@ -86,11 +86,21 @@ const PartnersSection = () => {
                 <div className="flex min-h-20 items-start justify-between gap-4 mb-4">
                   <div className="flex h-20 min-w-0 flex-1 items-center">
                     {partner.logo ? (
-                      <img
-                        src={partner.logo}
-                        alt={`${t(partner.nameKey)} logo`}
-                        className="max-h-16 max-w-44 object-contain object-left"
-                      />
+                      <>
+                        <img
+                          src={partner.logo}
+                          alt={`${t(partner.nameKey)} logo`}
+                          className="max-h-16 max-w-44 object-contain object-left"
+                          onError={(event) => {
+                            event.currentTarget.hidden = true;
+                            const fallback = event.currentTarget.nextElementSibling;
+                            if (fallback instanceof HTMLElement) fallback.hidden = false;
+                          }}
+                        />
+                        <span hidden className="text-xl font-serif font-semibold text-foreground">
+                          {t(partner.nameKey)}
+                        </span>
+                      </>
                     ) : (
                       <span className="text-xl font-serif font-semibold text-foreground">
                         {t(partner.nameKey)}

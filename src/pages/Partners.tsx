@@ -94,11 +94,21 @@ const Partners = () => {
                     <div className="flex min-h-24 items-start justify-between gap-5 mb-6">
                       <div className="flex h-24 min-w-0 flex-1 items-center">
                         {partner.logo ? (
-                          <img
-                            src={partner.logo}
-                            alt={`${t(partner.nameKey)} logo`}
-                            className="max-h-20 max-w-52 object-contain object-left"
-                          />
+                          <>
+                            <img
+                              src={partner.logo}
+                              alt={`${t(partner.nameKey)} logo`}
+                              className="max-h-20 max-w-52 object-contain object-left"
+                              onError={(event) => {
+                                event.currentTarget.hidden = true;
+                                const fallback = event.currentTarget.nextElementSibling;
+                                if (fallback instanceof HTMLElement) fallback.hidden = false;
+                              }}
+                            />
+                            <span hidden className="text-2xl font-serif font-semibold text-foreground">
+                              {t(partner.nameKey)}
+                            </span>
+                          </>
                         ) : (
                           <span className="text-2xl font-serif font-semibold text-foreground">
                             {t(partner.nameKey)}
