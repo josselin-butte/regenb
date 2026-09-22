@@ -9,6 +9,8 @@ import regenBLogo from '@/assets/partners/regenb-logo.jpg.asset.json';
 import alveolesLogo from '@/assets/partners/alveoles-logo.png.asset.json';
 import oulanBatLogo from '@/assets/partners/oulan-bat-logo.jpg.asset.json';
 import earthConverseLogo from '@/assets/partners/earthconverse-logo.png.asset.json';
+import ecodomaineLogo from '@/assets/partners/ecodomaine-fontaine-logo.png.asset.json';
+import inovOnLogo from '@/assets/partners/inovon-experience-logo.png.asset.json';
 
 interface Partner {
   id: string;
@@ -74,6 +76,22 @@ const partners: Partner[] = [
     typeKey: 'partners.type.leadership',
     logo: earthConverseLogo.url,
     url: 'https://earthconverse.com/',
+  },
+  {
+    id: 'ecodomaine-la-fontaine',
+    nameKey: 'partners.ecodomaine.name',
+    descriptionKey: 'partners.ecodomaine.description',
+    typeKey: 'partners.type.hospitality',
+    logo: ecodomaineLogo.url,
+    url: 'https://www.ecodomaine-la-fontaine.fr/',
+  },
+  {
+    id: 'inov-on-experience',
+    nameKey: 'partners.inovon.name',
+    descriptionKey: 'partners.inovon.description',
+    typeKey: 'partners.type.transformation',
+    logo: inovOnLogo.url,
+    url: 'https://www.inov-on-experience.fr/',
   },
 ];
 
