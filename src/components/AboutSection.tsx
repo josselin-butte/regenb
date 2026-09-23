@@ -8,51 +8,40 @@ const AboutSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-24 sm:py-32 bg-background relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <img
-          src={patternImage}
-          alt=""
-          className="w-full h-full object-cover"
-          aria-hidden="true"
-        />
+    <section id="about" className="bg-primary text-primary-foreground border-b-2 border-primary relative overflow-hidden">
+      <div className="absolute inset-0 opacity-5" aria-hidden="true">
+        <img src={patternImage} alt="" className="w-full h-full object-cover" />
       </div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="relative z-10 grid lg:grid-cols-12">
           {/* Image */}
-          <div className="relative order-2 lg:order-1">
-            <div className="relative overflow-hidden shadow-nature">
+          <div className="relative lg:col-span-5 min-h-[28rem] lg:min-h-[44rem] border-b-2 lg:border-b-0 lg:border-r-2 border-primary-foreground/30">
+            <div className="absolute inset-0 overflow-hidden">
               <img
                 src={groupImage}
-                alt="Group coaching session in nature"
-                className="w-full h-auto aspect-square object-cover"
+                alt="Un temps d’accompagnement en pleine nature"
+                className="w-full h-full object-cover"
               />
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-forest/20 to-transparent" />
+              <div className="absolute inset-0 bg-primary/20" />
             </div>
-            {/* Decorative elements */}
-            <div className="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-sage/40 blur-2xl" />
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-terracotta/20 blur-2xl" />
           </div>
 
           {/* Content */}
-          <div className="order-1 lg:order-2">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-semibold text-foreground mb-8">
+          <div className="lg:col-span-7 px-6 py-16 sm:px-10 lg:px-16 xl:px-24 flex flex-col justify-center">
+            <span className="text-xs font-bold uppercase tracking-widest text-accent">{t('about.kicker')}</span>
+            <h2 className="mt-5 text-4xl sm:text-6xl lg:text-7xl font-black uppercase leading-none text-primary-foreground">
               {t('about.title')}
             </h2>
             
-            <div className="space-y-6 mb-10">
-              <p className="text-lg text-muted-foreground leading-relaxed">
+            <div className="mt-10 grid gap-7 sm:grid-cols-2 sm:gap-10 mb-10">
+              <p className="text-lg text-primary-foreground leading-relaxed">
                 {t('about.text1')}
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-primary-foreground/75 leading-relaxed">
                 {t('about.text2')}
               </p>
             </div>
 
-            <Button variant="outline" size="lg" asChild>
+            <Button variant="heroOutline" size="lg" asChild className="self-start">
               <a
                 href="https://regenb.com"
                 target="_blank"
@@ -64,7 +53,6 @@ const AboutSection = () => {
               </a>
             </Button>
           </div>
-        </div>
       </div>
     </section>
   );

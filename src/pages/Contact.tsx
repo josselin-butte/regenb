@@ -11,6 +11,7 @@ import { useToast } from '@/hooks/use-toast';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Mail, MapPin, Send, CheckCircle } from 'lucide-react';
+import groupImage from '@/assets/group-nature.jpg';
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, { message: "Le nom doit contenir au moins 2 caractères" }).max(100),
@@ -62,15 +63,16 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-20">
+      <main className="pt-16 sm:pt-20">
         {/* Hero Section */}
-        <section className="py-16 sm:py-24 bg-gradient-to-b from-sage/20 to-background">
+        <section className="py-16 sm:py-24 bg-primary text-primary-foreground border-b-2 border-primary">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-semibold text-foreground mb-6">
+            <div className="max-w-5xl">
+              <span className="text-xs font-bold uppercase tracking-widest text-accent">Josselin Butté · Contact</span>
+              <h1 className="mt-5 text-5xl sm:text-7xl lg:text-8xl font-black uppercase leading-none text-primary-foreground mb-6">
                 {t('contact.title')}
               </h1>
-              <p className="text-lg sm:text-xl text-muted-foreground">
+              <p className="text-lg sm:text-xl text-primary-foreground/75 max-w-2xl">
                 {t('contact.subtitle')}
               </p>
             </div>
@@ -78,13 +80,13 @@ const Contact = () => {
         </section>
 
         {/* Contact Content */}
-        <section className="py-16 sm:py-24">
+        <section className="py-16 sm:py-24 bg-background">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 border-2 border-primary">
               {/* Contact Info */}
-              <div className="space-y-8">
+              <div className="space-y-8 p-6 sm:p-10 lg:border-r-2 border-primary">
                 <div>
-                  <h2 className="text-2xl sm:text-3xl font-serif font-semibold text-foreground mb-4">
+                  <h2 className="text-3xl sm:text-4xl font-bold uppercase text-primary mb-4">
                     {t('contact.info.title')}
                   </h2>
                   <p className="text-muted-foreground">
@@ -94,7 +96,7 @@ const Contact = () => {
 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-primary/10 text-primary">
+                    <div className="p-3 bg-accent text-accent-foreground">
                       <Mail className="w-6 h-6" />
                     </div>
                     <div>
@@ -109,7 +111,7 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-primary/10 text-primary">
+                    <div className="p-3 bg-accent text-accent-foreground">
                       <MapPin className="w-6 h-6" />
                     </div>
                     <div>
@@ -123,8 +125,8 @@ const Contact = () => {
                 <div className="hidden lg:block mt-8">
                   <div className="aspect-[4/3] bg-sage/30 overflow-hidden">
                     <img 
-                      src="/src/assets/group-nature.jpg" 
-                      alt="RegenB Nature"
+                      src={groupImage}
+                      alt="Un échange en pleine nature"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -132,14 +134,14 @@ const Contact = () => {
               </div>
 
               {/* Contact Form */}
-              <div className="bg-card border border-border p-6 sm:p-8 lg:p-10">
+              <div className="bg-card p-6 sm:p-8 lg:p-10">
                 {isSubmitted ? (
                   <div className="flex flex-col items-center justify-center text-center py-12 space-y-6">
-                    <div className="p-4 bg-primary/10 text-primary">
+                    <div className="p-4 bg-accent text-accent-foreground">
                       <CheckCircle className="w-12 h-12" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-serif font-semibold text-foreground mb-2">
+                      <h3 className="text-2xl font-bold uppercase text-foreground mb-2">
                         {t('contact.success.title')}
                       </h3>
                       <p className="text-muted-foreground">
@@ -152,7 +154,7 @@ const Contact = () => {
                   </div>
                 ) : (
                   <>
-                    <h2 className="text-2xl font-serif font-semibold text-foreground mb-6">
+                    <h2 className="text-2xl font-bold uppercase text-foreground mb-6">
                       {t('contact.form.title')}
                     </h2>
                     <Form {...form}>

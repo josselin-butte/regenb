@@ -101,15 +101,16 @@ const Partners = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-20 sm:pt-24">
+      <main className="pt-16 sm:pt-20">
         {/* Hero Section */}
-        <section className="py-16 sm:py-24 bg-muted/30">
+        <section className="py-16 sm:py-24 bg-primary text-primary-foreground border-b-2 border-primary">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-semibold text-foreground mb-6">
+            <div className="max-w-5xl">
+              <span className="text-xs font-bold uppercase tracking-widest text-accent">Écosystème · 03</span>
+              <h1 className="mt-5 text-5xl sm:text-7xl lg:text-8xl font-black uppercase leading-none text-primary-foreground mb-6">
                 {t('partners.page.title')}
               </h1>
-              <p className="text-lg sm:text-xl text-muted-foreground">
+              <p className="text-lg sm:text-xl text-primary-foreground/75 max-w-3xl">
                 {t('partners.page.subtitle')}
               </p>
             </div>
@@ -119,11 +120,11 @@ const Partners = () => {
         {/* Partners Grid */}
         <section className="py-16 sm:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-2 border-primary">
               {partners.map((partner) => (
                 <Card
                   key={partner.id}
-                  className="group bg-card hover:shadow-lg transition-all duration-300 border-border/50"
+                  className="group bg-card hover:bg-muted transition-colors duration-300 border-0 border-b-2 md:border-r-2 border-primary"
                 >
                   <CardContent className="p-8">
                     {/* Logo & Type */}
@@ -151,7 +152,7 @@ const Partners = () => {
                           </span>
                         )}
                       </div>
-                      <span className="shrink-0 text-xs font-medium px-3 py-1 bg-primary/10 text-primary">
+                      <span className="shrink-0 text-xs font-semibold px-3 py-1 bg-accent text-accent-foreground">
                         {t(partner.typeKey)}
                       </span>
                     </div>
@@ -184,17 +185,17 @@ const Partners = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 sm:py-24 bg-primary text-primary-foreground">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl sm:text-4xl font-serif font-semibold mb-6">
+        <section className="py-16 sm:py-24 bg-accent text-accent-foreground border-b-2 border-primary">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-left grid gap-8 lg:grid-cols-3 lg:items-end">
+            <h2 className="text-4xl sm:text-5xl font-black uppercase leading-none lg:col-span-1">
               {t('partners.cta.title')}
             </h2>
-            <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mb-8">
+            <p className="text-lg max-w-2xl lg:col-span-1">
               {t('partners.cta.subtitle')}
             </p>
             <a
               href="mailto:josselin@regenb.com"
-              className="inline-flex items-center px-6 py-3 bg-primary-foreground text-primary font-medium hover:bg-primary-foreground/90 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors lg:justify-self-end"
             >
               {t('partners.cta.button')}
             </a>

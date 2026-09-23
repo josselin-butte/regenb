@@ -1,5 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Leaf, ExternalLink, Mail, Globe } from 'lucide-react';
+import { ExternalLink, Mail, Globe } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import logo from '@/assets/josselin-butte-logo.png';
 
 const Footer = () => {
   const { t, language, setLanguage } = useLanguage();
@@ -15,9 +17,8 @@ const Footer = () => {
         <div className="py-16 sm:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-6">
-              <Leaf className="w-6 h-6" />
-              <span className="text-2xl font-serif font-semibold">RegenB France</span>
+            <div className="bg-background inline-flex px-4 py-3 mb-6">
+              <img src={logo} alt="Josselin Butté" className="h-8 w-auto max-w-56 object-contain" />
             </div>
             <p className="text-primary-foreground/80 max-w-md mb-6">
               {t('footer.tagline')}
@@ -73,13 +74,15 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <button
+                <Button
+                  variant="ghost"
+                  size="sm"
                   onClick={toggleLanguage}
-                  className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="inline-flex items-center px-0 text-primary-foreground/80 hover:text-primary hover:bg-primary-foreground transition-colors"
                 >
                   <Globe className="w-4 h-4 mr-2" />
                   {language === 'fr' ? 'Switch to English' : 'Passer en Français'}
-                </button>
+                </Button>
               </li>
             </ul>
           </div>
@@ -88,7 +91,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-primary-foreground/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-primary-foreground/60">
           <p>
-            © {new Date().getFullYear()} RegenB France. {t('footer.rights')}.
+            © {new Date().getFullYear()} Josselin Butté · RegenB France. {t('footer.rights')}.
           </p>
           <div className="flex items-center space-x-6">
             <a href="#" className="hover:text-primary-foreground transition-colors">

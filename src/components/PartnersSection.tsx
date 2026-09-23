@@ -98,24 +98,24 @@ const PartnersSection = () => {
   const featuredPartners = partners.slice(0, 3);
 
   return (
-    <section id="partners" className="py-20 sm:py-28 bg-muted/30">
+    <section id="partners" className="py-20 sm:py-28 bg-background border-b-2 border-primary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold text-foreground mb-6">
+        <div className="grid gap-6 lg:grid-cols-2 lg:items-end mb-14">
+          <h2 className="text-4xl sm:text-6xl font-black uppercase leading-none text-primary">
             {t('partners.title')}
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground lg:max-w-xl lg:justify-self-end">
             {t('partners.subtitle')}
           </p>
         </div>
 
         {/* Partners Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 border-2 border-primary mb-10">
           {featuredPartners.map((partner) => (
             <Card
               key={partner.id}
-              className="group bg-card hover:shadow-lg transition-all duration-300 border-border/50"
+              className="group bg-card transition-colors duration-300 border-0 border-b-2 last:border-b-0 md:border-b-0 md:border-r-2 md:last:border-r-0 border-primary hover:bg-muted"
             >
               <CardContent className="p-6">
                 {/* Logo & Type */}
@@ -143,7 +143,7 @@ const PartnersSection = () => {
                       </span>
                     )}
                   </div>
-                  <span className="shrink-0 text-xs font-medium px-3 py-1 bg-primary/10 text-primary">
+                  <span className="shrink-0 text-xs font-semibold px-3 py-1 bg-accent text-accent-foreground">
                     {t(partner.typeKey)}
                   </span>
                 </div>
