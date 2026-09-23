@@ -9,11 +9,14 @@ const AboutSection = () => {
         <div className="order-2 md:order-1">
           <div className="border border-border bg-secondary p-8 sm:p-12">
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('about.kicker')}</p>
-            <p className="mt-6 font-serif text-2xl leading-snug text-primary sm:text-3xl">{t('about.title')}</p>
+            <p className="mt-6 font-serif text-3xl leading-snug text-primary sm:text-4xl">{t('about.title')}</p>
+            <p className="mt-6 border-t border-border pt-6 text-sm uppercase tracking-[0.14em] text-muted-foreground">
+              RegenB France
+            </p>
           </div>
         </div>
         <div className="order-1 max-w-[500px] md:order-2">
-          <h2 className="text-3xl sm:text-4xl">{t('about.title')}</h2>
+          <h2 className="text-3xl sm:text-4xl">{t('nav.about')}</h2>
           <p className="mt-6">{t('about.text1')}</p>
           <p className="mt-4">{t('about.text2')}</p>
         </div>
