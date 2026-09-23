@@ -53,7 +53,6 @@ const AboutSection = () => {
               </a>
             </Button>
           </div>
-        </div>
       </div>
     </section>
   );
