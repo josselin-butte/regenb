@@ -1,6 +1,4 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Button } from '@/components/ui/button';
-import { ExternalLink } from 'lucide-react';
 import groupImage from '@/assets/group-nature.jpg';
 import patternImage from '@/assets/pattern-organic.jpg';
 
@@ -41,17 +39,6 @@ const AboutSection = () => {
               </p>
             </div>
 
-            <Button variant="heroOutline" size="lg" asChild className="self-start">
-              <a
-                href="https://regenb.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center"
-              >
-                {t('about.visit')}
-                <ExternalLink className="w-4 h-4 ml-2" />
-              </a>
-            </Button>
           </div>
       </div>
     </section>

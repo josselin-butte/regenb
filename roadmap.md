@@ -7,3 +7,4 @@
 - [x] Mettre à jour les métadonnées et le favicon
 - [x] Vérifier ordinateur, mobile, FR/EN et interactions
 - [x] Retirer les services, partenaires, retraites et anciennes dates
+- [ ] Réorganiser l’accueil : boussole, présentation, proposition, lettre et liste d’attente
