@@ -33,11 +33,6 @@ const Footer = () => {
                 <a href="mailto:josselin@regenb.com" className="text-primary underline decoration-accent">josselin@regenb.com</a>
               </li>
               <li>
-                <a href="https://regenb.com" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-accent">
-                  RegenB.com
-                </a>
-              </li>
-              <li>
                 <button type="button" onClick={toggleLanguage} className="hover:text-primary">
                   {language === 'fr' ? 'Switch to English' : 'Passer en Français'}
                 </button>

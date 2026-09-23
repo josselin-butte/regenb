@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import logoHeader from '@/assets/logo-header.png';
+import logoHeader from '@/assets/logo-header-regenb.png';
 
 const Header = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -21,7 +21,7 @@ const Header = () => {
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-border bg-background">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8 lg:px-12">
         <a href="/" className="flex items-center" aria-label="Josselin Butté — accueil">
-          <img src={logoHeader} alt="Josselin Butté" className="h-10 w-auto sm:h-11" />
+          <img src={logoHeader} alt="RegenB France" className="h-12 w-auto sm:h-14" />
         </a>
 
         <nav className="hidden items-center gap-6 md:flex">
