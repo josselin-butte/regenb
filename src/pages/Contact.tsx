@@ -55,7 +55,7 @@ const Contact = () => {
         <section className="border-b border-border px-5 pb-12 pt-28 sm:px-8 sm:pb-16 sm:pt-36 lg:px-12">
           <div className="mx-auto max-w-6xl lg:grid lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-3">
-              <p className="text-sm font-medium uppercase tracking-widest text-primary">Josselin Butté · Contact</p>
+              <p className="text-sm font-medium uppercase tracking-widest text-accent">Josselin Butté · Contact</p>
             </div>
             <div className="lg:col-span-9">
               <h1 className="mt-6 text-[2.1rem] leading-[1.15] sm:text-5xl lg:mt-0">{t('contact.title')}</h1>
@@ -71,7 +71,7 @@ const Contact = () => {
             <ul className="mt-6 space-y-2">
               <li>
                 {t('contact.info.email')} —{' '}
-                <a href="mailto:josselin@regenb.com" className="text-primary underline">
+                <a href="mailto:josselin@regenb.com" className="text-primary underline decoration-accent">
                   josselin@regenb.com
                 </a>
               </li>

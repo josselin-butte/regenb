@@ -25,7 +25,7 @@ const NewsletterSection = () => {
     <section id="letter" className="border-b border-border bg-secondary px-5 py-14 sm:px-8 sm:py-20 lg:px-12">
       <div className="mx-auto max-w-6xl lg:grid lg:grid-cols-12 lg:gap-12">
         <div className="lg:col-span-3">
-          <p className="text-sm font-medium uppercase tracking-widest text-primary">{t('letter.kicker')}</p>
+          <p className="text-sm font-medium uppercase tracking-widest text-accent">{t('letter.kicker')}</p>
           <h2 className="mt-4 text-2xl sm:text-3xl">{t('letter.title')}</h2>
         </div>
         <div className="mt-6 lg:col-span-5 lg:mt-0">

@@ -36,13 +36,13 @@ const Legal = () => {
         <section className="border-b border-border px-5 pb-10 pt-28 sm:px-8 sm:pb-14 sm:pt-36 lg:px-12">
           <div className="mx-auto max-w-6xl lg:grid lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-3">
-              <p className="text-sm font-medium uppercase tracking-widest text-primary">{t('legal.kicker')}</p>
+              <p className="text-sm font-medium uppercase tracking-widest text-accent">{t('legal.kicker')}</p>
             </div>
             <div className="lg:col-span-9">
               <h1 className="mt-6 text-[2.1rem] leading-[1.15] sm:text-5xl lg:mt-0">{t('legal.title')}</h1>
               <nav aria-label={t('legal.title')} className="mt-6 flex flex-col gap-2 sm:flex-row sm:gap-8">
                 {anchors.map((anchor) => (
-                  <a key={anchor.id} href={`#${anchor.id}`} className="text-primary underline">
+                  <a key={anchor.id} href={`#${anchor.id}`} className="text-primary underline decoration-accent">
                     {t(anchor.key)}
                   </a>
                 ))}
