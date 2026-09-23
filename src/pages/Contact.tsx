@@ -10,8 +10,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { useToast } from '@/hooks/use-toast';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Mail, MapPin, Send, CheckCircle } from 'lucide-react';
-import groupImage from '@/assets/group-nature.jpg';
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, { message: "Le nom doit contenir au moins 2 caractères" }).max(100),
@@ -30,25 +28,15 @@ const Contact = () => {
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    },
+    defaultValues: { name: '', email: '', subject: '', message: '' },
   });
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     console.log('Form submitted:', data);
-    
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
     toast({
       title: t('contact.toast.title'),
       description: t('contact.toast.description'),
@@ -63,186 +51,113 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-16 sm:pt-20">
-        {/* Hero Section */}
-        <section className="py-16 sm:py-24 bg-primary text-primary-foreground border-b-2 border-primary">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl">
-              <span className="text-xs font-bold uppercase tracking-widest text-accent">Josselin Butté · Contact</span>
-              <h1 className="mt-5 text-5xl sm:text-7xl lg:text-8xl font-black uppercase leading-none text-primary-foreground mb-6">
-                {t('contact.title')}
-              </h1>
-              <p className="text-lg sm:text-xl text-primary-foreground/75 max-w-2xl">
-                {t('contact.subtitle')}
-              </p>
-            </div>
+      <main>
+        <section className="border-b border-border px-5 pb-12 pt-28 sm:px-8 sm:pb-16 sm:pt-36">
+          <div className="mx-auto max-w-measure">
+            <p className="text-sm font-medium uppercase tracking-widest text-primary">Josselin Butté · Contact</p>
+            <h1 className="mt-6 text-3xl sm:text-4xl">{t('contact.title')}</h1>
+            <p className="mt-6">{t('contact.subtitle')}</p>
           </div>
         </section>
 
-        {/* Contact Content */}
-        <section className="py-16 sm:py-24 bg-background">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 border-2 border-primary">
-              {/* Contact Info */}
-              <div className="space-y-8 p-6 sm:p-10 lg:border-r-2 border-primary">
-                <div>
-                  <h2 className="text-3xl sm:text-4xl font-bold uppercase text-primary mb-4">
-                    {t('contact.info.title')}
-                  </h2>
-                  <p className="text-muted-foreground">
-                    {t('contact.info.description')}
-                  </p>
-                </div>
+        <section className="border-b border-border px-5 py-12 sm:px-8 sm:py-16">
+          <div className="mx-auto max-w-measure">
+            <h2 className="text-2xl sm:text-3xl">{t('contact.info.title')}</h2>
+            <p className="mt-4 text-muted-foreground">{t('contact.info.description')}</p>
+            <ul className="mt-6 space-y-2">
+              <li>
+                {t('contact.info.email')} —{' '}
+                <a href="mailto:josselin@regenb.com" className="text-primary underline">
+                  josselin@regenb.com
+                </a>
+              </li>
+              <li>{t('contact.info.location')} — France</li>
+            </ul>
+          </div>
+        </section>
 
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-accent text-accent-foreground">
-                      <Mail className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-1">{t('contact.info.email')}</h3>
-                      <a 
-                        href="mailto:josselin@regenb.com" 
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        josselin@regenb.com
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-accent text-accent-foreground">
-                      <MapPin className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-1">{t('contact.info.location')}</h3>
-                      <p className="text-muted-foreground">France</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Decorative Image */}
-                <div className="hidden lg:block mt-8">
-                  <div className="aspect-[4/3] bg-sage/30 overflow-hidden">
-                    <img 
-                      src={groupImage}
-                      alt="Un échange en pleine nature"
-                      className="w-full h-full object-cover"
+        <section className="border-b border-border px-5 py-12 sm:px-8 sm:py-16">
+          <div className="mx-auto max-w-measure">
+            {isSubmitted ? (
+              <div className="border border-border p-6">
+                <h2 className="text-2xl">{t('contact.success.title')}</h2>
+                <p className="mt-3 text-muted-foreground">{t('contact.success.description')}</p>
+                <Button onClick={handleReset} variant="outline" className="mt-6">
+                  {t('contact.success.button')}
+                </Button>
+              </div>
+            ) : (
+              <>
+                <h2 className="text-2xl sm:text-3xl">{t('contact.form.title')}</h2>
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="mt-6 space-y-6">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>{t('contact.form.name')}</FormLabel>
+                          <FormControl>
+                            <Input placeholder={t('contact.form.name.placeholder')} {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
                     />
-                  </div>
-                </div>
-              </div>
 
-              {/* Contact Form */}
-              <div className="bg-card p-6 sm:p-8 lg:p-10">
-                {isSubmitted ? (
-                  <div className="flex flex-col items-center justify-center text-center py-12 space-y-6">
-                    <div className="p-4 bg-accent text-accent-foreground">
-                      <CheckCircle className="w-12 h-12" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold uppercase text-foreground mb-2">
-                        {t('contact.success.title')}
-                      </h3>
-                      <p className="text-muted-foreground">
-                        {t('contact.success.description')}
-                      </p>
-                    </div>
-                    <Button onClick={handleReset} variant="outline">
-                      {t('contact.success.button')}
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>{t('contact.form.email')}</FormLabel>
+                          <FormControl>
+                            <Input type="email" placeholder={t('contact.form.email.placeholder')} {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="subject"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>{t('contact.form.subject')}</FormLabel>
+                          <FormControl>
+                            <Input placeholder={t('contact.form.subject.placeholder')} {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="message"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>{t('contact.form.message')}</FormLabel>
+                          <FormControl>
+                            <Textarea
+                              placeholder={t('contact.form.message.placeholder')}
+                              className="min-h-[150px] resize-none"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                      {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
                     </Button>
-                  </div>
-                ) : (
-                  <>
-                    <h2 className="text-2xl font-bold uppercase text-foreground mb-6">
-                      {t('contact.form.title')}
-                    </h2>
-                    <Form {...form}>
-                      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                        <FormField
-                          control={form.control}
-                          name="name"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>{t('contact.form.name')}</FormLabel>
-                              <FormControl>
-                                <Input placeholder={t('contact.form.name.placeholder')} {...field} />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-
-                        <FormField
-                          control={form.control}
-                          name="email"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>{t('contact.form.email')}</FormLabel>
-                              <FormControl>
-                                <Input type="email" placeholder={t('contact.form.email.placeholder')} {...field} />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-
-                        <FormField
-                          control={form.control}
-                          name="subject"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>{t('contact.form.subject')}</FormLabel>
-                              <FormControl>
-                                <Input placeholder={t('contact.form.subject.placeholder')} {...field} />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-
-                        <FormField
-                          control={form.control}
-                          name="message"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>{t('contact.form.message')}</FormLabel>
-                              <FormControl>
-                                <Textarea 
-                                  placeholder={t('contact.form.message.placeholder')} 
-                                  className="min-h-[150px] resize-none"
-                                  {...field} 
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-
-                        <Button 
-                          type="submit" 
-                          className="w-full" 
-                          size="lg"
-                          disabled={isSubmitting}
-                        >
-                          {isSubmitting ? (
-                            <span className="flex items-center gap-2">
-                              <span className="animate-spin">⏳</span>
-                              {t('contact.form.sending')}
-                            </span>
-                          ) : (
-                            <span className="flex items-center gap-2">
-                              <Send className="w-4 h-4" />
-                              {t('contact.form.submit')}
-                            </span>
-                          )}
-                        </Button>
-                      </form>
-                    </Form>
-                  </>
-                )}
-              </div>
-            </div>
+                  </form>
+                </Form>
+              </>
+            )}
           </div>
         </section>
       </main>
