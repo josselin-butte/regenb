@@ -6,3 +6,4 @@
 - [x] Harmoniser les pages Partenaires et Contact
 - [x] Mettre à jour les métadonnées et le favicon
 - [x] Vérifier ordinateur, mobile, FR/EN et interactions
+- [x] Retirer les services, partenaires, retraites et anciennes dates
