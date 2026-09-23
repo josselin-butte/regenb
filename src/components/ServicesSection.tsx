@@ -1,31 +1,22 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { TreeDeciduous, Brain, Monitor, Mountain, ArrowRight } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { ArrowUpRight } from 'lucide-react';
 
 const services = [
   {
-    icon: TreeDeciduous,
     titleKey: 'services.leadership.title',
     descKey: 'services.leadership.desc',
-    gradient: 'from-forest to-forest-light',
   },
   {
-    icon: Brain,
     titleKey: 'services.reflective.title',
     descKey: 'services.reflective.desc',
-    gradient: 'from-earth to-terracotta',
   },
   {
-    icon: Monitor,
     titleKey: 'services.nature.title',
     descKey: 'services.nature.desc',
-    gradient: 'from-sage to-muted',
   },
   {
-    icon: Mountain,
     titleKey: 'services.retreats.title',
     descKey: 'services.retreats.desc',
-    gradient: 'from-primary to-forest',
   },
 ];
 
@@ -33,58 +24,51 @@ const ServicesSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="services" className="py-24 sm:py-32 bg-gradient-warm">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="bg-background border-b-2 border-primary">
+      <div className="grid lg:grid-cols-12">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-semibold text-foreground mb-6">
+        <div className="lg:col-span-5 px-6 py-16 sm:px-10 lg:px-16 xl:px-24 lg:border-r-2 border-primary">
+          <span className="text-xs font-bold uppercase tracking-widest text-accent">Édition · 02</span>
+          <h2 className="mt-5 text-4xl sm:text-6xl font-black uppercase leading-none text-primary">
             {t('services.title')}
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground mb-6">
+          <p className="mt-8 text-xl font-medium text-primary">
             {t('services.subtitle')}
           </p>
-          <p className="text-base sm:text-lg text-muted-foreground/90 italic">
+          <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-muted-foreground">
             {t('services.intro')}
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="lg:col-span-7 grid sm:grid-cols-2">
           {services.map((service, index) => {
-            const Icon = service.icon;
             return (
-              <Card
+              <article
                 key={service.titleKey}
-                className="group relative overflow-hidden border-0 shadow-soft hover:shadow-elevated transition-all duration-500 bg-card"
+                className={`group min-h-72 p-7 sm:p-9 flex flex-col justify-between border-primary transition-colors duration-300 hover:bg-primary hover:text-primary-foreground ${index % 2 === 0 ? 'sm:border-r-2' : ''} ${index < 2 ? 'border-b-2' : ''}`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CardContent className="p-8 sm:p-10">
-                  {/* Icon */}
-                  <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${service.gradient} text-primary-foreground mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className="w-7 h-7" />
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-2xl sm:text-3xl font-serif font-semibold text-foreground mb-4">
+                <div className="flex items-start justify-between">
+                  <span className="text-sm font-black text-accent">0{index + 1}</span>
+                  <ArrowUpRight className="h-5 w-5 text-primary group-hover:text-accent" />
+                </div>
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-bold uppercase leading-tight text-primary group-hover:text-primary-foreground">
                     {t(service.titleKey)}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-6">
+                  <p className="mt-4 leading-relaxed text-muted-foreground group-hover:text-primary-foreground/75">
                     {t(service.descKey)}
                   </p>
-
-                  {/* Link */}
                   <a
                     href="#"
-                    className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors group/link"
+                    className="mt-6 inline-flex items-center text-sm font-semibold text-primary group-hover:text-accent"
                   >
                     {t('services.learn')}
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" />
+                    <ArrowUpRight className="w-4 h-4 ml-2" />
                   </a>
-
-                  {/* Decorative corner */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-muted/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </CardContent>
-              </Card>
+                </div>
+              </article>
             );
           })}
         </div>

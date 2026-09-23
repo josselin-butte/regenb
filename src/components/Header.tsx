@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logo from '@/assets/josselin-butte-logo.png.asset.json';
 
 const Header = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -20,26 +21,24 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b-2 border-primary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center space-x-2">
-            <span className="text-2xl sm:text-3xl font-serif font-semibold text-primary">
-              RegenB
-            </span>
-            <span className="text-sm font-sans font-medium text-muted-foreground">
-              France
+          <a href="/" className="flex items-center gap-3" aria-label="Josselin Butté — accueil">
+            <img src={logo.url} alt="Josselin Butté" className="h-7 w-auto max-w-44 object-contain" />
+            <span className="hidden sm:block border-l border-primary pl-3 text-[10px] font-semibold uppercase tracking-widest text-primary">
+              RegenB France
             </span>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-7">
             {navItems.map((item) => (
               <a
                 key={item.key}
                 href={item.href}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-200"
+                className="text-xs font-semibold uppercase tracking-wider text-foreground/80 hover:text-accent transition-colors duration-200"
               >
                 {t(item.key)}
               </a>
@@ -48,26 +47,31 @@ const Header = () => {
 
           {/* Language Toggle & CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <button
+            <Button
+              variant="ghost"
+              size="sm"
               onClick={toggleLanguage}
-              className="flex items-center space-x-1.5 px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 hover:bg-muted"
+              className="flex items-center space-x-1.5 text-sm font-medium"
+              aria-label={language === 'fr' ? 'Switch to English' : 'Passer en français'}
             >
               <Globe className="w-4 h-4" />
               <span>{language.toUpperCase()}</span>
-            </button>
+            </Button>
             <Button variant="default" size="sm" asChild>
               <a href="/contact">{t('nav.contact')}</a>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
+          <Button
+            variant="ghost"
+            size="icon"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-foreground"
+            className="md:hidden text-foreground"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          </Button>
         </div>
 
         {/* Mobile Menu */}
@@ -85,13 +89,15 @@ const Header = () => {
                 </a>
               ))}
               <div className="flex items-center justify-between pt-4 border-t border-border/50">
-                <button
+                <Button
+                  variant="ghost"
+                  size="sm"
                   onClick={toggleLanguage}
-                  className="flex items-center space-x-1.5 px-3 py-1.5 text-sm font-medium text-muted-foreground"
+                  className="flex items-center space-x-1.5 text-sm font-medium text-muted-foreground"
                 >
                   <Globe className="w-4 h-4" />
                   <span>{language === 'fr' ? 'English' : 'Français'}</span>
-                </button>
+                </Button>
                 <Button variant="default" size="sm" asChild>
                   <a href="/contact">{t('nav.contact')}</a>
                 </Button>

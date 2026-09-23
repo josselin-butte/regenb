@@ -12,49 +12,52 @@ interface Translations {
 const translations: Translations = {
   // Navigation
   'nav.home': { fr: 'Accueil', en: 'Home' },
-  'nav.services': { fr: 'Nos Services', en: 'Our Services' },
-  'nav.about': { fr: 'À Propos', en: 'About' },
+  'nav.services': { fr: 'Mes accompagnements', en: 'My work' },
+  'nav.about': { fr: 'Mon approche', en: 'My approach' },
   'nav.partners': { fr: 'Partenaires', en: 'Partners' },
   'nav.retreats': { fr: 'Retraites', en: 'Retreats' },
   'nav.contact': { fr: 'Contact', en: 'Contact' },
   
   // Hero
   'hero.tagline': { 
-    fr: 'Nous accompagnons tous les leaders, coachs, superviseurs et accompagnants à transformer leur manière d\'accompagner en s\'alignant au vivant.', 
-    en: 'We support leaders, coaches, supervisors and practitioners in transforming how they accompany others by aligning with the living world.' 
+    fr: 'J’accompagne les leaders, coachs, superviseurs et accompagnants à transformer leur manière d’accompagner en s’alignant au vivant.', 
+    en: 'I support leaders, coaches, supervisors and practitioners in transforming how they accompany others by aligning with the living world.' 
   },
-  'hero.cta': { fr: 'Découvrir nos services', en: 'Discover our services' },
+  'hero.eyebrow': { fr: 'Josselin Butté · RegenB France', en: 'Josselin Butté · RegenB France' },
+  'hero.title': { fr: 'L’ère du vivant', en: 'The age of living systems' },
+  'hero.cta': { fr: 'Découvrir mes accompagnements', en: 'Discover my work' },
   'hero.secondary': { fr: 'Prochaines retraites', en: 'Upcoming retreats' },
   'hero.values': { fr: 'Identifier mes valeurs', en: 'Identify my values' },
   
   // Services
-  'services.title': { fr: 'Nos Services', en: 'Our Services' },
+  'services.title': { fr: 'Mes accompagnements', en: 'My work' },
   'services.subtitle': { fr: 'Quatre chemins pour transformer votre pratique', en: 'Four paths to transform your practice' },
-  'services.intro': { fr: 'Si vous sentez que l\'ancienne histoire ne tient plus, vous n\'êtes pas \'perdu\', vous êtes en transition. Tous les accompagnements vous aident à écrire l\'histoire suivante, pour la vivre à chaque instant.', en: 'If you feel the old story no longer holds, you are not \'lost\', you are in transition. All our support helps you write the next story, to live it in every moment.' },
+  'services.intro': { fr: 'Si vous sentez que l’ancienne histoire ne tient plus, vous n’êtes pas « perdu », vous êtes en transition. Je vous aide à écrire l’histoire suivante, pour la vivre à chaque instant.', en: 'If you feel the old story no longer holds, you are not “lost”; you are in transition. I help you write the next story, so you can live it in every moment.' },
   
   'services.leadership.title': { fr: 'Leadership avec le Vivant', en: 'Leadership with the Living' },
-  'services.leadership.desc': { fr: 'Développez un leadership régénératif inspiré par les systèmes vivants et les écosystèmes naturels.', en: 'Develop regenerative leadership inspired by living systems and natural ecosystems.' },
+  'services.leadership.desc': { fr: 'Je vous aide à développer un leadership régénératif inspiré par les systèmes vivants et les écosystèmes naturels.', en: 'I help you develop regenerative leadership inspired by living systems and natural ecosystems.' },
   
   'services.reflective.title': { fr: 'Pratique Réflexive Intégrative', en: 'Integrative Reflective Practice' },
-  'services.reflective.desc': { fr: 'Approfondissez votre pratique d\'accompagnement grâce à des espaces de réflexion et de supervision enrichis.', en: 'Deepen your coaching practice through enriched spaces for reflection and supervision.' },
+  'services.reflective.desc': { fr: 'Je crée des espaces de réflexion et de supervision pour approfondir votre pratique d’accompagnement.', en: 'I create spaces for reflection and supervision to deepen your practice.' },
   
   'services.nature.title': { fr: 'Accompagner avec la Nature', en: 'Accompanying with Nature' },
-  'services.nature.desc': { fr: 'Formations en ligne pour intégrer la nature comme partenaire dans vos accompagnements.', en: 'Online courses to integrate nature as a partner in your practice.' },
+  'services.nature.desc': { fr: 'Je propose des formations en ligne pour intégrer la nature comme partenaire dans vos accompagnements.', en: 'I offer online courses to integrate nature as a partner in your practice.' },
   
   'services.retreats.title': { fr: 'Retraites & Weekends', en: 'Retreats & Weekends' },
-  'services.retreats.desc': { fr: 'Immersions en pleine nature pour ressourcer et transformer votre relation au vivant.', en: 'Nature immersions to restore and transform your relationship with the living world.' },
+  'services.retreats.desc': { fr: 'Je vous accueille en pleine nature pour vous ressourcer et transformer votre relation au vivant.', en: 'I welcome you into nature to restore and transform your relationship with the living world.' },
   
   'services.learn': { fr: 'En savoir plus', en: 'Learn more' },
   
   // About
-  'about.title': { fr: 'Notre Philosophie', en: 'Our Philosophy' },
-  'about.text1': { fr: 'Chez RegenB France, nous croyons que les réponses aux défis du leadership moderne se trouvent dans notre reconnexion au vivant.', en: 'At RegenB France, we believe the answers to modern leadership challenges lie in our reconnection with the living world.' },
-  'about.text2': { fr: 'Notre approche intégrative combine les sagesses ancestrales, les sciences du vivant et les pratiques contemporaines d\'accompagnement.', en: 'Our integrative approach combines ancestral wisdom, life sciences and contemporary coaching practices.' },
+  'about.kicker': { fr: 'Mon approche · 01', en: 'My approach · 01' },
+  'about.title': { fr: 'Accompagner depuis le vivant', en: 'Accompanying from the living world' },
+  'about.text1': { fr: 'Je m’appelle Josselin Butté. Avec RegenB France, j’explore une conviction simple : les réponses aux défis du leadership contemporain émergent lorsque nous renouons avec le vivant.', en: 'I am Josselin Butté. Through RegenB France, I explore a simple conviction: answers to contemporary leadership challenges emerge when we reconnect with the living world.' },
+  'about.text2': { fr: 'Mon approche intégrative relie les sagesses ancestrales, les sciences du vivant et les pratiques contemporaines d’accompagnement. Je crée des espaces où chacun peut écouter, expérimenter et transformer sa manière d’agir.', en: 'My integrative approach connects ancestral wisdom, life sciences and contemporary practices. I create spaces where each person can listen, experiment and transform how they act.' },
   'about.visit': { fr: 'Visiter RegenB.com', en: 'Visit RegenB.com' },
   
   // CTA
-  'cta.title': { fr: 'Prêt à transformer votre pratique ?', en: 'Ready to transform your practice?' },
-  'cta.subtitle': { fr: 'Rejoignez notre prochaine retraite en pleine nature', en: 'Join our next nature retreat' },
+  'cta.title': { fr: 'Et si la suite s’écrivait dehors ?', en: 'What if the next chapter began outdoors?' },
+  'cta.subtitle': { fr: 'Je vous invite à vivre ma prochaine retraite en pleine nature.', en: 'I invite you to experience my next retreat in the heart of nature.' },
   'cta.button': { fr: 'Réserver ma place', en: 'Book my spot' },
   
   // Footer
@@ -64,10 +67,10 @@ const translations: Translations = {
   'footer.terms': { fr: 'Mentions légales', en: 'Terms' },
 
   // Partners Section
-  'partners.title': { fr: 'Nos Partenaires', en: 'Our Partners' },
-  'partners.subtitle': { fr: 'Un réseau de professionnels engagés pour accompagner la transition vers le vivant', en: 'A network of engaged professionals supporting the transition to living systems' },
+  'partners.title': { fr: 'Mon écosystème', en: 'My ecosystem' },
+  'partners.subtitle': { fr: 'Je collabore avec des professionnels et des lieux engagés dans la transition vers le vivant.', en: 'I collaborate with professionals and places committed to the transition toward living systems.' },
   'partners.visit': { fr: 'Visiter le site', en: 'Visit website' },
-  'partners.seeAll': { fr: 'Voir tous nos partenaires', en: 'See all our partners' },
+  'partners.seeAll': { fr: 'Découvrir tous mes partenaires', en: 'Discover all my partners' },
   
   // Partner Types
   'partners.type.network': { fr: 'Réseau', en: 'Network' },
@@ -89,7 +92,7 @@ const translations: Translations = {
   'partners.impact.description': { fr: 'Cabinet de conseil international spécialisé dans le développement du leadership et la transformation organisationnelle.', en: 'International consulting firm specializing in leadership development and organizational transformation.' },
   
   'partners.regenb.name': { fr: 'RegenB', en: 'RegenB' },
-  'partners.regenb.description': { fr: 'Notre réseau international de coachs et facilitateurs dédiés au leadership régénératif et à l\'accompagnement avec le vivant.', en: 'Our international network of coaches and facilitators dedicated to regenerative leadership and accompanying with the living.' },
+  'partners.regenb.description': { fr: 'Le réseau international auquel je contribue, réunissant des coachs et facilitateurs dédiés au leadership régénératif.', en: 'The international network I contribute to, bringing together coaches and facilitators dedicated to regenerative leadership.' },
   
   'partners.alveoles.name': { fr: 'L\'Atelier des Alvéoles', en: 'L\'Atelier des Alvéoles' },
   'partners.alveoles.description': { fr: 'Centre de formation en permaculture proposant des formations pour concevoir des systèmes durables et régénératifs.', en: 'Permaculture training center offering courses to design sustainable and regenerative systems.' },
@@ -107,36 +110,36 @@ const translations: Translations = {
   'partners.inovon.description': { fr: 'Une équipe qui accompagne les organisations dans leur transformation managériale vers l’intelligence collective et l’autonomie.', en: 'A team supporting organizations in their managerial transformation towards collective intelligence and autonomy.' },
   
   // Partners Page
-  'partners.page.title': { fr: 'Nos Partenaires', en: 'Our Partners' },
-  'partners.page.subtitle': { fr: 'Découvrez les organisations et professionnels avec lesquels nous collaborons pour transformer l\'accompagnement et le leadership.', en: 'Discover the organizations and professionals we collaborate with to transform coaching and leadership.' },
+  'partners.page.title': { fr: 'Mon écosystème de partenaires', en: 'My partner ecosystem' },
+  'partners.page.subtitle': { fr: 'Découvrez les personnes, organisations et lieux avec lesquels je collabore pour transformer l’accompagnement et le leadership.', en: 'Discover the people, organizations and places I collaborate with to transform coaching and leadership.' },
   
   'partners.cta.title': { fr: 'Devenir partenaire', en: 'Become a partner' },
-  'partners.cta.subtitle': { fr: 'Vous partagez notre vision d\'un accompagnement aligné au vivant ? Rejoignez notre réseau de partenaires.', en: 'Do you share our vision of coaching aligned with the living? Join our partner network.' },
-  'partners.cta.button': { fr: 'Nous contacter', en: 'Contact us' },
+  'partners.cta.subtitle': { fr: 'Vous partagez ma vision d’un accompagnement aligné au vivant ? Échangeons sur une collaboration.', en: 'Do you share my vision of practice aligned with the living world? Let’s discuss a collaboration.' },
+  'partners.cta.button': { fr: 'Me contacter', en: 'Contact me' },
 
   // Contact Page
-  'contact.title': { fr: 'Contactez-nous', en: 'Contact Us' },
-  'contact.subtitle': { fr: 'Nous serions ravis d\'échanger avec vous sur votre parcours de transformation.', en: 'We would love to discuss your transformation journey with you.' },
+  'contact.title': { fr: 'Parlons de votre transition', en: 'Let’s talk about your transition' },
+  'contact.subtitle': { fr: 'Je serai heureux d’échanger avec vous sur votre parcours et ce qui cherche à émerger.', en: 'I would be glad to discuss your journey and what is seeking to emerge.' },
   
-  'contact.info.title': { fr: 'Restons en contact', en: 'Let\'s Stay Connected' },
-  'contact.info.description': { fr: 'Que vous ayez des questions sur nos services, nos retraites ou que vous souhaitiez simplement échanger, n\'hésitez pas à nous contacter.', en: 'Whether you have questions about our services, retreats, or simply want to connect, don\'t hesitate to reach out.' },
+  'contact.info.title': { fr: 'Échangeons', en: 'Let’s connect' },
+  'contact.info.description': { fr: 'Une question sur mes accompagnements ou mes retraites ? Vous pouvez m’écrire directement ou utiliser le formulaire.', en: 'A question about my work or retreats? You can email me directly or use the form.' },
   'contact.info.email': { fr: 'E-mail', en: 'Email' },
   'contact.info.location': { fr: 'Localisation', en: 'Location' },
   
-  'contact.form.title': { fr: 'Envoyez-nous un message', en: 'Send us a message' },
+  'contact.form.title': { fr: 'Écrivez-moi', en: 'Write to me' },
   'contact.form.name': { fr: 'Nom complet', en: 'Full Name' },
   'contact.form.name.placeholder': { fr: 'Votre nom', en: 'Your name' },
   'contact.form.email': { fr: 'Adresse e-mail', en: 'Email Address' },
   'contact.form.email.placeholder': { fr: 'votre@email.com', en: 'your@email.com' },
   'contact.form.subject': { fr: 'Sujet', en: 'Subject' },
-  'contact.form.subject.placeholder': { fr: 'Comment pouvons-nous vous aider ?', en: 'How can we help you?' },
+  'contact.form.subject.placeholder': { fr: 'De quoi souhaitez-vous parler ?', en: 'What would you like to discuss?' },
   'contact.form.message': { fr: 'Message', en: 'Message' },
   'contact.form.message.placeholder': { fr: 'Décrivez votre demande...', en: 'Describe your request...' },
   'contact.form.submit': { fr: 'Envoyer le message', en: 'Send Message' },
   'contact.form.sending': { fr: 'Envoi en cours...', en: 'Sending...' },
   
   'contact.success.title': { fr: 'Message envoyé !', en: 'Message Sent!' },
-  'contact.success.description': { fr: 'Merci pour votre message. Nous vous répondrons dans les plus brefs délais.', en: 'Thank you for your message. We will get back to you as soon as possible.' },
+  'contact.success.description': { fr: 'Merci pour votre message. Je vous répondrai dans les plus brefs délais.', en: 'Thank you for your message. I will get back to you as soon as possible.' },
   'contact.success.button': { fr: 'Envoyer un autre message', en: 'Send another message' },
   
   'contact.toast.title': { fr: 'Succès', en: 'Success' },

@@ -1,67 +1,51 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Leaf } from 'lucide-react';
+import { ArrowDown, ArrowUpRight } from 'lucide-react';
 import heroImage from '@/assets/hero-forest.jpg';
 
 const HeroSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Forest landscape"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-hero" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="max-w-4xl mx-auto">
-          {/* Icon */}
-          <div className="inline-flex items-center justify-center w-16 h-16 mb-8 bg-primary-foreground/10 backdrop-blur-sm animate-float">
-            <Leaf className="w-8 h-8 text-primary-foreground" />
+    <section className="relative min-h-[92vh] pt-16 sm:pt-20 bg-background overflow-hidden">
+      <div className="grid min-h-[calc(92vh-5rem)] lg:grid-cols-12 border-b-2 border-primary">
+        <div className="relative z-10 lg:col-span-7 px-6 py-14 sm:px-10 sm:py-20 lg:px-16 xl:px-24 flex flex-col justify-between border-b-2 lg:border-b-0 lg:border-r-2 border-primary">
+          <div>
+            <span className="inline-block bg-accent px-3 py-1 text-xs font-bold uppercase tracking-widest text-accent-foreground animate-fade-in">
+              {t('hero.eyebrow')}
+            </span>
+            <h1 className="mt-8 max-w-4xl text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-black uppercase leading-[0.86] text-primary animate-fade-in">
+              {t('hero.title')}
+            </h1>
           </div>
-
-          {/* Logo */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-semibold text-primary-foreground mb-6 animate-fade-in">
-            RegenB <span className="text-primary-foreground/80">France</span>
-          </h1>
-
-          {/* Tagline */}
-          <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/90 font-light leading-relaxed mb-12 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            {t('hero.tagline')}
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <div className="mt-14 grid gap-8 md:grid-cols-2 md:items-end">
+            <p className="text-xl sm:text-2xl font-medium leading-tight text-primary animate-fade-in">
+              {t('hero.tagline')}
+            </p>
+            <div className="flex flex-col gap-3 animate-fade-in">
             <Button variant="hero" size="lg" asChild>
-              <a href="#services">{t('hero.cta')}</a>
+                <a href="#services">{t('hero.cta')}<ArrowUpRight /></a>
             </Button>
             <Button variant="heroOutline" size="lg" asChild>
-              <a href="#retreats">{t('hero.secondary')}</a>
+                <a href="#retreats" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">{t('hero.secondary')}</a>
             </Button>
-          </div>
-          
-          {/* Values CTA */}
-          <div className="mt-6 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <Button variant="heroOutline" size="lg" asChild>
-              <a href="https://nature-values-quest.lovable.app" target="_blank" rel="noopener noreferrer">
+              <a className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-primary underline underline-offset-4" href="https://nature-values-quest.lovable.app" target="_blank" rel="noopener noreferrer">
                 {t('hero.values')}
+                <ArrowUpRight className="h-4 w-4" />
               </a>
-            </Button>
+            </div>
           </div>
         </div>
+        <div className="relative min-h-[45vh] lg:col-span-5">
+          <img src={heroImage} alt="Une forêt ancienne baignée de lumière" className="absolute inset-0 h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-hero" />
+          <div className="absolute bottom-0 left-0 bg-primary px-5 py-4 text-xs font-semibold uppercase tracking-widest text-primary-foreground">RegenB France · 2026</div>
+        </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-4 right-4 hidden sm:block animate-bounce">
         <a
           href="#services"
-          className="flex items-center justify-center w-10 h-10 bg-primary-foreground/20 backdrop-blur-sm text-primary-foreground hover:bg-primary-foreground/30 transition-colors"
+          className="flex items-center justify-center w-10 h-10 bg-accent text-accent-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
           aria-label="Scroll down"
         >
           <ArrowDown className="w-5 h-5" />
