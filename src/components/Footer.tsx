@@ -1,5 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Leaf, ExternalLink, Mail, Globe } from 'lucide-react';
+import { ExternalLink, Mail, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logo from '@/assets/josselin-butte-logo.png.asset.json';
 
