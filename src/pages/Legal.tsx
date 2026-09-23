@@ -61,13 +61,15 @@ const Legal = () => {
           >
             <div className="mx-auto max-w-6xl lg:grid lg:grid-cols-12 lg:gap-12">
               <div className="lg:col-span-3">
-                <h2 className="text-2xl sm:text-3xl">{t(block.titleKey)}</h2>
+                <h2 className="text-xl sm:text-2xl">{t(block.titleKey)}</h2>
               </div>
-              <div className="mt-6 gap-12 sm:columns-2 lg:col-span-9 lg:mt-0">
+              <div className="mt-5 gap-10 sm:columns-2 lg:col-span-9 lg:mt-0">
                 {block.items.map((item) => (
-                  <div key={item} className="mb-6 break-inside-avoid">
-                    <h3 className="text-base">{t(`${item}.title`)}</h3>
-                    <p className="mt-2">{t(`${item}.text`)}</p>
+                  <div key={item} className="mb-5 break-inside-avoid">
+                    <h3 className="text-sm font-semibold">{t(`${item}.title`)}</h3>
+                    <p className="mt-1.5 text-[15px] leading-relaxed text-muted-foreground">
+                      {t(`${item}.text`)}
+                    </p>
                   </div>
                 ))}
               </div>
