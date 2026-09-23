@@ -128,7 +128,7 @@ const translations: Translations = {
   'legal.mentions.publication.title': { fr: 'Directeur de la publication', en: 'Editorial director' },
   'legal.mentions.publication.text': { fr: 'Josselin Butté.', en: 'Josselin Butté.' },
   'legal.mentions.hosting.title': { fr: 'Hébergement', en: 'Hosting' },
-  'legal.mentions.hosting.text': { fr: 'Ce site est hébergé par [hébergeur à compléter].', en: 'This site is hosted by [host to be completed].' },
+  'legal.mentions.hosting.text': { fr: 'Ce site est hébergé par Lovable, Inc., 2261 Market Street, San Francisco, CA 94114, États-Unis. Le nom de domaine regenb.fr est géré via GoDaddy.', en: 'This site is hosted by Lovable, Inc., 2261 Market Street, San Francisco, CA 94114, USA. The regenb.fr domain name is managed via GoDaddy.' },
   'legal.privacy.data.title': { fr: 'Données collectées', en: 'Data collected' },
   'legal.privacy.data.text': { fr: 'Je collecte uniquement les données que vous me transmettez volontairement : votre adresse e-mail (lettre d’information, liste d’attente) et, si vous utilisez le formulaire de contact, votre nom, votre e-mail et votre message.', en: 'I collect only the data you share voluntarily: your email address (newsletter, waiting list) and, if you use the contact form, your name, email and message.' },
   'legal.privacy.use.title': { fr: 'Utilisation', en: 'Use' },
