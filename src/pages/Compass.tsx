@@ -56,7 +56,7 @@ const Compass = () => {
             <ol className="mt-6 grid gap-x-12 border-t border-border sm:grid-cols-2 lg:col-span-9 lg:mt-0">
               {steps.map((step) => (
                 <li key={step} className="flex gap-4 border-b border-border py-4">
-                  <span className="shrink-0 text-primary">0{step}</span>
+                  <span className="shrink-0 text-accent">0{step}</span>
                   <span>{t(`compass.step${step}`)}</span>
                 </li>
               ))}
