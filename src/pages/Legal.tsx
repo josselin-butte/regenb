@@ -33,31 +33,39 @@ const Legal = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        <section className="border-b border-border px-5 pb-10 pt-28 sm:px-8 sm:pb-14 sm:pt-36">
-          <div className="mx-auto max-w-measure">
-            <p className="text-sm font-medium uppercase tracking-widest text-primary">{t('legal.kicker')}</p>
-            <h1 className="mt-6 text-3xl sm:text-4xl">{t('legal.title')}</h1>
-            <nav aria-label={t('legal.title')} className="mt-6 flex flex-col gap-2 sm:flex-row sm:gap-6">
-              {anchors.map((anchor) => (
-                <a key={anchor.id} href={`#${anchor.id}`} className="text-primary underline">
-                  {t(anchor.key)}
-                </a>
-              ))}
-            </nav>
+        <section className="border-b border-border px-5 pb-10 pt-28 sm:px-8 sm:pb-14 sm:pt-36 lg:px-12">
+          <div className="mx-auto max-w-6xl lg:grid lg:grid-cols-12 lg:gap-12">
+            <div className="lg:col-span-3">
+              <p className="text-sm font-medium uppercase tracking-widest text-primary">{t('legal.kicker')}</p>
+            </div>
+            <div className="lg:col-span-9">
+              <h1 className="mt-6 text-[2.1rem] leading-[1.15] sm:text-5xl lg:mt-0">{t('legal.title')}</h1>
+              <nav aria-label={t('legal.title')} className="mt-6 flex flex-col gap-2 sm:flex-row sm:gap-8">
+                {anchors.map((anchor) => (
+                  <a key={anchor.id} href={`#${anchor.id}`} className="text-primary underline">
+                    {t(anchor.key)}
+                  </a>
+                ))}
+              </nav>
+            </div>
           </div>
         </section>
 
-        {blocks.map((block) => (
+        {blocks.map((block, index) => (
           <section
             key={block.id}
             id={block.id}
-            className="scroll-mt-24 border-b border-border px-5 py-12 sm:px-8 sm:py-16"
+            className={`scroll-mt-24 border-b border-border px-5 py-12 sm:px-8 sm:py-16 lg:px-12 ${
+              index % 2 === 1 ? 'bg-secondary' : ''
+            }`}
           >
-            <div className="mx-auto max-w-measure">
-              <h2 className="text-2xl sm:text-3xl">{t(block.titleKey)}</h2>
-              <div className="mt-6 space-y-6">
+            <div className="mx-auto max-w-6xl lg:grid lg:grid-cols-12 lg:gap-12">
+              <div className="lg:col-span-3">
+                <h2 className="text-2xl sm:text-3xl">{t(block.titleKey)}</h2>
+              </div>
+              <div className="mt-6 gap-12 sm:columns-2 lg:col-span-9 lg:mt-0">
                 {block.items.map((item) => (
-                  <div key={item}>
+                  <div key={item} className="mb-6 break-inside-avoid">
                     <h3 className="text-base">{t(`${item}.title`)}</h3>
                     <p className="mt-2">{t(`${item}.text`)}</p>
                   </div>
