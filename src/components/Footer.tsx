@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ExternalLink, Mail, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import logo from '@/assets/josselin-butte-logo.png.asset.json';
+import logo from '@/assets/josselin-butte-logo.png';
 
 const Footer = () => {
   const { t, language, setLanguage } = useLanguage();
@@ -18,7 +18,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="bg-background inline-flex px-4 py-3 mb-6">
-              <img src={logo.url} alt="Josselin Butté" className="h-8 w-auto max-w-56 object-contain" />
+              <img src={logo} alt="Josselin Butté" className="h-8 w-auto max-w-56 object-contain" />
             </div>
             <p className="text-primary-foreground/80 max-w-md mb-6">
               {t('footer.tagline')}

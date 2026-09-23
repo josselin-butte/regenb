@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import logo from '@/assets/josselin-butte-logo.png.asset.json';
+import logo from '@/assets/josselin-butte-logo.png';
 
 const Header = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -26,7 +26,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3" aria-label="Josselin Butté — accueil">
-            <img src={logo.url} alt="Josselin Butté" className="h-7 w-auto max-w-44 object-contain" />
+            <img src={logo} alt="Josselin Butté" className="h-7 w-auto max-w-44 object-contain" />
             <span className="hidden sm:block border-l border-primary pl-3 text-[10px] font-semibold uppercase tracking-widest text-primary">
               RegenB France
             </span>
