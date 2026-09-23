@@ -124,7 +124,7 @@ const translations: Translations = {
   'legal.nav.privacy': { fr: 'Confidentialité', en: 'Privacy' },
   'legal.nav.cgv': { fr: 'CGV', en: 'Terms of sale' },
   'legal.mentions.editor.title': { fr: 'Éditeur du site', en: 'Site publisher' },
-  'legal.mentions.editor.text': { fr: 'Ce site est édité par Josselin Butté · RegenB France. Contact : josselin@regenb.com.', en: 'This site is published by Josselin Butté · RegenB France. Contact: josselin@regenb.com.' },
+  'legal.mentions.editor.text': { fr: 'Ce site est édité par RegenB France, EURL au capital de 500 euros, immatriculée au RCS de Toulouse sous le SIREN 1026 298 47 (NAF 9609Z). Numéro de TVA intracommunautaire : FR10102629847. Contact : josselin@regenb.com.', en: 'This site is published by RegenB France, a private limited company (EURL) with capital of €500, registered with the Toulouse Trade and Companies Registry under SIREN 1026 298 47 (NAF 9609Z). VAT number: FR10102629847. Contact: josselin@regenb.com.' },
   'legal.mentions.publication.title': { fr: 'Directeur de la publication', en: 'Editorial director' },
   'legal.mentions.publication.text': { fr: 'Josselin Butté.', en: 'Josselin Butté.' },
   'legal.mentions.hosting.title': { fr: 'Hébergement', en: 'Hosting' },
