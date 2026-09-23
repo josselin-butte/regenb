@@ -30,7 +30,6 @@ const translations: Translations = {
   'about.title': { fr: 'Josselin Butté', en: 'Josselin Butté' },
   'about.text1': { fr: 'Je m’appelle Josselin Butté. Avec RegenB France, j’explore une conviction simple : les réponses aux défis du leadership contemporain émergent lorsque chacun renoue avec le vivant.', en: 'I am Josselin Butté. Through RegenB France, I explore a simple conviction: answers to contemporary leadership challenges emerge when each person reconnects with the living world.' },
   'about.text2': { fr: 'Mon approche intégrative relie les sagesses ancestrales, les sciences du vivant et les pratiques contemporaines d’accompagnement. Je crée des espaces où chacun peut écouter, expérimenter et transformer sa manière d’agir.', en: 'My integrative approach connects ancestral wisdom, life sciences and contemporary practices. I create spaces where each person can listen, experiment and transform how they act.' },
-  'about.visit': { fr: 'Visiter RegenB.com', en: 'Visit RegenB.com' },
 
   // Offer
   'offer.kicker': { fr: 'Ce que je propose · 02', en: 'What I offer · 02' },
