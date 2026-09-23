@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-border bg-background">
-      <div className="mx-auto flex max-w-measure items-center justify-between px-5 py-4 sm:px-8">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8 lg:px-12">
         <a href="/" className="text-base font-semibold text-foreground" aria-label="Josselin Butté — accueil">
           Josselin Butté
         </a>
