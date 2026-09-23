@@ -84,11 +84,14 @@ const Footer = () => {
             © {new Date().getFullYear()} Josselin Butté · RegenB France. {t('footer.rights')}.
           </p>
           <div className="flex items-center space-x-6">
-            <a href="#" className="hover:text-primary-foreground transition-colors">
+            <a href="/legal#mentions-legales" className="hover:text-primary-foreground transition-colors">
+              {t('footer.terms')}
+            </a>
+            <a href="/legal#confidentialite" className="hover:text-primary-foreground transition-colors">
               {t('footer.privacy')}
             </a>
-            <a href="#" className="hover:text-primary-foreground transition-colors">
-              {t('footer.terms')}
+            <a href="/legal#cgv" className="hover:text-primary-foreground transition-colors">
+              {t('legal.nav.cgv')}
             </a>
           </div>
         </div>
