@@ -55,7 +55,7 @@ const Header = () => {
 
       {isMenuOpen && (
         <div className="border-t border-border md:hidden">
-          <nav className="mx-auto flex max-w-measure flex-col gap-4 px-5 py-5 sm:px-8">
+          <nav className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-5 sm:px-8">
             {navItems.map((item) => (
               <a
                 key={item.key}
