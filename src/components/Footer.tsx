@@ -17,7 +17,7 @@ const Footer = () => {
           </div>
 
           <div className="lg:col-span-3">
-            <p className="text-sm font-medium uppercase tracking-widest text-primary">Navigation</p>
+            <p className="text-sm font-medium uppercase tracking-widest text-accent">Navigation</p>
             <ul className="mt-4 space-y-2">
               <li><a href="/#about" className="hover:text-primary">{t('nav.about')}</a></li>
               <li><a href="/#offer" className="hover:text-primary">{t('nav.offer')}</a></li>
@@ -27,13 +27,13 @@ const Footer = () => {
           </div>
 
           <div className="lg:col-span-4">
-            <p className="text-sm font-medium uppercase tracking-widest text-primary">Contact</p>
+            <p className="text-sm font-medium uppercase tracking-widest text-accent">Contact</p>
             <ul className="mt-4 space-y-2">
               <li>
-                <a href="mailto:josselin@regenb.com" className="text-primary underline">josselin@regenb.com</a>
+                <a href="mailto:josselin@regenb.com" className="text-primary underline decoration-accent">josselin@regenb.com</a>
               </li>
               <li>
-                <a href="https://regenb.com" target="_blank" rel="noopener noreferrer" className="text-primary underline">
+                <a href="https://regenb.com" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-accent">
                   RegenB.com
                 </a>
               </li>

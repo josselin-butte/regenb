@@ -29,7 +29,7 @@ const Header = () => {
               {t(item.key)}
             </a>
           ))}
-          <a href="/boussole" className="text-sm text-primary underline">
+          <a href="/boussole" className="text-sm text-primary underline decoration-accent">
             {t('nav.compass')}
           </a>
           <button
@@ -66,7 +66,7 @@ const Header = () => {
                 {t(item.key)}
               </a>
             ))}
-            <a href="/boussole" onClick={() => setIsMenuOpen(false)} className="text-primary underline">
+            <a href="/boussole" onClick={() => setIsMenuOpen(false)} className="text-primary underline decoration-accent">
               {t('nav.compass')}
             </a>
             <button

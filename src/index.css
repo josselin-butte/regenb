@@ -111,7 +111,7 @@
   }
 
   ::selection {
-    @apply bg-primary text-primary-foreground;
+    @apply bg-accent text-accent-foreground;
   }
 }
 

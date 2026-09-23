@@ -8,7 +8,7 @@ const WaitlistSection = () => {
     <section id="waitlist" className="border-b border-border px-5 py-14 sm:px-8 sm:py-20 lg:px-12">
       <div className="mx-auto max-w-6xl lg:grid lg:grid-cols-12 lg:gap-12">
         <div className="lg:col-span-3">
-          <p className="text-sm font-medium uppercase tracking-widest text-primary">{t('waitlist.kicker')}</p>
+          <p className="text-sm font-medium uppercase tracking-widest text-accent">{t('waitlist.kicker')}</p>
           <h2 className="mt-4 text-2xl sm:text-3xl">{t('waitlist.title')}</h2>
         </div>
         <div className="mt-6 lg:col-span-6 lg:mt-0">
