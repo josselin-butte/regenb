@@ -1,6 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, ArrowUpRight } from 'lucide-react';
+import { ArrowDown, ArrowRight } from 'lucide-react';
 import heroImage from '@/assets/hero-forest.jpg';
 
 const HeroSection = () => {
@@ -18,19 +18,14 @@ const HeroSection = () => {
               {t('hero.title')}
             </h1>
           </div>
-          <div className="mt-14 grid gap-8 md:grid-cols-2 md:items-end">
-            <p className="text-xl sm:text-2xl font-medium leading-tight text-primary animate-fade-in">
-              {t('hero.tagline')}
-            </p>
-            <div className="flex flex-col gap-3 animate-fade-in">
-            <Button variant="hero" size="lg" asChild>
-                <a href="/contact">{t('hero.cta')}<ArrowUpRight /></a>
-            </Button>
-              <a className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-primary underline underline-offset-4" href="https://nature-values-quest.lovable.app" target="_blank" rel="noopener noreferrer">
-                {t('hero.values')}
-                <ArrowUpRight className="h-4 w-4" />
-              </a>
+          <div className="mt-14 max-w-2xl animate-fade-in">
+            <div className="space-y-4 text-xl font-medium leading-tight text-primary sm:text-2xl">
+              <p>{t('hero.sentence1')}</p>
+              <p>{t('hero.sentence2')}</p>
             </div>
+            <Button variant="hero" size="lg" asChild className="mt-9">
+              <a href="/boussole">{t('hero.cta')}<ArrowRight /></a>
+            </Button>
           </div>
         </div>
         <div className="relative min-h-[45vh] lg:col-span-5">
