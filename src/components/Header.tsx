@@ -13,10 +13,7 @@ const Header = () => {
   };
 
   const navItems = [
-    { key: 'nav.services', href: '/#services' },
     { key: 'nav.about', href: '/#about' },
-    { key: 'nav.partners', href: '/partenariats' },
-    { key: 'nav.retreats', href: '/#retreats' },
     { key: 'nav.contact', href: '/contact' },
   ];
 

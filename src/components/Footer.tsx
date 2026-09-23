@@ -41,18 +41,8 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="#services" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  {t('nav.services')}
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/#about" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   {t('nav.about')}
-                </a>
-              </li>
-              <li>
-                <a href="#retreats" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  {t('nav.retreats')}
                 </a>
               </li>
             </ul>
