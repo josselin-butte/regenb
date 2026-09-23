@@ -21,10 +21,11 @@
     --primary: 140 31% 27%;
     --primary-foreground: 48 24% 96%;
 
-    --secondary: 45 15% 92%;
+    /* surface chaude, légèrement plus soutenue que le fond */
+    --secondary: 44 22% 92%;
     --secondary-foreground: 44 16% 14%;
 
-    --muted: 45 15% 92%;
+    --muted: 44 22% 92%;
     --muted-foreground: 44 8% 38%;
 
     --accent: 140 31% 27%;
