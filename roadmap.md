@@ -8,3 +8,5 @@
 - [x] Vérifier ordinateur, mobile, FR/EN et interactions
 - [x] Retirer les services, partenaires, retraites et anciennes dates
 - [x] Réorganiser l’accueil : boussole, présentation, proposition, lettre et liste d’attente
+- [x] Créer la page /boussole (formation Nature Values Compass, une colonne, bouton d’achat)
+- [x] Créer la page /legal avec trois ancres (mentions légales, confidentialité, CGV)
