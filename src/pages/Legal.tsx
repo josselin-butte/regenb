@@ -15,17 +15,17 @@ const Legal = () => {
     {
       id: 'mentions-legales',
       titleKey: 'legal.nav.mentions',
-      items: ['legal.mentions.editor', 'legal.mentions.publication', 'legal.mentions.hosting'],
+      items: ['legal.mentions.editor', 'legal.mentions.hosting'],
     },
     {
       id: 'confidentialite',
       titleKey: 'legal.nav.privacy',
-      items: ['legal.privacy.data', 'legal.privacy.use', 'legal.privacy.rights'],
+      items: ['legal.privacy.data'],
     },
     {
       id: 'cgv',
       titleKey: 'legal.nav.cgv',
-      items: ['legal.cgv.object', 'legal.cgv.order', 'legal.cgv.withdrawal', 'legal.cgv.ip'],
+      items: ['legal.cgv.order', 'legal.cgv.withdrawal', 'legal.cgv.ip'],
     },
   ];
 
