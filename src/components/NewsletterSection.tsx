@@ -22,25 +22,22 @@ const NewsletterSection = () => {
   };
 
   return (
-    <section id="letter" className="border-b border-border bg-secondary px-5 py-14 sm:px-8 sm:py-20 lg:px-12">
-      <div className="mx-auto max-w-6xl lg:grid lg:grid-cols-12 lg:gap-12">
-        <div className="lg:col-span-3">
-          <p className="text-sm font-medium uppercase tracking-widest text-accent">{t('letter.kicker')}</p>
-          <h2 className="mt-4 text-2xl sm:text-3xl">{t('letter.title')}</h2>
-        </div>
-        <div className="mt-6 lg:col-span-5 lg:mt-0">
-          <p>{t('letter.text')}</p>
-        </div>
-        <div className="mt-8 lg:col-span-4 lg:mt-0">
-          {status === 'success' ? (
-            <p role="status" className="border border-border bg-background p-5 text-primary">
-              {t('letter.success')}
-            </p>
-          ) : (
-            <form onSubmit={handleSubmit} noValidate>
-              <label htmlFor="letter-email" className="mb-2 block text-sm font-medium text-foreground">
-                {t('letter.label')}
-              </label>
+    <section id="letter" className="px-5 py-24 sm:px-8 sm:py-28 lg:px-12">
+      <div className="mx-auto max-w-measure text-center">
+        <p className="text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('letter.kicker')}</p>
+        <h2 className="mt-4 text-3xl sm:text-4xl">{t('letter.title')}</h2>
+        <p className="mx-auto mt-6">{t('letter.text')}</p>
+
+        {status === 'success' ? (
+          <p role="status" className="mt-8 border border-border bg-secondary p-5 text-primary">
+            {t('letter.success')}
+          </p>
+        ) : (
+          <form onSubmit={handleSubmit} noValidate className="mt-8">
+            <label htmlFor="letter-email" className="sr-only">
+              {t('letter.label')}
+            </label>
+            <div className="flex flex-col sm:flex-row">
               <Input
                 id="letter-email"
                 type="email"
@@ -54,19 +51,19 @@ const NewsletterSection = () => {
                 maxLength={255}
                 aria-invalid={status === 'error'}
                 aria-describedby={status === 'error' ? 'letter-error' : undefined}
-                className="h-12 border-border bg-background"
+                className="h-14 flex-1 border-2 border-primary bg-background text-center sm:text-left"
               />
-              <Button type="submit" size="lg" className="mt-3 w-full">
+              <Button type="submit" size="lg" className="mt-3 h-14 sm:mt-0 sm:px-10">
                 {t('letter.submit')}
               </Button>
-              {status === 'error' && (
-                <p id="letter-error" className="mt-2 text-sm text-destructive">
-                  {t('letter.error')}
-                </p>
-              )}
-            </form>
-          )}
-        </div>
+            </div>
+            {status === 'error' && (
+              <p id="letter-error" className="mt-3 text-sm text-destructive">
+                {t('letter.error')}
+              </p>
+            )}
+          </form>
+        )}
       </div>
     </section>
   );
