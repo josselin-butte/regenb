@@ -14,8 +14,21 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ['Outfit', 'system-ui', 'sans-serif'],
-        sans: ['Figtree', 'system-ui', 'sans-serif'],
+        serif: ['Work Sans', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      maxWidth: {
+        measure: '680px',
+      },
+      boxShadow: {
+        none: 'none',
+        sm: 'none',
+        DEFAULT: 'none',
+        md: 'none',
+        lg: 'none',
+        xl: 'none',
+        '2xl': 'none',
+        inner: 'none',
       },
       colors: {
         border: "hsl(var(--border))",

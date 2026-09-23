@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import logo from '@/assets/josselin-butte-logo.png';
 
 const Header = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -19,91 +17,69 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b-2 border-primary">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo */}
-          <a href="/" className="flex items-center gap-3" aria-label="Josselin Butté — accueil">
-            <img src={logo} alt="Josselin Butté" className="h-7 w-auto max-w-44 object-contain" />
-            <span className="hidden sm:block border-l border-primary pl-3 text-[10px] font-semibold uppercase tracking-widest text-primary">
-              RegenB France
-            </span>
-          </a>
+    <header className="fixed left-0 right-0 top-0 z-50 border-b border-border bg-background">
+      <div className="mx-auto flex max-w-measure items-center justify-between px-5 py-4 sm:px-8">
+        <a href="/" className="text-base font-semibold text-foreground" aria-label="Josselin Butté — accueil">
+          Josselin Butté
+        </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-7">
+        <nav className="hidden items-center gap-6 md:flex">
+          {navItems.map((item) => (
+            <a key={item.key} href={item.href} className="text-sm text-foreground hover:text-primary">
+              {t(item.key)}
+            </a>
+          ))}
+          <a href="/boussole" className="text-sm text-primary underline">
+            {t('nav.compass')}
+          </a>
+          <button
+            type="button"
+            onClick={toggleLanguage}
+            className="text-sm text-foreground hover:text-primary"
+            aria-label={language === 'fr' ? 'Switch to English' : 'Passer en français'}
+          >
+            {language === 'fr' ? 'EN' : 'FR'}
+          </button>
+        </nav>
+
+        <button
+          type="button"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="border border-border px-3 py-1 text-sm text-foreground md:hidden"
+          aria-label="Menu"
+          aria-expanded={isMenuOpen}
+        >
+          {isMenuOpen ? 'Fermer' : 'Menu'}
+        </button>
+      </div>
+
+      {isMenuOpen && (
+        <div className="border-t border-border md:hidden">
+          <nav className="mx-auto flex max-w-measure flex-col gap-4 px-5 py-5 sm:px-8">
             {navItems.map((item) => (
               <a
                 key={item.key}
                 href={item.href}
-                className="text-xs font-semibold uppercase tracking-wider text-foreground/80 hover:text-accent transition-colors duration-200"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-foreground hover:text-primary"
               >
                 {t(item.key)}
               </a>
             ))}
-          </nav>
-
-          {/* Language Toggle & CTA */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button
-              variant="ghost"
-              size="sm"
+            <a href="/boussole" onClick={() => setIsMenuOpen(false)} className="text-primary underline">
+              {t('nav.compass')}
+            </a>
+            <button
+              type="button"
               onClick={toggleLanguage}
-              className="flex items-center space-x-1.5 text-sm font-medium"
+              className="self-start text-foreground hover:text-primary"
               aria-label={language === 'fr' ? 'Switch to English' : 'Passer en français'}
             >
-              <Globe className="w-4 h-4" />
-              <span>{language.toUpperCase()}</span>
-            </Button>
-            <Button variant="default" size="sm" asChild>
-              <a href="/boussole">{t('nav.compass')}</a>
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-foreground"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </Button>
+              {language === 'fr' ? 'English' : 'Français'}
+            </button>
+          </nav>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border/50 animate-fade-in">
-            <nav className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.key}
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-base font-medium text-foreground/80 hover:text-primary transition-colors duration-200"
-                >
-                  {t(item.key)}
-                </a>
-              ))}
-              <div className="flex items-center justify-between pt-4 border-t border-border/50">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={toggleLanguage}
-                  className="flex items-center space-x-1.5 text-sm font-medium text-muted-foreground"
-                >
-                  <Globe className="w-4 h-4" />
-                  <span>{language === 'fr' ? 'English' : 'Français'}</span>
-                </Button>
-                <Button variant="default" size="sm" asChild>
-                  <a href="/boussole">{t('nav.compass')}</a>
-                </Button>
-              </div>
-            </nav>
-          </div>
-        )}
-      </div>
+      )}
     </header>
   );
 };
