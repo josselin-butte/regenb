@@ -52,16 +52,20 @@ const Contact = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        <section className="border-b border-border px-5 pb-12 pt-28 sm:px-8 sm:pb-16 sm:pt-36">
-          <div className="mx-auto max-w-measure">
-            <p className="text-sm font-medium uppercase tracking-widest text-primary">Josselin Butté · Contact</p>
-            <h1 className="mt-6 text-3xl sm:text-4xl">{t('contact.title')}</h1>
-            <p className="mt-6">{t('contact.subtitle')}</p>
+        <section className="border-b border-border px-5 pb-12 pt-28 sm:px-8 sm:pb-16 sm:pt-36 lg:px-12">
+          <div className="mx-auto max-w-6xl lg:grid lg:grid-cols-12 lg:gap-12">
+            <div className="lg:col-span-3">
+              <p className="text-sm font-medium uppercase tracking-widest text-primary">Josselin Butté · Contact</p>
+            </div>
+            <div className="lg:col-span-9">
+              <h1 className="mt-6 text-[2.1rem] leading-[1.15] sm:text-5xl lg:mt-0">{t('contact.title')}</h1>
+              <p className="mt-6 max-w-measure">{t('contact.subtitle')}</p>
+            </div>
           </div>
         </section>
 
-        <section className="border-b border-border px-5 py-12 sm:px-8 sm:py-16">
-          <div className="mx-auto max-w-measure">
+        <section className="border-b border-border bg-secondary px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
+          <div className="mx-auto max-w-6xl">
             <h2 className="text-2xl sm:text-3xl">{t('contact.info.title')}</h2>
             <p className="mt-4 text-muted-foreground">{t('contact.info.description')}</p>
             <ul className="mt-6 space-y-2">
@@ -76,7 +80,7 @@ const Contact = () => {
           </div>
         </section>
 
-        <section className="border-b border-border px-5 py-12 sm:px-8 sm:py-16">
+        <section className="border-b border-border px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
           <div className="mx-auto max-w-measure">
             {isSubmitted ? (
               <div className="border border-border p-6">
