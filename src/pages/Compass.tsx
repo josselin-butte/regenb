@@ -3,8 +3,8 @@ import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-// Lien de paiement (Stripe) de la formation Nature Values Compass — à remplacer
-const BUY_URL = 'https://buy.stripe.com/REMPLACER_PAR_VOTRE_LIEN';
+// Page de vente de la formation Nature Values Compass
+const BUY_URL = 'https://valuescourse.regenb.com/';
 
 const Compass = () => {
   const { t } = useLanguage();
