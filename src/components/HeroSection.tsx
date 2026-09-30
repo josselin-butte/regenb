@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 
@@ -14,7 +15,7 @@ const HeroSection = () => {
         <p className="mt-8 text-xl leading-relaxed">{t('hero.sentence1')}</p>
         <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{t('hero.sentence2')}</p>
         <Button size="lg" asChild className="mt-10">
-          <a href="/boussole">{t('hero.cta')}</a>
+          <Link to="/boussole">{t('hero.cta')}</Link>
         </Button>
       </div>
     </section>
