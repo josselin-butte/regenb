@@ -23,7 +23,7 @@ const translations: Translations = {
   'hero.title': { fr: 'L’ère du vivant', en: 'The age of living systems' },
   'hero.sentence1': { fr: 'J’accompagne les leaders, coachs, superviseurs et accompagnants à transformer leur manière d’accompagner en s’alignant au vivant.', en: 'I support leaders, coaches, supervisors and practitioners in transforming how they accompany others by aligning with the living world.' },
   'hero.sentence2': { fr: 'Quand l’ancienne histoire ne tient plus, je vous aide à écouter ce qui cherche à émerger et à lui donner forme.', en: 'When the old story no longer holds, I help you listen to what is seeking to emerge and give it shape.' },
-  'hero.cta': { fr: 'Découvrir ma boussole', en: 'Discover my compass' },
+  'hero.cta': { fr: 'Trouver mon cap avec la boussole', en: 'Find my bearings with the compass' },
   
   // About
   'about.kicker': { fr: 'Qui je suis · 01', en: 'About me · 01' },
