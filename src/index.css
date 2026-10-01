@@ -124,3 +124,20 @@
     text-wrap: balance;
   }
 }
+
+/* Hero hills opening */
+.hero-ridge { stroke-dasharray: var(--ridge-len, 2000); stroke-dashoffset: var(--ridge-len, 2000); }
+.hero-ridge.is-drawing { animation: ridge-draw 3.2s cubic-bezier(.45,.05,.3,1) forwards; }
+.hero-sun { transform-box: fill-box; opacity: 0; transform: translateY(70px);
+  animation: sun-rise 2.6s cubic-bezier(.2,.7,.2,1) 2.2s forwards, sun-fade 2s ease 2.2s forwards; }
+.hero-hill-back { animation: hill-sway 26s ease-in-out infinite alternate; }
+.hero-hill-front { animation: hill-sway 34s ease-in-out infinite alternate-reverse; }
+@keyframes ridge-draw { to { stroke-dashoffset: 0; } }
+@keyframes sun-rise { to { transform: translateY(0); } }
+@keyframes sun-fade { to { opacity: 1; } }
+@keyframes hill-sway { from { transform: translateX(0); } to { transform: translateX(-24px); } }
+@media (prefers-reduced-motion: reduce) {
+  .hero-ridge, .hero-ridge.is-drawing { animation: none; stroke-dashoffset: 0; }
+  .hero-sun { animation: none; opacity: 1; transform: none; }
+  .hero-hill-back, .hero-hill-front { animation: none; }
+}
