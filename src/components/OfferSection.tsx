@@ -19,7 +19,7 @@ const OfferSection = () => {
           <p className="border border-primary-foreground/20 p-8 font-serif text-2xl leading-snug sm:p-12 sm:text-3xl">
             {t('offer.text3')}
           </p>
-          <img src={groupe.url} alt={t('image.groupe')} width={1600} height={1200} loading="lazy" className="mt-6 aspect-[3/2] w-full object-cover" />
+          <img src={`https://regenb.lovable.app${groupe.url}`} alt={t('image.groupe')} width={1600} height={1200} loading="lazy" className="mt-6 aspect-[3/2] w-full object-cover" />
         </div>
       </div>
     </section>

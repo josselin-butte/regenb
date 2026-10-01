@@ -28,7 +28,7 @@ const HeroSection = () => {
           <Link to="/boussole">{t('hero.cta')}</Link>
         </Button>
         </div>
-        <img src={dehors.url} alt={t('image.dehors')} width={1280} height={853} loading="eager" fetchPriority="high" className="aspect-[4/3] w-full object-cover lg:aspect-[4/5] lg:max-h-[520px]" />
+        <img src={`https://regenb.lovable.app${dehors.url}`} alt={t('image.dehors')} width={1280} height={853} loading="eager" fetchPriority="high" className="aspect-[4/3] w-full object-cover lg:aspect-[4/5] lg:max-h-[520px]" />
       </div>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[72px] sm:h-[120px]" aria-hidden="true">
         <svg viewBox="0 290 1584 106" preserveAspectRatio="none" width="100%" height="100%" aria-hidden="true" focusable="false">

@@ -17,7 +17,7 @@ const Index = () => {
         <HeroSection />
         <AboutSection />
         <OfferSection />
-        <img src={paysage.url} alt={t('image.paysage')} width={1600} height={1200} loading="lazy" className="block h-[220px] w-full object-cover object-center lg:h-[420px]" />
+        <img src={`https://regenb.lovable.app${paysage.url}`} alt={t('image.paysage')} width={1600} height={1200} loading="lazy" className="block h-[220px] w-full object-cover object-center lg:h-[420px]" />
         <NewsletterSection />
         <WaitlistSection />
       </main>
