@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
+import dehors from '@/assets/home-dehors.webp.asset.json';
 
 const HeroSection = () => {
   const { t, language } = useLanguage();
@@ -15,7 +16,8 @@ const HeroSection = () => {
 
   return (
     <section className="relative px-5 pb-24 pt-20 sm:px-8 sm:pb-[150px] sm:pt-28 lg:px-12">
-      <div className="relative z-10 mx-auto max-w-measure">
+      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-14">
+        <div className="max-w-measure">
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('hero.eyebrow')}</p>
         <h1 className="mt-7 text-[2.4rem] leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
           {t('tagline')}
@@ -25,6 +27,8 @@ const HeroSection = () => {
         <Button size="lg" asChild className="mt-10">
           <Link to="/boussole">{t('hero.cta')}</Link>
         </Button>
+        </div>
+        <img src={`https://regenb.lovable.app${dehors.url}`} alt={t('image.dehors')} width={1280} height={853} loading="eager" fetchPriority="high" className="aspect-[4/3] w-full object-cover lg:aspect-[4/5] lg:max-h-[520px]" />
       </div>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[72px] sm:h-[120px]" aria-hidden="true">
         <svg viewBox="0 290 1584 106" preserveAspectRatio="none" width="100%" height="100%" aria-hidden="true" focusable="false">

@@ -1,0 +1,1 @@
+- Serve uploaded site photography through Lovable Assets pointer imports using the published asset origin, because repository binaries add unnecessary weight and local Vite does not proxy asset paths.
