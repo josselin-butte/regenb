@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import portrait from '@/assets/home-portrait.webp.asset.json';
 
 const AboutSection = () => {
   const { t } = useLanguage();
@@ -7,6 +8,7 @@ const AboutSection = () => {
     <section id="about" className="px-5 py-20 sm:px-8 sm:py-24 lg:px-12">
       <div className="mx-auto grid max-w-6xl items-start gap-12 md:grid-cols-2 md:gap-16">
         <div className="order-2 md:order-1">
+          <img src={portrait.url} alt={t('image.portrait')} width={1200} height={900} loading="lazy" className="mb-6 aspect-square w-full object-cover" />
           <div className="border border-border bg-secondary p-8 sm:p-12">
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('about.guide.kicker')}</p>
             <ul className="mt-6 divide-y divide-border">

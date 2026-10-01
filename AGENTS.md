@@ -1,0 +1,1 @@
+- Serve uploaded site photography through Lovable Assets pointer imports, because repository binaries add unnecessary weight.

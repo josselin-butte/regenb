@@ -24,6 +24,11 @@ const translations: Translations = {
   'hero.sentence1': { fr: 'J’accompagne les leaders, coachs, superviseurs et accompagnants à transformer leur manière d’accompagner en s’alignant au vivant.', en: 'I support leaders, coaches, supervisors and practitioners in transforming how they accompany others by aligning with the living world.' },
   'hero.sentence2': { fr: 'Quand l’ancienne histoire ne tient plus, je vous aide à écouter ce qui cherche à émerger et à lui donner forme.', en: 'When the old story no longer holds, I help you listen to what is seeking to emerge and give it shape.' },
   'hero.cta': { fr: 'Trouver mon cap avec la boussole', en: 'Find my bearings with the compass' },
+  'image.dehors': { fr: 'Josselin Butté marche sur un sentier de montagne', en: 'Josselin Butté walking a mountain path' },
+  'image.portrait': { fr: 'Portrait de Josselin Butté', en: 'Portrait of Josselin Butté' },
+  'image.groupe': { fr: 'Josselin Butté avec un groupe en atelier', en: 'Josselin Butté with a group in a workshop' },
+  'image.paysage': { fr: 'Crêtes des Pyrénées dans la brume du matin', en: 'Pyrenees ridges in the morning mist' },
+  'image.ecoute': { fr: 'Un moment d’écoute dans la nature', en: 'A moment of listening in nature' },
   
   // About
   'about.p1': { fr: 'Je m’appelle Josselin Butté. Avec RegenB France, je pars d’une conviction\u00A0: les réponses aux défis du leadership d’aujourd’hui ne viennent pas d’une seule personne. Elles émergent quand un groupe apprend à s’écouter, à décider ensemble et à renouer avec le vivant.', en: 'I’m Josselin Butté. Through RegenB France, I start from one conviction: the answers to today’s leadership challenges don’t come from one person. They emerge when a group learns to listen, to decide together and to reconnect with the living world.' },
