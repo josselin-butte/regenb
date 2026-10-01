@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 type Language = 'fr' | 'en';
 
@@ -55,7 +55,8 @@ const translations: Translations = {
   'waitlist.cta': { fr: 'Rejoindre la liste', en: 'Join the list' },
   
   // Footer
-  'footer.tagline': { fr: 'S\'aligner au vivant pour mieux accompagner', en: 'Aligning with the living to better accompany' },
+  'tagline': { fr: 'Accompagner au rythme du vivant', en: 'Guiding at the pace of the living world' },
+  'home.title': { fr: 'Josselin Butté · RegenB France — Accompagner au rythme du vivant', en: 'Josselin Butté · RegenB France — Guiding at the pace of the living world' },
   'footer.rights': { fr: 'Tous droits réservés', en: 'All rights reserved' },
   'footer.privacy': { fr: 'Confidentialité', en: 'Privacy' },
   'footer.terms': { fr: 'Mentions légales', en: 'Terms' },
@@ -145,8 +146,28 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+const STORAGE_KEY = 'regenb-lang';
+
+const getInitialLanguage = (): Language => {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved === 'fr' || saved === 'en') return saved;
+  } catch { /* ignore */ }
+  const nav = typeof navigator !== 'undefined' ? navigator.language || '' : '';
+  return nav.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+};
+
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>('fr');
+  const [language, setLanguageState] = useState<Language>(getInitialLanguage);
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch { /* ignore */ }
+  };
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
 
   const t = (key: string): string => {
     const translation = translations[key];

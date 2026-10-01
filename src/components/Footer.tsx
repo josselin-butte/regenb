@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
             <p className="text-base font-semibold text-foreground">Josselin Butté · RegenB France</p>
-            <p className="mt-3 max-w-measure text-muted-foreground">{t('footer.tagline')}</p>
+            <p className="mt-3 max-w-measure text-muted-foreground">{t('tagline')}</p>
           </div>
 
           <div className="lg:col-span-3">
