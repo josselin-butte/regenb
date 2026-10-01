@@ -26,10 +26,18 @@ const translations: Translations = {
   'hero.cta': { fr: 'Trouver mon cap avec la boussole', en: 'Find my bearings with the compass' },
   
   // About
-  'about.kicker': { fr: 'Qui je suis · 01', en: 'About me · 01' },
-  'about.title': { fr: 'Josselin Butté', en: 'Josselin Butté' },
-  'about.text1': { fr: 'Je m’appelle Josselin Butté. Avec RegenB France, j’explore une conviction simple : les réponses aux défis du leadership contemporain émergent lorsque chacun renoue avec le vivant.', en: 'I am Josselin Butté. Through RegenB France, I explore a simple conviction: answers to contemporary leadership challenges emerge when each person reconnects with the living world.' },
-  'about.text2': { fr: 'Mon approche intégrative relie les sagesses ancestrales, les sciences du vivant et les pratiques contemporaines d’accompagnement. Je crée des espaces où chacun peut écouter, expérimenter et transformer sa manière d’agir.', en: 'My integrative approach connects ancestral wisdom, life sciences and contemporary practices. I create spaces where each person can listen, experiment and transform how they act.' },
+  'about.p1': { fr: 'Je m’appelle Josselin Butté. Avec RegenB France, je pars d’une conviction\u00A0: les réponses aux défis du leadership d’aujourd’hui ne viennent pas d’une seule personne. Elles émergent quand un groupe apprend à s’écouter, à décider ensemble et à renouer avec le vivant.', en: 'I’m Josselin Butté. Through RegenB France, I start from one conviction: the answers to today’s leadership challenges don’t come from one person. They emerge when a group learns to listen, to decide together and to reconnect with the living world.' },
+  'about.p2': { fr: 'Je ne viens pas avec des réponses toutes faites. J’apporte un cadre, des questions et une attention à la manière dont le groupe travaille. Vous apportez votre expérience, vos tensions et ce qui cherche à émerger. Ce que nous construisons ensemble vous appartient.', en: 'I don’t arrive with ready-made answers. I bring a frame, questions and attention to how the group works. You bring your experience, your tensions and what is seeking to emerge. What we build together belongs to you.' },
+  'about.p3': { fr: 'Je travaille rarement seul\u00A0: je conçois mes accompagnements avec des partenaires, des lieux d’accueil et des praticiens d’autres métiers. Mon approche relie les sagesses anciennes, les sciences du vivant et les pratiques d’accompagnement. Elle s’enrichit de chaque groupe que je rencontre.', en: 'I rarely work alone: I design my work with partners, host venues and practitioners from other fields. My approach connects ancestral wisdom, the life sciences and the practice of accompaniment, and it grows with every group I meet.' },
+  'about.guide.kicker': { fr: 'Ce qui guide ma pratique', en: 'What guides my practice' },
+  'about.guide.1.title': { fr: 'Co-créer plutôt que prescrire', en: 'Co-create rather than prescribe' },
+  'about.guide.1.text': { fr: 'Les solutions naissent du groupe, pas de l’expert.', en: 'Solutions come from the group, not the expert.' },
+  'about.guide.2.title': { fr: 'Rendre les décisions claires', en: 'Make decisions clear' },
+  'about.guide.2.text': { fr: 'Dire qui contribue, qui tranche et comment, avant d’en débattre.', en: 'Say who contributes, who decides and how, before the debate.' },
+  'about.guide.3.title': { fr: 'Traiter l’organisation comme un vivant', en: 'Treat the organisation as a living system' },
+  'about.guide.3.text': { fr: 'Prendre soin des liens autant que des résultats.', en: 'Care for relationships as much as for results.' },
+  'about.guide.4.title': { fr: 'Apprendre en faisant', en: 'Learn by doing' },
+  'about.guide.4.text': { fr: 'Essayer, observer, ajuster ensemble.', en: 'Try, observe, adjust together.' },
 
   // Offer
   'offer.kicker': { fr: 'Ce que je propose · 02', en: 'What I offer · 02' },
