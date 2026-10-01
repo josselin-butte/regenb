@@ -12,7 +12,7 @@ const AboutSection = () => {
             <ul className="mt-6 divide-y divide-border">
               {[1, 2, 3, 4].map((n) => (
                 <li key={n} className="py-5 first:pt-0 last:pb-0">
-                  <p className="font-display text-[20px] font-semibold leading-snug text-primary">{t(`about.guide.${n}.title`)}</p>
+                  <p className="font-serif text-[20px] font-medium leading-snug text-primary">{t(`about.guide.${n}.title`)}</p>
                   <p className="mt-1 text-[15px] leading-relaxed text-muted-foreground">{t(`about.guide.${n}.text`)}</p>
                 </li>
               ))}
