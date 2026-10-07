@@ -141,3 +141,11 @@
   .hero-sun { animation: none; opacity: 1; transform: none; }
   .hero-hill-back, .hero-hill-front { animation: none; }
 }
+
+/* Carnet print */
+@media print {
+  .carnet-noprint { display: none !important; }
+  body, .carnet-article, .carnet-article * { background: #fff !important; color: #000 !important; }
+  main { padding-top: 0 !important; }
+  .carnet-article a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.85em; }
+}
