@@ -161,7 +161,7 @@ const translations: Translations = {
   'carnet.minutes': { fr: 'min de lecture', en: 'min read' },
   'carnet.otherLangBadge': { fr: 'En anglais', en: 'In French' },
   'carnet.otherLangNote': { fr: 'Cette note n’existe pour l’instant qu’en anglais.', en: 'This note is currently available in French only.' },
-  'carnet.ai': { fr: 'Je m’appuie sur des outils d’intelligence artificielle pour rassembler les sources. La lecture, le tri et les positions sont les miens.', en: 'I use AI tools to help gather sources. The reading, the sorting and the positions are my own.' },
+  'carnet.ai': { fr: 'J’utilise des outils d’intelligence artificielle pour rassembler et/ou vérifier les sources. L’apprentissage, les heures de cours, de lecture, de réflexion, d’échanges avec pairs, collègues, familles, amis, clients, tout comme le tri, le choix de la méthode de recherche, des positions, émission d’hypothèses sont les miens.', en: 'I use artificial intelligence tools to gather and/or check sources. The learning, the hours of classes, reading, reflection, exchanges with peers, colleagues, families, friends and clients, as well as the sorting, the choice of research method, the positions taken and the hypotheses put forward are my own.' },
   'carnet.empty': { fr: 'La première note arrive bientôt.', en: 'The first note is on its way.' },
   'carnet.back': { fr: '← Carnet de recherche', en: '← Research notebook' },
   'carnet.noteEyebrow': { fr: 'Note de recherche', en: 'Research note' },
