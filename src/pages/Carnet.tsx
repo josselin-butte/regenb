@@ -50,7 +50,7 @@ const Carnet = () => {
             </ul>
           )}
 
-          <p className="mt-10 text-sm text-muted-foreground">{t('carnet.ai')}</p>
+          <p className="mt-10 max-w-measure text-[13px] leading-relaxed text-muted-foreground">{t('carnet.ai')}</p>
         </div>
       </main>
       <Footer />
