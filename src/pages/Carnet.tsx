@@ -22,9 +22,16 @@ const Carnet = () => {
           <p className="text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('carnet.eyebrow')}</p>
           <h1 className="mt-6 text-[2.2rem] leading-[1.1] tracking-tight text-primary sm:text-5xl">{t('carnet.title')}</h1>
           <div className="mt-8 max-w-measure space-y-5">
-            <p>{t('carnet.intro1')}</p>
+            <p className="text-[20px] leading-relaxed">{t('carnet.intro1')}</p>
             <p>{t('carnet.intro2')}</p>
+            <p>{t('carnet.intro3')}</p>
           </div>
+          <p className="mt-10 text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('carnet.threads')}</p>
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {t('carnet.threadList').split('|').map((tag) => (
+              <li key={tag} className="border border-[#C9D3BF] bg-transparent px-3 py-1 text-[14px] text-primary">{tag}</li>
+            ))}
+          </ul>
 
           {entries.length === 0 ? (
             <p className="mt-16 border-t border-border pt-10 text-muted-foreground">{t('carnet.empty')}</p>
