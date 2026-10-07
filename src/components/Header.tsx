@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import logoHeader from '@/assets/logo-header-regenb.png';
@@ -6,6 +7,8 @@ import logoHeader from '@/assets/logo-header-regenb.png';
 const Header = () => {
   const { language, setLanguage, t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const onCarnet = useLocation().pathname.startsWith('/carnet');
+  const carnetCls = onCarnet ? 'text-primary underline decoration-accent underline-offset-4' : 'text-foreground hover:text-primary';
 
   const toggleLanguage = () => {
     setLanguage(language === 'fr' ? 'en' : 'fr');
@@ -18,7 +21,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 border-b border-border bg-background">
+    <header className="carnet-noprint fixed left-0 right-0 top-0 z-50 border-b border-border bg-background">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8 lg:px-12">
         <a href="/" className="flex items-center" aria-label="Josselin Butté — accueil">
           <img src={logoHeader} alt="RegenB France" className="h-12 w-auto sm:h-14" />
@@ -33,6 +36,9 @@ const Header = () => {
           <a href="/boussole" className="text-sm text-primary underline decoration-accent">
             {t('nav.compass')}
           </a>
+          <Link to="/carnet" className={`text-sm ${carnetCls}`} aria-current={onCarnet ? 'page' : undefined}>
+            {t('nav.carnet')}
+          </Link>
           <button
             type="button"
             onClick={toggleLanguage}
@@ -70,6 +76,9 @@ const Header = () => {
             <a href="/boussole" onClick={() => setIsMenuOpen(false)} className="text-primary underline decoration-accent">
               {t('nav.compass')}
             </a>
+            <Link to="/carnet" onClick={() => setIsMenuOpen(false)} className={carnetCls} aria-current={onCarnet ? 'page' : undefined}>
+              {t('nav.carnet')}
+            </Link>
             <button
               type="button"
               onClick={toggleLanguage}

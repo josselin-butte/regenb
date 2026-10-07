@@ -8,6 +8,8 @@ import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import Compass from "./pages/Compass";
 import Legal from "./pages/Legal";
+import Carnet from "./pages/Carnet";
+import CarnetEntry from "./pages/CarnetEntry";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +25,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/boussole" element={<Compass />} />
+            <Route path="/carnet" element={<Carnet />} />
+            <Route path="/carnet/:slug" element={<CarnetEntry />} />
             <Route path="/legal" element={<Legal />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

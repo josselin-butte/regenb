@@ -8,7 +8,7 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="border-t border-border px-5 py-14 sm:px-8 lg:px-12">
+    <footer id="contact" className="carnet-noprint border-t border-border px-5 py-14 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
@@ -23,6 +23,7 @@ const Footer = () => {
               <li><a href="/#offer" className="hover:text-primary">{t('nav.offer')}</a></li>
               <li><a href="/#letter" className="hover:text-primary">{t('nav.letter')}</a></li>
               <li><a href="/boussole" className="hover:text-primary">{t('nav.compass')}</a></li>
+              <li><a href="/carnet" className="hover:text-primary">{t('nav.carnet')}</a></li>
             </ul>
           </div>
 

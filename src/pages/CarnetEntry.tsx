@@ -43,11 +43,6 @@ const mdComponents: Components = {
 const refComponents: Components = {
   ...mdComponents,
   ol: ({ children, start }) => <ol start={start} className="mt-4 list-decimal space-y-2 pl-6 text-[15px]">{children}</ol>,
-  li: ({ children, node }) => {
-    const parent = (node as unknown as { position?: unknown }) && undefined;
-    void parent;
-    return <li className="carnet-ref break-words">{children}</li>;
-  },
   a: ({ href = '', children }) => (
     <a href={href} target="_blank" rel="noopener" className="break-all text-primary underline decoration-accent">{children}</a>
   ),
