@@ -1,1 +1,1 @@
-- Serve uploaded site photography through Lovable Assets pointer imports using the published asset origin, because repository binaries add unnecessary weight and local Vite does not proxy asset paths.
+- Serve uploaded site photography through Lovable Assets pointer imports using the published asset origin, because repository binaries add unnecessary weight and local Vite does not proxy asset paths.- Research notebook entries are Markdown files with YAML frontmatter in src/content/carnet/, auto-loaded by src/lib/carnet.ts, so publishing a note needs no code change.
