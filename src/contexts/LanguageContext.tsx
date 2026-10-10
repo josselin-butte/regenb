@@ -53,8 +53,9 @@ const translations: Translations = {
 
   // Letter
   'letter.kicker': { fr: 'La lettre · 03', en: 'The letter · 03' },
-  'letter.title': { fr: 'Recevoir des nouvelles du vivant', en: 'News from the living world' },
-  'letter.text': { fr: 'Des réflexions, des ressources et les prochaines propositions de RegenB France, directement dans votre boîte mail.', en: 'Reflections, resources and the next RegenB France offerings, delivered directly to your inbox.' },
+  'letter.title': { fr: 'Continuo, ma lettre', en: 'Continuo, my letter' },
+  'letter.text': { fr: 'Gratuite et bimensuelle, Continuo parle de ce que le studio m’a appris sur les réunions — et de ce que le vivant m’apprend sur l’accompagnement. Vous pouvez me répondre : je lis tout.', en: 'Free and twice a month, Continuo tells of what the studio taught me about meetings — and what the living world teaches me about guiding. You can reply to me: I read everything.' },
+  'letter.readLink': { fr: 'Lire la première lettre — Continuo', en: 'Read the first letter — Continuo' },
   'letter.label': { fr: 'Votre adresse e-mail', en: 'Your email address' },
   'letter.placeholder': { fr: 'vous@exemple.fr', en: 'you@example.com' },
   'letter.submit': { fr: 'M’inscrire', en: 'Subscribe' },
