@@ -66,6 +66,17 @@ const NewsletterSection = () => {
             )}
           </form>
         )}
+
+        <p className="mt-6 text-sm text-muted-foreground">
+          <a
+            href="https://substack.com/@guidancefacililtation/note/p-218300000?r=3926mi&utm_medium=ios&utm_source=notes-share-action"
+            target="_blank"
+            rel="noopener"
+            className="text-primary underline decoration-accent"
+          >
+            {t('letter.readLink')}
+          </a>
+        </p>
       </div>
     </section>
   );
