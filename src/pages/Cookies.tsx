@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useConsentSettings } from '@/contexts/ConsentContext';
 import { consentCopy } from '@/lib/consent-copy';
+import LegalTranslationNotice from '@/components/LegalTranslationNotice';
 
 export default function Cookies() {
   const { language } = useLanguage();
@@ -13,6 +14,7 @@ export default function Cookies() {
     <Header />
     <main className="px-5 pb-16 pt-32 sm:px-8 sm:pt-40">
       <div className="measure mx-auto">
+        <LegalTranslationNotice />
         <h1 className="text-3xl sm:text-4xl">{copy.policyTitle}</h1>
         <p className="mt-6">{copy.policyIntro}</p>
         <section className="mt-10 border-t border-border pt-6"><h2 className="text-xl">{copy.storageTitle}</h2><p className="mt-3">{copy.storageText}</p><p className="mt-3">{copy.renewal}</p></section>

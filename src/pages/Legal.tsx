@@ -1,32 +1,28 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Navigate, useLocation } from 'react-router-dom';
+import LegalTranslationNotice from '@/components/LegalTranslationNotice';
+import { legacyLegalDestination, noticeContent, type LegalPageKind } from '@/lib/legal';
 
-const Legal = () => {
-  const { t } = useLanguage();
+export function LegacyLegalRedirect() {
+  const { language } = useLanguage();
+  const { hash } = useLocation();
+  return <Navigate replace to={legacyLegalDestination(language, hash)} />;
+}
 
-  const anchors = [
-    { id: 'mentions-legales', key: 'legal.nav.mentions' },
-    { id: 'confidentialite', key: 'legal.nav.privacy' },
-    { id: 'cgv', key: 'legal.nav.cgv' },
-  ];
-
-  const blocks = [
-    {
-      id: 'mentions-legales',
-      titleKey: 'legal.nav.mentions',
-      items: ['legal.mentions.editor', 'legal.mentions.hosting'],
-    },
-    {
-      id: 'confidentialite',
-      titleKey: 'legal.nav.privacy',
-      items: ['legal.privacy.data'],
-    },
-    {
-      id: 'cgv',
-      titleKey: 'legal.nav.cgv',
-      items: ['legal.cgv.order', 'legal.cgv.withdrawal', 'legal.cgv.ip'],
-    },
+const Legal = ({ kind }: { kind: LegalPageKind }) => {
+  const { t, language, lp } = useLanguage();
+  const title = t(kind === 'notice' ? 'legal.nav.mentions' : kind === 'privacy' ? 'legal.nav.privacy' : 'legal.nav.cgv');
+  const blocks = kind === 'notice' ? noticeContent[language] : (kind === 'privacy'
+    ? ['legal.privacy.data']
+    : ['legal.cgv.order', 'legal.cgv.withdrawal', 'legal.cgv.ip'])
+    .map(key => ({ title: t(`${key}.title`), paragraphs: [t(`${key}.text`)] }));
+  const links = [
+    { path: '/mentions-legales', label: t('legal.nav.mentions') },
+    { path: '/confidentialite', label: t('legal.nav.privacy') },
+    { path: '/cookies', label: 'Cookies' },
+    { path: '/cgv', label: t('legal.nav.cgv') },
   ];
 
   return (
@@ -39,11 +35,12 @@ const Legal = () => {
               <p className="text-sm font-medium uppercase tracking-widest text-accent">{t('legal.kicker')}</p>
             </div>
             <div className="lg:col-span-9">
-              <h1 className="mt-6 text-[2.1rem] leading-[1.15] sm:text-5xl lg:mt-0">{t('legal.title')}</h1>
-              <nav aria-label={t('legal.title')} className="mt-6 flex flex-col gap-2 sm:flex-row sm:gap-8">
-                {anchors.map((anchor) => (
-                  <a key={anchor.id} href={`#${anchor.id}`} className="text-primary underline decoration-accent">
-                    {t(anchor.key)}
+              <LegalTranslationNotice />
+              <h1 className="mt-6 text-[2.1rem] leading-[1.15] sm:text-5xl lg:mt-0">{title}</h1>
+              <nav aria-label={t('legal.title')} className="mt-6 flex flex-wrap gap-x-8 gap-y-2">
+                {links.filter(link => lp(link.path) !== window.location.pathname).map((link) => (
+                  <a key={link.path} href={lp(link.path)} className="text-primary underline decoration-accent">
+                    {link.label}
                   </a>
                 ))}
               </nav>
@@ -53,22 +50,22 @@ const Legal = () => {
 
         {blocks.map((block, index) => (
           <section
-            key={block.id}
-            id={block.id}
+            key={block.title}
             className={`scroll-mt-24 border-b border-border px-5 py-12 sm:px-8 sm:py-16 lg:px-12 ${
               index % 2 === 1 ? 'bg-secondary' : ''
             }`}
           >
             <div className="mx-auto max-w-6xl lg:grid lg:grid-cols-12 lg:gap-12">
               <div className="lg:col-span-3">
-                <h2 className="text-xl sm:text-2xl">{t(block.titleKey)}</h2>
+                <h2 className="text-xl sm:text-2xl">{block.title}</h2>
               </div>
-              <div className="mt-5 gap-10 sm:columns-2 lg:col-span-9 lg:mt-0">
-                {block.items.map((item) => (
-                  <div key={item} className="mb-5 break-inside-avoid">
-                    <h3 className="text-sm font-semibold">{t(`${item}.title`)}</h3>
-                    <p className="mt-1.5 text-[15px] leading-relaxed text-muted-foreground">
-                      {t(`${item}.text`)}
+              <div className="measure mt-5 lg:col-span-9 lg:mt-0">
+                {block.paragraphs.map((paragraph) => (
+                  <div key={paragraph} className="mb-3 break-inside-avoid">
+                    <p className="text-[15px] leading-relaxed text-muted-foreground break-words">
+                      {paragraph.split(/(josselin@regenb\.com|https:\/\/lovable\.dev)/).map((part, i) => part === 'josselin@regenb.com'
+                        ? <a key={i} href="mailto:josselin@regenb.com" className="underline decoration-accent">{part}</a>
+                        : part === 'https://lovable.dev' ? <a key={i} href={part} target="_blank" rel="noopener noreferrer" className="underline decoration-accent">{part}</a> : part)}
                     </p>
                   </div>
                 ))}

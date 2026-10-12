@@ -1,5 +1,8 @@
 # Refonte Josselin Butté
 
+- [x] Split legal pages FR/EN, update footer/sitemap and verify redirects and French-precedence notice (28 tests passed, eight pages verified)
+- [ ] Legal notice: confirm course storage provider, address and server region (awaiting user information; supplied bracketed placeholder retained)
+
 - [x] Consent: bilingual first-visit banner, equal choices, purpose settings and permanent footer access
 - [x] Consent: first-party six-month versioned choice, gated loaders and withdrawal cleanup/reload (no optional providers currently installed)
 - [x] Consent: bilingual cookies information, 21 passing automated checks and private-window test plan; preview flow verified, publication/hosted retest still required
