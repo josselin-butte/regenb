@@ -63,6 +63,7 @@ const CarnetEntry = () => {
 
 
   if (!entry) return <NotFound />;
+  if (entry.slug !== slug) return <Navigate to={lp(`/carnet/${entry.slug}`)} replace />;
 
   // Split references off, then split custom boxes.
   const refMatch = entry.body.match(REF_HEADING);
@@ -79,7 +80,7 @@ const CarnetEntry = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Seo title={`${entry.title} | Josselin Butté`} description={entry.summary} />
+      <Seo title={`${entry.title} | Josselin Butté`} description={entry.description} />
       <Header />
       <main className="px-5 pb-24 pt-[113px] sm:px-8 sm:pt-[137px] lg:px-12">
         <article lang={entry.lang} className="carnet-article mx-auto max-w-measure">

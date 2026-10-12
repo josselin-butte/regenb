@@ -12,6 +12,7 @@ export interface CarnetEntry {
   origin: string;
   themes: string[];
   summary: string;
+  description: string;
   body: string;
   readingTime: number;
 }
@@ -50,6 +51,7 @@ const parse = (raw: string): CarnetEntry | null => {
     origin: String(data.origin ?? ''),
     themes: Array.isArray(data.themes) ? data.themes : data.themes ? [String(data.themes)] : [],
     summary: String(data.summary ?? ''),
+    description: String(data.description ?? data.summary ?? ''),
     body,
     readingTime: Math.max(1, Math.ceil(words / 200)),
   };
