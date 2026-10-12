@@ -15,3 +15,5 @@
 - [x] Hébergeur ajouté aux mentions légales (Lovable, domaine chez GoDaddy)
 - [x] Métadonnées par page + JSON-LD
 - [x] sitemap.xml (généré au build) + robots.txt
+
+- [ ] Add English notes dry-toilets and robustness
