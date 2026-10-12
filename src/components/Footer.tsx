@@ -54,6 +54,7 @@ const Footer = () => {
             <a href={lp("/cgv")} className="hover:text-primary">{t('legal.nav.cgv')}</a>
             <a href={lp("/cookies")} className="hover:text-primary">Cookies</a>
             <Button variant="link" className="h-auto justify-start whitespace-normal p-0 text-sm font-normal" onClick={openSettings}>{consentCopy[language].settings}</Button>
+            <a href={language === 'fr' ? 'https://valuescourse.regenb.com/renoncer' : 'https://valuescourse.regenb.com/renoncer?lang=en'} className="font-medium text-primary underline underline-offset-4">{language === 'fr' ? 'Renoncer au contrat ici' : 'Withdraw from the contract here'}</a>
           </div>
         </div>
       </div>
