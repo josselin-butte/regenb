@@ -2,7 +2,7 @@
 import { readdirSync, readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
 
-const BASE = "https://regenb.fr";
+const BASE = "https://www.regenb.fr";
 const pairs: [string, string][] = [
   ["/", "/en"],
   ["/accompagnement", "/en/services"],
