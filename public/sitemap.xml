@@ -73,6 +73,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/legal"/>
   </url>
   <url>
+    <loc>https://www.regenb.fr/cookies</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/cookies"/>
+  </url>
+  <url>
+    <loc>https://www.regenb.fr/en/cookies</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/cookies"/>
+  </url>
+  <url>
     <loc>https://www.regenb.fr/contact</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/contact"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/contact"/>
