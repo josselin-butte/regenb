@@ -1,5 +1,11 @@
 export const consentCopy = {
   fr: {
+    pageIntro: "Un cookie ou traceur est un petit fichier ou une information enregistrée sur votre appareil. Les traceurs strictement nécessaires (connexion à votre espace de formation, mémorisation de la langue et de votre choix sur les cookies, sécurité du paiement) ne demandent pas votre accord. Tous les autres ne sont utilisés qu'avec votre consentement, que vous pouvez retirer à tout moment.",
+    noOptional: "Ce site n'utilise aucun cookie de mesure d'audience, de publicité ou de réseau social.",
+    tableTitle: 'Les traceurs de ce site',
+    cols: ['Nom', 'Finalité', 'Fournisseur', 'Durée', 'Catégorie'],
+    catNecessary: 'Strictement nécessaire', catConsent: 'Nécessite votre consentement',
+    tableNote: "La langue est déduite de l'adresse de la page : rien n'est enregistré pour elle. La connexion à l'espace de formation et le paiement se font sur le site de la formation, qui a ses propres règles.",
     title: 'Votre choix de cookies',
     intro: "Avec votre accord, j'utilise une mesure d'audience / des contenus externes pour comprendre quelles pages sont utiles / afficher les vidéos. Vous pouvez changer d'avis à tout moment via « Gérer mes cookies » en bas de page.",
     more: 'En savoir plus', refuse: 'Tout refuser', accept: 'Tout accepter', customize: 'Personnaliser',
@@ -20,6 +26,12 @@ export const consentCopy = {
     contact: 'Pour toute question ou pour exercer vos droits :',
   },
   en: {
+    pageIntro: "A cookie or tracker is a small file or piece of information stored on your device. Strictly necessary trackers (signing in to your course area, remembering your language and your cookie choice, payment security) don't require your permission. All others are only used with your consent, which you can withdraw at any time.",
+    noOptional: 'This site uses no audience measurement, advertising or social media cookies.',
+    tableTitle: 'Trackers on this site',
+    cols: ['Name', 'Purpose', 'Provider', 'Lifetime', 'Category'],
+    catNecessary: 'Strictly necessary', catConsent: 'Requires your consent',
+    tableNote: 'Your language comes from the page address: nothing is stored for it. Signing in to the course area and payment happen on the course website, which has its own rules.',
     title: 'Your cookie choices',
     intro: 'With your permission, I use audience measurement / external content to understand which pages are useful / display videos. You can change your mind at any time via “Cookie settings” at the bottom of the page.',
     more: 'Learn more', refuse: 'Reject all', accept: 'Accept all', customize: 'Customise',
