@@ -1,6 +1,7 @@
 ---
 title: "Robustness: roots, contributions and limits"
 slug: "robustness"
+element: "earth"
 fr: "la-robustesse"
 date: "2026-10-07"
 status: "exploring"

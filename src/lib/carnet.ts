@@ -11,6 +11,7 @@ export interface CarnetEntry {
   lang: CarnetLang;
   origin: string;
   themes: string[];
+  element?: 'earth' | 'water' | 'air' | 'fire';
   summary: string;
   description: string;
   body: string;
@@ -50,6 +51,7 @@ const parse = (raw: string): CarnetEntry | null => {
     lang: data.lang === 'en' ? 'en' : 'fr',
     origin: String(data.origin ?? ''),
     themes: Array.isArray(data.themes) ? data.themes : data.themes ? [String(data.themes)] : [],
+    element: ['earth','water','air','fire'].includes(String(data.element)) ? (String(data.element) as CarnetEntry['element']) : undefined,
     summary: String(data.summary ?? ''),
     description: String(data.description ?? data.summary ?? ''),
     body,

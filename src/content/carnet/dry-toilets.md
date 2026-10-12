@@ -1,6 +1,7 @@
 ---
 title: "What our toilets say about our relationship with water"
 slug: "dry-toilets"
+element: "water"
 fr: "toilettes-seches"
 date: "2026-10-08"
 status: "exploring"

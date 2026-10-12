@@ -17,5 +17,6 @@
 - [x] sitemap.xml (généré au build) + robots.txt
 
 - [x] Add English notes dry-toilets and robustness
-- [ ] Boussole : icônes d'éléments sur les cartes de modules
-- [ ] Séparateurs ondulés animés (WavySeparator)
+- [ ] Boussole : icônes d'éléments sur les cartes de modules (en attente : éléments par pas)
+- [ ] Séparateurs ondulés animés (WavySeparator) (en attente : remplacer les traits droits ?)
+- [x] Accueil : quatre icônes sous le sous-titre

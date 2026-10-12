@@ -1,6 +1,7 @@
 ---
 title: "La robustesse : racines, apports et limites"
 slug: "la-robustesse"
+element: "earth"
 date: "2026-10-07"
 status: "exploring"
 lang: "fr"

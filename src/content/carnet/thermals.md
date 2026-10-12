@@ -1,6 +1,7 @@
 ---
 title: "What thermals teach me about a group's energy"
 slug: "thermals"
+element: "air"
 fr: "thermiques"
 date: "2026-10-09"
 status: "exploring"
