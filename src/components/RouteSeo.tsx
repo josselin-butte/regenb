@@ -33,7 +33,7 @@ const service = (names: string[]) => ({
   availableLanguage: ['French', 'English'],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: names[0] === 'Facilitation' && names[2] === 'Coaching' ? 'Services' : 'Services',
+    name: 'Services',
     itemListElement: names.map((n) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: n } })),
   },
 });
