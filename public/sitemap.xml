@@ -109,6 +109,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://regenb.fr/carnet/la-robustesse"/>
   </url>
   <url>
+    <loc>https://regenb.fr/carnet/le-feu-et-la-conversation</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://regenb.fr/carnet/le-feu-et-la-conversation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://regenb.fr/en/notebook/le-feu-et-la-conversation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://regenb.fr/carnet/le-feu-et-la-conversation"/>
+  </url>
+  <url>
+    <loc>https://regenb.fr/en/notebook/le-feu-et-la-conversation</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://regenb.fr/carnet/le-feu-et-la-conversation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://regenb.fr/en/notebook/le-feu-et-la-conversation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://regenb.fr/carnet/le-feu-et-la-conversation"/>
+  </url>
+  <url>
     <loc>https://regenb.fr/carnet/thermiques</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://regenb.fr/carnet/thermiques"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://regenb.fr/en/notebook/thermals"/>
