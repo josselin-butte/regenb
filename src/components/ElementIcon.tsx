@@ -9,6 +9,8 @@ interface ElementIconProps {
   drawOnView?: boolean;
   label?: string;
   className?: string;
+  /** Draw-in delay in seconds. */
+  delay?: number;
 }
 
 const OCHRE = '#D5B544';
@@ -43,7 +45,7 @@ const paths: Record<Element, JSX.Element> = {
   ),
 };
 
-const ElementIcon = ({ element, size = 48, animated = true, drawOnView = true, label, className }: ElementIconProps) => {
+const ElementIcon = ({ element, size = 48, animated = true, drawOnView = true, label, className, delay = 0 }: ElementIconProps) => {
   const ref = useRef<SVGSVGElement>(null);
   const [state, setState] = useState<'idle' | 'drawing' | 'done'>(drawOnView ? 'idle' : 'done');
 
@@ -83,6 +85,7 @@ const ElementIcon = ({ element, size = 48, animated = true, drawOnView = true, l
       strokeLinejoin="round"
       overflow="visible"
       className={classes}
+      style={{ ['--ei-delay' as string]: `${delay}s` }}
       role={label ? 'img' : undefined}
       aria-label={label}
       aria-hidden={label ? undefined : true}

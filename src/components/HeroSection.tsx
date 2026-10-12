@@ -5,6 +5,7 @@ const RIDGE_LINE = 'M0 150 C160 146 300 128 420 118 C470 114 490 104 520 108 C60
 
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ElementIcon from '@/components/ElementIcon';
 import { Button } from '@/components/ui/button';
 import dehors from '@/assets/home-dehors.webp.asset.json';
 
@@ -44,6 +45,11 @@ const HeroSection = () => {
         </h1>
         <p className="mt-8 text-xl leading-relaxed">{t('hero.sentence1')}</p>
         <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{t('hero.sentence2')}</p>
+        <div className="mt-8 flex items-center gap-7">
+          {(['earth', 'water', 'air', 'fire'] as const).map((el, i) => (
+            <ElementIcon key={el} element={el} size={28} delay={i * 0.25} animated={el === 'water'} label={t(`element.${el}`)} />
+          ))}
+        </div>
         <Button size="lg" asChild className="mt-10">
           <Link to={lp('/boussole')}>{t('hero.cta')}</Link>
         </Button>

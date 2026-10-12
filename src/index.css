@@ -153,7 +153,7 @@
 /* ElementIcon */
 @media (prefers-reduced-motion: no-preference) {
   .element-icon.ei-draw path { stroke-dasharray: 1; stroke-dashoffset: 1; }
-  .element-icon.ei-drawing path { animation: ei-draw 1.4s ease-out forwards; }
+  .element-icon.ei-drawing path { animation: ei-draw 1.4s ease-out var(--ei-delay, 0s) forwards; }
   .ei-animated .ei-water { animation: ei-water 6s ease-in-out infinite; }
   .ei-animated .ei-air-arrow { animation: ei-air 5s ease-in-out infinite; }
   .ei-animated .ei-fire { transform-box: fill-box; transform-origin: 50% 100%; animation: ei-fire 2.6s ease-in-out infinite; }
