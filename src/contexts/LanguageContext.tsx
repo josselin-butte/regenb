@@ -1,4 +1,6 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useEffect, ReactNode } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { langFromPath, localizePath, SITE_ORIGIN } from '@/lib/routes';
 
 type Language = 'fr' | 'en';
 
@@ -182,32 +184,40 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  /** Localize a French public path (e.g. '/boussole', '/#letter') to the current language. */
+  lp: (path: string) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-const STORAGE_KEY = 'regenb-lang';
-
-const getInitialLanguage = (): Language => {
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved === 'fr' || saved === 'en') return saved;
-  } catch { /* ignore */ }
-  const nav = typeof navigator !== 'undefined' ? navigator.language || '' : '';
-  return nav.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+const setAlternate = (hreflang: string, href: string) => {
+  let el = document.head.querySelector<HTMLLinkElement>(`link[rel="alternate"][hreflang="${hreflang}"]`);
+  if (!el) {
+    el = document.createElement('link');
+    el.rel = 'alternate';
+    el.hreflang = hreflang;
+    document.head.appendChild(el);
+  }
+  el.href = href;
 };
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguageState] = useState<Language>(getInitialLanguage);
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const language: Language = langFromPath(pathname);
 
   const setLanguage = (lang: Language) => {
-    setLanguageState(lang);
-    try { localStorage.setItem(STORAGE_KEY, lang); } catch { /* ignore */ }
+    if (lang !== language) navigate(localizePath(pathname, lang));
   };
 
   useEffect(() => {
     document.documentElement.lang = language;
-  }, [language]);
+    const fr = SITE_ORIGIN + localizePath(pathname, 'fr');
+    const en = SITE_ORIGIN + localizePath(pathname, 'en');
+    setAlternate('fr', fr);
+    setAlternate('en', en);
+    setAlternate('x-default', fr);
+  }, [language, pathname]);
 
   const t = (key: string): string => {
     const translation = translations[key];
@@ -215,8 +225,10 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     return translation[language];
   };
 
+  const lp = (path: string) => localizePath(path, language);
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, lp }}>
       {children}
     </LanguageContext.Provider>
   );

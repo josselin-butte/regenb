@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
-  const { t, language, setLanguage } = useLanguage();
+  const { t, language, setLanguage, lp } = useLanguage();
 
   const toggleLanguage = () => {
     setLanguage(language === 'fr' ? 'en' : 'fr');
@@ -19,11 +19,11 @@ const Footer = () => {
           <div className="lg:col-span-3">
             <p className="text-sm font-medium uppercase tracking-widest text-accent">Navigation</p>
             <ul className="mt-4 space-y-2">
-              <li><a href="/#about" className="hover:text-primary">{t('nav.about')}</a></li>
-              <li><a href="/#offer" className="hover:text-primary">{t('nav.offer')}</a></li>
-              <li><a href="/#letter" className="hover:text-primary">{t('nav.letter')}</a></li>
-              <li><a href="/boussole" className="hover:text-primary">{t('nav.compass')}</a></li>
-              <li><a href="/carnet" className="hover:text-primary">{t('nav.carnet')}</a></li>
+              <li><a href={lp("/#about")} className="hover:text-primary">{t('nav.about')}</a></li>
+              <li><a href={lp("/#offer")} className="hover:text-primary">{t('nav.offer')}</a></li>
+              <li><a href={lp("/#letter")} className="hover:text-primary">{t('nav.letter')}</a></li>
+              <li><a href={lp("/boussole")} className="hover:text-primary">{t('nav.compass')}</a></li>
+              <li><a href={lp("/carnet")} className="hover:text-primary">{t('nav.carnet')}</a></li>
             </ul>
           </div>
 
@@ -45,9 +45,9 @@ const Footer = () => {
         <div className="mt-12 flex flex-col gap-3 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Josselin Butté · RegenB France. {t('footer.rights')}.</p>
           <div className="flex flex-col gap-2 sm:flex-row sm:gap-6">
-            <a href="/legal#mentions-legales" className="hover:text-primary">{t('footer.terms')}</a>
-            <a href="/legal#confidentialite" className="hover:text-primary">{t('footer.privacy')}</a>
-            <a href="/legal#cgv" className="hover:text-primary">{t('legal.nav.cgv')}</a>
+            <a href={lp("/legal#mentions-legales")} className="hover:text-primary">{t('footer.terms')}</a>
+            <a href={lp("/legal#confidentialite")} className="hover:text-primary">{t('footer.privacy')}</a>
+            <a href={lp("/legal#cgv")} className="hover:text-primary">{t('legal.nav.cgv')}</a>
           </div>
         </div>
       </div>

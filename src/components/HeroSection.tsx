@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import dehors from '@/assets/home-dehors.webp.asset.json';
 
 const HeroSection = () => {
-  const { t, language } = useLanguage();
+  const { t, language, lp } = useLanguage();
   const ridgeDesk = useRef<SVGPathElement>(null);
   const ridgeMob = useRef<SVGPathElement>(null);
 
@@ -51,7 +51,7 @@ const HeroSection = () => {
         <p className="mt-8 text-xl leading-relaxed">{t('hero.sentence1')}</p>
         <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{t('hero.sentence2')}</p>
         <Button size="lg" asChild className="mt-10">
-          <Link to="/boussole">{t('hero.cta')}</Link>
+          <Link to={lp('/boussole')}>{t('hero.cta')}</Link>
         </Button>
         </div>
         <img src={`https://regenb.lovable.app${dehors.url}`} alt={t('image.dehors')} width={1280} height={853} loading="eager" fetchPriority="high" className="aspect-[4/3] w-full object-cover lg:aspect-[4/5] lg:max-h-[520px]" />
