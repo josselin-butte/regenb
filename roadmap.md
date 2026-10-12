@@ -1,5 +1,9 @@
 # Refonte Josselin Butté
 
+- [ ] Consent: bilingual first-visit banner, equal choices, purpose settings and permanent footer access
+- [ ] Consent: first-party six-month versioned choice, gated loaders and withdrawal cleanup/reload
+- [ ] Consent: bilingual cookies information, automated checks and private-window test plan
+
 - [x] Privacy: prevent optional tracking before consent and remove unnecessary storage
 - [x] Privacy: verify external embeds and fresh-visitor network behaviour (production policy tested against published HTML; publish required)
 
