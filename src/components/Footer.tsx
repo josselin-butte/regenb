@@ -1,7 +1,11 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useConsentSettings } from '@/contexts/ConsentContext';
+import { consentCopy } from '@/lib/consent-copy';
+import { Button } from '@/components/ui/button';
 
 const Footer = () => {
   const { t, language, setLanguage, lp } = useLanguage();
+  const { openSettings } = useConsentSettings();
 
   const toggleLanguage = () => {
     setLanguage(language === 'fr' ? 'en' : 'fr');
@@ -48,6 +52,7 @@ const Footer = () => {
             <a href={lp("/legal#mentions-legales")} className="hover:text-primary">{t('footer.terms')}</a>
             <a href={lp("/legal#confidentialite")} className="hover:text-primary">{t('footer.privacy')}</a>
             <a href={lp("/legal#cgv")} className="hover:text-primary">{t('legal.nav.cgv')}</a>
+            <Button variant="link" className="h-auto justify-start whitespace-normal p-0 text-sm font-normal" onClick={openSettings}>{consentCopy[language].settings}</Button>
           </div>
         </div>
       </div>

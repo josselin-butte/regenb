@@ -126,6 +126,14 @@
 }
 
 /* Hero hills opening */
+.consent-surface {
+  --foreground: 136.55 20.28% 28.43%;
+  --primary: 136.55 20.28% 28.43%;
+  --ring: 136.55 20.28% 28.43%;
+  color: hsl(var(--foreground));
+}
+
+/* Hero hills opening */
 .hero-ridge { stroke-dasharray: var(--ridge-len, 2000); stroke-dashoffset: var(--ridge-len, 2000); }
 .hero-ridge.is-drawing { animation: ridge-draw 3.2s cubic-bezier(.45,.05,.3,1) forwards; }
 .hero-sun { transform-box: fill-box; opacity: 0; transform: translateY(70px);
