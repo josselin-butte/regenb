@@ -6,6 +6,7 @@ const BASE = "https://regenb.fr";
 const pairs: [string, string][] = [
   ["/", "/en"],
   ["/accompagnement", "/en/services"],
+  ["/etapes", "/en/journeys"],
   ["/boussole", "/en/compass"],
   ["/carnet", "/en/notebook"],
   ["/legal", "/en/legal"],
