@@ -98,24 +98,3 @@ Sources consultées en 2026.
 9. Ostau Comengés, « Les fêtes du solstice d'été en Aran et Comminges ». https://ostaucomenges.org/images/har/articles/Les%20f%C3%AAtes%20du%20solstice%20d%E2%80%99%C3%A9t%C3%A9%20en%20Aran%20et%20Comminges.pdf
 10. Préfecture des Hautes-Pyrénées, « Pratique des brûlages pastoraux dirigés dits écobuages ». https://www.hautes-pyrenees.gouv.fr/Actions-de-l-Etat/Environnement-et-risques-majeurs/Forets/Pratique-des-brulages-pastoraux-diriges-dits-ecobuages
 11. S. J. Pyne, « We Are Living in the Pyrocene, the Age of Fire that We Created », Scientific American, 2024. https://www.scientificamerican.com/article/we-are-living-in-the-pyrocene-at-our-peril/
-dry-toilets.md
-la-robustesse.md
-robustness.md
-thermals.md
-thermiques.md
-toilettes-seches.md
----
-title: "What thermals teach me about a group's energy"
-slug: "thermals"
-element: "air"
-fr: "thermiques"
-date: "2026-10-09"
-status: "exploring"
-lang: "en"
-origin: "Born of my paragliding flights"
-themes: ["Facilitation", "Complexity thinking", "Life sciences"]
-summary: "In paragliding, you fly on an invisible energy: warm air rising. You can't see it. You feel it, you guess at it, and you settle into it without forcing. That's very close to what I look for when I work with a group. I wanted to understand what vultures, storks and pilots can teach us."
-description: "In paragliding you fly on an energy you can't see. What vultures, storks and pilots teach a facilitator about reading a group, and knowing when not to take off."
----
-
-In paragliding, you don't fly thanks to an engine, because there isn't one. You fly thanks to something you can't see: warm air rising. The best you can do is feel it, guess where it is, settle into it without forcing, and leave it at the right moment.
