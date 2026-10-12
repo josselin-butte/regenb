@@ -1,5 +1,7 @@
 # Refonte Josselin Butté
 
+- [ ] Split legal pages FR/EN, update footer/sitemap and verify redirects and French-precedence notice
+
 - [x] Consent: bilingual first-visit banner, equal choices, purpose settings and permanent footer access
 - [x] Consent: first-party six-month versioned choice, gated loaders and withdrawal cleanup/reload (no optional providers currently installed)
 - [x] Consent: bilingual cookies information, 21 passing automated checks and private-window test plan; preview flow verified, publication/hosted retest still required
