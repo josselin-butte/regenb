@@ -20,7 +20,7 @@ const Footer = () => {
             <p className="text-sm font-medium uppercase tracking-widest text-accent">Navigation</p>
             <ul className="mt-4 space-y-2">
               <li><a href={lp("/#about")} className="hover:text-primary">{t('nav.about')}</a></li>
-              <li><a href={lp("/#offer")} className="hover:text-primary">{t('nav.offer')}</a></li>
+              <li><a href={lp("/accompagnement")} className="hover:text-primary">{t('nav.offer')}</a></li>
               <li><a href={lp("/#letter")} className="hover:text-primary">{t('nav.letter')}</a></li>
               <li><a href={lp("/boussole")} className="hover:text-primary">{t('nav.compass')}</a></li>
               <li><a href={lp("/carnet")} className="hover:text-primary">{t('nav.carnet')}</a></li>

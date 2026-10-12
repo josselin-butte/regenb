@@ -10,6 +10,7 @@ import Compass from "./pages/Compass";
 import Legal from "./pages/Legal";
 import Carnet from "./pages/Carnet";
 import CarnetEntry from "./pages/CarnetEntry";
+import Services from "./pages/Services";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,12 +25,14 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/accompagnement" element={<Services />} />
             <Route path="/boussole" element={<Compass />} />
             <Route path="/carnet" element={<Carnet />} />
             <Route path="/carnet/:slug" element={<CarnetEntry />} />
             <Route path="/legal" element={<Legal />} />
             <Route path="/en" element={<Index />} />
             <Route path="/en/contact" element={<Contact />} />
+            <Route path="/en/services" element={<Services />} />
             <Route path="/en/compass" element={<Compass />} />
             <Route path="/en/notebook" element={<Carnet />} />
             <Route path="/en/notebook/:slug" element={<CarnetEntry />} />

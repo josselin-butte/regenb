@@ -16,7 +16,7 @@ const Header = () => {
 
   const navItems = [
     { key: 'nav.about', href: '/#about' },
-    { key: 'nav.offer', href: '/#offer' },
+    { key: 'nav.offer', href: '/accompagnement' },
     { key: 'nav.letter', href: '/#letter' },
   ];
 
