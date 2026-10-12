@@ -25,6 +25,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://regenb.fr/accompagnement"/>
   </url>
   <url>
+    <loc>https://regenb.fr/etapes</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://regenb.fr/etapes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://regenb.fr/en/journeys"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://regenb.fr/etapes"/>
+  </url>
+  <url>
+    <loc>https://regenb.fr/en/journeys</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://regenb.fr/etapes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://regenb.fr/en/journeys"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://regenb.fr/etapes"/>
+  </url>
+  <url>
     <loc>https://regenb.fr/boussole</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://regenb.fr/boussole"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://regenb.fr/en/compass"/>
