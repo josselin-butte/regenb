@@ -10,9 +10,6 @@ const Carnet = () => {
   const { t, language, lp } = useLanguage();
   const entries = getEntries(language);
 
-  useEffect(() => {
-    document.title = `${t('carnet.eyebrow')} · RegenB France`;
-  }, [language]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="min-h-screen bg-background">
