@@ -1,5 +1,8 @@
 # Refonte Josselin Butté
 
+- [x] Privacy: prevent optional tracking before consent and remove unnecessary storage
+- [x] Privacy: verify external embeds and fresh-visitor network behaviour (production policy tested against published HTML; publish required)
+
 - [x] Intégrer le logo fourni et la nouvelle identité visuelle
 - [x] Réécrire tous les contenus FR/EN à la première personne
 - [x] Recomposer la page d’accueil en revue vivante
