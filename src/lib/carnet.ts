@@ -4,6 +4,8 @@ export type CarnetLang = 'fr' | 'en';
 export interface CarnetEntry {
   title: string;
   slug: string;
+  /** Shared id across languages: the French slug. */
+  key: string;
   date: string;
   status: CarnetStatus;
   lang: CarnetLang;
@@ -41,6 +43,7 @@ const parse = (raw: string): CarnetEntry | null => {
   return {
     title: String(data.title),
     slug: String(data.slug),
+    key: String(data.fr ?? data.slug),
     date: String(data.date ?? ''),
     status: data.status === 'settled' ? 'settled' : 'exploring',
     lang: data.lang === 'en' ? 'en' : 'fr',
@@ -54,17 +57,28 @@ const parse = (raw: string): CarnetEntry | null => {
 
 const all: CarnetEntry[] = Object.values(files).map(parse).filter((e): e is CarnetEntry => !!e);
 
-/** One entry per slug, preferring the current language. Newest first. */
+/** One entry per note (key), preferring the current language. Newest first. */
 export const getEntries = (lang: CarnetLang): CarnetEntry[] => {
-  const bySlug = new Map<string, CarnetEntry>();
+  const byKey = new Map<string, CarnetEntry>();
   for (const e of all) {
-    const cur = bySlug.get(e.slug);
-    if (!cur || (cur.lang !== lang && e.lang === lang)) bySlug.set(e.slug, e);
+    const cur = byKey.get(e.key);
+    if (!cur || (cur.lang !== lang && e.lang === lang)) byKey.set(e.key, e);
   }
-  return [...bySlug.values()].sort((a, b) => b.date.localeCompare(a.date));
+  return [...byKey.values()].sort((a, b) => b.date.localeCompare(a.date));
 };
 
-export const getEntry = (slug: string, lang: CarnetLang) => getEntries(lang).find((e) => e.slug === slug);
+/** Find the note shown at this slug in this language (any language's slug resolves to the same note). */
+export const getEntry = (slug: string, lang: CarnetLang) => {
+  const key = all.find((e) => e.slug === slug)?.key;
+  return key ? getEntries(lang).find((e) => e.key === key) : undefined;
+};
+
+/** Slug to use for a note in the target language (falls back to the existing slug). */
+export const translateSlug = (slug: string, lang: CarnetLang): string => {
+  const key = all.find((e) => e.slug === slug)?.key;
+  if (!key) return slug;
+  return getEntries(lang).find((e) => e.key === key)?.slug ?? slug;
+};
 
 export const formatDate = (date: string, lang: CarnetLang) => {
   const d = new Date(`${date}T12:00:00`);

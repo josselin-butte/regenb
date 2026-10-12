@@ -122,7 +122,7 @@ const CarnetEntry = () => {
             <h2 className="text-2xl text-primary">{t('carnet.cta.title')}</h2>
             <p className="mt-4">{t('carnet.cta.text')}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button size="lg" asChild><a href={lp('/#letter')}>{t('carnet.cta.letter')}</a></Button>
+              <Button size="lg" asChild><a href="https://lecontinuo.substack.com" target="_blank" rel="noopener noreferrer">{t('carnet.cta.letter')}</a></Button>
               <Button size="lg" variant="outline" asChild><a href="mailto:josselin@regenb.com">{t('carnet.cta.write')}</a></Button>
             </div>
           </section>

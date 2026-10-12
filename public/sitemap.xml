@@ -85,39 +85,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://regenb.fr/contact"/>
   </url>
   <url>
-    <loc>https://regenb.fr/carnet/la-robustesse</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://regenb.fr/carnet/la-robustesse"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://regenb.fr/en/notebook/la-robustesse"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://regenb.fr/carnet/la-robustesse"/>
+    <loc>https://regenb.fr/carnet/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://regenb.fr/carnet/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://regenb.fr/en/notebook/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://regenb.fr/carnet/"/>
   </url>
   <url>
-    <loc>https://regenb.fr/en/notebook/la-robustesse</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://regenb.fr/carnet/la-robustesse"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://regenb.fr/en/notebook/la-robustesse"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://regenb.fr/carnet/la-robustesse"/>
-  </url>
-  <url>
-    <loc>https://regenb.fr/carnet/thermiques</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://regenb.fr/carnet/thermiques"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://regenb.fr/en/notebook/thermiques"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://regenb.fr/carnet/thermiques"/>
-  </url>
-  <url>
-    <loc>https://regenb.fr/en/notebook/thermiques</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://regenb.fr/carnet/thermiques"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://regenb.fr/en/notebook/thermiques"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://regenb.fr/carnet/thermiques"/>
-  </url>
-  <url>
-    <loc>https://regenb.fr/carnet/toilettes-seches</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://regenb.fr/carnet/toilettes-seches"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://regenb.fr/en/notebook/toilettes-seches"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://regenb.fr/carnet/toilettes-seches"/>
-  </url>
-  <url>
-    <loc>https://regenb.fr/en/notebook/toilettes-seches</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://regenb.fr/carnet/toilettes-seches"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://regenb.fr/en/notebook/toilettes-seches"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://regenb.fr/carnet/toilettes-seches"/>
+    <loc>https://regenb.fr/en/notebook/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://regenb.fr/carnet/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://regenb.fr/en/notebook/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://regenb.fr/carnet/"/>
   </url>
 </urlset>

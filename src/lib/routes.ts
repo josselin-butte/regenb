@@ -1,3 +1,5 @@
+import { translateSlug } from './carnet';
+
 export type Lang = 'fr' | 'en';
 
 export const SITE_ORIGIN = 'https://regenb.fr';
@@ -29,6 +31,7 @@ export const localizePath = (path: string, lang: Lang): string => {
     if (matchPrefix(base, pair[from])) {
       const rest = pair[from] === '/' ? '' : base.slice(pair[from].length);
       out = pair[to] + rest;
+      if (pair[0] === '/carnet' && rest.length > 1) out = pair[to] + '/' + translateSlug(rest.slice(1), lang);
       if (lang === 'fr' && pair[to] === '/' ) out = '/';
       break;
     }

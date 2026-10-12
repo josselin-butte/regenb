@@ -13,9 +13,17 @@ const pairs: [string, string][] = [
   ["/contact", "/en/contact"],
 ];
 const dir = resolve("src/content/carnet");
+const notes = new Map<string, { fr?: string; en?: string }>();
 for (const f of readdirSync(dir).filter((f) => f.endsWith(".md"))) {
-  const slug = readFileSync(resolve(dir, f), "utf8").match(/^slug:\s*["']?([^"'\n]+)/m)?.[1]?.trim() ?? f.replace(/\.md$/, "");
-  const pair: [string, string] = [`/carnet/${slug}`, `/en/notebook/${slug}`];
+  const raw = readFileSync(resolve(dir, f), "utf8");
+  const get = (k: string) => raw.match(new RegExp(`^${k}:\s*["']?([^"'\n]+)`, "m"))?.[1]?.trim();
+  const slug = get("slug") ?? f.replace(/\.md$/, "");
+  const lang = get("lang") === "en" ? "en" : "fr";
+  const key = get("fr") ?? slug;
+  notes.set(key, { ...notes.get(key), [lang]: slug });
+}
+for (const [key, n] of notes) {
+  const pair: [string, string] = [`/carnet/${n.fr ?? key}`, `/en/notebook/${n.en ?? n.fr ?? key}`];
   if (!pairs.some((p) => p[0] === pair[0])) pairs.push(pair);
 }
 const url = (loc: string, [fr, en]: [string, string]) => `  <url>
