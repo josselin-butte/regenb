@@ -1,26 +1,33 @@
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import groupe from '@/assets/home-groupe.webp.asset.json';
 
 const OfferSection = () => {
-  const { t } = useLanguage();
+  const { t, lp } = useLanguage();
+
+  const services = [1, 2, 3, 4, 5].map((n) => ({
+    title: t(`offer.s${n}.title`),
+    who: t(`offer.s${n}.who`),
+  }));
 
   return (
     <section id="offer" className="bg-primary px-5 py-20 text-primary-foreground sm:px-8 sm:py-24 lg:px-12">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
-        <div className="max-w-[500px] md:ml-auto">
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('offer.kicker')}</p>
-          <h2 className="mt-4 text-3xl text-primary-foreground sm:text-4xl">{t('offer.title')}</h2>
-          <div className="mt-8 space-y-6">
-            <p className="border-l-2 border-accent pl-6">{t('offer.text1')}</p>
-            <p className="border-l-2 border-accent pl-6">{t('offer.text2')}</p>
-          </div>
-        </div>
-        <div>
-          <p className="border border-primary-foreground/20 p-8 font-serif text-2xl leading-snug sm:p-12 sm:text-3xl">
-            {t('offer.text3')}
-          </p>
-          <img src={`https://regenb.lovable.app${groupe.url}`} alt={t('image.groupe')} width={1600} height={1200} loading="lazy" className="mt-6 aspect-[3/2] w-full object-cover" />
-        </div>
+      <div className="mx-auto max-w-measure">
+        <p className="text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('offer.kicker')}</p>
+        <h2 className="mt-4 text-3xl text-primary-foreground sm:text-4xl">{t('offer.title')}</h2>
+        <ul className="mt-10 divide-y divide-primary-foreground/20">
+          {services.map((s) => (
+            <li key={s.title} className="py-5 first:pt-0 last:pb-0">
+              <p className="font-serif text-[20px] font-medium">{s.title}</p>
+              <p className="mt-1 text-[15px] leading-relaxed opacity-90">{s.who}</p>
+            </li>
+          ))}
+        </ul>
+        <Link
+          to={lp('/accompagnement')}
+          className="mt-10 inline-block border-b-2 border-accent pb-1 font-semibold transition-colors hover:text-accent"
+        >
+          {t('offer.seeAll')}
+        </Link>
       </div>
     </section>
   );
