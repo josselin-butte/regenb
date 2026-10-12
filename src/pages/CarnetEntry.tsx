@@ -57,7 +57,7 @@ const Box = ({ label, kind, children }: { label: string; kind: 'essentiel' | 'ac
 
 const CarnetEntry = () => {
   const { slug = '' } = useParams();
-  const { t, language } = useLanguage();
+  const { t, language, lp } = useLanguage();
   const entry = getEntry(slug, language);
 
   useEffect(() => {
@@ -90,7 +90,7 @@ const CarnetEntry = () => {
       <Header />
       <main className="px-5 pb-24 pt-[113px] sm:px-8 sm:pt-[137px] lg:px-12">
         <article lang={entry.lang} className="carnet-article mx-auto max-w-measure">
-          <Link to="/carnet" lang={language} className="carnet-noprint text-sm text-primary underline decoration-accent">{t('carnet.back')}</Link>
+          <Link to={lp('/carnet')} lang={language} className="carnet-noprint text-sm text-primary underline decoration-accent">{t('carnet.back')}</Link>
           <p lang={language} className="mt-10 text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('carnet.noteEyebrow')}</p>
           <h1 className="mt-5 text-[2.1rem] leading-[1.12] tracking-tight text-primary sm:text-[2.75rem]">{entry.title}</h1>
           <p className="mt-6 text-[20px] leading-relaxed">{entry.summary}</p>
@@ -129,7 +129,7 @@ const CarnetEntry = () => {
             <h2 className="text-2xl text-primary">{t('carnet.cta.title')}</h2>
             <p className="mt-4">{t('carnet.cta.text')}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button size="lg" asChild><a href="/#letter">{t('carnet.cta.letter')}</a></Button>
+              <Button size="lg" asChild><a href={lp('/#letter')}>{t('carnet.cta.letter')}</a></Button>
               <Button size="lg" variant="outline" asChild><a href="mailto:josselin@regenb.com">{t('carnet.cta.write')}</a></Button>
             </div>
           </section>
