@@ -15,7 +15,7 @@ const translations: Translations = {
   // Navigation
   'nav.home': { fr: 'Accueil', en: 'Home' },
   'nav.about': { fr: 'Qui je suis', en: 'About me' },
-  'nav.offer': { fr: 'Ce que je propose', en: 'What I offer' },
+  'nav.offer': { fr: 'Accompagnement', en: 'Services' },
   'nav.letter': { fr: 'La lettre', en: 'The letter' },
   'nav.compass': { fr: 'Ma boussole', en: 'My compass' },
   'nav.contact': { fr: 'Contact', en: 'Contact' },

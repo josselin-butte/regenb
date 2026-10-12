@@ -4,6 +4,7 @@ export const SITE_ORIGIN = 'https://regenb.fr';
 
 // French path (root) → English path (/en). Order matters: longer prefixes first.
 const PAIRS: [string, string][] = [
+  ['/accompagnement', '/en/services'],
   ['/boussole', '/en/compass'],
   ['/carnet', '/en/notebook'],
   ['/legal', '/en/legal'],
