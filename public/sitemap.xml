@@ -99,13 +99,13 @@
   <url>
     <loc>https://regenb.fr/carnet/thermiques</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://regenb.fr/carnet/thermiques"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://regenb.fr/en/notebook/thermiques"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://regenb.fr/en/notebook/thermals"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://regenb.fr/carnet/thermiques"/>
   </url>
   <url>
-    <loc>https://regenb.fr/en/notebook/thermiques</loc>
+    <loc>https://regenb.fr/en/notebook/thermals</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://regenb.fr/carnet/thermiques"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://regenb.fr/en/notebook/thermiques"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://regenb.fr/en/notebook/thermals"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://regenb.fr/carnet/thermiques"/>
   </url>
   <url>

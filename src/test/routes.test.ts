@@ -4,7 +4,7 @@ describe('localized routes', () => {
   it('maps fr to en', () => {
     expect(localizePath('/', 'en')).toBe('/en');
     expect(localizePath('/boussole', 'en')).toBe('/en/compass');
-    expect(localizePath('/carnet/thermiques', 'en')).toBe('/en/notebook/thermiques');
+    expect(localizePath('/carnet/la-robustesse', 'en')).toBe('/en/notebook/la-robustesse');
     expect(localizePath('/legal#cgv', 'en')).toBe('/en/legal#cgv');
     expect(localizePath('/#letter', 'en')).toBe('/en#letter');
   });
@@ -16,5 +16,12 @@ describe('localized routes', () => {
   it('detects language from URL only', () => {
     expect(langFromPath('/')).toBe('fr');
     expect(langFromPath('/en/legal')).toBe('en');
+  });
+});
+
+describe('bilingual notebook slugs', () => {
+  it('maps thermiques <-> thermals', () => {
+    expect(localizePath('/carnet/thermiques', 'en')).toBe('/en/notebook/thermals');
+    expect(localizePath('/en/notebook/thermals', 'fr')).toBe('/carnet/thermiques');
   });
 });
