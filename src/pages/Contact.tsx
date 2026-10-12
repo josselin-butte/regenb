@@ -14,27 +14,28 @@ import Footer from '@/components/Footer';
 const contactSchema = z.object({
   name: z.string().trim().min(2, { message: "Le nom doit contenir au moins 2 caractères" }).max(100),
   email: z.string().trim().email({ message: "Adresse e-mail invalide" }).max(255),
-  subject: z.string().trim().min(5, { message: "Le sujet doit contenir au moins 5 caractères" }).max(200),
   message: z.string().trim().min(10, { message: "Le message doit contenir au moins 10 caractères" }).max(2000),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
 const Contact = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
-    defaultValues: { name: '', email: '', subject: '', message: '' },
+    defaultValues: { name: '', email: '', message: '' },
   });
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log('Form submitted:', data);
+    // No data is stored: the message opens in the visitor's own email app.
+    const subject = (language === 'fr' ? 'Message de ' : 'Message from ') + data.name;
+    const body = `${data.message}\n\n${data.name} — ${data.email}`;
+    window.location.href = `mailto:josselin@regenb.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setIsSubmitting(false);
     setIsSubmitted(true);
     toast({
@@ -125,20 +126,6 @@ const Contact = () => {
 
                     <FormField
                       control={form.control}
-                      name="subject"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>{t('contact.form.subject')}</FormLabel>
-                          <FormControl>
-                            <Input placeholder={t('contact.form.subject.placeholder')} {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
                       name="message"
                       render={({ field }) => (
                         <FormItem>
@@ -158,6 +145,12 @@ const Contact = () => {
                     <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                       {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
                     </Button>
+                    <p className="text-sm text-muted-foreground">
+                      {language === 'fr' ? 'Vos données servent uniquement à vous répondre. Voir la ' : 'Your data is used only to reply to you. See the '}
+                      <a href={language === 'fr' ? '/confidentialite' : '/en/privacy'} className="text-primary underline decoration-accent">
+                        {language === 'fr' ? 'politique de confidentialité' : 'privacy policy'}
+                      </a>.
+                    </p>
                   </form>
                 </Form>
               </>
