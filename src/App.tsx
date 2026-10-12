@@ -16,11 +16,11 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <LanguageProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <LanguageProvider>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/contact" element={<Contact />} />
@@ -28,12 +28,18 @@ const App = () => (
             <Route path="/carnet" element={<Carnet />} />
             <Route path="/carnet/:slug" element={<CarnetEntry />} />
             <Route path="/legal" element={<Legal />} />
+            <Route path="/en" element={<Index />} />
+            <Route path="/en/contact" element={<Contact />} />
+            <Route path="/en/compass" element={<Compass />} />
+            <Route path="/en/notebook" element={<Carnet />} />
+            <Route path="/en/notebook/:slug" element={<CarnetEntry />} />
+            <Route path="/en/legal" element={<Legal />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </LanguageProvider>
+        </LanguageProvider>
+      </BrowserRouter>
+    </TooltipProvider>
   </QueryClientProvider>
 );
 
