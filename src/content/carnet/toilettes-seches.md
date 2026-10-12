@@ -1,6 +1,7 @@
 ---
 title: "Ce que nos toilettes disent de notre rapport à l’eau"
 slug: "toilettes-seches"
+element: "water"
 date: "2026-10-08"
 status: "exploring"
 lang: "fr"

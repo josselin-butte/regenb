@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ElementIcon from '@/components/ElementIcon';
 import StatusChip from '@/components/carnet/StatusChip';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { formatDate, getEntries } from '@/lib/carnet';
@@ -33,8 +34,10 @@ const Carnet = () => {
             <p className="mt-16 border-t border-border pt-10 text-muted-foreground">{t('carnet.empty')}</p>
           ) : (
             <ul className="mt-16 divide-y divide-border border-y border-border">
-              {entries.map((e) => (
+              {entries.map((e, i) => (
                 <li key={e.slug} className="py-8">
+                  <div className="flex items-center gap-4">
+                  {e.element && <ElementIcon element={e.element} size={32} animated={i === 0} className="shrink-0" />}
                   <p className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted-foreground">
                     <span>{formatDate(e.date, language)}</span>
                     <StatusChip status={e.status} />
@@ -44,6 +47,7 @@ const Carnet = () => {
                       <span className="bg-secondary px-2 py-0.5 text-[12px]">{t('carnet.otherLangBadge')}</span>
                     )}
                   </p>
+                  </div>
                   <h2 className="mt-3 text-2xl leading-snug">
                     <Link to={lp(`/carnet/${e.slug}`)} className="text-primary hover:underline hover:decoration-accent">{e.title}</Link>
                   </h2>

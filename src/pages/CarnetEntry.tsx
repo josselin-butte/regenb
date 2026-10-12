@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm';
 import Seo from '@/components/Seo';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ElementIcon from '@/components/ElementIcon';
 import StatusChip from '@/components/carnet/StatusChip';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -87,7 +88,8 @@ const CarnetEntry = () => {
       <main className="px-5 pb-24 pt-[113px] sm:px-8 sm:pt-[137px] lg:px-12">
         <article lang={entry.lang} className="carnet-article mx-auto max-w-measure">
           <Link to={lp('/carnet')} lang={language} className="carnet-noprint text-sm text-primary underline decoration-accent">{t('carnet.back')}</Link>
-          <p lang={language} className="mt-10 text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('carnet.noteEyebrow')}</p>
+          {entry.element && <ElementIcon element={entry.element} size={40} animated={false} className="mt-10 block" />}
+          <p lang={language} className={`${entry.element ? 'mt-5' : 'mt-10'} text-sm font-medium uppercase tracking-[0.18em] text-accent`}>{t('carnet.noteEyebrow')}</p>
           <h1 className="mt-5 text-[2.1rem] leading-[1.12] tracking-tight text-primary sm:text-[2.75rem]">{entry.title}</h1>
           <p className="mt-6 text-[20px] leading-relaxed">{entry.summary}</p>
           <p lang={language} className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted-foreground">

@@ -1,6 +1,7 @@
 ---
 title: "Ce que les thermiques m’apprennent sur l’énergie d’un groupe"
 slug: "thermiques"
+element: "air"
 date: "2026-10-09"
 status: "exploring"
 lang: "fr"
