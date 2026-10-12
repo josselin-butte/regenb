@@ -162,3 +162,10 @@
 @keyframes ei-water { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-6px); } }
 @keyframes ei-air { 0% { transform: translateY(4px); opacity: 0; } 30%, 70% { opacity: 1; } 100% { transform: translateY(-6px); opacity: 0; } }
 @keyframes ei-fire { 0%, 100% { transform: scaleY(0.9); opacity: 0.9; } 50% { transform: scaleY(1.05); opacity: 1; } }
+
+/* WavySeparator */
+@media (prefers-reduced-motion: no-preference) {
+  .wavy-sep-line { animation: wavy-flow 9s linear infinite; animation-play-state: paused; }
+  .wavy-sep.is-flowing .wavy-sep-line { animation-play-state: running; }
+}
+@keyframes wavy-flow { from { transform: translateX(0); } to { transform: translateX(-24px); } }
