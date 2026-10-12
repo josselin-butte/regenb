@@ -16,7 +16,7 @@ const dir = resolve("src/content/carnet");
 const notes = new Map<string, { fr?: string; en?: string }>();
 for (const f of readdirSync(dir).filter((f) => f.endsWith(".md"))) {
   const raw = readFileSync(resolve(dir, f), "utf8");
-  const get = (k: string) => raw.match(new RegExp(`^${k}:\s*["']?([^"'\n]+)`, "m"))?.[1]?.trim();
+  const get = (k: string) => raw.match(new RegExp(`^${k}:\\s*["']?([^"'\\n]+)`, "m"))?.[1]?.trim();
   const slug = get("slug") ?? f.replace(/\.md$/, "");
   const lang = get("lang") === "en" ? "en" : "fr";
   const key = get("fr") ?? slug;
