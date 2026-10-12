@@ -7,7 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { formatDate, getEntries } from '@/lib/carnet';
 
 const Carnet = () => {
-  const { t, language } = useLanguage();
+  const { t, language, lp } = useLanguage();
   const entries = getEntries(language);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const Carnet = () => {
                     )}
                   </p>
                   <h2 className="mt-3 text-2xl leading-snug">
-                    <Link to={`/carnet/${e.slug}`} className="text-primary hover:underline hover:decoration-accent">{e.title}</Link>
+                    <Link to={lp(`/carnet/${e.slug}`)} className="text-primary hover:underline hover:decoration-accent">{e.title}</Link>
                   </h2>
                   <p className="mt-2 text-base text-muted-foreground" lang={e.lang}>{e.summary}</p>
                 </li>
