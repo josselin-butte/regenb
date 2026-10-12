@@ -36,6 +36,7 @@ const translations: Translations = {
   'image.groupe': { fr: 'Josselin Butté avec un groupe en atelier', en: 'Josselin Butté with a group in a workshop' },
   'image.paysage': { fr: 'Crêtes des Pyrénées dans la brume du matin', en: 'Pyrenees ridges in the morning mist' },
   'image.ecoute': { fr: 'Un moment d’écoute dans la nature', en: 'A moment of listening in nature' },
+  'image.oulanbat': { fr: 'Les yourtes d’Oulan Bât, en vallée d’Arbas, vues à travers les feuilles d’automne', en: 'The Oulan Bât yurts in the Arbas valley, seen through autumn leaves' },
   
   // About
   'about.p1': { fr: 'Je m’appelle Josselin Butté. Avec RegenB France, je pars d’une conviction\u00A0: les réponses aux défis du leadership d’aujourd’hui ne viennent pas d’une seule personne. Elles émergent quand un groupe apprend à s’écouter, à décider ensemble et à renouer avec le vivant.', en: 'I’m Josselin Butté. Through RegenB France, I start from one conviction: the answers to today’s leadership challenges don’t come from one person. They emerge when a group learns to listen, to decide together and to reconnect with the living world.' },

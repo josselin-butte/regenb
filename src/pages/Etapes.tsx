@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import PhotoSlot from '@/components/PhotoSlot';
+import oulanBat from '@/assets/etapes-oulan-bat.jpg.asset.json';
 import { Button } from '@/components/ui/button';
 
 const content = {
@@ -34,7 +34,7 @@ const content = {
 };
 
 const Etapes = () => {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const c = content[language];
   const mailto = `mailto:josselin@regenb.com?subject=${encodeURIComponent(c.subject)}`;
 
@@ -60,7 +60,14 @@ const Etapes = () => {
                 <a href={mailto}>{c.button}</a>
               </Button>
             </div>
-            <PhotoSlot slotKey="etapes-printemps" />
+            <img
+              src={`https://regenb.lovable.app${oulanBat.url}`}
+              alt={t('image.oulanbat')}
+              width={1025}
+              height={737}
+              loading="lazy"
+              className="aspect-[3/2] w-full object-cover"
+            />
           </div>
         </section>
 
