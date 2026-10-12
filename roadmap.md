@@ -17,3 +17,4 @@
 - [x] sitemap.xml (généré au build) + robots.txt
 
 - [x] Add English notes dry-toilets and robustness
+- [ ] Boussole : icônes d'éléments sur les cartes de modules

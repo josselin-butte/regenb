@@ -149,3 +149,16 @@
   main { padding-top: 0 !important; }
   .carnet-article a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.85em; }
 }
+
+/* ElementIcon */
+@media (prefers-reduced-motion: no-preference) {
+  .element-icon.ei-draw path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  .element-icon.ei-drawing path { animation: ei-draw 1.4s ease-out forwards; }
+  .ei-animated .ei-water { animation: ei-water 6s ease-in-out infinite; }
+  .ei-animated .ei-air-arrow { animation: ei-air 5s ease-in-out infinite; }
+  .ei-animated .ei-fire { transform-box: fill-box; transform-origin: 50% 100%; animation: ei-fire 2.6s ease-in-out infinite; }
+}
+@keyframes ei-draw { to { stroke-dashoffset: 0; } }
+@keyframes ei-water { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-6px); } }
+@keyframes ei-air { 0% { transform: translateY(4px); opacity: 0; } 30%, 70% { opacity: 1; } 100% { transform: translateY(-6px); opacity: 0; } }
+@keyframes ei-fire { 0%, 100% { transform: scaleY(0.9); opacity: 0.9; } 50% { transform: scaleY(1.05); opacity: 1; } }
