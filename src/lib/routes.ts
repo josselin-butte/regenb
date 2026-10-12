@@ -2,7 +2,7 @@ import { translateSlug } from './carnet';
 
 export type Lang = 'fr' | 'en';
 
-export const SITE_ORIGIN = 'https://regenb.fr';
+export const SITE_ORIGIN = 'https://www.regenb.fr';
 
 // French path (root) → English path (/en). Order matters: longer prefixes first.
 const PAIRS: [string, string][] = [
