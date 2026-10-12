@@ -1,7 +1,8 @@
-import { useEffect, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ReactMarkdown, { type Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import Seo from '@/components/Seo';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import StatusChip from '@/components/carnet/StatusChip';
@@ -60,15 +61,6 @@ const CarnetEntry = () => {
   const { t, language, lp } = useLanguage();
   const entry = getEntry(slug, language);
 
-  useEffect(() => {
-    if (!entry) return;
-    const title = `${entry.title} · ${t('carnet.short')} · RegenB France`;
-    document.title = title;
-    setMeta('meta[name="description"]', 'name', 'description', entry.summary);
-    setMeta('meta[property="og:title"]', 'property', 'og:title', title);
-    setMeta('meta[property="og:description"]', 'property', 'og:description', entry.summary);
-    setMeta('meta[name="twitter:title"]', 'name', 'twitter:title', title);
-  }, [entry, language]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!entry) return <NotFound />;
 
@@ -87,6 +79,7 @@ const CarnetEntry = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo title={`${entry.title} | Josselin Butté`} description={entry.summary} />
       <Header />
       <main className="px-5 pb-24 pt-[113px] sm:px-8 sm:pt-[137px] lg:px-12">
         <article lang={entry.lang} className="carnet-article mx-auto max-w-measure">

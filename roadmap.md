@@ -13,3 +13,5 @@
 - [x] Ajouter SIREN, NAF, TVA et siège social (8 route de Barat, 31160 Arbas) aux mentions légales
 - [x] Lien d’achat de la boussole pointant vers https://valuescourse.regenb.com/
 - [x] Hébergeur ajouté aux mentions légales (Lovable, domaine chez GoDaddy)
+- [x] Métadonnées par page + JSON-LD
+- [x] sitemap.xml (généré au build) + robots.txt

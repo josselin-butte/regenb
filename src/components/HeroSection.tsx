@@ -21,12 +21,6 @@ const HeroSection = () => {
     });
   }, []);
 
-  useEffect(() => {
-    const title = t('home.title');
-    document.title = title;
-    document.querySelector('meta[property="og:title"]')?.setAttribute('content', title);
-    document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title);
-  }, [language]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <section className="relative px-5 pb-[96px] pt-[81px] sm:px-8 sm:pb-[118px] sm:pt-[89px] lg:px-12">
