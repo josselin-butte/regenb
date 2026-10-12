@@ -14,6 +14,9 @@ import CarnetEntry from "./pages/CarnetEntry";
 import Services from "./pages/Services";
 import Etapes from "./pages/Etapes";
 import NotFound from "./pages/NotFound";
+import Cookies from "./pages/Cookies";
+import { ConsentProvider } from '@/contexts/ConsentContext';
+import ConsentManager from '@/components/ConsentManager';
 
 const queryClient = new QueryClient();
 
@@ -24,6 +27,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <LanguageProvider>
+          <ConsentProvider>
           <RouteSeo />
           <Routes>
             <Route path="/" element={<Index />} />
@@ -34,6 +38,7 @@ const App = () => (
             <Route path="/carnet" element={<Carnet />} />
             <Route path="/carnet/:slug" element={<CarnetEntry />} />
             <Route path="/legal" element={<Legal />} />
+            <Route path="/cookies" element={<Cookies />} />
             <Route path="/en" element={<Index />} />
             <Route path="/en/contact" element={<Contact />} />
             <Route path="/en/services" element={<Services />} />
@@ -42,9 +47,12 @@ const App = () => (
             <Route path="/en/notebook" element={<Carnet />} />
             <Route path="/en/notebook/:slug" element={<CarnetEntry />} />
             <Route path="/en/legal" element={<Legal />} />
+            <Route path="/en/cookies" element={<Cookies />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <ConsentManager />
+          </ConsentProvider>
         </LanguageProvider>
       </BrowserRouter>
     </TooltipProvider>

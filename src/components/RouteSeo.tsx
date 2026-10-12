@@ -67,6 +67,8 @@ export const SEO: Record<string, Entry> = {
   '/en/notebook': { title: 'Research notebook | Josselin Butté', description: 'The questions that keep me walking: group listening, water, attention, robustness. Research notes linking the life sciences and the work of guiding.' },
   '/legal': { title: 'Mentions légales et conditions | RegenB France', description: 'Mentions légales, confidentialité et conditions générales de vente de RegenB France, EURL basée à Arbas (Haute-Garonne).' },
   '/en/legal': { title: 'Legal notice and terms | RegenB France', description: 'Legal notice, privacy and terms of sale for RegenB France, a company based in Arbas, France.' },
+  '/cookies': { title: 'Cookies et confidentialité | RegenB France', description: 'Choisir les usages facultatifs, connaître le cookie de consentement et changer d’avis à tout moment.' },
+  '/en/cookies': { title: 'Cookies and privacy | RegenB France', description: 'Choose optional purposes, learn about the consent cookie and change your mind at any time.' },
   '/contact': { title: 'Contact | Josselin Butté', description: 'Écrivez-moi pour parler de facilitation, de supervision, de coaching ou de la Boussole des valeurs.' },
   '/en/contact': { title: 'Contact | Josselin Butté', description: 'Write to me about facilitation, supervision, coaching or the Values Compass.' },
 };

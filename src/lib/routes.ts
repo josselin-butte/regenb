@@ -11,6 +11,7 @@ const PAIRS: [string, string][] = [
   ['/boussole', '/en/compass'],
   ['/carnet', '/en/notebook'],
   ['/legal', '/en/legal'],
+  ['/cookies', '/en/cookies'],
   ['/contact', '/en/contact'],
   ['/', '/en'],
 ];
