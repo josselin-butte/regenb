@@ -61,16 +61,40 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/carnet"/>
   </url>
   <url>
-    <loc>https://www.regenb.fr/legal</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/legal"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/legal"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/legal"/>
+    <loc>https://www.regenb.fr/mentions-legales</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/mentions-legales"/>
   </url>
   <url>
-    <loc>https://www.regenb.fr/en/legal</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/legal"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/legal"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/legal"/>
+    <loc>https://www.regenb.fr/en/legal-notice</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/mentions-legales"/>
+  </url>
+  <url>
+    <loc>https://www.regenb.fr/confidentialite</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/confidentialite"/>
+  </url>
+  <url>
+    <loc>https://www.regenb.fr/en/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/confidentialite"/>
+  </url>
+  <url>
+    <loc>https://www.regenb.fr/cgv</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/cgv"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/cgv"/>
+  </url>
+  <url>
+    <loc>https://www.regenb.fr/en/terms</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/cgv"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/cgv"/>
   </url>
   <url>
     <loc>https://www.regenb.fr/cookies</loc>
