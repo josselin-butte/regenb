@@ -12,6 +12,7 @@ import Legal from "./pages/Legal";
 import Carnet from "./pages/Carnet";
 import CarnetEntry from "./pages/CarnetEntry";
 import Services from "./pages/Services";
+import Etapes from "./pages/Etapes";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/accompagnement" element={<Services />} />
+            <Route path="/etapes" element={<Etapes />} />
             <Route path="/boussole" element={<Compass />} />
             <Route path="/carnet" element={<Carnet />} />
             <Route path="/carnet/:slug" element={<CarnetEntry />} />
@@ -35,6 +37,7 @@ const App = () => (
             <Route path="/en" element={<Index />} />
             <Route path="/en/contact" element={<Contact />} />
             <Route path="/en/services" element={<Services />} />
+            <Route path="/en/journeys" element={<Etapes />} />
             <Route path="/en/compass" element={<Compass />} />
             <Route path="/en/notebook" element={<Carnet />} />
             <Route path="/en/notebook/:slug" element={<CarnetEntry />} />
