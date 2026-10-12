@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Navigate, useLocation } from 'react-router-dom';
 import LegalTranslationNotice from '@/components/LegalTranslationNotice';
-import { legacyLegalDestination, noticeContent, privacyContent, type LegalBlock, type LegalPageKind } from '@/lib/legal';
+import { legacyLegalDestination, noticeContent, privacyContent, termsContent, type LegalBlock, type LegalPageKind } from '@/lib/legal';
 
 export function LegacyLegalRedirect() {
   const { language } = useLanguage();
@@ -15,11 +15,12 @@ const Legal = ({ kind }: { kind: LegalPageKind }) => {
   const { t, language, lp } = useLanguage();
   const title = t(kind === 'notice' ? 'legal.nav.mentions' : kind === 'privacy' ? 'legal.nav.privacy' : 'legal.nav.cgv');
   const blocks: LegalBlock[] = kind === 'notice' ? noticeContent[language] : kind === 'privacy' ? privacyContent[language]
-    : ['legal.cgv.order', 'legal.cgv.withdrawal', 'legal.cgv.ip']
-    .map(key => ({ title: t(`${key}.title`), paragraphs: [t(`${key}.text`)] }));
-  const renderText = (text: string) => text.split(/(josselin@regenb\.com|https:\/\/lovable\.dev|www\.cnil\.fr|page Cookies|Cookies page)/).map((part, i) => part === 'josselin@regenb.com'
+    : termsContent[language];
+  const renderText = (text: string) => text.split(/(josselin@regenb\.com|https:\/\/lovable\.dev|www\.cnil\.fr|page Cookies|Cookies page|mentions légales|legal notice|politique de confidentialité|privacy policy)/).map((part, i) => part === 'josselin@regenb.com'
     ? <a key={i} href="mailto:josselin@regenb.com" className="underline decoration-accent">{part}</a>
     : part === 'https://lovable.dev' || part === 'www.cnil.fr' ? <a key={i} href={part.startsWith('http') ? part : `https://${part}`} target="_blank" rel="noopener noreferrer" className="underline decoration-accent">{part}</a>
+    : part === 'mentions légales' || part === 'legal notice' ? <a key={i} href={lp('/mentions-legales')} className="underline decoration-accent">{part}</a>
+    : part === 'politique de confidentialité' || part === 'privacy policy' ? <a key={i} href={lp('/confidentialite')} className="underline decoration-accent">{part}</a>
     : part === 'page Cookies' || part === 'Cookies page' ? <a key={i} href={lp('/cookies')} className="underline decoration-accent">{part}</a> : part);
   const links = [
     { path: '/mentions-legales', label: t('legal.nav.mentions') },

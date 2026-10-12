@@ -112,3 +112,42 @@ export const privacyContent: Record<'fr' | 'en', LegalBlock[]> = {
     { title: 'Cookies', paragraphs: ['See the Cookies page.', 'Last updated: 12 October 2026.'] },
   ],
 };
+
+export const TERMS_VERSION = 'v1 — 12 octobre 2026';
+
+export const termsContent: Record<'fr' | 'en', LegalBlock[]> = {
+  fr: [
+    { title: '1. Objet et champ', paragraphs: ['Les présentes conditions s\'appliquent à la vente en ligne de la formation numérique « [NOM OFFICIEL DU COURS] » par RegenB France EURL (coordonnées : voir mentions légales) à des consommateurs et à des professionnels.'] },
+    { title: '2. Contenu', paragraphs: ['Six modules de trois sections, textes, enregistrements audio FR/EN, cahiers téléchargeables, accès via un espace personnel.', 'Configuration requise : navigateur récent, connexion internet.'] },
+    { title: '3. Prix', paragraphs: ['[MONTANT] € TTC [ou : TVA non applicable, art. 293 B du CGI — selon votre régime].', 'Le prix applicable est celui affiché au moment de la commande.'] },
+    { title: '4. Commande', paragraphs: ['Étapes : choix de la formule, vérification du récapitulatif, acceptation des CGV, choix concernant le droit de rétractation, clic sur « Commander avec obligation de paiement », paiement sécurisé via Stripe.', 'Une confirmation est envoyée par e-mail avec les CGV en PDF.'] },
+    { title: '5. Accès', paragraphs: ['Personnel, non transférable, pour une durée [illimitée tant que la formation est proposée / de X mois].'] },
+    { title: '6. Droit de rétractation', paragraphs: [
+      `Vous disposez de 14 jours à compter de la conclusion du contrat pour vous rétracter, sans motif et sans frais, via le bouton « Renoncer au contrat ici » disponible dans votre espace et en pied de page, ou par e-mail à ${EMAIL} (modèle de formulaire ci-dessous). Remboursement sous 14 jours par le même moyen de paiement.`,
+      "Exception : si vous demandez expressément l'accès immédiat à la formation avant la fin de ce délai ET reconnaissez que vous perdez ainsi votre droit de rétractation (deux cases distinctes lors de la commande), le droit de rétractation ne peut plus être exercé dès que l'accès est ouvert (art. L221-28 13° du Code de la consommation). Cet accord vous est confirmé par e-mail. Si vous ne cochez pas ces cases, l'accès s'ouvre à l'issue du délai de 14 jours.",
+      `Modèle de formulaire de rétractation (annexe du Code de la consommation) : « À l'attention de RegenB France, 8 route de Barat, 31160 Arbas, ${EMAIL} : je vous notifie par la présente ma rétractation du contrat portant sur la formation ci-dessous : commandée le [ ] ; nom ; adresse ; date ; signature (si papier). »`,
+    ] },
+    { title: '7. Garantie légale de conformité', paragraphs: [`Le contenu numérique bénéficie de la garantie légale de conformité (art. L224-25-12 et suivants du Code de la consommation) pendant toute la durée de fourniture. Signalez tout défaut à ${EMAIL}.`] },
+    { title: '8. Propriété intellectuelle', paragraphs: ['Usage strictement personnel, aucune diffusion ou reproduction.'] },
+    { title: '9. Données personnelles', paragraphs: ['Voir la politique de confidentialité.'] },
+    { title: '10. Réclamations et médiation', paragraphs: [`Réclamation écrite à ${EMAIL} ; à défaut de solution, médiateur gratuit : [NOM, ADRESSE, SITE].`] },
+    { title: '11. Droit applicable', paragraphs: ['Droit français ; le consommateur conserve la protection des règles impératives de son pays de résidence.', `Version et date : ${TERMS_VERSION}.`] },
+  ],
+  en: [
+    { title: '1. Purpose and scope', paragraphs: ['These terms apply to the online sale of the digital course “[OFFICIAL COURSE NAME]” by RegenB France EURL (contact details: see legal notice) to consumers and professionals.'] },
+    { title: '2. Content', paragraphs: ['Six modules of three sections each, texts, audio recordings in French and English, downloadable workbooks, access through a personal area.', 'Requirements: a recent browser and an internet connection.'] },
+    { title: '3. Price', paragraphs: ['€[AMOUNT] including VAT [or: VAT not applicable, art. 293 B of the French General Tax Code — depending on your tax regime].', 'The applicable price is the one displayed at the time of the order.'] },
+    { title: '4. Order', paragraphs: ['Steps: choice of package, review of the order summary, acceptance of these terms, choice regarding the right of withdrawal, click on “Order with obligation to pay”, secure payment via Stripe.', 'A confirmation is sent by email with these terms attached as a PDF.'] },
+    { title: '5. Access', paragraphs: ['Personal and non-transferable, for [an unlimited period as long as the course is offered / X months].'] },
+    { title: '6. Right of withdrawal', paragraphs: [
+      `You have 14 days from the conclusion of the contract to withdraw, without giving a reason and at no cost, using the “Withdraw from the contract here” button in your personal area and in the footer, or by email to ${EMAIL} (model form below). You are refunded within 14 days using the same payment method.`,
+      'Exception: if you expressly ask for immediate access to the course before the end of this period AND acknowledge that you thereby lose your right of withdrawal (two separate boxes when ordering), the right of withdrawal can no longer be exercised once access has been opened (art. L221-28 13° of the French Consumer Code). This agreement is confirmed to you by email. If you do not tick these boxes, access opens at the end of the 14-day period.',
+      `Model withdrawal form (annex to the French Consumer Code): “To RegenB France, 8 route de Barat, 31160 Arbas, France, ${EMAIL}: I hereby give notice that I withdraw from the contract for the course below: ordered on [ ]; name; address; date; signature (if on paper).”`,
+    ] },
+    { title: '7. Legal guarantee of conformity', paragraphs: [`The digital content is covered by the legal guarantee of conformity (art. L224-25-12 and following of the French Consumer Code) for the entire supply period. Report any defect to ${EMAIL}.`] },
+    { title: '8. Intellectual property', paragraphs: ['Strictly personal use; no distribution or reproduction.'] },
+    { title: '9. Personal data', paragraphs: ['See the privacy policy.'] },
+    { title: '10. Complaints and mediation', paragraphs: [`Written complaint to ${EMAIL}; if no solution is found, free mediator: [NAME, ADDRESS, WEBSITE].`] },
+    { title: '11. Governing law', paragraphs: ['French law; consumers keep the protection of the mandatory rules of their country of residence.', `Version and date: ${TERMS_VERSION}.`] },
+  ],
+};
