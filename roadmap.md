@@ -19,4 +19,4 @@
 - [x] Add English notes dry-toilets and robustness
 - [ ] Boussole : icônes d'éléments sur les cartes de modules
 - [ ] Séparateurs ondulés animés (WavySeparator)
-- [ ] Accueil : quatre icônes sous le sous-titre
+- [x] Accueil : quatre icônes sous le sous-titre
