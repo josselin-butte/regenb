@@ -9,7 +9,9 @@ const pairs: [string, string][] = [
   ["/etapes", "/en/journeys"],
   ["/boussole", "/en/compass"],
   ["/carnet", "/en/notebook"],
-  ["/legal", "/en/legal"],
+  ["/mentions-legales", "/en/legal-notice"],
+  ["/confidentialite", "/en/privacy"],
+  ["/cgv", "/en/terms"],
   ["/cookies", "/en/cookies"],
   ["/contact", "/en/contact"],
 ];

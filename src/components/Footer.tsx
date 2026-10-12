@@ -48,10 +48,11 @@ const Footer = () => {
 
         <div className="mt-12 flex flex-col gap-3 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Josselin Butté · RegenB France. {t('footer.rights')}.</p>
-          <div className="flex flex-col gap-2 sm:flex-row sm:gap-6">
-            <a href={lp("/legal#mentions-legales")} className="hover:text-primary">{t('footer.terms')}</a>
-            <a href={lp("/legal#confidentialite")} className="hover:text-primary">{t('footer.privacy')}</a>
-            <a href={lp("/legal#cgv")} className="hover:text-primary">{t('legal.nav.cgv')}</a>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <a href={lp("/mentions-legales")} className="hover:text-primary">{t('footer.terms')}</a>
+            <a href={lp("/confidentialite")} className="hover:text-primary">{t('footer.privacy')}</a>
+            <a href={lp("/cgv")} className="hover:text-primary">{t('legal.nav.cgv')}</a>
+            <a href={lp("/cookies")} className="hover:text-primary">Cookies</a>
             <Button variant="link" className="h-auto justify-start whitespace-normal p-0 text-sm font-normal" onClick={openSettings}>{consentCopy[language].settings}</Button>
           </div>
         </div>

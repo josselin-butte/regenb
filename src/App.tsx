@@ -8,7 +8,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import Compass from "./pages/Compass";
-import Legal from "./pages/Legal";
+import Legal, { LegacyLegalRedirect } from "./pages/Legal";
 import Carnet from "./pages/Carnet";
 import CarnetEntry from "./pages/CarnetEntry";
 import Services from "./pages/Services";
@@ -37,7 +37,10 @@ const App = () => (
             <Route path="/boussole" element={<Compass />} />
             <Route path="/carnet" element={<Carnet />} />
             <Route path="/carnet/:slug" element={<CarnetEntry />} />
-            <Route path="/legal" element={<Legal />} />
+            <Route path="/legal" element={<LegacyLegalRedirect />} />
+            <Route path="/mentions-legales" element={<Legal kind="notice" />} />
+            <Route path="/confidentialite" element={<Legal kind="privacy" />} />
+            <Route path="/cgv" element={<Legal kind="terms" />} />
             <Route path="/cookies" element={<Cookies />} />
             <Route path="/en" element={<Index />} />
             <Route path="/en/contact" element={<Contact />} />
@@ -46,7 +49,10 @@ const App = () => (
             <Route path="/en/compass" element={<Compass />} />
             <Route path="/en/notebook" element={<Carnet />} />
             <Route path="/en/notebook/:slug" element={<CarnetEntry />} />
-            <Route path="/en/legal" element={<Legal />} />
+            <Route path="/en/legal" element={<LegacyLegalRedirect />} />
+            <Route path="/en/legal-notice" element={<Legal kind="notice" />} />
+            <Route path="/en/privacy" element={<Legal kind="privacy" />} />
+            <Route path="/en/terms" element={<Legal kind="terms" />} />
             <Route path="/en/cookies" element={<Cookies />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
