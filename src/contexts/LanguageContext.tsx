@@ -49,26 +49,29 @@ const translations: Translations = {
   // Offer
   'offer.kicker': { fr: 'Ce que je propose · 02', en: 'What I offer · 02' },
   'offer.title': { fr: 'Transformer sa manière d’accompagner', en: 'Transform how you accompany' },
-  'offer.text1': { fr: 'Je propose des espaces de réflexion, d’exploration et de mise en mouvement pour celles et ceux qui accompagnent des personnes, des équipes et des organisations.', en: 'I offer spaces for reflection, exploration and movement to those who support people, teams and organisations.' },
-  'offer.text2': { fr: 'Mon travail relie leadership avec le vivant, pratique réflexive intégrative et expériences au contact de la nature. Chaque accompagnement part de votre réalité et de ce qui demande à évoluer.', en: 'My work connects living-systems leadership, integrative reflective practice and experiences in contact with nature. Each engagement begins with your reality and what is asking to evolve.' },
-  'offer.text3': { fr: 'L’intention : retrouver une manière d’agir plus juste, plus vivante et profondément ancrée.', en: 'The intention: to find a way of acting that is more grounded, more alive and more deeply aligned.' },
+  'offer.s1.title': { fr: 'Facilitation', en: 'Facilitation' },
+  'offer.s1.who': { fr: 'équipes de direction, comités, collectifs qui doivent décider ensemble.', en: 'leadership teams, committees and groups that need to decide together.' },
+  'offer.s2.title': { fr: 'Conception de programmes', en: 'Programme design' },
+  'offer.s2.who': { fr: 'directions RH, responsables formation, organisations qui lancent un parcours.', en: 'HR and learning leaders, and organisations launching a programme.' },
+  'offer.s3.title': { fr: 'Coaching', en: 'Coaching' },
+  'offer.s3.who': { fr: 'dirigeants et managers dans une transition de rôle, une prise de poste ou une décision difficile.', en: 'leaders and managers in a role transition, a new position or a difficult decision.' },
+  'offer.s4.title': { fr: 'Supervision', en: 'Supervision' },
+  'offer.s4.who': { fr: 'facilitateurs, coachs, formateurs et accompagnants.', en: 'facilitators, coaches, trainers and practitioners.' },
+  'offer.s5.title': { fr: 'Médiation', en: 'Mediation' },
+  'offer.s5.who': { fr: 'équipes, binômes ou associés pris dans une tension qui dure.', en: 'teams, pairs or business partners caught in a lasting tension.' },
+  'offer.seeAll': { fr: 'Voir l’accompagnement', en: 'See all services' },
 
   // Letter
   'letter.kicker': { fr: 'La lettre · 03', en: 'The letter · 03' },
   'letter.title': { fr: 'Continuo, ma lettre', en: 'Continuo, my letter' },
-  'letter.text': { fr: 'Gratuite et bimensuelle, Continuo parle de ce que le studio m’a appris sur les réunions — et de ce que le vivant m’apprend sur l’accompagnement. Vous pouvez me répondre : je lis tout.', en: 'Free and twice a month, Continuo tells of what the studio taught me about meetings — and what the living world teaches me about guiding. You can reply to me: I read everything.' },
-  'letter.readLink': { fr: 'Lire la première lettre — Continuo', en: 'Read the first letter — Continuo' },
-  'letter.label': { fr: 'Votre adresse e-mail', en: 'Your email address' },
-  'letter.placeholder': { fr: 'vous@exemple.fr', en: 'you@example.com' },
-  'letter.submit': { fr: 'M’inscrire', en: 'Subscribe' },
-  'letter.error': { fr: 'Saisissez une adresse e-mail valide.', en: 'Enter a valid email address.' },
-  'letter.success': { fr: 'Merci. Votre intérêt est bien enregistré pour cette visite.', en: 'Thank you. Your interest has been noted for this visit.' },
+  'letter.text': { fr: 'Continuo, ma lettre, un mardi sur deux. Ce que je vois sur le terrain, ce qui m’a fait changer d’avis. Gratuite, et on peut me répondre.', en: "Continuo, my letter, every other Tuesday. What I see in the field, what's changed my mind. Free, and you can reply." },
+  'letter.cta': { fr: 'Lire Continuo', en: 'Read Continuo' },
 
   // Waitlist
   'waitlist.kicker': { fr: 'Prochaine étape · 04', en: 'Next step · 04' },
-  'waitlist.title': { fr: 'Être parmi les premiers informés', en: 'Be among the first to know' },
-  'waitlist.text': { fr: 'Une nouvelle étape se prépare. Rejoignez la liste d’attente pour être informé dès qu’elle prendra forme.', en: 'A new chapter is taking shape. Join the waiting list to hear about it as soon as it is ready.' },
-  'waitlist.cta': { fr: 'Rejoindre la liste', en: 'Join the list' },
+  'waitlist.title': { fr: 'Les étapes', en: 'Journeys' },
+  'waitlist.text': { fr: 'Quelques jours dehors, en petit groupe, pour marcher et relire sa pratique. Le premier séjour aura lieu au printemps 2027.', en: 'A few days outdoors, in a small group, to walk and reflect on your practice. The first journey takes place in spring 2027.' },
+  'waitlist.cta': { fr: 'Découvrir les étapes', en: 'Discover the journeys' },
   
   // Footer
   'tagline': { fr: 'Accompagner au rythme du vivant', en: 'Guiding at the pace of the living world' },
