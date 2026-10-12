@@ -72,10 +72,12 @@ const CarnetEntry = () => {
   const parts = linkCitations(main).split(/^:::(essentiel|accompagnement)\s*$([\s\S]*?)^:::\s*$/m);
 
   // Number reference items so citations can target #ref-N
-  let refIndex = 0;
+  // Number by source line so repeated renders (StrictMode) can't double-count.
+  const refLines = new Map<number, number>();
+  refs.split('\n').forEach((l, i) => { const m = l.match(/^(\d+)\.\s/); if (m) refLines.set(i + 1, Number(m[1])); });
   const numberedRefComponents: Components = {
     ...refComponents,
-    li: ({ children }) => { refIndex += 1; return <li id={`ref-${refIndex}`} className="scroll-mt-28 break-words">{children}</li>; },
+    li: ({ children, node }) => { const n = refLines.get(node?.position?.start.line ?? -1); return <li id={n ? `ref-${n}` : undefined} className="scroll-mt-28 break-words">{children}</li>; },
   };
 
   return (
