@@ -119,7 +119,7 @@ export const termsContent: Record<'fr' | 'en', LegalBlock[]> = {
   fr: [
     { title: '1. Objet et champ', paragraphs: ['Les présentes conditions s\'appliquent à la vente en ligne de la formation numérique « [NOM OFFICIEL DU COURS] » par RegenB France EURL (coordonnées : voir mentions légales) à des consommateurs et à des professionnels.'] },
     { title: '2. Contenu', paragraphs: ['Six modules de trois sections, textes, enregistrements audio FR/EN, cahiers téléchargeables, accès via un espace personnel.', 'Configuration requise : navigateur récent, connexion internet.'] },
-    { title: '3. Prix', paragraphs: ['[MONTANT] € TTC [ou : TVA non applicable, art. 293 B du CGI — selon votre régime].', 'Le prix applicable est celui affiché au moment de la commande.'] },
+    { title: '3. Prix', paragraphs: ['77 € hors taxes, soit 92,40 € toutes taxes comprises (TVA 20 %).', 'Le prix applicable est celui affiché au moment de la commande.'] },
     { title: '4. Commande', paragraphs: ['Étapes : choix de la formule, vérification du récapitulatif, acceptation des CGV, choix concernant le droit de rétractation, clic sur « Commander avec obligation de paiement », paiement sécurisé via Stripe.', 'Une confirmation est envoyée par e-mail avec les CGV en PDF.'] },
     { title: '5. Accès', paragraphs: ['Personnel, non transférable, pour une durée [illimitée tant que la formation est proposée / de X mois].'] },
     { title: '6. Droit de rétractation', paragraphs: [
@@ -136,7 +136,7 @@ export const termsContent: Record<'fr' | 'en', LegalBlock[]> = {
   en: [
     { title: '1. Purpose and scope', paragraphs: ['These terms apply to the online sale of the digital course “[OFFICIAL COURSE NAME]” by RegenB France EURL (contact details: see legal notice) to consumers and professionals.'] },
     { title: '2. Content', paragraphs: ['Six modules of three sections each, texts, audio recordings in French and English, downloadable workbooks, access through a personal area.', 'Requirements: a recent browser and an internet connection.'] },
-    { title: '3. Price', paragraphs: ['€[AMOUNT] including VAT [or: VAT not applicable, art. 293 B of the French General Tax Code — depending on your tax regime].', 'The applicable price is the one displayed at the time of the order.'] },
+    { title: '3. Price', paragraphs: ['€77 excluding VAT, i.e. €92.40 including VAT (20% VAT).', 'The applicable price is the one displayed at the time of the order.'] },
     { title: '4. Order', paragraphs: ['Steps: choice of package, review of the order summary, acceptance of these terms, choice regarding the right of withdrawal, click on “Order with obligation to pay”, secure payment via Stripe.', 'A confirmation is sent by email with these terms attached as a PDF.'] },
     { title: '5. Access', paragraphs: ['Personal and non-transferable, for [an unlimited period as long as the course is offered / X months].'] },
     { title: '6. Right of withdrawal', paragraphs: [
