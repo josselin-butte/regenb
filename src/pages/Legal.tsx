@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Navigate, useLocation } from 'react-router-dom';
 import LegalTranslationNotice from '@/components/LegalTranslationNotice';
-import { legacyLegalDestination, noticeContent, type LegalPageKind } from '@/lib/legal';
+import { legacyLegalDestination, noticeContent, privacyContent, type LegalBlock, type LegalPageKind } from '@/lib/legal';
 
 export function LegacyLegalRedirect() {
   const { language } = useLanguage();
@@ -14,10 +14,13 @@ export function LegacyLegalRedirect() {
 const Legal = ({ kind }: { kind: LegalPageKind }) => {
   const { t, language, lp } = useLanguage();
   const title = t(kind === 'notice' ? 'legal.nav.mentions' : kind === 'privacy' ? 'legal.nav.privacy' : 'legal.nav.cgv');
-  const blocks = kind === 'notice' ? noticeContent[language] : (kind === 'privacy'
-    ? ['legal.privacy.data']
-    : ['legal.cgv.order', 'legal.cgv.withdrawal', 'legal.cgv.ip'])
+  const blocks: LegalBlock[] = kind === 'notice' ? noticeContent[language] : kind === 'privacy' ? privacyContent[language]
+    : ['legal.cgv.order', 'legal.cgv.withdrawal', 'legal.cgv.ip']
     .map(key => ({ title: t(`${key}.title`), paragraphs: [t(`${key}.text`)] }));
+  const renderText = (text: string) => text.split(/(josselin@regenb\.com|https:\/\/lovable\.dev|www\.cnil\.fr|page Cookies|Cookies page)/).map((part, i) => part === 'josselin@regenb.com'
+    ? <a key={i} href="mailto:josselin@regenb.com" className="underline decoration-accent">{part}</a>
+    : part === 'https://lovable.dev' || part === 'www.cnil.fr' ? <a key={i} href={part.startsWith('http') ? part : `https://${part}`} target="_blank" rel="noopener noreferrer" className="underline decoration-accent">{part}</a>
+    : part === 'page Cookies' || part === 'Cookies page' ? <a key={i} href={lp('/cookies')} className="underline decoration-accent">{part}</a> : part);
   const links = [
     { path: '/mentions-legales', label: t('legal.nav.mentions') },
     { path: '/confidentialite', label: t('legal.nav.privacy') },
@@ -59,15 +62,28 @@ const Legal = ({ kind }: { kind: LegalPageKind }) => {
               <div className="lg:col-span-3">
                 <h2 className="text-xl sm:text-2xl">{block.title}</h2>
               </div>
-              <div className="measure mt-5 lg:col-span-9 lg:mt-0">
+              <div className={`mt-5 lg:col-span-9 lg:mt-0 ${block.table ? '' : 'measure'}`}>
                 {block.paragraphs.map((paragraph) => (
-                  <div key={paragraph} className="mb-3 break-inside-avoid">
-                    <p className="text-[15px] leading-relaxed text-muted-foreground break-words">
-                      {paragraph.split(/(josselin@regenb\.com|https:\/\/lovable\.dev)/).map((part, i) => part === 'josselin@regenb.com'
-                        ? <a key={i} href="mailto:josselin@regenb.com" className="underline decoration-accent">{part}</a>
-                        : part === 'https://lovable.dev' ? <a key={i} href={part} target="_blank" rel="noopener noreferrer" className="underline decoration-accent">{part}</a> : part)}
-                    </p>
+                  <p key={paragraph} className="mb-3 text-[15px] leading-relaxed text-muted-foreground break-words">{renderText(paragraph)}</p>
+                ))}
+                {block.table && (
+                  <div className="-mx-5 overflow-x-auto px-5 sm:mx-0 sm:px-0">
+                    <table className="w-full min-w-[640px] border-collapse text-left text-[14px] leading-snug">
+                      <thead>
+                        <tr>{block.table.head.map(h => <th key={h} scope="col" className="border-b border-primary py-2 pr-4 align-bottom font-medium text-primary">{h}</th>)}</tr>
+                      </thead>
+                      <tbody>
+                        {block.table.rows.map(row => (
+                          <tr key={row[0]}>{row.map((cell, i) => i === 0
+                            ? <th key={i} scope="row" className="border-b border-border py-3 pr-4 align-top font-medium text-foreground">{cell}</th>
+                            : <td key={i} className="border-b border-border py-3 pr-4 align-top text-muted-foreground">{cell}</td>)}</tr>
+                        ))}
+                      </tbody>
+                    </table>
                   </div>
+                )}
+                {block.after?.map(paragraph => (
+                  <p key={paragraph} className="mt-5 text-[15px] leading-relaxed text-muted-foreground">{paragraph}</p>
                 ))}
               </div>
             </div>
