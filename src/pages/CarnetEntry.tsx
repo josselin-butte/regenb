@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import ReactMarkdown, { type Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Seo from '@/components/Seo';
@@ -63,6 +63,7 @@ const CarnetEntry = () => {
 
 
   if (!entry) return <NotFound />;
+  if (entry.slug !== slug) return <Navigate to={lp(`/carnet/${entry.slug}`)} replace />;
 
   // Split references off, then split custom boxes.
   const refMatch = entry.body.match(REF_HEADING);
@@ -71,15 +72,17 @@ const CarnetEntry = () => {
   const parts = linkCitations(main).split(/^:::(essentiel|accompagnement)\s*$([\s\S]*?)^:::\s*$/m);
 
   // Number reference items so citations can target #ref-N
-  let refIndex = 0;
+  // Number by source line so repeated renders (StrictMode) can't double-count.
+  const refLines = new Map<number, number>();
+  refs.split('\n').forEach((l, i) => { const m = l.match(/^(\d+)\.\s/); if (m) refLines.set(i + 1, Number(m[1])); });
   const numberedRefComponents: Components = {
     ...refComponents,
-    li: ({ children }) => { refIndex += 1; return <li id={`ref-${refIndex}`} className="scroll-mt-28 break-words">{children}</li>; },
+    li: ({ children, node }) => { const n = refLines.get(node?.position?.start.line ?? -1); return <li id={n ? `ref-${n}` : undefined} className="scroll-mt-28 break-words">{children}</li>; },
   };
 
   return (
     <div className="min-h-screen bg-background">
-      <Seo title={`${entry.title} | Josselin Butté`} description={entry.summary} />
+      <Seo title={`${entry.title} | Josselin Butté`} description={entry.description} />
       <Header />
       <main className="px-5 pb-24 pt-[113px] sm:px-8 sm:pt-[137px] lg:px-12">
         <article lang={entry.lang} className="carnet-article mx-auto max-w-measure">

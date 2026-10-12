@@ -175,7 +175,7 @@ const translations: Translations = {
   'carnet.empty': { fr: 'La première note arrive bientôt.', en: 'The first note is on its way.' },
   'carnet.back': { fr: '← Carnet de recherche', en: '← Research notebook' },
   'carnet.noteEyebrow': { fr: 'Note de recherche', en: 'Research note' },
-  'carnet.box.essentiel': { fr: 'L’essentiel', en: 'Key points' },
+  'carnet.box.essentiel': { fr: 'L’essentiel', en: 'In short' },
   'carnet.box.accompagnement': { fr: 'Et pour l’accompagnement\u00A0?', en: 'And for facilitation?' },
   'carnet.references': { fr: 'Références', en: 'References' },
   'carnet.cta.title': { fr: 'Cette note vous parle\u00A0?', en: 'Does this note speak to you?' },
