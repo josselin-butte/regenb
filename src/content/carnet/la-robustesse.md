@@ -21,7 +21,7 @@ Aujourd’hui, en France, la robustesse est partout. Beaucoup en font la derniè
 
 - La robustesse n’est pas une qualité morale. Une armée hostile ou une industrie productiviste peuvent être très robustes. La vraie question reste : robustesse de quoi, face à quoi, pour qui [17, 25] ?
 
-- Le mot sert des projets très différents. Des communautés citoyennes comme le Shift Project, dont le « Plan robuste » inclut la relance du nucléaire [28, 29].
+- Le mot sert des projets très différents : des communautés citoyennes apprenantes, mais aussi le Shift Project, dont le « Plan robuste » inclut la relance du nucléaire [28, 29].
 
 - Pour une démarche régénérative, elle est nécessaire mais ne suffit pas. Elle permet de tenir. La régénération vise à faire évoluer le système et à enrichir son milieu [22].
 
