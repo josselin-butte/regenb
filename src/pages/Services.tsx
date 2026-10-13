@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import EnquiryForm from '@/components/EnquiryForm';
 import { Button } from '@/components/ui/button';
 
 type Service = { title: string; who: string; desc: string; format: string; fees: string };
@@ -96,6 +97,7 @@ const Services = () => {
             </p>
           </div>
         </section>
+        <EnquiryForm />
       </main>
       <Footer />
     </div>
