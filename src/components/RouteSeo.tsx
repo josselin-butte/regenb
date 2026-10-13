@@ -9,7 +9,7 @@ const org = {
   '@id': `${SITE_ORIGIN}/#org`,
   name: 'RegenB France',
   url: SITE_ORIGIN,
-  logo: `${SITE_ORIGIN}/favicon.png`,
+  logo: `${SITE_ORIGIN}/favicon-v2-512.png`,
   email: 'josselin@regenb.com',
 };
 
