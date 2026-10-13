@@ -33,11 +33,26 @@ Deno.serve(async (req) => {
   const secret = Deno.env.get('INTAKE_SECRET')
   if (!url || !secret) return json({ error: 'CRM not configured' }, 503)
 
-  const { website: _hp, ...entry } = parsed.data
+  const d = parsed.data
+  const service = d.topic === 'programmes' ? 'programme_design' : d.topic
+  const wording = d.language === 'fr'
+    ? 'Me prévenir des prochains programmes de RegenB France. Désinscription en un clic.'
+    : 'Let me know about upcoming RegenB France programmes. One-click unsubscribe.'
+  const entry = {
+    form_type: d.topic === 'etapes' ? 'etapes_interest' : 'enquiry',
+    first_name: d.firstName,
+    email: d.email,
+    language: d.language,
+    service_interest: service,
+    message: d.message,
+    page_url: `https://www.regenb.fr${d.page}`,
+    consent_invitations: d.programmesOptIn,
+    ...(d.programmesOptIn ? { consent_wording: wording } : {}),
+  }
   const res = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'X-Intake-Secret': secret },
-    body: JSON.stringify({ ...entry, source: 'regenb.fr', submittedAt: new Date().toISOString() }),
+    body: JSON.stringify(entry),
   })
   if (!res.ok) {
     console.error(`CRM intake failed [${res.status}]: ${await res.text()}`)
