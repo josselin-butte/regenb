@@ -13,7 +13,7 @@ export function privacyPolicy(development = false): string {
     "frame-src 'none'",
     "font-src 'self'",
     "img-src 'self' https://regenb.lovable.app data: blob:",
-    "connect-src 'self'" + (development ? ' ws://localhost:8080' : ''),
+    "connect-src 'self' https://isxkgzebsoyordijkpnt.supabase.co" + (development ? ' ws://localhost:8080' : ''),
     "base-uri 'self'",
     "form-action 'self'",
   ].join('; ');

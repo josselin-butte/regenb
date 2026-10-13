@@ -1,6 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import EnquiryForm from '@/components/EnquiryForm';
 import oulanBat from '@/assets/etapes-oulan-bat.jpg.asset.json';
 import { Button } from '@/components/ui/button';
 
@@ -74,6 +75,7 @@ const Etapes = () => {
         <section className="px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
           <p className="measure mx-auto text-center text-[15px] text-muted-foreground">{c.closing}</p>
         </section>
+        <EnquiryForm defaultTopic="etapes" />
       </main>
       <Footer />
     </div>
