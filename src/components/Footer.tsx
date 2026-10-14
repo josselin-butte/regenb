@@ -28,6 +28,7 @@ const Footer = () => {
               <li><a href={lp("/#letter")} className="hover:text-primary">{t('nav.letter')}</a></li>
               <li><a href={lp("/boussole")} className="hover:text-primary">{t('nav.compass')}</a></li>
               <li><a href={lp("/carnet")} className="hover:text-primary">{t('nav.carnet')}</a></li>
+              <li><a href={lp("/contact")} className="hover:text-primary">Contact</a></li>
             </ul>
           </div>
 
