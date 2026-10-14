@@ -83,7 +83,20 @@ const CarnetEntry = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Seo title={`${entry.title} | Josselin Butté`} description={entry.description} />
+      <Seo
+        title={`${entry.title} | Josselin Butté`}
+        description={entry.description}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: entry.title,
+          description: entry.description,
+          datePublished: entry.date,
+          inLanguage: entry.lang,
+          author: { '@type': 'Person', name: 'Josselin Butté', url: 'https://www.regenb.fr' },
+          publisher: { '@type': 'Organization', name: 'RegenB France', url: 'https://www.regenb.fr' },
+        }}
+      />
       <Header />
       <main className="px-5 pb-24 pt-[113px] sm:px-8 sm:pt-[137px] lg:px-12">
         <article lang={entry.lang} className="carnet-article mx-auto max-w-measure">
