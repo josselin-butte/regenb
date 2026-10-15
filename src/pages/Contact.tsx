@@ -111,7 +111,10 @@ const Contact = () => {
               <>
                 <h2 className="text-2xl sm:text-3xl">{t('contact.form.title')}</h2>
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="mt-6 space-y-6">
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="mt-6 space-y-6" noValidate>
+                    <div aria-hidden="true" className="absolute -left-[10000px] h-px w-px overflow-hidden">
+                      <label>Website<input tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} name="website" /></label>
+                    </div>
                     <FormField
                       control={form.control}
                       name="name"
