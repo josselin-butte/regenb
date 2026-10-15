@@ -6,6 +6,7 @@ type Props = {
   title: string;
   description: string;
   noindex?: boolean;
+  ogType?: string;
   jsonLd?: object | object[];
 };
 
