@@ -39,7 +39,7 @@ Deno.serve(async (req) => {
     ? 'Me prévenir des prochains programmes de RegenB France. Désinscription en un clic.'
     : 'Let me know about upcoming RegenB France programmes. One-click unsubscribe.'
   const entry = {
-    form_type: d.topic === 'etapes' ? 'etapes_interest' : d.topic === 'contact' ? 'contact_message' : 'enquiry',
+    form_type: d.topic === 'etapes' ? 'etapes_interest' : 'enquiry',
     first_name: d.firstName,
     email: d.email,
     language: d.language,
