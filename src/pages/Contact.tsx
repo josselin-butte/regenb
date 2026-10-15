@@ -3,6 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -24,6 +25,8 @@ const Contact = () => {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const [honeypot, setHoneypot] = useState('');
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -32,11 +35,24 @@ const Contact = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    // No data is stored: the message opens in the visitor's own email app.
-    const subject = (language === 'fr' ? 'Message de ' : 'Message from ') + data.name;
-    const body = `${data.message}\n\n${data.name} — ${data.email}`;
-    window.location.href = `mailto:josselin@regenb.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setHasError(false);
+    const { error } = await supabase.functions.invoke('forward-to-crm', {
+      body: {
+        firstName: data.name,
+        email: data.email,
+        topic: 'contact',
+        message: data.message,
+        programmesOptIn: false,
+        language,
+        page: window.location.pathname,
+        website: honeypot,
+      },
+    });
     setIsSubmitting(false);
+    if (error) {
+      setHasError(true);
+      return;
+    }
     setIsSubmitted(true);
     toast({
       title: t('contact.toast.title'),
