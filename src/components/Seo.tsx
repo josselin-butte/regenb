@@ -6,6 +6,7 @@ type Props = {
   title: string;
   description: string;
   noindex?: boolean;
+  ogType?: string;
   jsonLd?: object | object[];
 };
 
@@ -20,7 +21,7 @@ const setMeta = (attr: 'name' | 'property', key: string, content: string) => {
 };
 
 /** Per-page head tags (title, description, canonical, Open Graph, robots, JSON-LD). */
-const Seo = ({ title, description, noindex, jsonLd }: Props) => {
+const Seo = ({ title, description, noindex, ogType = 'website', jsonLd }: Props) => {
   const { pathname } = useLocation();
   const ld = jsonLd ? JSON.stringify(jsonLd) : '';
 
@@ -31,7 +32,7 @@ const Seo = ({ title, description, noindex, jsonLd }: Props) => {
     setMeta('property', 'og:title', title);
     setMeta('property', 'og:description', description);
     setMeta('property', 'og:url', url);
-    setMeta('property', 'og:type', 'website');
+    setMeta('property', 'og:type', ogType);
     setMeta('property', 'og:locale', langFromPath(pathname) === 'en' ? 'en_GB' : 'fr_FR');
     setMeta('name', 'twitter:card', 'summary_large_image');
     setMeta('name', 'twitter:title', title);
@@ -57,7 +58,7 @@ const Seo = ({ title, description, noindex, jsonLd }: Props) => {
       s.textContent = ld;
       document.head.appendChild(s);
     }
-  }, [pathname, title, description, noindex, ld]);
+  }, [pathname, title, description, noindex, ogType, ld]);
 
   return null;
 };

@@ -86,6 +86,7 @@ const CarnetEntry = () => {
       <Seo
         title={`${entry.title} | Josselin Butté`}
         description={entry.description}
+        ogType="article"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'BlogPosting',

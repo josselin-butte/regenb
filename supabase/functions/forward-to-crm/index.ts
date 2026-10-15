@@ -1,7 +1,7 @@
 import { corsHeaders } from 'npm:@supabase/supabase-js@2/cors'
 import { z } from 'npm:zod@3.23.8'
 
-const TOPICS = ['facilitation', 'programmes', 'coaching', 'supervision', 'mediation', 'etapes'] as const
+const TOPICS = ['facilitation', 'programmes', 'coaching', 'supervision', 'mediation', 'etapes', 'contact'] as const
 
 const Body = z.object({
   firstName: z.string().trim().min(1).max(100),
@@ -43,7 +43,7 @@ Deno.serve(async (req) => {
     first_name: d.firstName,
     email: d.email,
     language: d.language,
-    service_interest: service,
+    ...(d.topic === 'contact' ? {} : { service_interest: service }),
     message: d.message,
     page_url: `https://www.regenb.fr${d.page}`,
     consent_invitations: d.programmesOptIn,

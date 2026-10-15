@@ -3,6 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -24,6 +25,8 @@ const Contact = () => {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const [honeypot, setHoneypot] = useState('');
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -32,11 +35,24 @@ const Contact = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    // No data is stored: the message opens in the visitor's own email app.
-    const subject = (language === 'fr' ? 'Message de ' : 'Message from ') + data.name;
-    const body = `${data.message}\n\n${data.name} — ${data.email}`;
-    window.location.href = `mailto:josselin@regenb.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setHasError(false);
+    const { error } = await supabase.functions.invoke('forward-to-crm', {
+      body: {
+        firstName: data.name,
+        email: data.email,
+        topic: 'contact',
+        message: data.message,
+        programmesOptIn: false,
+        language,
+        page: window.location.pathname,
+        website: honeypot,
+      },
+    });
     setIsSubmitting(false);
+    if (error) {
+      setHasError(true);
+      return;
+    }
     setIsSubmitted(true);
     toast({
       title: t('contact.toast.title'),
@@ -95,7 +111,10 @@ const Contact = () => {
               <>
                 <h2 className="text-2xl sm:text-3xl">{t('contact.form.title')}</h2>
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="mt-6 space-y-6">
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="mt-6 space-y-6" noValidate>
+                    <div aria-hidden="true" className="absolute -left-[10000px] h-px w-px overflow-hidden">
+                      <label>Website<input tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} name="website" /></label>
+                    </div>
                     <FormField
                       control={form.control}
                       name="name"
@@ -145,6 +164,13 @@ const Contact = () => {
                     <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                       {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
                     </Button>
+                    {hasError && (
+                      <p className="text-sm text-destructive" role="alert">
+                        {language === 'fr'
+                          ? "Le message n'est pas parti. Réessayez, ou écrivez-moi à josselin@regenb.com."
+                          : "Your message didn't go through. Please try again, or write to josselin@regenb.com."}
+                      </p>
+                    )}
                     <p className="text-sm text-muted-foreground">
                       {language === 'fr' ? 'Vos données servent uniquement à vous répondre. Voir la ' : 'Your data is used only to reply to you. See the '}
                       <a href={language === 'fr' ? '/confidentialite' : '/en/privacy'} className="text-primary underline decoration-accent">
