@@ -164,6 +164,13 @@ const Contact = () => {
                     <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                       {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
                     </Button>
+                    {hasError && (
+                      <p className="text-sm text-destructive" role="alert">
+                        {language === 'fr'
+                          ? "Le message n'est pas parti. Réessayez, ou écrivez-moi à josselin@regenb.com."
+                          : "Your message didn't go through. Please try again, or write to josselin@regenb.com."}
+                      </p>
+                    )}
                     <p className="text-sm text-muted-foreground">
                       {language === 'fr' ? 'Vos données servent uniquement à vous répondre. Voir la ' : 'Your data is used only to reply to you. See the '}
                       <a href={language === 'fr' ? '/confidentialite' : '/en/privacy'} className="text-primary underline decoration-accent">
