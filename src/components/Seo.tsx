@@ -58,7 +58,7 @@ const Seo = ({ title, description, noindex, ogType = 'website', jsonLd }: Props)
       s.textContent = ld;
       document.head.appendChild(s);
     }
-  }, [pathname, title, description, noindex, ld]);
+  }, [pathname, title, description, noindex, ogType, ld]);
 
   return null;
 };
