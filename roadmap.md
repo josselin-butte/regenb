@@ -1,7 +1,7 @@
 # Refonte Josselin Butté
 
 - [x] Add standard contact Lead once after confirmed visible success; 47 tests passed, real CRM test returned 200 and browser Lead transmission returned 200 for Pixel 2072978403507203
-- [ ] Verify published contact Lead deployment after scheduled publication completes
+- [ ] Verify published contact Lead transmission: 2026-10-17 production confirms CRM success and one parameter-free track Lead call after Message envoyé !; Meta SDK/config return 200, but no /tr request observed in three fresh browser checks. Provider receipt unavailable (no connected Meta account); transmission remains unresolved.
 
 - [x] Add official Continuo Substack form behind external-content consent, without Lead as chosen; 36 tests passed and real iframe/withdrawal checked without submitting a subscription
 - [ ] Publish consent-gated Continuo form and verify the live deployment on continuation
