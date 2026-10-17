@@ -56,12 +56,12 @@ export const course = (lang: Lang, name: string, description: string) => ({
   hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'online', inLanguage: lang },
 });
 
-export const article = (entry: CarnetEntry, path: string) => ({
+export const article = (entry: CarnetEntry, path: string, references: string) => ({
   '@context': CTX, '@type': 'Article',
   headline: entry.title, description: entry.description,
   datePublished: entry.date, dateModified: entry.updated || entry.date,
   inLanguage: entry.lang, url: SITE_ORIGIN + path, mainEntityOfPage: SITE_ORIGIN + path,
   author: { '@id': PERSON_ID, '@type': 'Person', name: 'Josselin Butté', url: SITE_ORIGIN },
   publisher: { '@id': ORG_ID, '@type': 'ProfessionalService', name: 'RegenB France', url: SITE_ORIGIN },
-  citation: Array.from(new Set(entry.body.match(/https?:\/\/[^\s)>\]]+/g) ?? [])).map((u) => u.replace(/[.,;]+$/, '')),
+  citation: Array.from(new Set(references.match(/https?:\/\/[^\s)>\]]+/g) ?? [])).map((u) => u.replace(/[.,;]+$/, '')),
 });
