@@ -90,6 +90,7 @@ const Compass = () => {
               <p className="mt-6 max-w-measure">{t('compass.cta.text')}</p>
             </div>
             <div className="mt-8 lg:col-span-4 lg:mt-0 lg:self-end">
+              <p className="mb-4 text-sm text-muted-foreground">{t('compass.price')}</p>
               <Button size="lg" asChild className="w-full">
                 <a href={BUY_URL} target="_blank" rel="noopener noreferrer">{t('compass.buy')}</a>
               </Button>
