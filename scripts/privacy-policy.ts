@@ -5,6 +5,8 @@ export function privacyPolicy(development = false): string {
     'https://www.regenb.fr/assets/',
     'https://regenb.fr/assets/',
     'https://*.lovable.app/assets/',
+    'https://connect.facebook.net/en_US/fbevents.js',
+    'https://connect.facebook.net/signals/config/2072978403507203',
   ];
   if (development) scripts.push('http://localhost:8080', "'unsafe-inline'");
   return [
@@ -12,8 +14,8 @@ export function privacyPolicy(development = false): string {
     "object-src 'none'",
     "frame-src 'none'",
     "font-src 'self'",
-    "img-src 'self' https://regenb.lovable.app data: blob:",
-    "connect-src 'self' https://isxkgzebsoyordijkpnt.supabase.co" + (development ? ' ws://localhost:8080' : ''),
+    "img-src 'self' https://regenb.lovable.app https://www.facebook.com/tr/ data: blob:",
+    "connect-src 'self' https://isxkgzebsoyordijkpnt.supabase.co https://www.facebook.com/tr/" + (development ? ' ws://localhost:8080' : ''),
     "base-uri 'self'",
     "form-action 'self'",
   ].join('; ');

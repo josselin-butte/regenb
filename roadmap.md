@@ -1,5 +1,8 @@
 # Refonte Josselin Butté
 
+- [x] Add advertising-consent-gated Meta PageView and disclosures; 33 tests and browser acceptance/refusal/withdrawal checks passed
+- [ ] Verify published Meta Pixel deployment (awaiting scheduled publication and continuation)
+
 - [x] Split legal pages FR/EN, update footer/sitemap and verify redirects and French-precedence notice (28 tests passed, eight pages verified)
 - [ ] Legal notice: confirm course storage provider, address and server region (awaiting user information; supplied bracketed placeholder retained)
 

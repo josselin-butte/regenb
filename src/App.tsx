@@ -17,6 +17,7 @@ import NotFound from "./pages/NotFound";
 import Cookies from "./pages/Cookies";
 import { ConsentProvider } from '@/contexts/ConsentContext';
 import ConsentManager from '@/components/ConsentManager';
+import MetaPixel from '@/components/MetaPixel';
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
         <LanguageProvider>
           <ConsentProvider>
           <RouteSeo />
+           <MetaPixel />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/contact" element={<Contact />} />

@@ -19,9 +19,14 @@ describe('consent-free public site', () => {
     expect(allowed('https://regenb.lovable.app/~flock.js')).toBe(false);
   });
   it('blocks marketing, replay, pixels and A/B loaders', () => {
-    for (const url of ['https://www.googletagmanager.com/gtag/js', 'https://connect.facebook.net/en_US/fbevents.js', 'https://static.hotjar.com/c/hotjar.js', 'https://www.clarity.ms/tag/site', 'https://cdn.optimizely.com/js/site.js']) {
+    for (const url of ['https://www.googletagmanager.com/gtag/js', 'https://static.hotjar.com/c/hotjar.js', 'https://www.clarity.ms/tag/site', 'https://cdn.optimizely.com/js/site.js']) {
       expect(allowed(url)).toBe(false);
     }
+  });
+  it('allows only the requested Meta SDK and configuration', () => {
+    expect(allowed('https://connect.facebook.net/en_US/fbevents.js')).toBe(true);
+    expect(allowed('https://connect.facebook.net/signals/config/2072978403507203')).toBe(true);
+    expect(allowed('https://connect.facebook.net/signals/config/123')).toBe(false);
   });
   it('allows the actual app on the official domain and Lovable preview', () => {
     expect(allowed('https://www.regenb.fr/assets/index.js')).toBe(true);

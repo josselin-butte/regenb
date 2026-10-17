@@ -16,7 +16,7 @@ describe('consent rules', () => {
     vi.useFakeTimers(); vi.setSystemTime(new Date('2026-10-12T19:48:00Z'));
     saveConsent(REFUSE_ALL);
     expect(document.cookie).toContain('regenb_consent=');
-    expect(readConsent()).toEqual({ analytics: false, external: false, version: CONSENT_VERSION, date: '2026-10-12T19:48:00.000Z', expires: '2027-04-12T19:48:00.000Z' });
+    expect(readConsent()).toEqual({ analytics: false, external: false, advertising: false, version: CONSENT_VERSION, date: '2026-10-12T19:48:00.000Z', expires: '2027-04-12T19:48:00.000Z' });
   });
   it('stores acceptance for exactly six calendar months, then asks again', () => {
     vi.useFakeTimers(); vi.setSystemTime(new Date('2026-10-12T19:48:00Z'));
@@ -36,10 +36,10 @@ describe('consent rules', () => {
   });
   it('grants each purpose independently and notifies subscribers', () => {
     const listener = vi.fn(); const unsubscribe = onConsentChange(listener);
-    saveConsent({ analytics: false, external: true });
+    saveConsent({ analytics: false, external: true, advertising: false });
     expect(getConsent('analytics')).toBe(false);
     expect(getConsent('external')).toBe(true);
-    expect(listener).toHaveBeenCalledWith(expect.objectContaining({ analytics: false, external: true }));
+    expect(listener).toHaveBeenCalledWith(expect.objectContaining({ analytics: false, external: true, advertising: false }));
     unsubscribe();
   });
   it('does not start optional services before consent and stops before withdrawal reload', () => {
@@ -47,7 +47,7 @@ describe('consent rules', () => {
     const start = vi.fn(() => { sequence.push('start'); return () => sequence.push('stop'); });
     const unregister = registerOptionalService('analytics', start);
     expect(start).not.toHaveBeenCalled();
-    saveConsent({ analytics: false, external: true });
+    saveConsent({ analytics: false, external: true, advertising: false });
     expect(start).not.toHaveBeenCalled();
     saveConsent(ACCEPT_ALL);
     expect(start).toHaveBeenCalledTimes(1);
