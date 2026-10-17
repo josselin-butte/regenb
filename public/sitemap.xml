@@ -172,6 +172,14 @@
     <loc>https://www.regenb.fr/carnet/le-feu-et-la-conversation</loc>
     <lastmod>2026-10-12</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/carnet/le-feu-et-la-conversation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/notebook/fire-and-conversation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/carnet/le-feu-et-la-conversation"/>
+  </url>
+  <url>
+    <loc>https://www.regenb.fr/en/notebook/fire-and-conversation</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/carnet/le-feu-et-la-conversation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/notebook/fire-and-conversation"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/carnet/le-feu-et-la-conversation"/>
   </url>
   <url>
