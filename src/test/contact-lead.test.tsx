@@ -47,7 +47,7 @@ describe('contact standard Lead', () => {
   it('does not fire on page load or invalid submission', async () => {
     accept(); render(<Contact />);
     fireEvent.click(screen.getByRole('button', { name: 'Envoyer le message' }));
-    await waitFor(() => expect(screen.getAllByRole('alert').length).toBeGreaterThan(0));
+    await waitFor(() => expect(screen.getByLabelText('Nom').getAttribute('aria-invalid')).toBe('true'));
     expect(invoke).not.toHaveBeenCalled(); expect(leads()).toHaveLength(0);
   });
   it.each([
