@@ -142,6 +142,7 @@ const translations: Translations = {
   'compass.who.text': { fr: 'Elle s’adresse aux leaders, coachs, superviseurs et accompagnants qui sentent que leur manière d’accompagner demande un recentrage — et qui veulent l’ancrer dans quelque chose de vivant, pas de théorique.', en: 'It is for leaders, coaches, supervisors and practitioners who feel their way of accompanying needs re-grounding — and who want to anchor it in something alive, not theoretical.' },
   'compass.cta.title': { fr: 'Retrouvez votre nord', en: 'Find your north' },
   'compass.cta.text': { fr: 'Rejoignez La Boussole des valeurs et commencez dès aujourd’hui à clarifier ce qui vous guide.', en: 'Join Nature Values Compass and start clarifying today what guides you.' },
+  'compass.price': { fr: '77 € HT, accès immédiat et sans limite de durée. Six modules, quelques heures en tout, avec ma voix pour chaque leçon, en français ou en anglais.', en: '€77 excluding VAT, immediate access with no time limit. Six modules, a few hours in total, with my voice for every lesson, in English or in French.' },
 
   // Legal Page (/legal)
   'legal.kicker': { fr: 'Informations', en: 'Information' },
