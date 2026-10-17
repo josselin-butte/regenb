@@ -1,5 +1,7 @@
 # Refonte Josselin Butté
 
+- [ ] Add consent-gated standard Meta Lead once after confirmed Continuo subscription, test and publish (blocked: published Continuo section only links to Substack; no on-site email form or confirmed subscription success is available; awaiting user direction)
+
 - [x] Add advertising-consent-gated Meta PageView and disclosures; 33 tests and browser acceptance/refusal/withdrawal checks passed
 - [x] Verify published Meta Pixel deployment: www.regenb.fr passed exact ID/PageView, before-choice/refusal blocking, advertising-only acceptance, withdrawal/reload and English settings checks
 
