@@ -24,7 +24,7 @@ description: "Après un été 2026 sans feu, ce que les veillées du Kalahari, l
 
 L'été 2026 a enchaîné les canicules. Fin août, plus de 80 % du territoire était concerné par des restrictions d'usage de l'eau [2]. Fin septembre, l'Office national des forêts comptait environ 21 000 départs de feu et 98 000 hectares brûlés en France hexagonale, cinq fois la moyenne des vingt dernières années [1]. Le plus grand incendie, en Gironde, a parcouru 42 000 hectares et détruit environ 180 maisons au Porge [1].
 
-En Haute-Garonne, un arrêté du 9 juillet interdisait, pendant les alertes de risque très élevé, le bivouac et l'usage du feu, réchauds compris, dans les massifs forestiers [3]. ⚠ Pendant nos quatre jours de marche dans le Comminges, nous n'avons pas allumé de feu.
+En Haute-Garonne, un arrêté du 9 juillet interdisait, pendant les alertes de risque très élevé, le bivouac et l'usage du feu, réchauds compris, dans les massifs forestiers [3]. Pendant nos quatre jours de marche dans le Comminges, nous n'avons pas allumé de feu.
 
 Les soirées étaient belles. Mais il manquait quelque chose, et ce n'était pas la chaleur : il faisait encore trente degrés à la tombée de la nuit. Il manquait un centre. Sans feu, chacun regarde son téléphone, sa carte, ses pieds. On se parle quand même, mais on se parle de demain : l'étape, l'eau, les mules.
 
@@ -44,7 +44,7 @@ Les praticiennes du cercle Christina Baldwin et Ann Linnea commencent leur méth
 
 Les Pyrénées connaissent un autre feu collectif. Chaque année, la nuit du solstice d'été, des habitants descendent des sommets avec des torches pour allumer de grands feux construits selon la tradition. L'UNESCO a inscrit ces fêtes au patrimoine culturel immatériel en 2015 [8]. La descente est un rite de passage pour les jeunes, de l'adolescence à l'âge adulte. Le premier feu est parfois allumé par le maire, parfois par le dernier marié du village. Au matin, on ramasse des braises ou des cendres pour protéger les maisons et les jardins [8].
 
-En Aran et dans le Comminges, ces feux avaient presque disparu pendant la Seconde Guerre mondiale et les années qui ont suivi. Ils sont revenus avec ceux qui revenaient au pays [9]. ⚠ Cette année, cette tradition est revenue dans le village où nous habitons.
+En Aran et dans le Comminges, ces feux avaient presque disparu pendant la Seconde Guerre mondiale et les années qui ont suivi. Ils sont revenus avec ceux qui revenaient au pays [9]. Cette année, cette tradition est revenue dans le village où nous habitons.
 
 Un village qui rallume un feu ensemble, ce n'est pas du folklore. C'est un collectif qui se rappelle qu'il existe.
 
