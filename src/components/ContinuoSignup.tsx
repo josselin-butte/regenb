@@ -21,7 +21,7 @@ export default function ContinuoSignup() {
   return <div className="mt-8 border-y border-border py-6">
     {enabled ? <iframe data-continuo-signup src="https://lecontinuo.substack.com/embed"
       title={fr ? 'S’abonner à Continuo sur Substack' : 'Subscribe to Continuo on Substack'}
-      className="h-[420px] w-full border-0 bg-background" referrerPolicy="no-referrer" /> : <>
+      className="h-[500px] w-full border-0 bg-background" referrerPolicy="no-referrer" /> : <>
       <p className="text-sm text-muted-foreground">{fr
         ? 'Le formulaire d’abonnement est hébergé par Substack. Pour l’afficher ici, autorisez les contenus externes dans vos choix de cookies.'
         : 'The signup form is hosted by Substack. To display it here, allow external content in your cookie choices.'}</p>
