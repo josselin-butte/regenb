@@ -1,6 +1,7 @@
 # Refonte Josselin Butté
 
-- [ ] Add standard contact Lead once after confirmed visible success, verify consent/error gates, test and publish
+- [x] Add standard contact Lead once after confirmed visible success; 47 tests passed, real CRM test returned 200 and browser Lead transmission returned 200 for Pixel 2072978403507203
+- [ ] Verify published contact Lead deployment after scheduled publication completes
 
 - [x] Add official Continuo Substack form behind external-content consent, without Lead as chosen; 36 tests passed and real iframe/withdrawal checked without submitting a subscription
 - [ ] Publish consent-gated Continuo form and verify the live deployment on continuation
