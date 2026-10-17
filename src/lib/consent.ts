@@ -1,17 +1,20 @@
-export type ConsentCategory = 'analytics' | 'external';
+export type ConsentCategory = 'analytics' | 'external' | 'advertising';
 export type ConsentChoices = Record<ConsentCategory, boolean>;
 export interface ConsentRecord extends ConsentChoices {
   version: number;
   date: string;
   expires: string;
+  advertisingAcceptance?: { date: string; version: number };
 }
 
 // Increment whenever the purposes or their providers change.
-export const CONSENT_VERSION = 1;
+export const CONSENT_VERSION = 2;
 export const CONSENT_COOKIE = 'regenb_consent';
-export const REFUSE_ALL: ConsentChoices = { analytics: false, external: false };
-export const ACCEPT_ALL: ConsentChoices = { analytics: true, external: true };
+export const REFUSE_ALL: ConsentChoices = { analytics: false, external: false, advertising: false };
+export const ACCEPT_ALL: ConsentChoices = { analytics: true, external: true, advertising: true };
 const listeners = new Set<(consent: ConsentRecord | null) => void>();
+const channel = typeof BroadcastChannel !== 'undefined' ? new BroadcastChannel('regenb-consent') : undefined;
+if (channel) channel.onmessage = () => refreshConsent();
 
 export function sixMonthsAfter(date: Date): Date {
   const result = new Date(date);
@@ -30,7 +33,7 @@ export function parseConsent(value: string | undefined, now = new Date()): Conse
     const date = new Date(record.date);
     const expires = new Date(record.expires);
     if (record.version !== CONSENT_VERSION || typeof record.analytics !== 'boolean' ||
-        typeof record.external !== 'boolean' || typeof record.date !== 'string' ||
+        typeof record.external !== 'boolean' || typeof record.advertising !== 'boolean' || typeof record.date !== 'string' ||
         typeof record.expires !== 'string' || !Number.isFinite(date.getTime()) ||
         date > now || expires <= now || expires.getTime() !== sixMonthsAfter(date).getTime()) return null;
     return record;
@@ -53,7 +56,7 @@ export function onConsentChange(listener: (consent: ConsentRecord | null) => voi
 }
 
 /** Every optional integration must register its start AND stop/cleanup here.
- * No integration is currently configured; the hosting tracker remains CSP-blocked.
+  * Meta PageView uses advertising consent; the hosting tracker remains CSP-blocked.
  * Do not register providers before documenting cookies and narrowing the CSP.
  */
 export function registerOptionalService(category: ConsentCategory, start: () => (() => void)): () => void {
@@ -93,12 +96,14 @@ export function deleteOptionalCookies(names: string[]): void {
 export function saveConsent(choices: ConsentChoices, reload = () => location.reload()): ConsentRecord {
   const previous = readConsent();
   const now = new Date();
-  const record: ConsentRecord = { ...choices, version: CONSENT_VERSION, date: now.toISOString(), expires: sixMonthsAfter(now).toISOString() };
+  const record: ConsentRecord = { ...choices, version: CONSENT_VERSION, date: now.toISOString(), expires: sixMonthsAfter(now).toISOString(),
+    ...(choices.advertising ? { advertisingAcceptance: { date: now.toISOString(), version: CONSENT_VERSION } } : previous?.advertisingAcceptance ? { advertisingAcceptance: previous.advertisingAcceptance } : {}) };
   document.cookie = `${CONSENT_COOKIE}=${encodeURIComponent(JSON.stringify(record))}; Path=/; Expires=${new Date(record.expires).toUTCString()}; SameSite=Lax${location.protocol === 'https:' ? '; Secure' : ''}`;
   for (const listener of listeners) {
     try { listener(record); } catch { /* Notify the other services even if one fails. */ }
   }
-  if ((previous?.analytics && !choices.analytics) || (previous?.external && !choices.external)) reload();
+  channel?.postMessage('changed');
+  if ((previous?.analytics && !choices.analytics) || (previous?.external && !choices.external) || (previous?.advertising && !choices.advertising)) reload();
   return record;
 }
 

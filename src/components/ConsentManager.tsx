@@ -20,7 +20,7 @@ export default function ConsentManager() {
     if (panelOpen) {
       previousFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
       const existing = readConsent();
-      setDraft(existing ? { analytics: existing.analytics, external: existing.external } : REFUSE_ALL);
+      setDraft(existing ? { analytics: existing.analytics, external: existing.external, advertising: existing.advertising } : REFUSE_ALL);
     }
   }, [panelOpen]);
   useEffect(() => {
@@ -63,7 +63,7 @@ export default function ConsentManager() {
             <div className="pb-5">
               <p className="font-semibold">{copy.necessary}</p><p className="mt-1 font-medium">{copy.active}</p><p className="mt-2">{copy.necessaryText}</p>
             </div>
-            {(['analytics', 'external'] as const).map(category => <div key={category} className="py-5">
+            {(['analytics', 'external', 'advertising'] as const).map(category => <div key={category} className="py-5">
               <div className="flex items-center justify-between gap-4">
                 <label htmlFor={`consent-${category}`} className="font-semibold">{copy[category]}</label>
                 <Switch id={`consent-${category}`} checked={draft[category]} onCheckedChange={checked => setDraft(value => ({ ...value, [category]: checked }))} aria-describedby={`consent-${category}-description`} />
