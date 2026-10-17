@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { contactLeadAfterSuccess } from '@/lib/meta-pixel';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -27,6 +28,14 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [honeypot, setHoneypot] = useState('');
+  const sending = useRef(false);
+  const confirmedLead = useRef<(() => void) | undefined>();
+  useEffect(() => {
+    if (isSubmitted) {
+      confirmedLead.current?.();
+      confirmedLead.current = undefined;
+    }
+  }, [isSubmitted]);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -34,9 +43,12 @@ const Contact = () => {
   });
 
   const onSubmit = async (data: ContactFormData) => {
+    if (sending.current) return;
+    sending.current = true;
     setIsSubmitting(true);
     setHasError(false);
-    const { error } = await supabase.functions.invoke('forward-to-crm', {
+    try {
+    const { data: response, error } = await supabase.functions.invoke('forward-to-crm', {
       body: {
         firstName: data.name,
         email: data.email,
@@ -48,16 +60,22 @@ const Contact = () => {
         website: honeypot,
       },
     });
-    setIsSubmitting(false);
-    if (error) {
+    if (error || response?.ok !== true) {
       setHasError(true);
       return;
     }
+    confirmedLead.current = honeypot ? undefined : contactLeadAfterSuccess();
     setIsSubmitted(true);
     toast({
       title: t('contact.toast.title'),
       description: t('contact.toast.description'),
     });
+    } catch {
+      setHasError(true);
+    } finally {
+      sending.current = false;
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {

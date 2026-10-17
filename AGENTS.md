@@ -8,4 +8,5 @@
 - Website forms post to the forward-to-crm backend function, which maps entries to the CRM intake format and adds the intake secret server-side, because the secret must never reach the browser and contacts live only in the CRM project.
 
 - Install the browser Pixel through the app-level MetaPixel lifecycle into document.head, without a noscript beacon or server reporting, because every public route must respect the central advertising choice.
+- Contact Lead uses a one-shot callback created only after the CRM confirms success and invoked after the success screen commits; consent is checked at both stages and no form data enters the callback, preventing premature, duplicate or replayed reports.
 - Load the official Continuo iframe through registerOptionalService under external-content consent, with synchronous frame removal on withdrawal; do not infer subscription success or dispatch Lead from cross-origin frame activity.

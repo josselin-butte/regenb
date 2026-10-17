@@ -1,5 +1,7 @@
 # Refonte Josselin Butté
 
+- [ ] Add standard contact Lead once after confirmed visible success, verify consent/error gates, test and publish
+
 - [x] Add official Continuo Substack form behind external-content consent, without Lead as chosen; 36 tests passed and real iframe/withdrawal checked without submitting a subscription
 - [ ] Publish consent-gated Continuo form and verify the live deployment on continuation
 
