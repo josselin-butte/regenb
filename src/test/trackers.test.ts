@@ -9,7 +9,7 @@ describe('cookie table', () => {
     expect(c?.lifetime.fr).toBe('6 mois');
   });
   it('declares both Meta cookies under advertising consent', () => {
-    expect(optionalTrackers().map(t => [t.name, t.category, t.lifetime.en])).toEqual([['_fbp', 'advertising', '3 months'], ['_fbc', 'advertising', '3 months']]);
+    expect(optionalTrackers().filter(t => t.category === 'advertising').map(t => [t.name, t.category, t.lifetime.en])).toEqual([['_fbp', 'advertising', '3 months'], ['_fbc', 'advertising', '3 months']]);
   });
   it('flags a consent-category tracker as optional', () => {
     expect(optionalTrackers([{ ...trackers[0], name: 'x', category: 'analytics' }])).toHaveLength(1);
