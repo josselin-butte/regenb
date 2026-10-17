@@ -99,6 +99,7 @@ export const privacyContent: Record<'fr' | 'en', LegalBlock[]> = {
       ] },
       after: ['I never sell or rent your data. Only with advertising consent, the Meta Pixel sends visited pages, browser identifiers, your IP address and browser information to Meta Platforms Ireland Limited for Facebook/Instagram advertising measurement and attribution. No name, email, form content or conversion event is sent. The _fbp and _fbc cookies last three months; Meta retention follows its privacy policy. Withdraw consent through Cookie settings in the footer.'] },
     { title: 'Embedded Continuo form', paragraphs: ['The Substack form loads only after external-content consent. Substack Inc. (United States) then receives your IP address, browser information and its own operation, security and attribution trackers; your email is sent to Substack only if you subscribe. Substack handles confirmation and unsubscription. No Lead event or data from this form is sent to Meta. Withdrawal through Cookie settings immediately removes the form and reloads this site; this site cannot erase cookies on the Substack domain. See also Substack’s privacy policy: https://substack.com/privacy.'] },
+    { title: 'Who receives your data?', paragraphs: [
       'Service providers acting on my behalf, or independent controllers:',
       'Lovable Labs Inc. (hosting, United States); [Supabase / Lovable Cloud] (database, [region]); Stripe Payments Europe Ltd (payment, Ireland); [email provider]; Substack Inc. (Continuo letter, United States); my accountant, for invoices.',
     ] },

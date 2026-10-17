@@ -11,7 +11,9 @@ export default function ContinuoSignup() {
   useEffect(() => registerOptionalService('external', () => {
     setEnabled(true);
     return () => {
-      document.querySelector('iframe[data-continuo-signup]')?.remove();
+      // Unload immediately; let React remove its own DOM node during rendering.
+      const frame = document.querySelector('iframe[data-continuo-signup]');
+      if (frame instanceof HTMLIFrameElement) frame.src = 'about:blank';
       setEnabled(false);
     };
   }), []);

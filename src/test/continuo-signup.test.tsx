@@ -19,7 +19,8 @@ describe('Continuo external consent', () => {
     open();
     act(() => { saveConsent({ analytics: false, external: true, advertising: false }); });
     expect(document.querySelector('iframe')?.src).toBe('https://lecontinuo.substack.com/embed');
-    act(() => { saveConsent(REFUSE_ALL, () => expect(document.querySelector('iframe')).toBeNull()); });
+    act(() => { saveConsent(REFUSE_ALL, () => expect(document.querySelector('iframe')?.src).toBe('about:blank')); });
+    expect(document.querySelector('iframe')).toBeNull();
   });
   it('never sends Lead when the frame loads or emits an apparent success message', () => {
     const dispatch = vi.fn(); window.fbq = Object.assign(dispatch, { queue: [], loaded: true, version: '2.0', push: dispatch }) as unknown as NonNullable<Window['fbq']>;
