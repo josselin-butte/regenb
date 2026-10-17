@@ -7,6 +7,8 @@ export interface CarnetEntry {
   /** Shared id across languages: the French slug. */
   key: string;
   date: string;
+  /** Last modification date (frontmatter `updated`), defaults to date. */
+  updated: string;
   status: CarnetStatus;
   lang: CarnetLang;
   origin: string;
@@ -47,6 +49,7 @@ const parse = (raw: string): CarnetEntry | null => {
     slug: String(data.slug),
     key: String(data.fr ?? data.slug),
     date: String(data.date ?? ''),
+    updated: String(data.updated ?? data.date ?? ''),
     status: data.status === 'settled' ? 'settled' : 'exploring',
     lang: data.lang === 'en' ? 'en' : 'fr',
     origin: String(data.origin ?? ''),

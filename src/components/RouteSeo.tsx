@@ -1,52 +1,38 @@
 import { useLocation } from 'react-router-dom';
 import Seo from '@/components/Seo';
-import { SITE_ORIGIN } from '@/lib/routes';
+import { content } from '@/pages/Services';
+import { breadcrumb, course, person, professionalService, services, website } from '@/lib/structured-data';
 
 type Entry = { title: string; description: string; noindex?: boolean; jsonLd?: object[] };
 
-const org = {
-  '@type': 'Organization',
-  '@id': `${SITE_ORIGIN}/#org`,
-  name: 'RegenB France',
-  url: SITE_ORIGIN,
-  logo: `${SITE_ORIGIN}/favicon-v2-512.png`,
-  email: 'josselin@regenb.com',
+const svcFr = content.fr.services, svcEn = content.en.services;
+const base = (lang: 'fr' | 'en', path: string) => [website(lang), breadcrumb(crumbs(path))];
+
+/** Visible page names for breadcrumbs. */
+const LABELS: Record<string, string> = {
+  '/accompagnement': 'Accompagnement', '/en/services': 'Services',
+  '/boussole': 'La Boussole des valeurs', '/en/compass': 'The Values Compass',
+  '/etapes': 'Les étapes', '/en/journeys': 'Journeys',
+  '/carnet': 'Carnet de recherche', '/en/notebook': 'Research notebook',
+  '/mentions-legales': 'Mentions légales', '/en/legal-notice': 'Legal notice',
+  '/confidentialite': 'Confidentialité', '/en/privacy': 'Privacy',
+  '/cgv': 'Conditions générales de vente', '/en/terms': 'Terms of sale',
+  '/cookies': 'Cookies', '/en/cookies': 'Cookies',
+  '/contact': 'Contact', '/en/contact': 'Contact',
 };
 
-const person = (jobTitle: string) => ({
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Josselin Butté',
-  jobTitle,
-  url: SITE_ORIGIN,
-  worksFor: { '@id': `${SITE_ORIGIN}/#org`, '@type': 'Organization', name: 'RegenB France' },
-  sameAs: ['https://www.linkedin.com/in/josselin-butt%C3%A9-96063a7/', 'https://lecontinuo.substack.com'],
-});
-
-const service = (names: string[]) => ({
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'RegenB France',
-  url: SITE_ORIGIN,
-  email: 'josselin@regenb.com',
-  areaServed: { '@type': 'Country', name: 'France' },
-  availableLanguage: ['French', 'English'],
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Services',
-    itemListElement: names.map((n) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: n } })),
-  },
-});
-
-const course = (name: string, description: string, inLanguage: string, url: string) => ({
-  '@context': 'https://schema.org',
-  '@type': 'Course',
-  name,
-  description,
-  inLanguage,
-  provider: { '@type': 'Organization', name: 'RegenB France', url: SITE_ORIGIN },
-  offers: { '@type': 'Offer', price: 147, priceCurrency: 'EUR', url, category: 'Paid' },
-});
+export const crumbs = (path: string, last?: string) => {
+  const en = path === '/en' || path.startsWith('/en/');
+  const items = [{ name: en ? 'Home' : 'Accueil', path: en ? '/en' : '/' }];
+  const segs = path.split('/').filter(Boolean).slice(en ? 1 : 0);
+  let acc = en ? '/en' : '';
+  segs.forEach((seg, i) => {
+    acc += '/' + seg;
+    const name = i === segs.length - 1 && last ? last : LABELS[acc];
+    if (name) items.push({ name, path: acc });
+  });
+  return items;
+};
 
 const D = {
   home: { fr: "Facilitateur et superviseur, j'accompagne équipes de direction, managers et accompagnants à décider plus clairement, au rythme du vivant.", en: 'Facilitator and supervisor, I help leadership teams, managers and practitioners make clearer decisions, at the pace of the living world.' },
@@ -55,12 +41,12 @@ const D = {
 };
 
 export const SEO: Record<string, Entry> = {
-  '/': { title: 'Facilitation, supervision et coaching | Josselin Butté', description: D.home.fr, jsonLd: [person('Facilitateur et superviseur'), { '@context': 'https://schema.org', ...org }] },
-  '/en': { title: 'Facilitation, supervision and coaching | Josselin Butté', description: D.home.en, jsonLd: [person('Facilitator and supervisor'), { '@context': 'https://schema.org', ...org }] },
-  '/accompagnement': { title: 'Facilitation, coaching, supervision, médiation | RegenB France', description: D.svc.fr, jsonLd: [service(['Facilitation', 'Conception de programmes', 'Coaching', 'Supervision', 'Médiation'])] },
-  '/en/services': { title: 'Facilitation, coaching, supervision, mediation | RegenB France', description: D.svc.en, jsonLd: [service(['Facilitation', 'Programme design', 'Coaching', 'Supervision', 'Mediation'])] },
-  '/boussole': { title: 'La Boussole des valeurs, formation en ligne | RegenB France', description: D.compass.fr, jsonLd: [course('La Boussole des valeurs', D.compass.fr, 'fr', 'https://valuescourse.regenb.com/')] },
-  '/en/compass': { title: 'The Values Compass, online course | RegenB France', description: D.compass.en, jsonLd: [course('The Values Compass', D.compass.en, 'en', 'https://valuescourse.regenb.com/')] },
+  '/': { title: 'Facilitation, supervision et coaching | Josselin Butté', description: D.home.fr, jsonLd: [person('fr'), professionalService()] },
+  '/en': { title: 'Facilitation, supervision and coaching | Josselin Butté', description: D.home.en, jsonLd: [person('en'), professionalService()] },
+  '/accompagnement': { title: 'Facilitation, coaching, supervision, médiation | RegenB France', description: D.svc.fr, jsonLd: [professionalService(), ...services('fr', svcFr, '/accompagnement')] },
+  '/en/services': { title: 'Facilitation, coaching, supervision, mediation | RegenB France', description: D.svc.en, jsonLd: [professionalService(), ...services('en', svcEn, '/en/services')] },
+  '/boussole': { title: 'La Boussole des valeurs, formation en ligne | RegenB France', description: D.compass.fr, jsonLd: [course('fr', 'La Boussole des valeurs', D.compass.fr)] },
+  '/en/compass': { title: 'The Values Compass, online course | RegenB France', description: D.compass.en, jsonLd: [course('en', 'The Values Compass', D.compass.en)] },
   '/etapes': { title: 'Les étapes, séjours en petit groupe | RegenB France', description: "Quelques jours dehors pour marcher et relire sa pratique. Premier séjour au printemps 2027, à la ferme d'Oulan Bât, à Arbas." },
   '/en/journeys': { title: 'Journeys, small-group stays | RegenB France', description: 'A few days outdoors to walk and reflect on your practice. First journey in spring 2027, at the Oulan Bât farm in Arbas, France.' },
   '/carnet': { title: 'Carnet de recherche | Josselin Butté', description: "Les questions qui me font marcher : écoute des groupes, eau, attention, robustesse. Des notes de recherche reliant sciences du vivant et accompagnement." },
@@ -85,7 +71,8 @@ const RouteSeo = () => {
   const path = pathname !== '/' ? pathname.replace(/\/$/, '') : '/';
   if (/^\/(carnet|en\/notebook)\/.+/.test(path)) return null;
   const entry = SEO[path];
-  if (entry) return <Seo {...entry} />;
+  const lang = path === '/en' || path.startsWith('/en/') ? 'en' : 'fr';
+  if (entry) return <Seo {...entry} jsonLd={entry.noindex ? entry.jsonLd : [...base(lang, path), ...(entry.jsonLd ?? [])]} />;
   return <Seo title="RegenB France" description={D.home.fr} noindex />;
 };
 

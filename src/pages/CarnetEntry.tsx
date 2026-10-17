@@ -3,6 +3,8 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import ReactMarkdown, { type Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Seo from '@/components/Seo';
+import { crumbs } from '@/components/RouteSeo';
+import { article, breadcrumb, website } from '@/lib/structured-data';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ElementIcon from '@/components/ElementIcon';
@@ -87,16 +89,11 @@ const CarnetEntry = () => {
         title={`${entry.title} | Josselin Butté`}
         description={entry.description}
         ogType="article"
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'BlogPosting',
-          headline: entry.title,
-          description: entry.description,
-          datePublished: entry.date,
-          inLanguage: entry.lang,
-          author: { '@type': 'Person', name: 'Josselin Butté', url: 'https://www.regenb.fr' },
-          publisher: { '@type': 'Organization', name: 'RegenB France', url: 'https://www.regenb.fr' },
-        }}
+        jsonLd={[
+          website(language),
+          breadcrumb(crumbs(lp(`/carnet/${entry.slug}`), entry.title)),
+          article(entry, lp(`/carnet/${entry.slug}`), refs),
+        ]}
       />
       <Header />
       <main className="px-5 pb-24 pt-[113px] sm:px-8 sm:pt-[137px] lg:px-12">
