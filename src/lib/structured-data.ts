@@ -44,7 +44,7 @@ export const services = (lang: Lang, items: { title: string; desc: string }[], p
     '@context': CTX, '@type': 'Service', name: s.title, description: s.desc, inLanguage: lang,
     url: SITE_ORIGIN + pagePath, provider: { '@id': ORG_ID, '@type': 'ProfessionalService', name: 'RegenB France' },
     ...(s.title === 'Supervision'
-      ? { offers: { '@type': 'Offer', price: 480, priceCurrency: 'EUR', description: lang === 'en' ? '€480 for the four sessions' : '480 € les quatre séances' } }
+      ? { offers: { '@type': 'Offer', price: 680, priceCurrency: 'EUR', description: lang === 'en' ? '€680 excl. VAT for the four sessions' : '680 € HT les quatre séances' } }
       : {}),
   }));
 
