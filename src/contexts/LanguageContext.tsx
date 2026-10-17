@@ -117,8 +117,8 @@ const translations: Translations = {
 
   // Compass Page (/boussole)
   'compass.kicker': { fr: 'Formation en ligne', en: 'Online course' },
-  'compass.title': { fr: 'Nature Values Compass', en: 'Nature Values Compass' },
-  'compass.lead1': { fr: 'J’ai créé Nature Values Compass comme un parcours en ligne pour revenir à l’essentiel : vos valeurs profondes, mises à l’épreuve du vivant.', en: 'I created Nature Values Compass as an online journey to return to what matters: your core values, tested against the living world.' },
+  'compass.title': { fr: 'La Boussole des valeurs', en: 'The Values Compass' },
+  'compass.lead1': { fr: 'J’ai créé La Boussole des valeurs comme un parcours en ligne pour revenir à l’essentiel : vos valeurs profondes, mises à l’épreuve du vivant.', en: 'I created Nature Values Compass as an online journey to return to what matters: your core values, tested against the living world.' },
   'compass.lead2': { fr: 'À votre rythme, vous explorez ce qui vous anime, ce qui vous freine, et ce qui demande à émerger dans votre manière d’accompagner.', en: 'At your own pace, you explore what moves you, what holds you back, and what is asking to emerge in how you accompany others.' },
   'compass.buy': { fr: 'Acheter la boussole', en: 'Get the compass' },
   'compass.why.kicker': { fr: 'Pourquoi cette boussole', en: 'Why this compass' },
@@ -141,7 +141,7 @@ const translations: Translations = {
   'compass.how.item4': { fr: 'Des outils que vous garderez pour la suite de votre pratique', en: 'Tools you will keep for the rest of your practice' },
   'compass.who.text': { fr: 'Elle s’adresse aux leaders, coachs, superviseurs et accompagnants qui sentent que leur manière d’accompagner demande un recentrage — et qui veulent l’ancrer dans quelque chose de vivant, pas de théorique.', en: 'It is for leaders, coaches, supervisors and practitioners who feel their way of accompanying needs re-grounding — and who want to anchor it in something alive, not theoretical.' },
   'compass.cta.title': { fr: 'Retrouvez votre nord', en: 'Find your north' },
-  'compass.cta.text': { fr: 'Rejoignez Nature Values Compass et commencez dès aujourd’hui à clarifier ce qui vous guide.', en: 'Join Nature Values Compass and start clarifying today what guides you.' },
+  'compass.cta.text': { fr: 'Rejoignez La Boussole des valeurs et commencez dès aujourd’hui à clarifier ce qui vous guide.', en: 'Join Nature Values Compass and start clarifying today what guides you.' },
 
   // Legal Page (/legal)
   'legal.kicker': { fr: 'Informations', en: 'Information' },
