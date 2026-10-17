@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 
 type Service = { title: string; who: string; desc: string; format: string; fees: string };
 
-const content = {
+export const content = {
   fr: {
     eyebrow: 'Accompagnement',
     title: 'Accompagner des personnes, des équipes et des organisations',
