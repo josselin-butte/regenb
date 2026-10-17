@@ -12,7 +12,7 @@ export function privacyPolicy(development = false): string {
   return [
     `script-src ${scripts.join(' ')}`,
     "object-src 'none'",
-    "frame-src 'none'",
+    "frame-src https://lecontinuo.substack.com/embed",
     "font-src 'self'",
     "img-src 'self' https://regenb.lovable.app https://www.facebook.com/tr/ data: blob:",
     "connect-src 'self' https://isxkgzebsoyordijkpnt.supabase.co https://www.facebook.com/tr/" + (development ? ' ws://localhost:8080' : ''),

@@ -8,7 +8,7 @@ export interface ConsentRecord extends ConsentChoices {
 }
 
 // Increment whenever the purposes or their providers change.
-export const CONSENT_VERSION = 2;
+export const CONSENT_VERSION = 3;
 export const CONSENT_COOKIE = 'regenb_consent';
 export const REFUSE_ALL: ConsentChoices = { analytics: false, external: false, advertising: false };
 export const ACCEPT_ALL: ConsentChoices = { analytics: true, external: true, advertising: true };

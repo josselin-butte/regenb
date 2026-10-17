@@ -32,8 +32,8 @@ describe('consent-free public site', () => {
     expect(allowed('https://www.regenb.fr/assets/index.js')).toBe(true);
     expect(allowed('https://id-preview--example.lovable.app/assets/index.js')).toBe(true);
   });
-  it('blocks all embedded frames while the site has no opted-in embeds', () => {
-    expect(policy.split('; ')).toContain("frame-src 'none'");
+  it('permits only the requested Continuo signup frame', () => {
+    expect(policy.split('; ')).toContain('frame-src https://lecontinuo.substack.com/embed');
   });
   it('serves fonts only from the site itself', () => {
     expect(policy.split('; ')).toContain("font-src 'self'");
