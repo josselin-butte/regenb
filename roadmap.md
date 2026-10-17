@@ -1,6 +1,7 @@
 # Refonte Josselin Butté
 
-- [ ] Add on-site Continuo subscription form and consent-gated standard Meta Lead once after confirmed subscription, test and publish (blocked: Substack has no public subscription API or documented embedded-form success callback; awaiting choice of supported embed without Lead or another newsletter service)
+- [x] Add official Continuo Substack form behind external-content consent, without Lead as chosen; 36 tests passed and real iframe/withdrawal checked without submitting a subscription
+- [ ] Publish consent-gated Continuo form and verify the live deployment on continuation
 
 - [x] Add advertising-consent-gated Meta PageView and disclosures; 33 tests and browser acceptance/refusal/withdrawal checks passed
 - [x] Verify published Meta Pixel deployment: www.regenb.fr passed exact ID/PageView, before-choice/refusal blocking, advertising-only acceptance, withdrawal/reload and English settings checks

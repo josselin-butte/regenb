@@ -10,6 +10,20 @@ type Bi = { fr: string; en: string };
 export interface Tracker { name: string; purpose: Bi; provider: Bi; lifetime: Bi; category: TrackerCategory }
 
 export const trackers: Tracker[] = [
+  ...[
+    ['ajs_anonymous_id', '1 an / 1 year'],
+    ['cf_clearance', '1 an / 1 year'],
+    ['__cf_bm (Substack)', '30 minutes'],
+    ['AWSALBTG / AWSALBTGCORS', '7 jours / 7 days'],
+    ['cookie_storage_key', '90 jours / 90 days'],
+    ['disable_html_pixels / disable_experiments', 'Session'],
+    ['substack_ref / substack_ref_url (localStorage, sessionStorage)', 'Session ou durée gérée par Substack / Session or Substack-managed duration'],
+  ].map(([name, duration]): Tracker => ({
+    name,
+    purpose: { fr: 'Formulaire Continuo : fonctionnement, sécurité, attribution et préférences du service tiers ; uniquement après accord pour les contenus externes', en: 'Continuo form: third-party operation, security, attribution and preferences; only after external-content consent' },
+    provider: { fr: 'Substack et ses prestataires (dans le formulaire intégré)', en: 'Substack and its providers (inside the embedded form)' },
+    lifetime: { fr: duration, en: duration }, category: 'external',
+  })),
   {
     name: '_fbp',
     purpose: { fr: 'Reconnaître le navigateur pour mesurer les pages vues et les publicités Facebook/Instagram', en: 'Recognise the browser to measure page views and Facebook/Instagram advertising' },
