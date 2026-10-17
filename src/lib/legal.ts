@@ -65,7 +65,7 @@ export const privacyContent: Record<'fr' | 'en', LegalBlock[]> = {
         ['Sécurité et fonctionnement du site', 'journaux techniques, adresse IP', 'intérêt légitime', '[12 mois max]'],
         ["[Mesure d'audience, si conservée]", 'données de navigation', 'consentement', '13 mois max (traceurs), 25 mois (statistiques)'],
       ] },
-      after: ['Je ne vends ni ne loue jamais vos données. Je n\'utilise aucune décision automatisée ni profilage.'] },
+      after: ['Je ne vends ni ne loue jamais vos données. Avec votre accord publicitaire uniquement, le Pixel Meta transmet les pages consultées, des identifiants de navigateur, l’adresse IP et les informations du navigateur à Meta Platforms Ireland Limited pour la mesure et l’attribution des publicités Facebook/Instagram. Aucun nom, e-mail, contenu de formulaire ou événement de conversion n’est transmis. Les cookies _fbp et _fbc durent trois mois ; la conservation chez Meta suit sa politique de confidentialité. Vous pouvez retirer votre accord via « Gérer mes cookies » en pied de page.'] },
     { title: 'Qui reçoit vos données ?', paragraphs: [
       'Des prestataires agissant pour mon compte ou des responsables indépendants :',
       "Lovable Labs Inc. (hébergement, États-Unis) ; [Supabase / Lovable Cloud] (base de données, [région]) ; Stripe Payments Europe Ltd (paiement, Irlande) ; [prestataire d'e-mails] ; Substack Inc. (lettre Continuo, États-Unis) ; mon expert-comptable pour les factures.",
@@ -78,7 +78,7 @@ export const privacyContent: Record<'fr' | 'en', LegalBlock[]> = {
       `Écrivez à ${EMAIL} ; je réponds sous un mois.`,
       'Vous pouvez aussi introduire une réclamation auprès de la CNIL (www.cnil.fr, 3 place de Fontenoy, 75007 Paris).',
     ] },
-    { title: 'Cookies', paragraphs: ['Voir la page Cookies.', 'Date de mise à jour : 12 octobre 2026.'] },
+    { title: 'Cookies', paragraphs: ['Voir la page Cookies.', 'Date de mise à jour : 17 octobre 2026.'] },
   ],
   en: [
     { title: 'Who is responsible?', paragraphs: [
@@ -96,7 +96,7 @@ export const privacyContent: Record<'fr' | 'en', LegalBlock[]> = {
         ['Website security and operation', 'technical logs, IP address', 'legitimate interest', '[12 months max]'],
         ['[Audience measurement, if kept]', 'browsing data', 'consent', '13 months max (trackers), 25 months (statistics)'],
       ] },
-      after: ['I never sell or rent your data. I use no automated decision-making or profiling.'] },
+      after: ['I never sell or rent your data. Only with advertising consent, the Meta Pixel sends visited pages, browser identifiers, your IP address and browser information to Meta Platforms Ireland Limited for Facebook/Instagram advertising measurement and attribution. No name, email, form content or conversion event is sent. The _fbp and _fbc cookies last three months; Meta retention follows its privacy policy. Withdraw consent through Cookie settings in the footer.'] },
     { title: 'Who receives your data?', paragraphs: [
       'Service providers acting on my behalf, or independent controllers:',
       'Lovable Labs Inc. (hosting, United States); [Supabase / Lovable Cloud] (database, [region]); Stripe Payments Europe Ltd (payment, Ireland); [email provider]; Substack Inc. (Continuo letter, United States); my accountant, for invoices.',
@@ -109,7 +109,7 @@ export const privacyContent: Record<'fr' | 'en', LegalBlock[]> = {
       `Write to ${EMAIL}; I reply within one month.`,
       'You can also lodge a complaint with the CNIL, the French data protection authority (www.cnil.fr, 3 place de Fontenoy, 75007 Paris, France).',
     ] },
-    { title: 'Cookies', paragraphs: ['See the Cookies page.', 'Last updated: 12 October 2026.'] },
+    { title: 'Cookies', paragraphs: ['See the Cookies page.', 'Last updated: 17 October 2026.'] },
   ],
 };
 
