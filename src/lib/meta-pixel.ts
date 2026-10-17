@@ -17,6 +17,18 @@ export const isPublicPixelPath = (path: string) => !/^\/(?:en\/)?(?:admin|dashbo
 let active = false;
 let lastPage: string | undefined;
 
+/** One callback per confirmed submission; no replay after later consent. */
+export function contactLeadAfterSuccess(): () => void {
+  const permittedAtSuccess = getConsent('advertising');
+  let consumed = false;
+  return () => {
+    if (consumed) return;
+    consumed = true;
+    if (!permittedAtSuccess || !active || !getConsent('advertising') || !isPublicPixelPath(location.pathname)) return;
+    window.fbq?.('track', 'Lead');
+  };
+}
+
 export function reportMetaPageView(): void {
   if (!active || !getConsent('advertising') || !isPublicPixelPath(location.pathname) || lastPage === location.pathname) return;
   lastPage = location.pathname;
