@@ -27,6 +27,13 @@ export const content = {
     subject: 'Prendre 30 minutes',
     compassPre: "Vous préférez apprendre seul·e d'abord ? ",
     compassLink: 'La Boussole des valeurs, formation en ligne.',
+    faqTitle: 'Questions fréquentes',
+    faq: [
+      { q: "Qu'est-ce que la supervision pour les coachs et les facilitateurs ?", a: "Un temps régulier pour regarder ce qui se passe en vous pendant que vous accompagnez les autres : ce qui vous a touché, ce que vous avez évité, ce que vous ramenez qui n'est pas à vous. Quatre séances d'une heure sur quatre mois, à distance, ou en groupe avec Le Cercle." },
+      { q: 'Travaillez-vous à distance ?', a: 'Oui. Le coaching et la supervision se font le plus souvent à distance, en français ou en anglais. La facilitation et la médiation, de préférence en présentiel.' },
+      { q: 'Combien coûte un accompagnement ?', a: "La supervision individuelle coûte 680 € les quatre séances. Pour le reste, je fais un devis après un premier échange de 30 minutes, gratuit." },
+      { q: "Par où commencer si je ne sais pas ce dont j'ai besoin ?", a: "Prenez 30 minutes avec moi. Vous me dites ce qui se passe, je vous dis honnêtement si je suis la bonne personne, et sinon vers qui aller." },
+    ],
   },
   en: {
     eyebrow: 'Services',
@@ -47,6 +54,13 @@ export const content = {
     subject: '30 minutes to talk',
     compassPre: 'Prefer to start on your own? ',
     compassLink: 'The Values Compass, online course.',
+    faqTitle: 'Frequently asked questions',
+    faq: [
+      { q: 'What is supervision for coaches and facilitators?', a: "A regular time to look at what happens in you while you support others: what touched you, what you avoided, what you bring back that isn't yours. Four one-hour sessions over four months, online, or in a group with The Circle." },
+      { q: 'Do you work online?', a: 'Yes. Coaching and supervision are most often online, in English or in French. Facilitation and mediation, preferably in person.' },
+      { q: 'How much does an engagement cost?', a: 'Individual supervision costs €680 for the four sessions. For everything else, I send a quotation after a first free 30-minute conversation.' },
+      { q: "Where do I start if I don't know what I need?", a: "Take 30 minutes with me. You tell me what's going on, I tell you honestly whether I'm the right person, and if not, where to go instead." },
+    ],
   },
 };
 
@@ -95,6 +109,17 @@ const Services = () => {
               {c.compassPre}
               <Link to={lp('/boussole')} className="underline decoration-accent underline-offset-4">{c.compassLink}</Link>
             </p>
+          </div>
+        </section>
+        <section className="border-b border-border px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
+          <div className="measure mx-auto">
+            <h2 className="text-2xl font-semibold text-primary sm:text-3xl">{c.faqTitle}</h2>
+            {c.faq.map((f) => (
+              <div key={f.q} className="mt-8">
+                <h3 className="text-lg font-semibold">{f.q}</h3>
+                <p className="mt-2 text-muted-foreground">{f.a}</p>
+              </div>
+            ))}
           </div>
         </section>
         <EnquiryForm />

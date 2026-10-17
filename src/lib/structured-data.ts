@@ -48,6 +48,14 @@ export const services = (lang: Lang, items: { title: string; desc: string }[], p
       : {}),
   }));
 
+export const faqPage = (lang: Lang, items: { q: string; a: string }[], pagePath: string) => ({
+  '@context': CTX, '@type': 'FAQPage', inLanguage: lang, url: SITE_ORIGIN + pagePath,
+  mainEntity: items.map((f) => ({
+    '@type': 'Question', name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+});
+
 /** No Offer: the compass page shows no price, and price is required in an Offer. */
 export const course = (lang: Lang, name: string, description: string) => ({
   '@context': CTX, '@type': 'Course', name, description,

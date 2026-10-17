@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import Seo from '@/components/Seo';
 import { content } from '@/pages/Services';
-import { breadcrumb, course, person, professionalService, services, website } from '@/lib/structured-data';
+import { breadcrumb, course, faqPage, person, professionalService, services, website } from '@/lib/structured-data';
 
 type Entry = { title: string; description: string; noindex?: boolean; jsonLd?: object[] };
 
@@ -43,8 +43,8 @@ const D = {
 export const SEO: Record<string, Entry> = {
   '/': { title: 'Facilitation, supervision et coaching | Josselin Butté', description: D.home.fr, jsonLd: [person('fr'), professionalService()] },
   '/en': { title: 'Facilitation, supervision and coaching | Josselin Butté', description: D.home.en, jsonLd: [person('en'), professionalService()] },
-  '/accompagnement': { title: 'Facilitation, coaching, supervision, médiation | RegenB France', description: D.svc.fr, jsonLd: [professionalService(), ...services('fr', svcFr, '/accompagnement')] },
-  '/en/services': { title: 'Facilitation, coaching, supervision, mediation | RegenB France', description: D.svc.en, jsonLd: [professionalService(), ...services('en', svcEn, '/en/services')] },
+  '/accompagnement': { title: 'Facilitation, coaching, supervision, médiation | RegenB France', description: D.svc.fr, jsonLd: [professionalService(), ...services('fr', svcFr, '/accompagnement'), faqPage('fr', content.fr.faq, '/accompagnement')] },
+  '/en/services': { title: 'Facilitation, coaching, supervision, mediation | RegenB France', description: D.svc.en, jsonLd: [professionalService(), ...services('en', svcEn, '/en/services'), faqPage('en', content.en.faq, '/en/services')] },
   '/boussole': { title: 'La Boussole des valeurs, formation en ligne | RegenB France', description: D.compass.fr, jsonLd: [course('fr', 'La Boussole des valeurs', D.compass.fr)] },
   '/en/compass': { title: 'The Values Compass, online course | RegenB France', description: D.compass.en, jsonLd: [course('en', 'The Values Compass', D.compass.en)] },
   '/etapes': { title: 'Les étapes, séjours en petit groupe | RegenB France', description: "Quelques jours dehors pour marcher et relire sa pratique. Premier séjour au printemps 2027, à la ferme d'Oulan Bât, à Arbas." },
