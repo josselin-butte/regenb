@@ -38,6 +38,9 @@ describe('consent-free public site', () => {
   it('serves fonts only from the site itself', () => {
     expect(policy.split('; ')).toContain("font-src 'self'");
   });
+  it('allows audio only from the notebook public storage bucket', () => {
+    expect(policy.split('; ')).toContain('media-src https://isxkgzebsoyordijkpnt.supabase.co/storage/v1/object/public/carnet-audio/');
+  });
   it('does not persist the sidebar preference', () => {
     const sidebar = readFileSync('src/components/ui/sidebar.tsx', 'utf8');
     expect(sidebar).not.toMatch(/document\.cookie\s*=|localStorage\.setItem|sessionStorage\.setItem/);
