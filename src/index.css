@@ -42,6 +42,11 @@
 
     --radius: 0rem;
 
+    --note-audio-border: #C7CEC0;
+    --note-audio-background: #F9F7F0;
+    --note-audio-accent: #D5B544;
+    --note-audio-muted: #5A7261;
+
     --sidebar-background: 43 43% 96%;
     --sidebar-foreground: 137 20% 28%;
     --sidebar-primary: 137 20% 28%;
@@ -151,6 +156,24 @@
 }
 
 /* Carnet print */
+.note-audio-frame {
+  border-color: var(--note-audio-border);
+  background: var(--note-audio-background);
+}
+.note-audio audio {
+  border-radius: 0;
+  accent-color: var(--note-audio-accent);
+  color-scheme: light;
+}
+.note-audio audio::-webkit-media-controls-panel {
+  background: var(--note-audio-background);
+}
+.note-audio audio::-webkit-media-controls-play-button {
+  background-color: var(--note-audio-accent);
+  border-radius: 0;
+}
+.note-audio-credit { color: var(--note-audio-muted); }
+
 @media print {
   .carnet-noprint { display: none !important; }
   body, .carnet-article, .carnet-article * { background: #fff !important; color: #000 !important; }

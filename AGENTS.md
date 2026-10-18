@@ -1,5 +1,6 @@
 - Serve uploaded site photography through Lovable Assets pointer imports using the published asset origin, because repository binaries add unnecessary weight and local Vite does not proxy asset paths.
 - Research notebook entries are Markdown files with YAML frontmatter in src/content/carnet/ (one file per language; an English file sets `lang: en`, its own `slug`, and `fr: <french-slug>` to link them), auto-loaded by src/lib/carnet.ts, so publishing a note needs no code change.
+- Optional notebook audio is declared with language-specific URL and minute-duration frontmatter fields; paired files share missing audio fields, while playback and Article media never fall back to another language, preserving silent notes and consent-free, user-initiated native playback.
 - Public pages: French at the root, English under /en, language derived from the URL only via src/lib/routes.ts, because each language needs its own crawlable URLs.
 - Generate an early production Content-Security-Policy through Vite that allows application bundles, exact consent-gated Meta SDK/config paths, and only the consent-gated Continuo Substack embed as a frame; narrow allowlists block unapproved integrations before execution.
 - Every cookie/storage entry the site can set is declared in src/lib/trackers.ts, which renders the /cookies table, so the disclosure stays in sync with the code.

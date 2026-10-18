@@ -1,5 +1,6 @@
 import { SITE_ORIGIN } from '@/lib/routes';
 import type { CarnetEntry } from '@/lib/carnet';
+import { audioIsoDuration, getNoteAudio } from '@/lib/carnet-audio';
 
 /** JSON-LD builders. Only facts visible on the site; never invent prices, ratings or reviews. */
 type Lang = 'fr' | 'en';
@@ -64,7 +65,9 @@ export const course = (lang: Lang, name: string, description: string) => ({
   hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'online', inLanguage: lang },
 });
 
-export const article = (entry: CarnetEntry, path: string, references: string) => ({
+export const article = (entry: CarnetEntry, path: string, references: string) => {
+  const audio = getNoteAudio(entry, entry.lang);
+  return ({
   '@context': CTX, '@type': 'Article',
   headline: entry.title, description: entry.description,
   datePublished: entry.date, dateModified: entry.updated || entry.date,
@@ -72,4 +75,10 @@ export const article = (entry: CarnetEntry, path: string, references: string) =>
   author: { '@id': PERSON_ID, '@type': 'Person', name: 'Josselin Butté', url: SITE_ORIGIN },
   publisher: { '@id': ORG_ID, '@type': 'ProfessionalService', name: 'RegenB France', url: SITE_ORIGIN },
   citation: Array.from(new Set(references.match(/https?:\/\/[^\s)>\]]+/g) ?? [])).map((u) => u.replace(/[.,;]+$/, '')),
-});
+  ...(audio ? { associatedMedia: {
+    '@type': 'AudioObject', contentUrl: audio.url,
+    ...(audio.duration ? { duration: audioIsoDuration(audio.duration) } : {}),
+    inLanguage: entry.lang, encodingFormat: 'audio/mpeg',
+  } } : {}),
+  });
+};

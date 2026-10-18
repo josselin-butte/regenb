@@ -1,5 +1,8 @@
 # Refonte Josselin Butté
 
+- [x] Add optional language-specific notebook audio, player, list badge, Article media and upload instructions (14 tests passed; browser playback verified using temporary MP3 interception, real storage blocked)
+- [ ] Create public carnet-audio bucket (blocked by workspace public_buckets_blocked policy; owner/admin must allow public buckets)
+
 - [x] Add standard contact Lead once after confirmed visible success; 47 tests passed, real CRM test returned 200 and browser Lead transmission returned 200 for Pixel 2072978403507203
 - [x] Verify published contact Lead transmission: 2026-10-17 isolated Meta bot-blocking of HeadlessChrome; same published site with normal Chrome user-agent sends PageView and one Lead to /tr (200), Pixel 2072978403507203, after confirmed Message envoyé !, without form data or refresh duplicate. No app code changed; Events Manager receipt remains unverified (no connected Meta account).
 

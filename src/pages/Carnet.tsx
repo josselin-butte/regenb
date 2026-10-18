@@ -5,6 +5,7 @@ import ElementIcon from '@/components/ElementIcon';
 import StatusChip from '@/components/carnet/StatusChip';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { formatDate, getEntries } from '@/lib/carnet';
+import { getNoteAudio } from '@/lib/carnet-audio';
 
 const Carnet = () => {
   const { t, language, lp } = useLanguage();
@@ -42,6 +43,7 @@ const Carnet = () => {
                     <span>{formatDate(e.date, language)}</span>
                     <StatusChip status={e.status} />
                     <span>{e.readingTime} {t('carnet.minutes')}</span>
+                    {getNoteAudio(e, language) && <span className="border border-border px-2 py-0.5 text-[12px]">Audio</span>}
                     {e.themes.length > 0 && <span>{e.themes.join(' · ')}</span>}
                     {e.lang !== language && (
                       <span className="bg-secondary px-2 py-0.5 text-[12px]">{t('carnet.otherLangBadge')}</span>
