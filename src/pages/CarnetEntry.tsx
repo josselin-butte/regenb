@@ -9,6 +9,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ElementIcon from '@/components/ElementIcon';
 import StatusChip from '@/components/carnet/StatusChip';
+import NoteAudio from '@/components/carnet/NoteAudio';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { formatDate, getEntry } from '@/lib/carnet';
@@ -109,6 +110,8 @@ const CarnetEntry = () => {
             <span>{entry.readingTime} {t('carnet.minutes')}</span>
             {entry.origin && <span lang={entry.lang}>{entry.origin}</span>}
           </p>
+
+          <NoteAudio entry={entry} language={language} />
 
           {entry.lang !== language && (
             <p lang={language} className="mt-8 bg-secondary px-5 py-4 text-[15px]">{t('carnet.otherLangNote')}</p>

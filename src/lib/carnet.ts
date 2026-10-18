@@ -1,7 +1,9 @@
+import type { CarnetAudioFields } from './carnet-audio';
+
 export type CarnetStatus = 'exploring' | 'settled';
 export type CarnetLang = 'fr' | 'en';
 
-export interface CarnetEntry {
+export interface CarnetEntry extends CarnetAudioFields {
   title: string;
   slug: string;
   /** Shared id across languages: the French slug. */
@@ -25,7 +27,7 @@ const files = import.meta.glob('/src/content/carnet/*.md', { query: '?raw', impo
 const unquote = (v: string) => v.trim().replace(/^["']|["']$/g, '');
 
 // Minimal YAML frontmatter parser: scalars, inline [a, b] lists and "- item" lists.
-const parse = (raw: string): CarnetEntry | null => {
+export const parseCarnetEntry = (raw: string): CarnetEntry | null => {
   const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
   if (!m) return null;
   const data: Record<string, string | string[]> = {};
@@ -57,12 +59,27 @@ const parse = (raw: string): CarnetEntry | null => {
     element: ['earth','water','air','fire'].includes(String(data.element)) ? (String(data.element) as CarnetEntry['element']) : undefined,
     summary: String(data.summary ?? ''),
     description: String(data.description ?? data.summary ?? ''),
+    audio_url_fr: data.audio_url_fr ? String(data.audio_url_fr) : undefined,
+    audio_url_en: data.audio_url_en ? String(data.audio_url_en) : undefined,
+    audio_duration_fr: data.audio_duration_fr ? Number(data.audio_duration_fr) : undefined,
+    audio_duration_en: data.audio_duration_en ? Number(data.audio_duration_en) : undefined,
     body,
     readingTime: Math.max(1, Math.ceil(words / 200)),
   };
 };
 
-const all: CarnetEntry[] = Object.values(files).map(parse).filter((e): e is CarnetEntry => !!e);
+const parsed: CarnetEntry[] = Object.values(files).map(parseCarnetEntry).filter((e): e is CarnetEntry => !!e);
+// Both language fields may be managed in either file; a file's own values win.
+const all = parsed.map((entry) => {
+  const pair = parsed.find((other) => other.key === entry.key && other.lang !== entry.lang);
+  return {
+    ...entry,
+    audio_url_fr: entry.audio_url_fr ?? pair?.audio_url_fr,
+    audio_url_en: entry.audio_url_en ?? pair?.audio_url_en,
+    audio_duration_fr: entry.audio_duration_fr ?? pair?.audio_duration_fr,
+    audio_duration_en: entry.audio_duration_en ?? pair?.audio_duration_en,
+  };
+});
 
 /** One entry per note (key), preferring the current language. Newest first. */
 export const getEntries = (lang: CarnetLang): CarnetEntry[] => {
