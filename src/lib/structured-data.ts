@@ -56,10 +56,10 @@ export const faqPage = (lang: Lang, items: { q: string; a: string }[], pagePath:
   })),
 });
 
-/** No Offer: the compass page shows no price, and price is required in an Offer. */
 export const course = (lang: Lang, name: string, description: string) => ({
   '@context': CTX, '@type': 'Course', name, description,
   inLanguage: ['fr', 'en'],
+  offers: { '@type': 'Offer', price: 77, priceCurrency: 'EUR', description: lang === 'en' ? '€77 incl. VAT' : '77 € TTC' },
   provider: { '@id': ORG_ID, '@type': 'ProfessionalService', name: 'RegenB France', url: SITE_ORIGIN },
   hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'online', inLanguage: lang },
 });
