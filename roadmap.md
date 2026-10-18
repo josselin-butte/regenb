@@ -1,6 +1,6 @@
 # Refonte Josselin Butté
 
-- [ ] Add optional language-specific notebook audio, player, list badge, Article media and upload instructions
+- [x] Add optional language-specific notebook audio, player, list badge, Article media and upload instructions (14 tests passed; browser playback verified using temporary MP3 interception, real storage blocked)
 - [ ] Create public carnet-audio bucket (blocked by workspace public_buckets_blocked policy; owner/admin must allow public buckets)
 
 - [x] Add standard contact Lead once after confirmed visible success; 47 tests passed, real CRM test returned 200 and browser Lead transmission returned 200 for Pixel 2072978403507203
