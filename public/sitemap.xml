@@ -155,20 +155,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/carnet/toilettes-seches"/>
   </url>
   <url>
-    <loc>https://www.regenb.fr/carnet/la-robustesse</loc>
-    <lastmod>2026-10-07</lastmod>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/carnet/la-robustesse"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/notebook/robustness"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/carnet/la-robustesse"/>
-  </url>
-  <url>
-    <loc>https://www.regenb.fr/en/notebook/robustness</loc>
-    <lastmod>2026-10-07</lastmod>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/carnet/la-robustesse"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/notebook/robustness"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/carnet/la-robustesse"/>
-  </url>
-  <url>
     <loc>https://www.regenb.fr/carnet/le-feu-et-la-conversation</loc>
     <lastmod>2026-10-12</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/carnet/le-feu-et-la-conversation"/>
@@ -181,6 +167,20 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/carnet/le-feu-et-la-conversation"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/notebook/fire-and-conversation"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/carnet/le-feu-et-la-conversation"/>
+  </url>
+  <url>
+    <loc>https://www.regenb.fr/carnet/la-robustesse</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/carnet/la-robustesse"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/notebook/robustness"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/carnet/la-robustesse"/>
+  </url>
+  <url>
+    <loc>https://www.regenb.fr/en/notebook/robustness</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/carnet/la-robustesse"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/notebook/robustness"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/carnet/la-robustesse"/>
   </url>
   <url>
     <loc>https://www.regenb.fr/carnet/thermiques</loc>
