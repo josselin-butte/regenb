@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
+import RegenLoop from '@/components/RegenLoop';
 import Footer from '@/components/Footer';
 import EnquiryForm from '@/components/EnquiryForm';
 import { Button } from '@/components/ui/button';
@@ -16,16 +17,20 @@ export const content = {
       "Je travaille avec des équipes de direction, des managers et des professionnels de l'accompagnement. Chaque collaboration part de votre réalité : ce qui se joue, ce qui bloque, ce qui demande à évoluer.",
     labels: { who: 'Pour qui', format: 'Format', fees: 'Tarif' },
     regen: {
-      title: 'La Boucle REGEN — revenir au réel, trouver un prochain pas juste',
-      intro: 'Un cadre de questionnement que je développe pour ma pratique. Il invite à rencontrer une situation dans sa complexité, à clarifier son pouvoir d’agir et à choisir une suite soutenable. Il guide mon attention ; il ne prescrit pas votre chemin.',
+      title: 'La Boucle REGEN',
+      intro: 'Cinq mouvements pour rencontrer la complexité et trouver un prochain pas juste.',
+      center: 'Votre situation', centerNote: 'Le point de départ. Le fil auquel revenir.',
+      status: 'Cadre en développement', pause: 'Mettre en pause', play: 'Animer la boucle',
       movements: [
-        { label: 'R — Revenir au réel', question: 'Qu’est-ce qui se passe vraiment ?' },
-        { label: 'E — Écouter et inclure le champ', question: 'Quoi — et qui — reste à entendre ?' },
-        { label: 'G — Guider son pouvoir avec discernement', question: 'Qu’est-ce qui est à vous de décider, d’influencer ou de laisser ?' },
-        { label: 'E — Explorer les tensions', question: 'Quelles vérités, valeurs ou contraintes demandent à être considérées ensemble ?' },
-        { label: 'N — Nourrir le prochain pas', question: 'Quel pas concret est possible, avec quel soutien et quel temps de retour ?' },
+        { label: 'R — Revenir au réel', question: 'Qu’est-ce qui se passe vraiment ?', support: 'Partir des faits, des ressentis et du contexte, sans chercher trop vite à résoudre.' },
+        { label: 'E — Écouter et inclure le champ', question: 'Quoi — et qui — reste à entendre ?', support: 'Élargir le regard aux besoins, aux relations et aux voix encore absentes.' },
+        { label: 'G — Guider son pouvoir avec discernement', question: 'Qu’est-ce qui est à vous de décider, d’influencer ou de laisser ?', support: 'Clarifier sa responsabilité, ses limites et ses possibilités d’action.' },
+        { label: 'E — Explorer les tensions fécondes', question: 'Quelles vérités, valeurs ou contraintes demandent à être considérées ensemble ?', support: 'Accueillir plusieurs réalités sans forcer une réconciliation ni oublier les limites.' },
+        { label: 'N — Nourrir le prochain pas', question: 'Quel pas concret est possible, avec quel soutien et quel temps de retour ?', support: 'Choisir une suite adaptée : agir, expérimenter, converser ou prendre du recul.' },
       ],
-      closing: 'Ces mouvements ne sont pas des étapes imposées. Le point de départ est ce que vous souhaitez travailler ; une nouvelle compréhension peut inviter à revenir en arrière, à agir ou à faire une pause.',
+      closing: 'Cinq mouvements. Aucun chemin imposé.',
+      closingNote: 'Revenir, écouter, ajuster : le mouvement reste le vôtre.',
+      context: 'Un cadre de questionnement en cours d’expérimentation dans ma pratique. Il guide mon attention ; il ne prescrit pas votre chemin.',
     },
     services: [
       { title: 'Facilitation', who: 'équipes de direction, comités, collectifs qui doivent décider ensemble.', desc: "Séminaires, ateliers de stratégie, moments de décision. Je conçois le déroulé, je tiens le cadre, et je rends visibles les voix qu'on n'entend pas d'habitude. Le groupe repart avec des décisions claires : qui contribue, qui décide, et comment.", format: "d'une demi-journée à trois jours, en salle ou en extérieur.", fees: 'sur devis, après un premier échange.' },
@@ -55,16 +60,20 @@ export const content = {
       "I work with leadership teams, managers and people whose job is to support others. Every engagement starts from your reality: what's at stake, what's stuck, and what's asking to change.",
     labels: { who: 'For whom', format: 'Format', fees: 'Fees' },
     regen: {
-      title: 'The REGEN Loop — meet reality, find a wise next step',
-      intro: 'A questioning framework I am developing for my practice. It invites a fuller understanding of a complex situation, clearer agency and a sustainable next step. It guides my attention; it does not prescribe your path.',
+      title: 'The REGEN Loop',
+      intro: 'Five movements to meet complexity and find a wise next step.',
+      center: 'Your situation', centerNote: 'The starting point. The thread to return to.',
+      status: 'A developing framework', pause: 'Pause movement', play: 'Animate the loop',
       movements: [
-        { label: 'R — Root in reality', question: 'What is actually happening?' },
-        { label: 'E — Embrace the whole field', question: 'What — and who — still needs to be heard?' },
-        { label: 'G — Guide power wisely', question: 'What is yours to decide, influence or let go of?' },
-        { label: 'E — Explore tensions', question: 'Which truths, values or constraints need to be considered together?' },
-        { label: 'N — Nurture the next step', question: 'What concrete step is possible, with what support and when to review it?' },
+        { label: 'R — Root in reality', question: 'What is actually happening?', support: 'Start with facts, feelings and context, without rushing to solve.' },
+        { label: 'E — Embrace the whole field', question: 'What — and who — still needs to be heard?', support: 'Widen attention to needs, relationships and voices that are not yet present.' },
+        { label: 'G — Guide power wisely', question: 'What is yours to decide, influence or let go of?', support: 'Clarify responsibility, boundaries and possibilities for action.' },
+        { label: 'E — Explore polarities', question: 'Which truths, values or constraints need to be considered together?', support: 'Make room for different realities without forcing reconciliation or losing sight of boundaries.' },
+        { label: 'N — Nurture the next step', question: 'What concrete step is possible, with what support and when to review it?', support: 'Choose an appropriate response: action, an experiment, a conversation or time to reflect.' },
       ],
-      closing: 'These movements are not prescribed steps. The starting point is what you want to work on; new understanding may invite you to return, act or pause.',
+      closing: 'Five movements. No prescribed path.',
+      closingNote: 'Return, listen, adjust: the movement remains yours.',
+      context: 'A questioning framework being explored in my practice. It guides my attention; it does not prescribe your path.',
     },
     services: [
       { title: 'Facilitation', who: 'leadership teams, committees and groups that need to decide together.', desc: 'Off-sites, strategy workshops, decision points. I design the flow, hold the frame and bring out the voices that usually go unheard. The group leaves with clear decisions: who contributes, who decides, and how.', format: 'from half a day to three days, indoors or outdoors.', fees: 'on quotation, after a first conversation.' },
@@ -125,21 +134,7 @@ const Services = () => {
               <h2 className="text-2xl font-semibold text-primary sm:text-3xl">{s.title}</h2>
               <p className="mt-4"><span className="font-medium">{c.labels.who}</span>{language === 'fr' ? ' : ' : ': '}{s.who}</p>
               <p className="mt-4 text-muted-foreground">{s.desc}</p>
-              {i === 2 && (
-                <section id="regen-loop" aria-labelledby="regen-loop-title" className="mt-8 scroll-mt-28 border-t border-border pt-8">
-                  <h3 id="regen-loop-title" className="text-xl font-semibold text-primary sm:text-2xl">{c.regen.title}</h3>
-                  <p className="mt-4 text-muted-foreground">{c.regen.intro}</p>
-                  <ol className="mt-6 list-none space-y-5" role="list">
-                    {c.regen.movements.map((movement) => (
-                      <li key={movement.label}>
-                        <h4 className="text-base font-semibold">{movement.label}</h4>
-                        <p className="mt-1 text-muted-foreground">{movement.question}</p>
-                      </li>
-                    ))}
-                  </ol>
-                  <p className="mt-6 text-muted-foreground">{c.regen.closing}</p>
-                </section>
-              )}
+              {i === 2 && <RegenLoop copy={c.regen} />}
               <dl className="mt-6 space-y-2 border-l-2 border-accent pl-4 text-[15px]">
                 <div><dt className="inline font-medium">{c.labels.format}{language === 'fr' ? ' : ' : ': '}</dt><dd className="inline">{s.format}</dd></div>
                 <div><dt className="inline font-medium">{c.labels.fees}{language === 'fr' ? ' : ' : ': '}</dt><dd className="inline">{s.fees}</dd></div>
