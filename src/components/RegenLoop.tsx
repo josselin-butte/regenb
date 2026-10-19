@@ -106,7 +106,7 @@ export default function RegenLoop({ copy }: { copy: RegenCopy }) {
         <p className="mt-4 text-center text-sm text-muted-foreground">{copy.status}</p>
         <div id="regen-question" role="region" aria-label={movement.label} aria-live="polite" aria-atomic="true" className="regen-detail mt-6 bg-secondary p-5 sm:p-6">
           <h4 className="text-lg font-semibold text-primary">{movement.question}</h4>
-          <p className="mt-3 text-muted-foreground">{movement.support}</p>
+          <p className="mt-3 text-foreground">{movement.support}</p>
         </div>
         <Button type="button" variant="heroOutline" className="mt-5 min-h-11" disabled={reduced}
           aria-pressed={!paused && !reduced} onClick={() => { visitorPaused = !paused; setPaused(visitorPaused); }}>
