@@ -216,7 +216,7 @@
 .regen-letter { display: flex; align-items: center; justify-content: center; flex: 0 0 44px; height: 44px; border: 1px solid hsl(var(--primary)); border-radius: 50%; font-family: 'Work Sans', sans-serif; font-size: 1.25rem; }
 .regen-choice[aria-pressed=true] .regen-letter { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); }
 .regen-choice[aria-pressed=true] { text-decoration: underline; text-underline-offset: 4px; }
-.regen-choice:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+.regen-loop button:focus-visible { outline: 2px solid hsl(var(--ring)) !important; outline-offset: 2px; }
 .regen-detail { min-height: 260px; }
 .regen-static.regen-ready, .regen-unready { display: none; }
 @media (min-width: 768px) {
