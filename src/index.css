@@ -263,3 +263,36 @@
 @media (prefers-reduced-motion: reduce) {
   .facil *, .facil-line { animation: none !important; transition: none !important; stroke-dashoffset: 0 !important; }
 }
+
+/* Programme design illustration (services page only) */
+.prog h3, .prog h4 { letter-spacing: 0; }
+.prog-grid { display: grid; gap: 1.5rem; }
+@media (min-width: 768px) { .prog-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; } }
+.prog-drawing { height: auto; margin: 0 auto; display: block; }
+.prog-drawing * { fill: none; stroke-linecap: round; }
+.prog-horizontal { width: 100%; max-width: 420px; display: none; }
+.prog-vertical { width: 60%; max-width: 200px; }
+@media (min-width: 768px) { .prog-horizontal { display: block; } .prog-vertical { display: none; } }
+.prog-learning { stroke: hsl(var(--primary)); stroke-width: 2.5; }
+.prog-practice { stroke: hsl(var(--primary) / .35); stroke-width: 6; }
+.prog-feedback, .prog-feedback-head { stroke: hsl(var(--muted-foreground)); stroke-width: 1.2; }
+.prog-feedback { stroke-dasharray: 3 5; }
+.prog-ring { stroke: transparent; stroke-width: 2; }
+.prog-dot { fill: hsl(var(--background)) !important; stroke: hsl(var(--primary)); stroke-width: 2; }
+.prog-point[data-on=true] .prog-dot { fill: hsl(var(--accent)) !important; }
+.prog-point[data-on=true] .prog-ring { stroke: hsl(var(--primary)); }
+.prog[data-phase=idle] .prog-line { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.prog[data-phase=drawing] .prog-line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: prog-draw 2s ease-out forwards; }
+@keyframes prog-draw { to { stroke-dashoffset: 0; } }
+.prog-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.25rem; }
+.prog-legend li { display: flex; align-items: center; gap: .5rem; }
+.prog-swatch { display: inline-block; width: 24px; }
+.prog-swatch-learning { border-top: 2.5px solid hsl(var(--primary)); }
+.prog-swatch-practice { border-top: 6px solid hsl(var(--primary) / .35); }
+.prog-choices { display: flex; flex-wrap: wrap; gap: .5rem; }
+.prog-choice-btn { min-height: 44px; height: auto; white-space: normal; text-align: left; }
+.prog-choice-btn[aria-pressed=true], .prog-choice-btn[aria-pressed=true]:hover { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); text-decoration: underline; text-underline-offset: 4px; }
+.prog button:focus-visible { outline: 2px solid hsl(var(--ring)) !important; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  .prog *, .prog-line { animation: none !important; transition: none !important; stroke-dashoffset: 0 !important; }
+}
