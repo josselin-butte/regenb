@@ -3,7 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import RegenLoop, { canAnimateLoop, REGEN_CIRCUIT_MS, type RegenCopy } from '@/components/RegenLoop';
 
 const copy: RegenCopy = {
-  title: 'Loop', intro: '', center: '', centerNote: '', status: '', closing: '', closingNote: '', context: '',
+  title: 'Loop', intro: '', center: '', centerNote: '', status: '', tapHint: '', closing: '', closingNote: '', context: '',
   pause: 'Pause', play: 'Play',
   movements: ['R', 'E1', 'G', 'E2', 'N'].map(label => ({ label, question: `Question ${label}`, support: `Support ${label}` })),
 };
