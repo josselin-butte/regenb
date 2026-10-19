@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -90,8 +91,17 @@ export const content = {
 
 const Services = () => {
   const { language, lp } = useLanguage();
+  const { hash, key } = useLocation();
   const c = content[language];
   const mailto = `mailto:josselin@regenb.com?subject=${encodeURIComponent(c.subject)}`;
+
+  useEffect(() => {
+    if (hash !== '#regen-loop') return;
+    const frame = requestAnimationFrame(() => {
+      document.getElementById('regen-loop')?.scrollIntoView({ behavior: 'instant', block: 'start' });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [hash, key, language]);
 
   return (
     <div className="min-h-screen bg-background">
