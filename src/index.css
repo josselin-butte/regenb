@@ -235,3 +235,31 @@
   .regen-interactive { display: none !important; }
   .regen-static.regen-ready { display: block; }
 }
+
+/* Facilitation illustration (services page only) */
+.facil h3, .facil h4 { letter-spacing: 0; }
+.facil-grid { display: grid; gap: 1.5rem; }
+@media (min-width: 768px) { .facil-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; } }
+.facil-drawing { width: 100%; max-width: 420px; height: auto; margin: 0 auto; display: block; }
+.facil-drawing * { fill: none; stroke-linecap: round; }
+.facil-line { stroke: hsl(var(--primary)); stroke-width: 1.5; opacity: .55; transition: opacity .3s, stroke-width .3s; }
+.facil-frame { stroke-dasharray: 4 6; stroke-width: 1; }
+.facil-unchosen { stroke: hsl(var(--muted-foreground)); stroke-width: 1.2; stroke-dasharray: 3 5; }
+.facil-voice { fill: hsl(var(--background)) !important; stroke: hsl(var(--primary)); stroke-width: 2; }
+.facil-option { fill: hsl(var(--secondary)) !important; stroke: hsl(var(--primary)); stroke-width: 1.5; }
+.facil-choice { fill: hsl(var(--accent)) !important; stroke: hsl(var(--primary)); stroke-width: 1.5; }
+.facil[data-active=frame] .facil-frame,
+.facil[data-active=open] .facil-open .facil-line,
+.facil[data-active=choose] .facil-choose .facil-line,
+.facil[data-active=follow] .facil-follow .facil-line { opacity: 1; stroke-width: 3; stroke: hsl(var(--accent)); }
+.facil[data-active=frame] .facil-frame { stroke-dasharray: none; }
+.facil[data-phase=idle] .facil-line:not(.facil-frame) { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.facil[data-phase=drawing] .facil-line:not(.facil-frame) { stroke-dasharray: 1; stroke-dashoffset: 1; animation: facil-draw 2s ease-out forwards; }
+@keyframes facil-draw { to { stroke-dashoffset: 0; } }
+.facil-choices { display: flex; flex-wrap: wrap; gap: .5rem; }
+.facil-choice-btn { min-height: 44px; height: auto; white-space: normal; text-align: left; }
+.facil-choice-btn[aria-pressed=true], .facil-choice-btn[aria-pressed=true]:hover { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); text-decoration: underline; text-underline-offset: 4px; }
+.facil button:focus-visible { outline: 2px solid hsl(var(--ring)) !important; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  .facil *, .facil-line { animation: none !important; transition: none !important; stroke-dashoffset: 0 !important; }
+}
