@@ -55,7 +55,15 @@ const translations: Translations = {
 
   // Offer
   'offer.kicker': { fr: 'Ce que je propose · 02', en: 'What I offer · 02' },
-  'offer.title': { fr: 'Transformer sa manière d’accompagner', en: 'Transform how you accompany' },
+  'offer.title': { fr: 'Quelle situation vous amène ?', en: 'What brings you here?' },
+  'offer.c1.title': { fr: 'Vous portez une équipe ou une organisation', en: 'You lead a team or organisation' },
+  'offer.c1.text': { fr: 'Des décisions à prendre, une coopération à retrouver, un changement à rendre concret.', en: 'Decisions to make, cooperation to rebuild, change to put into practice.' },
+  'offer.c1.line': { fr: 'Facilitation, conception de programmes, coaching et médiation.', en: 'Facilitation, programme design, coaching and mediation.' },
+  'offer.c1.cta': { fr: 'Explorer les accompagnements', en: 'Explore ways of working together' },
+  'offer.c2.title': { fr: 'Vous accompagnez les autres', en: 'You support others in their work' },
+  'offer.c2.text': { fr: 'Un espace pour relire votre pratique, travailler les situations difficiles et rester disponible sans tout porter.', en: 'Space to reflect on your practice, work through difficult situations and stay available without carrying everything alone.' },
+  'offer.c2.line': { fr: 'Supervision individuelle et Le Cercle.', en: 'Individual supervision and Le Cercle.' },
+  'offer.c2.cta': { fr: 'Explorer la supervision', en: 'Explore supervision' },
   'offer.s1.title': { fr: 'Facilitation', en: 'Facilitation' },
   'offer.s1.who': { fr: 'équipes de direction, comités, collectifs qui doivent décider ensemble.', en: 'leadership teams, committees and groups that need to decide together.' },
   'offer.s2.title': { fr: 'Conception de programmes', en: 'Programme design' },
