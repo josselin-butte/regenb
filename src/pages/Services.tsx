@@ -84,6 +84,7 @@ const Services = () => {
         {c.services.map((s, i) => (
           <section
             key={s.title}
+            id={i === 3 ? 'supervision' : undefined}
             className={`border-b border-border px-5 py-12 sm:px-8 sm:py-16 lg:px-12 ${i % 2 === 1 ? 'bg-secondary' : ''}`}
           >
             <div className="measure mx-auto">
