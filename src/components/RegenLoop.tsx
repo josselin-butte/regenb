@@ -10,7 +10,7 @@ export const REGEN_CIRCUIT_MS = 22000;
 export const canAnimateLoop = (visible: boolean, hidden: boolean, reduced: boolean, paused: boolean, competing: boolean) =>
   visible && !hidden && !reduced && !paused && !competing;
 let visitorPaused = false;
-const loopPath = 'M200 42 C279 32 346 105 344 183 C369 260 300 349 213 355 C139 375 48 314 52 230 C27 148 95 48 200 42 Z';
+const loopPath = 'M200 50 A150 150 0 1 1 199.99 50 Z';
 
 export default function RegenLoop({ copy }: { copy: RegenCopy }) {
   const [selected, setSelected] = useState(0);
@@ -103,10 +103,10 @@ export default function RegenLoop({ copy }: { copy: RegenCopy }) {
             ))}
           </ul>
         </div>
-        <p className="regen-mobile-only mt-4 text-center text-sm">{copy.tapHint}</p>
+        <p className="mt-4 text-center text-sm">{copy.tapHint}</p>
         <p className="mt-4 text-center text-sm text-muted-foreground">{copy.status}</p>
         <div id="regen-question" role="region" aria-label={movement.label} aria-live="polite" aria-atomic="true" className="regen-detail mt-6 bg-secondary p-5 sm:p-6">
-          <p className="regen-mobile-only mb-2 text-sm font-semibold">{movement.label}</p>
+          <p className="mb-2 text-sm font-semibold">{movement.label}</p>
           <h4 className="text-lg font-semibold text-primary">{movement.question}</h4>
           <p className="mt-3 text-foreground">{movement.support}</p>
         </div>
