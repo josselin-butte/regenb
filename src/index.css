@@ -322,3 +322,35 @@
 @media (prefers-reduced-motion: reduce) {
   .med * { animation: none !important; transition: none !important; stroke-dashoffset: 0 !important; fill-opacity: 1 !important; }
 }
+
+/* Supervision illustration (services page only) */
+.sup h3, .sup h4 { letter-spacing: 0; }
+.sup h3 { overflow-wrap: anywhere; }
+.sup-grid { display: grid; gap: 1.5rem; }
+@media (min-width: 768px) { .sup-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; } }
+.sup-figure { margin: 0; text-align: center; }
+.sup-drawing { width: 100%; max-width: 400px; height: auto; margin: 0 auto; display: block; }
+.sup-drawing * { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.sup-reveal { stroke: hsl(var(--primary)); stroke-width: 1.5; opacity: .45; }
+.sup-node { stroke: hsl(var(--primary)); stroke-width: 1.5; fill: hsl(var(--background)) !important; }
+.sup-dialogue { stroke-dasharray: 3 5; }
+.sup-experience path { stroke: hsl(var(--primary)); stroke-width: 1.5; opacity: .45; }
+.sup-center path { stroke: hsl(var(--primary)); stroke-width: 2.5; }
+.sup-center circle { fill: hsl(var(--primary)) !important; }
+.sup-center-label { margin-top: .25rem; font-size: 1rem; font-weight: 600; color: hsl(var(--primary)); }
+.sup[data-active=experience] .sup-experience path,
+.sup[data-active=relationship] .sup-relationship path,
+.sup[data-active=context] .sup-context path,
+.sup[data-active=resources] .sup-resources path { stroke: hsl(var(--accent)); stroke-width: 3.5; opacity: 1; }
+.sup[data-active=relationship] .sup-relationship .sup-node,
+.sup[data-active=resources] .sup-resources .sup-node { stroke: hsl(var(--accent)); stroke-width: 3; }
+.sup[data-phase=idle] .sup-reveal { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.sup[data-phase=drawing] .sup-reveal { stroke-dasharray: 1; stroke-dashoffset: 1; animation: sup-draw 2s ease-out forwards; }
+@keyframes sup-draw { to { stroke-dashoffset: 0; } }
+.sup-choices { display: flex; flex-wrap: wrap; gap: .5rem; }
+.sup-choice-btn { min-height: 44px; height: auto; max-width: 100%; white-space: normal; text-align: left; }
+.sup-choice-btn[aria-pressed=true], .sup-choice-btn[aria-pressed=true]:hover { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); text-decoration: underline; text-underline-offset: 4px; }
+.sup button:focus-visible { outline: 2px solid hsl(var(--ring)) !important; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  .sup * { animation: none !important; transition: none !important; stroke-dashoffset: 0 !important; }
+}
