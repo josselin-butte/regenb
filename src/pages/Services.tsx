@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import RegenLoop from '@/components/RegenLoop';
 import FacilitationIllustration from '@/components/FacilitationIllustration';
 import ProgrammeIllustration from '@/components/ProgrammeIllustration';
+import MediationIllustration from '@/components/MediationIllustration';
 import Footer from '@/components/Footer';
 import EnquiryForm from '@/components/EnquiryForm';
 import { Button } from '@/components/ui/button';
@@ -53,6 +54,16 @@ export const content = {
         { title: 'Concevoir', question: 'Quelles expériences et quels rythmes serviront ces capacités ?', explanation: 'Articuler les formats, les séquences et les liens avec le terrain.' },
         { title: 'Expérimenter', question: 'Que révèle un premier essai auprès des participants ?', explanation: 'Mettre une séquence à l’épreuve et ajuster la conception.' },
         { title: 'Ancrer', question: 'Comment les acquis trouveront-ils une place dans le travail quotidien ?', explanation: 'Prévoir les pratiques de transfert et les retours d’expérience.' },
+      ],
+    },
+    mediation: {
+      subtitle: 'Un cadre pour se parler autrement.',
+      caption: 'Exprimer ce qui se vit, entendre ce qui compte et explorer les suites possibles — sans imposer l’accord.',
+      dimensions: [
+        { title: 'Poser un cadre', question: 'Les conditions d’un échange libre et approprié sont-elles réunies ?', explanation: 'Examiner le consentement, les règles d’échange et les limites du cadre.' },
+        { title: 'Entendre les vécus', question: 'Qu’est-ce que chaque personne a besoin de pouvoir exprimer ?', explanation: 'Faire une place aux récits distincts, sans les confondre ni les hiérarchiser d’avance.' },
+        { title: 'Clarifier les besoins', question: 'Qu’est-ce qui compte, et quelles limites doivent être reconnues ?', explanation: 'Distinguer les besoins, les attentes et les limites de chacun.' },
+        { title: 'Explorer les suites', question: 'Quelles suites sont acceptables pour les personnes concernées ?', explanation: 'Examiner un accord éventuel, des limites, une autre orientation ou l’arrêt de la démarche.' },
       ],
     },
     services: [
@@ -119,6 +130,16 @@ export const content = {
         { title: 'Embed', question: 'How will the learning find its place in everyday work?', explanation: 'Plan ways to apply learning and reflect on experience.' },
       ],
     },
+    mediation: {
+      subtitle: 'A framework for a different conversation.',
+      caption: 'Express what is being experienced, hear what matters and explore possible next steps — without imposing agreement.',
+      dimensions: [
+        { title: 'Establish a framework', question: 'Are the conditions in place for a freely chosen and appropriate conversation?', explanation: 'Consider consent, ground rules and the limits of the process.' },
+        { title: 'Hear each experience', question: 'What does each person need to be able to express?', explanation: 'Make room for distinct accounts without merging them or prejudging them.' },
+        { title: 'Clarify needs', question: 'What matters, and which boundaries need to be recognised?', explanation: 'Distinguish each person’s needs, expectations and boundaries.' },
+        { title: 'Explore what follows', question: 'Which next steps are acceptable to the people involved?', explanation: 'Consider a possible agreement, boundaries, a different route or ending the process.' },
+      ],
+    },
     services: [
       { title: 'Facilitation', who: 'leadership teams, committees and groups that need to decide together.', desc: 'Off-sites, strategy workshops, decision points. I design the flow, hold the frame and bring out the voices that usually go unheard. The group leaves with clear decisions: who contributes, who decides, and how.', format: 'from half a day to three days, indoors or outdoors.', fees: 'on quotation, after a first conversation.' },
       { title: 'Programme design', who: 'HR and learning leaders, and organisations launching a programme.', desc: 'Leadership programmes, learning journeys, multi-part seminars. I build the architecture, sessions and materials with you, starting from observable behaviour rather than good intentions.', format: 'a few days of design, then delivery or handover to your teams.', fees: 'on quotation.' },
@@ -181,6 +202,7 @@ const Services = () => {
               {i === 0 && <FacilitationIllustration copy={c.facilitation} />}
               {i === 1 && <ProgrammeIllustration copy={c.programme} />}
               {i === 2 && <RegenLoop copy={c.regen} />}
+              {i === 4 && <MediationIllustration copy={c.mediation} />}
               <dl className="mt-6 space-y-2 border-l-2 border-accent pl-4 text-[15px]">
                 <div><dt className="inline font-medium">{c.labels.format}{language === 'fr' ? ' : ' : ': '}</dt><dd className="inline">{s.format}</dd></div>
                 <div><dt className="inline font-medium">{c.labels.fees}{language === 'fr' ? ' : ' : ': '}</dt><dd className="inline">{s.fees}</dd></div>

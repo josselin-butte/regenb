@@ -296,3 +296,28 @@
 @media (prefers-reduced-motion: reduce) {
   .prog *, .prog-line { animation: none !important; transition: none !important; stroke-dashoffset: 0 !important; }
 }
+
+/* Mediation illustration (services page only) */
+.med h3, .med h4 { letter-spacing: 0; }
+.med-grid { display: grid; gap: 1.5rem; }
+@media (min-width: 768px) { .med-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; } }
+.med-drawing { width: 100%; max-width: 400px; height: auto; margin: 0 auto; display: block; }
+.med-drawing * { fill: none; stroke-linecap: round; }
+.med-path { stroke: hsl(var(--primary)); stroke-width: 2.5; }
+.med-third { stroke-width: 1.5; opacity: .5; }
+.med-space { stroke: hsl(var(--muted-foreground)); stroke-width: 1.2; stroke-dasharray: 4 6; fill: hsl(var(--secondary)) !important; }
+.med-needs path, .med-follow path { stroke: hsl(var(--primary)); stroke-width: 1.5; opacity: .45; }
+.med-follow path { stroke-dasharray: 3 5; }
+.med[data-active=frame] .med-space { stroke: hsl(var(--accent)); stroke-width: 3; stroke-dasharray: none; }
+.med[data-active=hear] .med-hear .med-path { stroke: hsl(var(--accent)); stroke-width: 4; opacity: 1; }
+.med[data-active=needs] .med-needs path, .med[data-active=follow] .med-follow path { stroke: hsl(var(--accent)); stroke-width: 3; opacity: 1; }
+.med[data-phase=idle] .med-intro { stroke-dasharray: 1; stroke-dashoffset: 1; fill-opacity: 0; }
+.med[data-phase=drawing] .med-intro { stroke-dasharray: 1; stroke-dashoffset: 1; fill-opacity: 0; animation: med-draw 2s ease-out forwards; }
+@keyframes med-draw { 90% { stroke-dashoffset: 0; fill-opacity: 0; } to { stroke-dashoffset: 0; fill-opacity: 1; } }
+.med-choices { display: flex; flex-wrap: wrap; gap: .5rem; }
+.med-choice-btn { min-height: 44px; height: auto; white-space: normal; text-align: left; }
+.med-choice-btn[aria-pressed=true], .med-choice-btn[aria-pressed=true]:hover { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); text-decoration: underline; text-underline-offset: 4px; }
+.med button:focus-visible { outline: 2px solid hsl(var(--ring)) !important; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  .med * { animation: none !important; transition: none !important; stroke-dashoffset: 0 !important; fill-opacity: 1 !important; }
+}
