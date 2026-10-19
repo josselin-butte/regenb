@@ -12,7 +12,7 @@ let preference: () => void;
 let media: { matches: boolean; addEventListener: ReturnType<typeof vi.fn>; removeEventListener: ReturnType<typeof vi.fn> };
 const disconnect = vi.fn();
 const play = vi.fn(); const pause = vi.fn(); const cancel = vi.fn();
-const animate = vi.fn(() => ({ play, pause, cancel }));
+const animate = vi.fn((_frames: unknown, _options: unknown) => ({ play, pause, cancel }));
 
 beforeEach(() => {
   vi.useFakeTimers(); vi.clearAllMocks();
@@ -31,9 +31,9 @@ describe('REGEN conversation rules', () => {
   it('allows direct selection of any movement without traversing earlier movements', () => {
     render(<RegenLoop copy={copy} />);
     fireEvent.click(screen.getByRole('button', { name: 'N' }));
-    expect(screen.getByRole('region').textContent).toBe('Question NSupport N');
+    expect(screen.getByRole('region', { name: 'N' }).textContent).toBe('Question NSupport N');
     fireEvent.click(screen.getByRole('button', { name: 'G' }));
-    expect(screen.getByRole('region').textContent).toBe('Question GSupport G');
+    expect(screen.getByRole('region', { name: 'G' }).textContent).toBe('Question GSupport G');
     expect(screen.getByRole('button', { name: 'G' }).getAttribute('aria-pressed')).toBe('true');
   });
   it('uses a 22-second decorative circuit and never automatically selects a movement', () => {
@@ -41,7 +41,7 @@ describe('REGEN conversation rules', () => {
     act(() => { intersect([{ isIntersecting: true }]); vi.advanceTimersByTime(44000); });
     expect(REGEN_CIRCUIT_MS).toBe(22000);
     expect(animate.mock.calls[0]?.[1]).toEqual({ duration: 22000, iterations: Infinity, easing: 'linear' });
-    expect(screen.getByRole('region').textContent).toBe('Question RSupport R');
+    expect(screen.getByRole('region', { name: 'R' }).textContent).toBe('Question RSupport R');
   });
   it('stops when offscreen and resumes when visible', () => {
     render(<RegenLoop copy={copy} />);
