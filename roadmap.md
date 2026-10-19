@@ -4,7 +4,7 @@
 - [x] SV-03 Programme design illustration only (FR/EN, preview, not published).
 - [x] SV-04 Mediation illustration only (FR/EN, preview, not published).
 - [x] SV-02 Supervision illustration only (FR/EN, preview, not published); no supervision-specific contact button (owner's choice — the shared contact button serves it).
-- [ ] Le Cercle: no dedicated sign-up page or address yet (awaiting owner); do not invent a link.
+- [x] Le Cercle: no dedicated page or link — email is enough for now (owner's decision 2026-10-19).
 - [ ] Supervision caption wrapping at very large text (awaiting owner approval for a styles-only fix).
 - [x] Enhance existing REGEN loop only: FR/EN native selection and pause, 22-second decoration, 12 passing focused/route tests, browser checks at 375/1280px for keyboard, stable panels and anchor navigation; no publishing. True no-JavaScript rendering excluded by approved scope.
 
