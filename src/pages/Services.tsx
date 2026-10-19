@@ -6,6 +6,7 @@ import RegenLoop from '@/components/RegenLoop';
 import FacilitationIllustration from '@/components/FacilitationIllustration';
 import ProgrammeIllustration from '@/components/ProgrammeIllustration';
 import MediationIllustration from '@/components/MediationIllustration';
+import SupervisionIllustration from '@/components/SupervisionIllustration';
 import Footer from '@/components/Footer';
 import EnquiryForm from '@/components/EnquiryForm';
 import { Button } from '@/components/ui/button';
@@ -64,6 +65,19 @@ export const content = {
         { title: 'Entendre les vécus', question: 'Qu’est-ce que chaque personne a besoin de pouvoir exprimer ?', explanation: 'Faire une place aux récits distincts, sans les confondre ni les hiérarchiser d’avance.' },
         { title: 'Clarifier les besoins', question: 'Qu’est-ce qui compte, et quelles limites doivent être reconnues ?', explanation: 'Distinguer les besoins, les attentes et les limites de chacun.' },
         { title: 'Explorer les suites', question: 'Quelles suites sont acceptables pour les personnes concernées ?', explanation: 'Examiner un accord éventuel, des limites, une autre orientation ou l’arrêt de la démarche.' },
+      ],
+    },
+    supervision: {
+      subtitle: 'Prendre du recul, sans perdre le lien.',
+      caption: 'Un espace de réflexion avec un superviseur pour explorer votre posture, ce qui se joue dans vos relations professionnelles et les choix qui engagent votre responsabilité.',
+      instruction: 'Choisissez une perspective pour explorer votre pratique.',
+      center: 'Votre pratique',
+      takeaway: 'La supervision peut faire émerger des repères pour votre pratique : une hypothèse à vérifier, une limite à poser, une question à approfondir ou un ajustement à expérimenter.',
+      dimensions: [
+        { title: 'Votre vécu', question: 'Qu’est-ce que cette situation vient toucher chez vous ?', explanation: 'Explorer les émotions, les résonances et les présupposés qui influencent votre manière d’accompagner.' },
+        { title: 'La relation', question: 'Qu’est-ce qui se joue entre vous et les personnes accompagnées ?', explanation: 'Examiner les attentes, les limites, votre positionnement et les dynamiques relationnelles.' },
+        { title: 'Le contexte et le cadre', question: 'Quels mandats, rapports de pouvoir ou enjeux éthiques influencent votre pratique ?', explanation: 'Élargir le regard aux responsabilités, aux pressions organisationnelles et au système dans lequel vous intervenez.' },
+        { title: 'Vos ressources', question: 'De quoi avez-vous besoin pour exercer avec présence et discernement ?', explanation: 'Identifier les appuis, les limites et les apprentissages qui peuvent soutenir votre pratique dans la durée.' },
       ],
     },
     services: [
@@ -140,6 +154,19 @@ export const content = {
         { title: 'Explore what follows', question: 'Which next steps are acceptable to the people involved?', explanation: 'Consider a possible agreement, boundaries, a different route or ending the process.' },
       ],
     },
+    supervision: {
+      subtitle: 'Step back, without losing connection.',
+      caption: 'A reflective space with a supervisor to explore how you show up in your work, what is happening in your professional relationships and the choices that engage your responsibility.',
+      instruction: 'Choose a perspective to explore your practice.',
+      center: 'Your practice',
+      takeaway: 'Supervision can bring useful reference points for your practice: an assumption to explore, a boundary to set, a question to deepen or an adjustment to try.',
+      dimensions: [
+        { title: 'Your experience', question: 'What does this situation stir in you?', explanation: 'Explore the feelings, resonances and assumptions that influence how you work with others.' },
+        { title: 'The relationship', question: 'What is happening between you and the people you work with?', explanation: 'Examine expectations, boundaries, your positioning and relational dynamics.' },
+        { title: 'Context and boundaries', question: 'Which mandates, power dynamics or ethical issues influence your practice?', explanation: 'Consider responsibilities, organisational pressures and the wider system in which you work.' },
+        { title: 'Your resources', question: 'What do you need to practise with presence and discernment?', explanation: 'Identify the support, boundaries and learning that can sustain your practice over time.' },
+      ],
+    },
     services: [
       { title: 'Facilitation', who: 'leadership teams, committees and groups that need to decide together.', desc: 'Off-sites, strategy workshops, decision points. I design the flow, hold the frame and bring out the voices that usually go unheard. The group leaves with clear decisions: who contributes, who decides, and how.', format: 'from half a day to three days, indoors or outdoors.', fees: 'on quotation, after a first conversation.' },
       { title: 'Programme design', who: 'HR and learning leaders, and organisations launching a programme.', desc: 'Leadership programmes, learning journeys, multi-part seminars. I build the architecture, sessions and materials with you, starting from observable behaviour rather than good intentions.', format: 'a few days of design, then delivery or handover to your teams.', fees: 'on quotation.' },
@@ -202,6 +229,7 @@ const Services = () => {
               {i === 0 && <FacilitationIllustration copy={c.facilitation} />}
               {i === 1 && <ProgrammeIllustration copy={c.programme} />}
               {i === 2 && <RegenLoop copy={c.regen} />}
+              {i === 3 && <SupervisionIllustration copy={c.supervision} />}
               {i === 4 && <MediationIllustration copy={c.mediation} />}
               <dl className="mt-6 space-y-2 border-l-2 border-accent pl-4 text-[15px]">
                 <div><dt className="inline font-medium">{c.labels.format}{language === 'fr' ? ' : ' : ': '}</dt><dd className="inline">{s.format}</dd></div>
