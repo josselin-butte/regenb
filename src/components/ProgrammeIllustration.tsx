@@ -29,11 +29,11 @@ function Drawing({ selected, vertical }: { selected: number; vertical?: boolean 
     </>
   );
   return vertical ? (
-    <svg viewBox="0 0 200 310" aria-hidden="true" focusable="false" className="prog-drawing prog-vertical">
+    <svg viewBox="25 0 140 310" aria-hidden="true" focusable="false" className="prog-drawing prog-vertical">
       <g transform="translate(200 0) rotate(90)">{body}</g>
     </svg>
   ) : (
-    <svg viewBox="0 0 310 200" aria-hidden="true" focusable="false" className="prog-drawing prog-horizontal">{body}</svg>
+    <svg viewBox="0 25 310 140" aria-hidden="true" focusable="false" className="prog-drawing prog-horizontal">{body}</svg>
   );
 }
 
