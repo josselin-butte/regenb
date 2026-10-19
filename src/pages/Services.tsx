@@ -4,6 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import RegenLoop from '@/components/RegenLoop';
 import FacilitationIllustration from '@/components/FacilitationIllustration';
+import ProgrammeIllustration from '@/components/ProgrammeIllustration';
 import Footer from '@/components/Footer';
 import EnquiryForm from '@/components/EnquiryForm';
 import { Button } from '@/components/ui/button';
@@ -41,6 +42,17 @@ export const content = {
         { title: 'Ouvrir les perspectives', question: 'Quelles voix, informations et tensions doivent être entendues ?', explanation: 'Rendre visibles les contributions, les différences et les points de désaccord.' },
         { title: 'Choisir une voie', question: 'Quelle option retenir, selon le mode de décision convenu ?', explanation: 'Formuler un choix, un arbitrage ou une expérimentation.' },
         { title: 'Organiser la suite', question: 'Qui fait quoi, avec quels moyens et quel point de suivi ?', explanation: 'Relier la séance aux responsabilités et aux prochains pas.' },
+      ],
+    },
+    programme: {
+      subtitle: 'Relier les apprentissages au travail réel.',
+      caption: 'Une intention claire, des expériences utiles et des retours du terrain pour ajuster le parcours.',
+      strands: ['Apprentissages', 'Pratique sur le terrain'] as [string, string],
+      dimensions: [
+        { title: 'Comprendre', question: 'Que doivent pouvoir faire les participants, et comment le constater ?', explanation: 'Clarifier le besoin, les capacités visées et les signes de progression.' },
+        { title: 'Concevoir', question: 'Quelles expériences et quels rythmes serviront ces capacités ?', explanation: 'Articuler les formats, les séquences et les liens avec le terrain.' },
+        { title: 'Expérimenter', question: 'Que révèle un premier essai auprès des participants ?', explanation: 'Mettre une séquence à l’épreuve et ajuster la conception.' },
+        { title: 'Ancrer', question: 'Comment les acquis trouveront-ils une place dans le travail quotidien ?', explanation: 'Prévoir les pratiques de transfert et les retours d’expérience.' },
       ],
     },
     services: [
@@ -94,6 +106,17 @@ export const content = {
         { title: 'Open up perspectives', question: 'Which voices, information and tensions need to be heard?', explanation: 'Make contributions, differences and disagreements visible.' },
         { title: 'Choose a way forward', question: 'Which option should be taken, using the agreed decision-making process?', explanation: 'Articulate a choice, a trade-off or an experiment.' },
         { title: 'Organise what follows', question: 'Who does what, with which resources, and when will progress be reviewed?', explanation: 'Connect the session to responsibilities and next steps.' },
+      ],
+    },
+    programme: {
+      subtitle: 'Connect learning with real-world practice.',
+      caption: 'A clear purpose, useful experiences and feedback from practice to refine the programme.',
+      strands: ['Learning', 'Real-world practice'] as [string, string],
+      dimensions: [
+        { title: 'Understand', question: 'What should participants be able to do, and how will this be recognised?', explanation: 'Clarify the need, intended capabilities and signs of progress.' },
+        { title: 'Design', question: 'Which experiences and rhythms will support these capabilities?', explanation: 'Connect formats, sessions and real-world practice.' },
+        { title: 'Experiment', question: 'What does an initial trial with participants reveal?', explanation: 'Test a session and refine the design.' },
+        { title: 'Embed', question: 'How will the learning find its place in everyday work?', explanation: 'Plan ways to apply learning and reflect on experience.' },
       ],
     },
     services: [
@@ -156,6 +179,7 @@ const Services = () => {
               <p className="mt-4"><span className="font-medium">{c.labels.who}</span>{language === 'fr' ? ' : ' : ': '}{s.who}</p>
               <p className="mt-4 text-muted-foreground">{s.desc}</p>
               {i === 0 && <FacilitationIllustration copy={c.facilitation} />}
+              {i === 1 && <ProgrammeIllustration copy={c.programme} />}
               {i === 2 && <RegenLoop copy={c.regen} />}
               <dl className="mt-6 space-y-2 border-l-2 border-accent pl-4 text-[15px]">
                 <div><dt className="inline font-medium">{c.labels.format}{language === 'fr' ? ' : ' : ': '}</dt><dd className="inline">{s.format}</dd></div>
