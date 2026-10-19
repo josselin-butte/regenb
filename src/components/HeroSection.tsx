@@ -50,9 +50,14 @@ const HeroSection = () => {
             <ElementIcon key={el} element={el} size={28} delay={i * 0.25} animated={el === 'water'} label={t(`element.${el}`)} />
           ))}
         </div>
-        <Button size="lg" asChild className="mt-10">
-          <Link to={lp('/boussole')}>{t('hero.cta')}</Link>
-        </Button>
+        <div className="mt-10 flex flex-wrap items-center gap-4">
+          <Button size="lg" asChild>
+            <Link to={lp('/contact')}>{t('hero.ctaPrimary')}</Link>
+          </Button>
+          <Button size="lg" variant="heroOutline" asChild>
+            <Link to={lp('/boussole')}>{t('hero.cta')}</Link>
+          </Button>
+        </div>
         </div>
         <img src={`https://regenb.lovable.app${dehors.url}`} alt={t('image.dehors')} width={1280} height={853} loading="eager" fetchPriority="high" className="aspect-[4/3] w-full object-cover lg:aspect-[4/5] lg:max-h-[520px]" />
       </div>
