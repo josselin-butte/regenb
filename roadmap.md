@@ -1,5 +1,7 @@
 # Refonte Josselin Butté
 
+- [ ] Enhance the existing REGEN loop only: bilingual native controls, stable questions, locally gated decoration, responsive and keyboard checks; no publishing. True no-JavaScript rendering excluded by approved scope.
+
 - [x] WB-05 only: bilingual REGEN block after coaching description and one homepage link; direct/internal anchors verified FR/EN at 390/1280px, five visible movements, no overflow/runtime errors, four route tests passed; not published.
 
 - [x] Add optional language-specific notebook audio, player, list badge, Article media and upload instructions (14 tests passed; browser playback verified using temporary MP3 interception, real storage blocked)
