@@ -20,7 +20,7 @@ export const content = {
       title: 'La Boucle REGEN',
       intro: 'Cinq mouvements pour rencontrer la complexité et trouver un prochain pas juste.',
       center: 'Votre situation', centerNote: 'Le point de départ. Le fil auquel revenir.',
-      status: 'Cadre en développement', pause: 'Mettre en pause', play: 'Animer la boucle',
+      status: 'Cadre en développement', tapHint: 'Touchez une lettre pour explorer un mouvement.', pause: 'Mettre en pause', play: 'Animer la boucle',
       movements: [
         { label: 'R — Revenir au réel', question: 'Qu’est-ce qui se passe vraiment ?', support: 'Partir des faits, des ressentis et du contexte, sans chercher trop vite à résoudre.' },
         { label: 'E — Écouter et inclure le champ', question: 'Quoi — et qui — reste à entendre ?', support: 'Élargir le regard aux besoins, aux relations et aux voix encore absentes.' },
@@ -63,7 +63,7 @@ export const content = {
       title: 'The REGEN Loop',
       intro: 'Five movements to meet complexity and find a wise next step.',
       center: 'Your situation', centerNote: 'The starting point. The thread to return to.',
-      status: 'A developing framework', pause: 'Pause movement', play: 'Animate the loop',
+      status: 'A developing framework', tapHint: 'Tap a letter to explore a movement.', pause: 'Pause movement', play: 'Animate the loop',
       movements: [
         { label: 'R — Root in reality', question: 'What is actually happening?', support: 'Start with facts, feelings and context, without rushing to solve.' },
         { label: 'E — Embrace the whole field', question: 'What — and who — still needs to be heard?', support: 'Widen attention to needs, relationships and voices that are not yet present.' },
