@@ -64,6 +64,7 @@ const translations: Translations = {
   'offer.c2.text': { fr: 'Un espace pour relire votre pratique, travailler les situations difficiles et rester disponible sans tout porter.', en: 'Space to reflect on your practice, work through difficult situations and stay available without carrying everything alone.' },
   'offer.c2.line': { fr: 'Supervision individuelle et Le Cercle.', en: 'Individual supervision and Le Cercle.' },
   'offer.c2.cta': { fr: 'Explorer la supervision', en: 'Explore supervision' },
+  'offer.regen': { fr: 'Découvrir la Boucle REGEN', en: 'Discover the REGEN Loop' },
   'offer.s1.title': { fr: 'Facilitation', en: 'Facilitation' },
   'offer.s1.who': { fr: 'équipes de direction, comités, collectifs qui doivent décider ensemble.', en: 'leadership teams, committees and groups that need to decide together.' },
   'offer.s2.title': { fr: 'Conception de programmes', en: 'Programme design' },

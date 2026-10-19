@@ -14,6 +14,18 @@ export const content = {
     intro:
       "Je travaille avec des équipes de direction, des managers et des professionnels de l'accompagnement. Chaque collaboration part de votre réalité : ce qui se joue, ce qui bloque, ce qui demande à évoluer.",
     labels: { who: 'Pour qui', format: 'Format', fees: 'Tarif' },
+    regen: {
+      title: 'La Boucle REGEN — revenir au réel, trouver un prochain pas juste',
+      intro: 'Un cadre de questionnement que je développe pour ma pratique. Il invite à rencontrer une situation dans sa complexité, à clarifier son pouvoir d’agir et à choisir une suite soutenable. Il guide mon attention ; il ne prescrit pas votre chemin.',
+      movements: [
+        { label: 'R — Revenir au réel', question: 'Qu’est-ce qui se passe vraiment ?' },
+        { label: 'E — Écouter et inclure le champ', question: 'Quoi — et qui — reste à entendre ?' },
+        { label: 'G — Guider son pouvoir avec discernement', question: 'Qu’est-ce qui est à vous de décider, d’influencer ou de laisser ?' },
+        { label: 'E — Explorer les tensions', question: 'Quelles vérités, valeurs ou contraintes demandent à être considérées ensemble ?' },
+        { label: 'N — Nourrir le prochain pas', question: 'Quel pas concret est possible, avec quel soutien et quel temps de retour ?' },
+      ],
+      closing: 'Ces mouvements ne sont pas des étapes imposées. Le point de départ est ce que vous souhaitez travailler ; une nouvelle compréhension peut inviter à revenir en arrière, à agir ou à faire une pause.',
+    },
     services: [
       { title: 'Facilitation', who: 'équipes de direction, comités, collectifs qui doivent décider ensemble.', desc: "Séminaires, ateliers de stratégie, moments de décision. Je conçois le déroulé, je tiens le cadre, et je rends visibles les voix qu'on n'entend pas d'habitude. Le groupe repart avec des décisions claires : qui contribue, qui décide, et comment.", format: "d'une demi-journée à trois jours, en salle ou en extérieur.", fees: 'sur devis, après un premier échange.' },
       { title: 'Conception de programmes', who: 'directions RH, responsables formation, organisations qui lancent un parcours.', desc: "Programmes de leadership, parcours de formation, séminaires en plusieurs temps. Je construis avec vous l'architecture, les séquences et les supports, en partant de comportements observables plutôt que d'intentions.", format: 'quelques jours de conception, puis animation ou transmission à vos équipes.', fees: 'sur devis.' },
@@ -41,6 +53,18 @@ export const content = {
     intro:
       "I work with leadership teams, managers and people whose job is to support others. Every engagement starts from your reality: what's at stake, what's stuck, and what's asking to change.",
     labels: { who: 'For whom', format: 'Format', fees: 'Fees' },
+    regen: {
+      title: 'The REGEN Loop — meet reality, find a wise next step',
+      intro: 'A questioning framework I am developing for my practice. It invites a fuller understanding of a complex situation, clearer agency and a sustainable next step. It guides my attention; it does not prescribe your path.',
+      movements: [
+        { label: 'R — Root in reality', question: 'What is actually happening?' },
+        { label: 'E — Embrace the whole field', question: 'What — and who — still needs to be heard?' },
+        { label: 'G — Guide power wisely', question: 'What is yours to decide, influence or let go of?' },
+        { label: 'E — Explore tensions', question: 'Which truths, values or constraints need to be considered together?' },
+        { label: 'N — Nurture the next step', question: 'What concrete step is possible, with what support and when to review it?' },
+      ],
+      closing: 'These movements are not prescribed steps. The starting point is what you want to work on; new understanding may invite you to return, act or pause.',
+    },
     services: [
       { title: 'Facilitation', who: 'leadership teams, committees and groups that need to decide together.', desc: 'Off-sites, strategy workshops, decision points. I design the flow, hold the frame and bring out the voices that usually go unheard. The group leaves with clear decisions: who contributes, who decides, and how.', format: 'from half a day to three days, indoors or outdoors.', fees: 'on quotation, after a first conversation.' },
       { title: 'Programme design', who: 'HR and learning leaders, and organisations launching a programme.', desc: 'Leadership programmes, learning journeys, multi-part seminars. I build the architecture, sessions and materials with you, starting from observable behaviour rather than good intentions.', format: 'a few days of design, then delivery or handover to your teams.', fees: 'on quotation.' },
@@ -91,6 +115,21 @@ const Services = () => {
               <h2 className="text-2xl font-semibold text-primary sm:text-3xl">{s.title}</h2>
               <p className="mt-4"><span className="font-medium">{c.labels.who}</span>{language === 'fr' ? ' : ' : ': '}{s.who}</p>
               <p className="mt-4 text-muted-foreground">{s.desc}</p>
+              {i === 2 && (
+                <section id="regen-loop" aria-labelledby="regen-loop-title" className="mt-8 scroll-mt-28 border-t border-border pt-8">
+                  <h3 id="regen-loop-title" className="text-xl font-semibold text-primary sm:text-2xl">{c.regen.title}</h3>
+                  <p className="mt-4 text-muted-foreground">{c.regen.intro}</p>
+                  <ol className="mt-6 list-none space-y-5" role="list">
+                    {c.regen.movements.map((movement) => (
+                      <li key={movement.label}>
+                        <h4 className="text-base font-semibold">{movement.label}</h4>
+                        <p className="mt-1 text-muted-foreground">{movement.question}</p>
+                      </li>
+                    ))}
+                  </ol>
+                  <p className="mt-6 text-muted-foreground">{c.regen.closing}</p>
+                </section>
+              )}
               <dl className="mt-6 space-y-2 border-l-2 border-accent pl-4 text-[15px]">
                 <div><dt className="inline font-medium">{c.labels.format}{language === 'fr' ? ' : ' : ': '}</dt><dd className="inline">{s.format}</dd></div>
                 <div><dt className="inline font-medium">{c.labels.fees}{language === 'fr' ? ' : ' : ': '}</dt><dd className="inline">{s.fees}</dd></div>
