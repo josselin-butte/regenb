@@ -40,9 +40,9 @@ export default function SupervisionIllustration({ copy }: { copy: SupervisionCop
           {/* A situation at the centre; open, offset arcs and a few links widen the field. No wheel, no target. */}
           <svg viewBox="0 0 320 230" aria-hidden="true" focusable="false" className="sup-drawing">
             <g className="sup-context">
-              <path d="M34 70 C100 22 226 20 292 78" pathLength={1} className="sup-reveal" />
-              <path d="M24 170 C84 214 214 220 290 164" pathLength={1} className="sup-reveal" />
-              <path d="M300 104 C312 124 308 146 296 160" pathLength={1} className="sup-reveal" />
+              <path d="M70 50 C122 28 200 26 250 50" pathLength={1} className="sup-reveal" />
+              <path d="M40 182 C96 210 170 214 222 200" pathLength={1} className="sup-reveal" />
+              <path d="M286 84 C304 104 306 136 290 160" pathLength={1} className="sup-reveal" />
             </g>
             <g className="sup-relationship">
               <path d="M146 112 C124 102 104 90 82 84" pathLength={1} className="sup-reveal" />
