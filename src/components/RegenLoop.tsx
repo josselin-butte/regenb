@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 
 export type RegenCopy = {
-  title: string; intro: string; center: string; centerNote: string; status: string;
+  title: string; intro: string; center: string; centerNote: string; status: string; tapHint: string;
   closing: string; closingNote: string; context: string; pause: string; play: string;
   movements: { label: string; question: string; support: string }[];
 };
@@ -103,8 +103,10 @@ export default function RegenLoop({ copy }: { copy: RegenCopy }) {
             ))}
           </ul>
         </div>
+        <p className="regen-mobile-only mt-4 text-center text-sm">{copy.tapHint}</p>
         <p className="mt-4 text-center text-sm text-muted-foreground">{copy.status}</p>
         <div id="regen-question" role="region" aria-label={movement.label} aria-live="polite" aria-atomic="true" className="regen-detail mt-6 bg-secondary p-5 sm:p-6">
+          <p className="regen-mobile-only mb-2 text-sm font-semibold">{movement.label}</p>
           <h4 className="text-lg font-semibold text-primary">{movement.question}</h4>
           <p className="mt-3 text-foreground">{movement.support}</p>
         </div>
