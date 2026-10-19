@@ -29,6 +29,12 @@ const OfferSection = () => {
             </li>
           ))}
         </ul>
+        <Link
+          to={lp('/accompagnement#regen-loop')}
+          className="mt-8 inline-block text-sm underline decoration-accent underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary-foreground"
+        >
+          {t('offer.regen')}
+        </Link>
       </div>
     </section>
   );
