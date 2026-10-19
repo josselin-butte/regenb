@@ -94,11 +94,10 @@ export default function RegenLoop({ copy }: { copy: RegenCopy }) {
           <ul className="regen-choices" aria-label={copy.title}>
             {copy.movements.map((item, index) => (
               <li key={item.label}>
-                <Button type="button" variant="heroOutline" className="regen-choice" aria-pressed={selected === index}
+                <Button type="button" variant="heroOutline" className="regen-choice" aria-label={item.label} aria-pressed={selected === index}
                   aria-controls="regen-question" onClick={() => setSelected(index)}>
                   <span className="regen-letter" aria-hidden="true">{item.label.charAt(0)}</span>
                   <span>{item.label.slice(4)}</span>
-                  <span className="sr-only">{item.label.charAt(0)}</span>
                 </Button>
               </li>
             ))}
