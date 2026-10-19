@@ -81,7 +81,7 @@ export default function ProgrammeIllustration({ copy }: { copy: ProgrammeCopy })
               </li>
             ))}
           </ul>
-          <div id="prog-detail" role="region" aria-live="polite" aria-label={item.title} className="mt-4 bg-secondary p-5">
+          <div id="prog-detail" role="region" aria-live="polite" aria-label={item.title} className="mt-4 bg-background p-5">
             <p className="text-sm font-semibold">{item.title}</p>
             <h4 className="mt-2 text-lg font-semibold text-primary">{item.question}</h4>
             <p className="mt-2 text-foreground">{item.explanation}</p>
