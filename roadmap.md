@@ -1,5 +1,7 @@
 # Refonte Josselin Butté
 
+- [x] Enhance existing REGEN loop only: FR/EN native selection and pause, 22-second decoration, 12 passing focused/route tests, browser checks at 375/1280px for keyboard, stable panels and anchor navigation; no publishing. True no-JavaScript rendering excluded by approved scope.
+
 - [x] WB-05 only: bilingual REGEN block after coaching description and one homepage link; direct/internal anchors verified FR/EN at 390/1280px, five visible movements, no overflow/runtime errors, four route tests passed; not published.
 
 - [x] Add optional language-specific notebook audio, player, list badge, Article media and upload instructions (14 tests passed; browser playback verified using temporary MP3 interception, real storage blocked)
