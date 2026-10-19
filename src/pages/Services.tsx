@@ -169,7 +169,7 @@ const Services = () => {
           <div className="measure mx-auto text-center">
             <h2 className="text-2xl font-semibold sm:text-3xl">{c.closingTitle}</h2>
             <p className="mt-4 opacity-90">{c.closingText}</p>
-            <Button asChild size="lg" variant="secondary" className="mt-8">
+            <Button asChild size="lg" variant="secondary" className="mt-8 h-auto min-h-11 max-w-full whitespace-normal py-3 text-center">
               <a href={mailto}>{c.button}</a>
             </Button>
             <p className="mt-6 text-sm opacity-90">
