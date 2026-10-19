@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import RegenLoop from '@/components/RegenLoop';
+import FacilitationIllustration from '@/components/FacilitationIllustration';
 import Footer from '@/components/Footer';
 import EnquiryForm from '@/components/EnquiryForm';
 import { Button } from '@/components/ui/button';
@@ -31,6 +32,16 @@ export const content = {
       closing: 'Cinq mouvements. Aucun chemin imposé.',
       closingNote: 'Revenir, écouter, ajuster : le mouvement reste le vôtre.',
       context: 'Un cadre de questionnement en cours d’expérimentation dans ma pratique. Il guide mon attention ; il ne prescrit pas votre chemin.',
+    },
+    facilitation: {
+      subtitle: 'Faire place aux différences. Avancer ensemble.',
+      caption: 'Un cadre pour écouter les différences, clarifier les choix et organiser la suite.',
+      dimensions: [
+        { title: 'Poser le cadre', question: 'Sur quoi devons-nous avancer, avec qui, et qui décidera ?', explanation: 'Clarifier l’intention, les rôles et le mode de décision.' },
+        { title: 'Ouvrir les perspectives', question: 'Quelles voix, informations et tensions doivent être entendues ?', explanation: 'Rendre visibles les contributions, les différences et les points de désaccord.' },
+        { title: 'Choisir une voie', question: 'Quelle option retenir, selon le mode de décision convenu ?', explanation: 'Formuler un choix, un arbitrage ou une expérimentation.' },
+        { title: 'Organiser la suite', question: 'Qui fait quoi, avec quels moyens et quel point de suivi ?', explanation: 'Relier la séance aux responsabilités et aux prochains pas.' },
+      ],
     },
     services: [
       { title: 'Facilitation', who: 'équipes de direction, comités, collectifs qui doivent décider ensemble.', desc: "Séminaires, ateliers de stratégie, moments de décision. Je conçois le déroulé, je tiens le cadre, et je rends visibles les voix qu'on n'entend pas d'habitude. Le groupe repart avec des décisions claires : qui contribue, qui décide, et comment.", format: "d'une demi-journée à trois jours, en salle ou en extérieur.", fees: 'sur devis, après un premier échange.' },
@@ -74,6 +85,16 @@ export const content = {
       closing: 'Five movements. No prescribed path.',
       closingNote: 'Return, listen, adjust: the movement remains yours.',
       context: 'A questioning framework being explored in my practice. It guides my attention; it does not prescribe your path.',
+    },
+    facilitation: {
+      subtitle: 'Make room for differences. Move forward together.',
+      caption: 'A framework for hearing different perspectives, clarifying choices and organising what follows.',
+      dimensions: [
+        { title: 'Set the frame', question: 'What needs to move forward, who needs to be involved, and who will decide?', explanation: 'Clarify the purpose, roles and decision-making process.' },
+        { title: 'Open up perspectives', question: 'Which voices, information and tensions need to be heard?', explanation: 'Make contributions, differences and disagreements visible.' },
+        { title: 'Choose a way forward', question: 'Which option should be taken, using the agreed decision-making process?', explanation: 'Articulate a choice, a trade-off or an experiment.' },
+        { title: 'Organise what follows', question: 'Who does what, with which resources, and when will progress be reviewed?', explanation: 'Connect the session to responsibilities and next steps.' },
+      ],
     },
     services: [
       { title: 'Facilitation', who: 'leadership teams, committees and groups that need to decide together.', desc: 'Off-sites, strategy workshops, decision points. I design the flow, hold the frame and bring out the voices that usually go unheard. The group leaves with clear decisions: who contributes, who decides, and how.', format: 'from half a day to three days, indoors or outdoors.', fees: 'on quotation, after a first conversation.' },
@@ -134,6 +155,7 @@ const Services = () => {
               <h2 className="text-2xl font-semibold text-primary sm:text-3xl">{s.title}</h2>
               <p className="mt-4"><span className="font-medium">{c.labels.who}</span>{language === 'fr' ? ' : ' : ': '}{s.who}</p>
               <p className="mt-4 text-muted-foreground">{s.desc}</p>
+              {i === 0 && <FacilitationIllustration copy={c.facilitation} />}
               {i === 2 && <RegenLoop copy={c.regen} />}
               <dl className="mt-6 space-y-2 border-l-2 border-accent pl-4 text-[15px]">
                 <div><dt className="inline font-medium">{c.labels.format}{language === 'fr' ? ' : ' : ': '}</dt><dd className="inline">{s.format}</dd></div>
