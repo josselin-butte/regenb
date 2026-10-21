@@ -60,7 +60,14 @@ export const faqPage = (lang: Lang, items: { q: string; a: string }[], pagePath:
 export const course = (lang: Lang, name: string, description: string) => ({
   '@context': CTX, '@type': 'Course', name, description,
   inLanguage: ['fr', 'en'],
-  offers: { '@type': 'Offer', price: 77, priceCurrency: 'EUR', description: lang === 'en' ? '€77 incl. VAT' : '77 € TTC' },
+  offers: {
+    '@type': 'Offer', price: 27, priceCurrency: 'EUR',
+    description: lang === 'en' ? 'From €27, €77 recommended (VAT included)' : 'À partir de 27 €, 77 € conseillé (TTC)',
+    priceSpecification: [
+      { '@type': 'UnitPriceSpecification', minPrice: 27, price: 27, priceCurrency: 'EUR', valueAddedTaxIncluded: true },
+      { '@type': 'UnitPriceSpecification', price: 77, priceCurrency: 'EUR', priceType: 'https://schema.org/SRP', valueAddedTaxIncluded: true },
+    ],
+  },
   provider: { '@id': ORG_ID, '@type': 'ProfessionalService', name: 'RegenB France', url: SITE_ORIGIN },
   hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'online', inLanguage: lang },
 });
