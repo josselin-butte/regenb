@@ -2,6 +2,14 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import CompassAudio from '@/components/compass/CompassAudio';
+import heroImg from '@/assets/boussole/boussole-hero.jpg.asset.json';
+import earthImg from '@/assets/boussole/boussole-earth.jpg.asset.json';
+import waterImg from '@/assets/boussole/boussole-water.jpg.asset.json';
+import airImg from '@/assets/boussole/boussole-air.jpg.asset.json';
+import fireImg from '@/assets/boussole/boussole-fire.jpg.asset.json';
+import portraitImg from '@/assets/boussole/boussole-portrait.jpg.asset.json';
+import closingImg from '@/assets/boussole/boussole-closing.jpg.asset.json';
 
 // Page de vente de la formation Nature Values Compass
 const BUY_URLS = { fr: 'https://valuescourse.regenb.com/?lang=fr', en: 'https://valuescourse.regenb.com/?lang=en' } as const;
