@@ -53,4 +53,4 @@
 - [ ] Séparateurs ondulés animés (WavySeparator) (en attente : remplacer les traits droits ?)
 - [x] Accueil : quatre icônes sous le sous-titre
 - [x] Boussole : sept photos et deux enregistrements d'introduction hébergés, liens publics permanents vérifiés (photos 200 image/jpeg, MP3 200 audio/mpeg sur www.regenb.fr) ; photo « feu » convertie PNG 1,9 Mo -> JPEG 135 Ko, original retiré
-- [ ] Boussole : refonte de la page avec ces visuels et ces audios (en attente : accord de démarrage). Portrait = Josselin Butté, à nommer dans la description alternative ; écart de formulation FR/EN de l'intro à trancher (« Beaucoup l'ont suivie » vs "tested it with friends, colleagues and peers")
+- [ ] Boussole : refonte de la page avec ces visuels et ces audios (en attente : accord de démarrage). Portrait = Josselin Butté, à nommer dans la description alternative ; formulation FR/EN de l'intro rapprochée : phrase commune ajoutée en preview (compass.why.text3), « Beaucoup l'ont suivie » ne subsiste que dans l'audio français
