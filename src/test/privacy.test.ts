@@ -38,8 +38,15 @@ describe('consent-free public site', () => {
   it('serves fonts only from the site itself', () => {
     expect(policy.split('; ')).toContain("font-src 'self'");
   });
-  it('allows audio only from the notebook public storage bucket', () => {
-    expect(policy.split('; ')).toContain('media-src https://isxkgzebsoyordijkpnt.supabase.co/storage/v1/object/public/carnet-audio/');
+  it('allows audio only from the notebook bucket and the site asset hosting', () => {
+    expect(policy.split('; ')).toContain('media-src https://isxkgzebsoyordijkpnt.supabase.co/storage/v1/object/public/carnet-audio/ https://www.regenb.fr/__l5e/ https://regenb.fr/__l5e/ https://regenb.lovable.app/__l5e/');
+  });
+  it('allows images from the site itself and its asset hosting', () => {
+    const imgSrc = policy.split('; ').find((rule) => rule.startsWith('img-src ')) ?? '';
+    expect(imgSrc).toContain("'self'");
+    expect(imgSrc).toContain('https://www.regenb.fr');
+    expect(imgSrc).toContain('https://regenb.lovable.app');
+    expect(imgSrc).not.toContain('https://www.googletagmanager.com');
   });
   it('does not persist the sidebar preference', () => {
     const sidebar = readFileSync('src/components/ui/sidebar.tsx', 'utf8');
