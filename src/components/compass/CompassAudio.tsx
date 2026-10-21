@@ -4,7 +4,9 @@ import audioEn from '@/assets/boussole/boussole-intro-en.mp3.asset.json';
 
 // Introduction audio for the Boussole page: one recording per language,
 // no cross-language fallback, playback always started by the visitor.
-const SOURCES = { fr: audioFr.url, en: audioEn.url } as const;
+// Local Vite does not proxy asset paths, so audio uses the published asset origin.
+const ASSET_ORIGIN = 'https://regenb.lovable.app';
+const SOURCES = { fr: `${ASSET_ORIGIN}${audioFr.url}`, en: `${ASSET_ORIGIN}${audioEn.url}` } as const;
 
 export default function CompassAudio() {
   const { t, language } = useLanguage();

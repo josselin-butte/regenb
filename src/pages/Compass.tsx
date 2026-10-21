@@ -13,6 +13,8 @@ import closingImg from '@/assets/boussole/boussole-closing.jpg.asset.json';
 
 // Page de vente de la formation Nature Values Compass
 const BUY_URLS = { fr: 'https://valuescourse.regenb.com/?lang=fr', en: 'https://valuescourse.regenb.com/?lang=en' } as const;
+// Local Vite does not proxy asset paths, so images use the published asset origin.
+const ASSET_ORIGIN = 'https://regenb.lovable.app';
 
 const Compass = () => {
   const { t, language } = useLanguage();
