@@ -135,6 +135,7 @@ const translations: Translations = {
   'compass.why.title': { fr: 'Retrouver son nord', en: 'Finding true north' },
   'compass.why.text1': { fr: 'Quand l’ancienne histoire ne tient plus, on cherche des réponses à l’extérieur. Cette boussole invite à l’inverse : revenir à ce qui vous anime déjà, et l’écouter sérieusement.', en: 'When the old story no longer holds, we tend to look for answers outside. This compass invites the opposite: returning to what already moves you, and listening to it seriously.' },
   'compass.why.text2': { fr: 'La nature y joue le rôle de miroir : elle ralentit, décentre et rend visible ce que le quotidien recouvre. Pas besoin d’aller au sommet d’une montagne — un parc, un jardin ou une fenêtre suffisent.', en: 'Nature acts as a mirror: it slows you down, decentres you and makes visible what daily life covers up. No need to climb a mountain — a park, a garden or a window are enough.' },
+  'compass.why.text3': { fr: 'Je l’ai suivie moi-même, puis testée avec des amis, des collègues et des pairs, avant de la proposer.', en: 'I took it myself, then tested it with friends, colleagues and peers, before offering it.' },
   'compass.steps.kicker': { fr: 'Ce que vous allez explorer', en: 'What you will explore' },
   'compass.steps.title': { fr: 'Six pas, une même direction', en: 'Six steps, one direction' },
   'compass.step1': { fr: 'Prendre contact avec la nature comme miroir', en: 'Meeting nature as a mirror' },
