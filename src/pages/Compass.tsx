@@ -44,6 +44,7 @@ const Compass = () => {
             <div className="mt-6 lg:col-span-9 lg:mt-0">
               <p className="max-w-measure">{t('compass.why.text1')}</p>
               <p className="mt-6 max-w-measure border-l-2 border-primary pl-5 text-primary">{t('compass.why.text2')}</p>
+              <p className="mt-6 max-w-measure">{t('compass.why.text3')}</p>
             </div>
           </div>
         </section>
