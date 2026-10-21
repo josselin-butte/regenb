@@ -4,10 +4,11 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 // Page de vente de la formation Nature Values Compass
-const BUY_URL = 'https://valuescourse.regenb.com/';
+const BUY_URLS = { fr: 'https://valuescourse.regenb.com/?lang=fr', en: 'https://valuescourse.regenb.com/?lang=en' } as const;
 
 const Compass = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const BUY_URL = BUY_URLS[language];
 
   const steps = [1, 2, 3, 4, 5, 6];
   const howItems = [1, 2, 3, 4];
@@ -79,6 +80,7 @@ const Compass = () => {
                 ))}
               </ul>
               <p className="mt-8 max-w-measure">{t('compass.who.text')}</p>
+              <p className="mt-4 max-w-measure">{t('compass.who.text2')}</p>
             </div>
           </div>
         </section>
@@ -90,7 +92,8 @@ const Compass = () => {
               <p className="mt-6 max-w-measure">{t('compass.cta.text')}</p>
             </div>
             <div className="mt-8 lg:col-span-4 lg:mt-0 lg:self-end">
-              <p className="mb-4 text-sm text-muted-foreground">{t('compass.price')}</p>
+              <p className="mb-2 text-sm text-muted-foreground">{t('compass.price')}</p>
+              <p className="mb-4 text-sm text-muted-foreground">{t('compass.priceWhy')}</p>
               <Button size="lg" asChild className="w-full">
                 <a href={BUY_URL} target="_blank" rel="noopener noreferrer">{t('compass.buy')}</a>
               </Button>

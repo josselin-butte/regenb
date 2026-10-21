@@ -128,9 +128,9 @@ const translations: Translations = {
   // Compass Page (/boussole)
   'compass.kicker': { fr: 'Formation en ligne', en: 'Online course' },
   'compass.title': { fr: 'La Boussole des valeurs', en: 'The Values Compass' },
-  'compass.lead1': { fr: 'J’ai créé La Boussole des valeurs comme un parcours en ligne pour revenir à l’essentiel : vos valeurs profondes, mises à l’épreuve du vivant.', en: 'I created Nature Values Compass as an online journey to return to what matters: your core values, tested against the living world.' },
+  'compass.lead1': { fr: 'J’ai créé La Boussole des valeurs comme un parcours en ligne pour revenir à l’essentiel : vos valeurs profondes, mises à l’épreuve du vivant.', en: 'I created The Values Compass as an online journey to return to what matters: your core values, tested against the living world.' },
   'compass.lead2': { fr: 'À votre rythme, vous explorez ce qui vous anime, ce qui vous freine, et ce qui demande à émerger dans votre manière d’accompagner.', en: 'At your own pace, you explore what moves you, what holds you back, and what is asking to emerge in how you accompany others.' },
-  'compass.buy': { fr: 'Acheter la boussole', en: 'Get the compass' },
+  'compass.buy': { fr: 'Choisir mon prix', en: 'Choose your price' },
   'compass.why.kicker': { fr: 'Pourquoi cette boussole', en: 'Why this compass' },
   'compass.why.title': { fr: 'Retrouver son nord', en: 'Finding true north' },
   'compass.why.text1': { fr: 'Quand l’ancienne histoire ne tient plus, on cherche des réponses à l’extérieur. Cette boussole invite à l’inverse : revenir à ce qui vous anime déjà, et l’écouter sérieusement.', en: 'When the old story no longer holds, we tend to look for answers outside. This compass invites the opposite: returning to what already moves you, and listening to it seriously.' },
@@ -151,8 +151,10 @@ const translations: Translations = {
   'compass.how.item4': { fr: 'Des outils que vous garderez pour la suite de votre pratique', en: 'Tools you will keep for the rest of your practice' },
   'compass.who.text': { fr: 'Elle s’adresse aux leaders, coachs, superviseurs et accompagnants qui sentent que leur manière d’accompagner demande un recentrage — et qui veulent l’ancrer dans quelque chose de vivant, pas de théorique.', en: 'It is for leaders, coaches, supervisors and practitioners who feel their way of accompanying needs re-grounding — and who want to anchor it in something alive, not theoretical.' },
   'compass.cta.title': { fr: 'Retrouvez votre nord', en: 'Find your north' },
-  'compass.cta.text': { fr: 'Rejoignez La Boussole des valeurs et commencez dès aujourd’hui à clarifier ce qui vous guide.', en: 'Join Nature Values Compass and start clarifying today what guides you.' },
-  'compass.price': { fr: '77 € TTC, accès immédiat et sans limite de durée. Six modules, quelques heures en tout, avec ma voix pour chaque leçon, en français ou en anglais.', en: '€77 incl. VAT, immediate access with no time limit. Six modules, a few hours in total, with my voice for every lesson, in English or in French.' },
+  'compass.cta.text': { fr: 'Rejoignez La Boussole des valeurs et commencez dès aujourd’hui à clarifier ce qui vous guide.', en: 'Join The Values Compass and start clarifying today what guides you.' },
+  'compass.price': { fr: 'Prix libre : à partir de 27 €, 77 € conseillé, sans plafond (TTC). Accès immédiat et sans limite de durée. Six modules, quelques heures en tout, avec ma voix pour chaque leçon, en français ou en anglais.', en: 'Pay what feels right: from €27, €77 recommended, no ceiling (VAT included). Immediate access with no time limit. Six modules, a few hours in total, with my voice for every lesson, in English or in French.' },
+  'compass.priceWhy': { fr: 'Je veux que cette formation soit utile au plus grand nombre, quels que soient ses moyens : cela fait partie de la posture régénérative de RegenB. Quel que soit le montant, vous recevez la formation complète.', en: "I want this course to be useful to as many people as possible, whatever their means: that is part of RegenB's regenerative stance. Whatever you pay, you get the whole course." },
+  'compass.who.text2': { fr: "Au fond, cette formation s'adresse à toute personne qui a besoin de se recentrer rapidement autour de valeurs solidement enracinées.", en: 'Ultimately, this course is for anyone who needs to regroup quickly around values that are firmly rooted.' },
 
   // Legal Page (/legal)
   'legal.kicker': { fr: 'Informations', en: 'Information' },
