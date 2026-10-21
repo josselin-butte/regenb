@@ -43,7 +43,7 @@ const Compass = () => {
               </Button>
             </div>
             <figure className="mt-10 lg:col-span-12">
-              <img src={heroImg.url} alt={t('compass.img.hero.alt')} className="max-h-[520px] w-full object-cover" />
+              <img src={`${ASSET_ORIGIN}${heroImg.url}`} alt={t('compass.img.hero.alt')} className="max-h-[520px] w-full object-cover" />
             </figure>
           </div>
         </section>
@@ -78,10 +78,10 @@ const Compass = () => {
               ))}
             </ol>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:col-span-9 lg:col-start-4">
-              <img src={earthImg.url} alt={t('compass.img.earth.alt')} className="aspect-[4/3] w-full object-cover" loading="lazy" />
-              <img src={waterImg.url} alt={t('compass.img.water.alt')} className="aspect-[4/3] w-full object-cover" loading="lazy" />
-              <img src={airImg.url} alt={t('compass.img.air.alt')} className="aspect-[4/3] w-full object-cover" loading="lazy" />
-              <img src={fireImg.url} alt={t('compass.img.fire.alt')} className="aspect-[4/3] w-full object-cover" loading="lazy" />
+              <img src={`${ASSET_ORIGIN}${earthImg.url}`} alt={t('compass.img.earth.alt')} className="aspect-[4/3] w-full object-cover" loading="lazy" />
+              <img src={`${ASSET_ORIGIN}${waterImg.url}`} alt={t('compass.img.water.alt')} className="aspect-[4/3] w-full object-cover" loading="lazy" />
+              <img src={`${ASSET_ORIGIN}${airImg.url}`} alt={t('compass.img.air.alt')} className="aspect-[4/3] w-full object-cover" loading="lazy" />
+              <img src={`${ASSET_ORIGIN}${fireImg.url}`} alt={t('compass.img.fire.alt')} className="aspect-[4/3] w-full object-cover" loading="lazy" />
             </div>
           </div>
         </section>
@@ -103,7 +103,7 @@ const Compass = () => {
               <p className="mt-8 max-w-measure">{t('compass.who.text')}</p>
               <p className="mt-4 max-w-measure">{t('compass.who.text2')}</p>
               <figure className="mt-10 max-w-md">
-                <img src={portraitImg.url} alt={t('compass.img.portrait.alt')} className="w-full object-cover" loading="lazy" />
+                <img src={`${ASSET_ORIGIN}${portraitImg.url}`} alt={t('compass.img.portrait.alt')} className="w-full object-cover" loading="lazy" />
               </figure>
             </div>
           </div>
@@ -112,7 +112,7 @@ const Compass = () => {
         <section className="border-b border-border px-5 py-14 sm:px-8 sm:py-20 lg:px-12">
           <div className="mx-auto max-w-6xl lg:grid lg:grid-cols-12 lg:gap-12">
             <figure className="mb-10 lg:col-span-12">
-              <img src={closingImg.url} alt={t('compass.img.closing.alt')} className="max-h-[420px] w-full object-cover" loading="lazy" />
+              <img src={`${ASSET_ORIGIN}${closingImg.url}`} alt={t('compass.img.closing.alt')} className="max-h-[420px] w-full object-cover" loading="lazy" />
             </figure>
             <div className="lg:col-span-8">
               <h2 className="text-2xl sm:text-3xl">{t('compass.cta.title')}</h2>
