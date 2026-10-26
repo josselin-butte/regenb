@@ -54,7 +54,6 @@ const Etapes = () => {
 
         <VoiceQuote voiceKey="journeys.intro" variant="band" />
 
-
         <section className="border-b border-border px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
           <div className="mx-auto grid max-w-6xl items-start gap-8 md:grid-cols-2 md:gap-12">
             <div className="max-w-[500px]">
