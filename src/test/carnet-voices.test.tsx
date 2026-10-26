@@ -25,22 +25,22 @@ afterEach(() => {
   document.cookie = `${CONSENT_COOKIE}=; Max-Age=0; Path=/`;
 });
 
-const open = (path: string) => {
-  const Page: ComponentType = path.includes('/carnet/') ? CarnetEntry : Carnet;
-  const element: ReactNode = <Page />;
-  return render(
+const open = (path: string) =>
+  render(
     <MemoryRouter initialEntries={[path]}>
       <LanguageProvider>
         <ConsentProvider>
           <Routes>
-            <Route path="/carnet/:slug" element={element} />
+            <Route path="/carnet/:slug" element={<CarnetEntry />} />
+            <Route path="/en/notebook/:slug" element={<CarnetEntry />} />
+            <Route path="/carnet" element={<Carnet />} />
+            <Route path="/en/notebook" element={<Carnet />} />
             <Route path="*" element={<Carnet />} />
           </Routes>
         </ConsentProvider>
       </LanguageProvider>
     </MemoryRouter>
   );
-};
 
 const before = (a: Element, b: Element) =>
   !!(a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING);
