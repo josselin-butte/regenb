@@ -1,4 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
+import type { ComponentType } from 'react';
 import { cleanup, render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { LanguageProvider } from '@/contexts/LanguageContext';
@@ -23,7 +24,7 @@ afterEach(() => {
   document.cookie = `${CONSENT_COOKIE}=; Max-Age=0; Path=/`;
 });
 
-const open = (path: string, Page: React.ComponentType) =>
+const open = (path: string, Page: ComponentType) =>
   render(
     <MemoryRouter initialEntries={[path]}>
       <LanguageProvider>
