@@ -4,13 +4,15 @@ import { getVoice } from '@/content/voices';
 interface VoiceQuoteProps {
   voiceKey: string;
   variant?: 'band' | 'inline';
+  /** 'sm' : citation plus discrète, à insérer sous un texte existant. */
+  size?: 'default' | 'sm';
 }
 
 /**
  * Citation sourcée d'une femme, bilingue via LanguageContext.
  * Rend rien si la clé ou la langue est absente.
  */
-const VoiceQuote = ({ voiceKey, variant = 'inline' }: VoiceQuoteProps) => {
+const VoiceQuote = ({ voiceKey, variant = 'inline', size = 'default' }: VoiceQuoteProps) => {
   const { language } = useLanguage();
   const voice = getVoice(voiceKey);
   if (!voice) return null;
@@ -29,7 +31,11 @@ const VoiceQuote = ({ voiceKey, variant = 'inline' }: VoiceQuoteProps) => {
     <figure className={variant === 'inline' ? 'max-w-[40rem]' : 'max-w-measure mx-auto'}>
       <blockquote
         lang={language}
-        className="border-l-2 border-accent pl-5 font-serif text-[1.25rem] leading-[1.4] md:text-[1.5rem]"
+        className={
+          size === 'sm'
+            ? 'border-l-2 border-accent pl-4 font-serif text-[0.9375rem] leading-snug'
+            : 'border-l-2 border-accent pl-5 font-serif text-[1.25rem] leading-[1.4] md:text-[1.5rem]'
+        }
       >
         <p>{quote}</p>
       </blockquote>

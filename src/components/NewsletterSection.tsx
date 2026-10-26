@@ -2,6 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import ecoute from '@/assets/home-ecoute.webp.asset.json';
 import ContinuoSignup from '@/components/ContinuoSignup';
+import VoiceQuote from '@/components/VoiceQuote';
 
 const NewsletterSection = () => {
   const { t } = useLanguage();
@@ -13,6 +14,9 @@ const NewsletterSection = () => {
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('letter.kicker')}</p>
         <h2 className="mt-4 text-3xl sm:text-4xl">{t('letter.title')}</h2>
         <p className="mx-auto mt-6">{t('letter.text')}</p>
+        <div className="mx-auto mt-8 text-left">
+          <VoiceQuote voiceKey="home.continuo" variant="inline" />
+        </div>
         <ContinuoSignup />
         <Button asChild size="lg" className="mt-8">
           <a href="https://lecontinuo.substack.com" target="_blank" rel="noopener">
