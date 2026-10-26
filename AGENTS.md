@@ -16,3 +16,5 @@
 - Keep each service illustration (FacilitationIllustration, ProgrammeIllustration, SupervisionIllustration, MediationIllustration) as an isolated component inside its existing Services section, localized through Services content, with a one-time intro drawing only; it never alters RegenLoop or shared components.
 
 - Let long hero call-to-action labels wrap onto several centred lines rather than staying on one line (the heroOutline Button in src/components/HeroSection.tsx carries h-auto max-w-full whitespace-normal py-3 text-center), because the unwrapped English label forces horizontal scrolling on a 375px screen.
+
+- Apply hero spacing differences per language only below the sm breakpoint, through the `en` flag in src/components/HeroSection.tsx (each reduced margin is paired with its original `sm:` value), because the English title and call-to-action need extra lines on a 375px screen while the French layout and the desktop layout of both languages must stay untouched.
