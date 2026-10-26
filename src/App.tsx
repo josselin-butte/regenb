@@ -15,6 +15,7 @@ import Services from "./pages/Services";
 import Etapes from "./pages/Etapes";
 import NotFound from "./pages/NotFound";
 import Cookies from "./pages/Cookies";
+import DevVoices from "./pages/DevVoices";
 import { ConsentProvider } from '@/contexts/ConsentContext';
 import ConsentManager from '@/components/ConsentManager';
 import MetaPixel from '@/components/MetaPixel';
@@ -56,6 +57,9 @@ const App = () => (
             <Route path="/en/privacy" element={<Legal kind="privacy" />} />
             <Route path="/en/terms" element={<Legal kind="terms" />} />
             <Route path="/en/cookies" element={<Cookies />} />
+            {/* Prévisualisation temporaire des citations — non liée au menu */}
+            <Route path="/dev/voices" element={<DevVoices />} />
+            <Route path="/en/dev/voices" element={<DevVoices />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
