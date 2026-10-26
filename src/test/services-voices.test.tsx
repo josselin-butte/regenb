@@ -6,7 +6,11 @@ import { ConsentProvider } from '@/contexts/ConsentContext';
 import Services from '@/pages/Services';
 import { CONSENT_COOKIE } from '@/lib/consent';
 
-vi.stubGlobal('ResizeObserver', class { observe() {} disconnect() {} });
+vi.stubGlobal('ResizeObserver', class {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+});
 vi.stubGlobal('IntersectionObserver', class {
   observe() {}
   unobserve() {}
