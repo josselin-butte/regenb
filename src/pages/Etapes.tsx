@@ -2,6 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EnquiryForm from '@/components/EnquiryForm';
+import VoiceQuote from '@/components/VoiceQuote';
 import oulanBat from '@/assets/etapes-oulan-bat.jpg.asset.json';
 import { Button } from '@/components/ui/button';
 
@@ -50,6 +51,9 @@ const Etapes = () => {
             <p className="mt-6 text-muted-foreground">{c.intro}</p>
           </div>
         </section>
+
+        <VoiceQuote voiceKey="journeys.intro" variant="band" />
+
 
         <section className="border-b border-border px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
           <div className="mx-auto grid max-w-6xl items-start gap-8 md:grid-cols-2 md:gap-12">
