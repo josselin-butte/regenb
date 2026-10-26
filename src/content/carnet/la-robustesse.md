@@ -5,6 +5,7 @@ element: "earth"
 date: "2026-10-07"
 status: "exploring"
 lang: "fr"
+voice: "notebook.robustness"
 origin: "Née d’une conversation, automne 2026"
 themes: ["Pensée systémique", "Sciences du vivant", "Organisations"]
 summary: "La robustesse est partout en France, parfois présentée comme le courant qui dépasse tous les autres. Je suis allé voir ce qui la soutient vraiment : des racines scientifiques solides, un apport culturel précieux, et quelques limites à connaître avant d’en faire une doctrine."

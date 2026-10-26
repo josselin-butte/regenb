@@ -6,6 +6,7 @@ fr: "toilettes-seches"
 date: "2026-10-08"
 status: "exploring"
 lang: "en"
+voice: "notebook.water"
 origin: "Born of a choice made at home, 2026"
 themes: ["Water cycles", "Permaculture", "Systems thinking", "Change"]
 summary: "At home, we replaced our flush toilet with a dry toilet. The reason fitted in one sentence. Digging deeper, I found a story of drinking water, nitrogen and phosphorus, a debate a hundred and fifty years old, and a fine lesson in how a habit changes."

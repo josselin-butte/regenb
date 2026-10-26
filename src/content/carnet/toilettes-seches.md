@@ -5,6 +5,7 @@ element: "water"
 date: "2026-10-08"
 status: "exploring"
 lang: "fr"
+voice: "notebook.water"
 origin: "Née d’un choix fait à la maison, 2026"
 themes: ["Cycles de l’eau", "Permaculture", "Pensée systémique", "Changement"]
 summary: "Chez nous, nous avons remplacé nos toilettes à chasse d’eau par des toilettes sèches. La raison tenait en une phrase. En creusant, j’ai découvert une histoire d’eau potable, d’azote et de phosphore, un débat vieux de cent cinquante ans, et une belle leçon sur la manière dont on change une habitude."
