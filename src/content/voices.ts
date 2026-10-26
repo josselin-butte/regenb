@@ -303,7 +303,7 @@ export const voices: Voice[] = [
     },
     note: { en: '', fr: 'Traduction RegenB' },
     sourceLabel: 'Ontario Heritage Trust',
-    sourceUrl: 'https://www.heritagetrust.on.ca/myontario/stories/from-an-interview-with-josephine-mandamin-water-walker-grandmother-and-a-2015-recipient-of-a-lieutenant-governors-ontario-heritage-award-for-excellence-in-conservation',
+    sourceUrl: 'https://www.heritagetrust.on.ca/heritagematters/articles/walking-with-the-water',
     rights: 'short-quotation',
   },
   {
