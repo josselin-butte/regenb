@@ -5,12 +5,14 @@ const RIDGE_LINE = 'M0 150 C160 146 300 128 420 118 C470 114 490 104 520 108 C60
 
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 import ElementIcon from '@/components/ElementIcon';
 import { Button } from '@/components/ui/button';
 import dehors from '@/assets/home-dehors.webp.asset.json';
 
 const HeroSection = () => {
   const { t, language, lp } = useLanguage();
+  const en = language === 'en';
   const ridgeDesk = useRef<SVGPathElement>(null);
   const ridgeMob = useRef<SVGPathElement>(null);
 
