@@ -43,7 +43,7 @@ const VoiceQuote = ({ voiceKey, variant = 'inline' }: VoiceQuoteProps) => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={sourceAria}
-          className="mt-1 inline-block text-[0.8125rem] underline underline-offset-2 hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+          className="mt-1 block w-fit text-[0.8125rem] underline underline-offset-2 hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
         >
           {sourceWord}
         </a>
