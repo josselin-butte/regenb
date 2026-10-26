@@ -39,7 +39,7 @@ const VoiceQuote = ({ voiceKey, variant = 'inline', size = 'default' }: VoiceQuo
       >
         <p>{quote}</p>
       </blockquote>
-      <figcaption className="mt-4 pl-5 font-sans text-sm text-muted-foreground">
+      <figcaption className="mt-4 pl-5 font-sans text-sm text-foreground/90">
         <cite className="not-italic font-medium text-foreground">
           {voice.name}, {voice.year}
         </cite>
