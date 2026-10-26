@@ -5,6 +5,7 @@ element: "fire"
 date: "2026-10-12"
 status: "exploring"
 lang: "fr"
+voice: "notebook.fire"
 origin: "Née d'un été sans feu"
 themes: ["Facilitation", "Anthropologie", "Écologie"]
 summary: "Cet été, dans les Pyrénées, on n'avait pas le droit d'allumer un feu. En marchant le soir sans flammes, j'ai mesuré ce qui manquait : pas la chaleur, mais une certaine façon de se parler. Je suis allé voir ce que les anthropologues disent du feu, de la nuit et des histoires."

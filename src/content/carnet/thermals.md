@@ -6,6 +6,7 @@ fr: "thermiques"
 date: "2026-10-09"
 status: "exploring"
 lang: "en"
+voice: "notebook.thermals"
 origin: "Born of my paragliding flights"
 themes: ["Facilitation", "Complexity thinking", "Life sciences"]
 summary: "In paragliding, you fly on an invisible energy: warm air rising. You can't see it. You feel it, you guess at it, and you settle into it without forcing. That's very close to what I look for when I work with a group. I wanted to understand what vultures, storks and pilots can teach us."

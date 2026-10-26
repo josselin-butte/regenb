@@ -6,6 +6,7 @@ import StatusChip from '@/components/carnet/StatusChip';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { formatDate, getEntries } from '@/lib/carnet';
 import { getNoteAudio } from '@/lib/carnet-audio';
+import VoiceQuote from '@/components/VoiceQuote';
 
 const Carnet = () => {
   const { t, language, lp } = useLanguage();
@@ -24,6 +25,7 @@ const Carnet = () => {
             <p>{t('carnet.intro2')}</p>
             <p>{t('carnet.intro3')}</p>
           </div>
+          <div className="mt-10"><VoiceQuote voiceKey="notebook.index" variant="inline" /></div>
           <p className="mt-10 text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('carnet.threads')}</p>
           <ul className="mt-4 flex flex-wrap gap-2">
             {t('carnet.threadList').split('|').map((tag) => (

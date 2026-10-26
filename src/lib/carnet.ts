@@ -16,6 +16,7 @@ export interface CarnetEntry extends CarnetAudioFields {
   origin: string;
   themes: string[];
   element?: 'earth' | 'water' | 'air' | 'fire';
+  voice?: string;
   summary: string;
   description: string;
   body: string;
@@ -57,6 +58,7 @@ export const parseCarnetEntry = (raw: string): CarnetEntry | null => {
     origin: String(data.origin ?? ''),
     themes: Array.isArray(data.themes) ? data.themes : data.themes ? [String(data.themes)] : [],
     element: ['earth','water','air','fire'].includes(String(data.element)) ? (String(data.element) as CarnetEntry['element']) : undefined,
+    voice: data.voice ? String(data.voice) : undefined,
     summary: String(data.summary ?? ''),
     description: String(data.description ?? data.summary ?? ''),
     audio_url_fr: data.audio_url_fr ? String(data.audio_url_fr) : undefined,
