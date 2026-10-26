@@ -54,7 +54,7 @@ const HeroSection = () => {
           <Button size="lg" asChild>
             <Link to={lp('/contact')}>{t('hero.ctaPrimary')}</Link>
           </Button>
-          <Button size="lg" variant="heroOutline" className="h-auto max-w-full whitespace-normal py-3" asChild>
+          <Button size="lg" variant="heroOutline" className="h-auto max-w-full whitespace-normal py-3 text-center" asChild>
             <Link to={lp('/boussole')}>{t('hero.cta')}</Link>
           </Button>
         </div>
