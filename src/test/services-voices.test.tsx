@@ -48,27 +48,63 @@ const sectionByTitle = (container: HTMLElement, title: string) => {
 const quotesIn = (sec: Element) =>
   [...sec.querySelectorAll('figure')].filter((f) => f.querySelector('cite'));
 
-const describePage = (path: string, titles: Record<string, string>) => {
-  it('places one quote per service, after the description and before the details', () => {
-    const { container } = open(path);
+type Page = {
+  path: string;
+  services: { section: string; cite: string }[];
+  supervision: string;
+  closing: string;
+  faq: string;
+};
 
-    for (const [title, citeStart] of Object.entries(titles)) {
-      const sec = sectionByTitle(container, title);
+const FR: Page = {
+  path: '/accompagnement',
+  services: [
+    { section: 'Facilitation', cite: 'Nanyehi (Nancy Ward)' },
+    { section: 'Conception de programmes', cite: 'Florence Nightingale' },
+    { section: 'Coaching', cite: 'Ruth Bader Ginsburg' },
+    { section: 'Supervision', cite: 'Simone Weil' },
+    { section: 'Médiation', cite: 'Audre Lorde' },
+  ],
+  supervision: 'Supervision',
+  closing: 'Par où commencer',
+  faq: 'Questions fréquentes',
+};
+
+const EN: Page = {
+  path: '/en/services',
+  services: [
+    { section: 'Facilitation', cite: 'Nanyehi (Nancy Ward)' },
+    { section: 'Programme design', cite: 'Florence Nightingale' },
+    { section: 'Coaching', cite: 'Ruth Bader Ginsburg' },
+    { section: 'Supervision', cite: 'Simone Weil' },
+    { section: 'Mediation', cite: 'Audre Lorde' },
+  ],
+  supervision: 'Supervision',
+  closing: 'Where to start',
+  faq: 'Frequently asked questions',
+};
+
+const describePage = (page: Page) => {
+  it('places one quote per service, after the description and before the details', () => {
+    const { container } = open(page.path);
+
+    for (const { section, cite } of page.services) {
+      const sec = sectionByTitle(container, section);
       const desc = sec.querySelector('p.text-muted-foreground');
       const dl = sec.querySelector('dl');
       const quotes = quotesIn(sec).filter((f) =>
-        f.querySelector('cite')!.textContent!.startsWith(citeStart)
+        f.querySelector('cite')!.textContent!.startsWith(cite)
       );
-      expect(quotes, title).toHaveLength(1);
-      expect(desc, title).not.toBeNull();
-      expect(dl, title).not.toBeNull();
-      expect(before(desc!, quotes[0]), title).toBe(true);
-      expect(before(quotes[0], dl!), title).toBe(true);
+      expect(quotes, section).toHaveLength(1);
+      expect(desc, section).not.toBeNull();
+      expect(dl, section).not.toBeNull();
+      expect(before(desc!, quotes[0]), section).toBe(true);
+      expect(before(quotes[0], dl!), section).toBe(true);
     }
   });
 
   it('keeps the six voices in the page and nowhere else', () => {
-    const { container } = open(path);
+    const { container } = open(page.path);
     const cites = [...container.querySelectorAll('main cite')].map((c) =>
       c.textContent!.split(',')[0]
     );
@@ -81,18 +117,20 @@ const describePage = (path: string, titles: Record<string, string>) => {
       'Audre Lorde',
     ]);
 
-    const closing = sectionByTitle(container, titles.closing);
-    const faq = sectionByTitle(container, titles.faq);
-    expect(quotesIn(closing)).toHaveLength(0);
-    expect(quotesIn(faq)).toHaveLength(0);
+    expect(quotesIn(sectionByTitle(container, page.closing))).toHaveLength(0);
+    expect(quotesIn(sectionByTitle(container, page.faq))).toHaveLength(0);
   });
 
   it('puts the Le Cercle voice after the supervision voice and before the fees', () => {
-    const { container } = open(path);
-    const sec = sectionByTitle(container, titles.supervision);
+    const { container } = open(page.path);
+    const sec = sectionByTitle(container, page.supervision);
     const dl = sec.querySelector('dl')!;
-    const weil = quotesIn(sec).find((f) => f.querySelector('cite')!.textContent!.startsWith('Simone Weil'))!;
-    const mankiller = quotesIn(sec).find((f) => f.querySelector('cite')!.textContent!.startsWith('Wilma Mankiller'))!;
+    const weil = quotesIn(sec).find((f) =>
+      f.querySelector('cite')!.textContent!.startsWith('Simone Weil')
+    )!;
+    const mankiller = quotesIn(sec).find((f) =>
+      f.querySelector('cite')!.textContent!.startsWith('Wilma Mankiller')
+    )!;
     expect(weil).toBeTruthy();
     expect(mankiller).toBeTruthy();
     expect(before(weil, mankiller)).toBe(true);
@@ -100,26 +138,5 @@ const describePage = (path: string, titles: Record<string, string>) => {
   });
 };
 
-describe('Citations sur /accompagnement', () => {
-  describePage('/accompagnement', {
-    facilitation: 'Facilitation',
-    programmes: 'Conception de programmes',
-    coaching: 'Coaching',
-    supervision: 'Supervision',
-    mediation: 'Médiation',
-    closing: 'Par où commencer',
-    faq: 'Questions fréquentes',
-  } as Record<string, string>);
-});
-
-describe('Quotes on /en/services', () => {
-  describePage('/en/services', {
-    facilitation: 'Facilitation',
-    programmes: 'Programme design',
-    coaching: 'Coaching',
-    supervision: 'Supervision',
-    mediation: 'Mediation',
-    closing: 'Where to start',
-    faq: 'Frequently asked questions',
-  } as Record<string, string>);
-});
+describe('Citations sur /accompagnement', () => describePage(FR));
+describe('Quotes on /en/services', () => describePage(EN));
