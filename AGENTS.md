@@ -1,4 +1,5 @@
 - Serve uploaded site photography through Lovable Assets pointer imports using the published asset origin, because repository binaries add unnecessary weight and local Vite does not proxy asset paths.
+- Keep the homepage voices band isolated after HeroSection, with bilingual quotes in src/content/voices.ts and a scoped, visibility-aware clock; use Radix for sources so existing content and focus behavior remain untouched.
 - Research notebook entries are Markdown files with YAML frontmatter in src/content/carnet/ (one file per language; an English file sets `lang: en`, its own `slug`, and `fr: <french-slug>` to link them), auto-loaded by src/lib/carnet.ts, so publishing a note needs no code change.
 - Optional notebook audio is declared with language-specific URL and minute-duration frontmatter fields; paired files share missing audio fields, while playback and Article media never fall back to another language, preserving silent notes and consent-free, user-initiated native playback.
 - Public pages: French at the root, English under /en, language derived from the URL only via src/lib/routes.ts, because each language needs its own crawlable URLs.

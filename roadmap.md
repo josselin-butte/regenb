@@ -1,5 +1,7 @@
 # Refonte Josselin Butté
 
+- [x] Accueil : bande bilingue de douze voix après HeroSection ; fichiers : Index.tsx (insertion), VoicesBand.tsx (rotation/pauses/dialogue/balayage), voices.ts (textes exacts), index.css (styles isolés), voices-band.test.tsx (10 tests), AGENTS.md et mémoire (règles). Tests 10/10 ; navigateur FR/EN 1280/375px : douze voix, rotation, pause/reprise, hauteur stable, sources et Échap ; mouvement réduit et sélection manuelle vérifiés ; aucun nouvel incident. 180px ordinateur / 208px mobile pour préserver les longues citations. Points mobiles de 20×44px avec espacement, compromis pour douze choix. Débordement anglais préexistant dans HeroSection et son bouton Boussole, laissé intact conformément à la consigne ; validation intégrale accessibilité, lecteur d'écran et liens sources externes non effectuée. Rien publié.
+
 - [x] SV-01 Facilitation illustration only (FR/EN, preview, not published).
 - [x] SV-03 Programme design illustration only (FR/EN, preview, not published).
 - [x] SV-04 Mediation illustration only (FR/EN, preview, not published).

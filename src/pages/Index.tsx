@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
+import VoicesBand from '@/components/VoicesBand';
 import AboutSection from '@/components/AboutSection';
 import OfferSection from '@/components/OfferSection';
 import NewsletterSection from '@/components/NewsletterSection';
@@ -15,6 +16,7 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
+        <VoicesBand />
         <AboutSection />
         <OfferSection />
         <img src={`https://regenb.lovable.app${paysage.url}`} alt={t('image.paysage')} width={1600} height={1200} loading="lazy" className="block h-[220px] w-full object-cover object-center lg:h-[420px]" />
