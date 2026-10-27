@@ -6,7 +6,6 @@ fr: "la-robustesse"
 date: "2026-10-07"
 status: "exploring"
 lang: "en"
-voice: "notebook.robustness"
 origin: "Born of a conversation, autumn 2026"
 themes: ["Systems thinking", "Life sciences", "Organisations"]
 summary: "Robustness is everywhere in France, sometimes presented as the movement that surpasses all the others. I went to see what really supports it: solid scientific roots, a valuable cultural contribution, and a few limits worth knowing before turning it into a doctrine."

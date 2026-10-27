@@ -13,7 +13,6 @@ import NoteAudio from '@/components/carnet/NoteAudio';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { formatDate, getEntry } from '@/lib/carnet';
-import VoiceQuote from '@/components/VoiceQuote';
 import NotFound from './NotFound';
 
 const setMeta = (selector: string, attr: string, key: string, value: string) => {
@@ -104,7 +103,6 @@ const CarnetEntry = () => {
           {entry.element && <ElementIcon element={entry.element} size={40} animated={false} className="mt-10 block" />}
           <p lang={language} className={`${entry.element ? 'mt-5' : 'mt-10'} text-sm font-medium uppercase tracking-[0.18em] text-accent`}>{t('carnet.noteEyebrow')}</p>
           <h1 className="mt-5 text-[2.1rem] leading-[1.12] tracking-tight text-primary sm:text-[2.75rem]">{entry.title}</h1>
-          {entry.voice && <div className="mt-8"><VoiceQuote voiceKey={entry.voice} variant="inline" /></div>}
           <p className="mt-6 text-[20px] leading-relaxed">{entry.summary}</p>
           <p lang={language} className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted-foreground">
             <span>{formatDate(entry.date, language)}</span>

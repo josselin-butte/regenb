@@ -56,7 +56,6 @@ const App = () => (
             <Route path="/en/privacy" element={<Legal kind="privacy" />} />
             <Route path="/en/terms" element={<Legal kind="terms" />} />
             <Route path="/en/cookies" element={<Cookies />} />
-            {/* Prévisualisation temporaire des citations — non liée au menu */}
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

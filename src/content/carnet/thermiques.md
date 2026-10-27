@@ -5,7 +5,6 @@ element: "air"
 date: "2026-10-09"
 status: "exploring"
 lang: "fr"
-voice: "notebook.thermals"
 origin: "Née de mes vols en parapente"
 themes: ["Facilitation", "Pensée complexe", "Sciences du vivant"]
 summary: "En parapente, on vole grâce à une énergie invisible : l’air chaud qui monte. On ne la voit pas, on la sent, on la devine, on s’y installe sans la forcer. C’est très proche de ce que je cherche en accompagnant un groupe. J’ai voulu comprendre ce que les vautours, les cigognes et les pilotes ont à nous apprendre."

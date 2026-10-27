@@ -9,7 +9,6 @@ import MediationIllustration from '@/components/MediationIllustration';
 import SupervisionIllustration from '@/components/SupervisionIllustration';
 import Footer from '@/components/Footer';
 import EnquiryForm from '@/components/EnquiryForm';
-import VoiceQuote from '@/components/VoiceQuote';
 import { Button } from '@/components/ui/button';
 
 type Service = { title: string; who: string; desc: string; format: string; fees: string };
@@ -227,17 +226,11 @@ const Services = () => {
               <h2 className="text-2xl font-semibold text-primary sm:text-3xl">{s.title}</h2>
               <p className="mt-4"><span className="font-medium">{c.labels.who}</span>{language === 'fr' ? ' : ' : ': '}{s.who}</p>
               <p className="mt-4 text-muted-foreground">{s.desc}</p>
-              {i === 0 && <div className="mt-8"><VoiceQuote voiceKey="services.facilitation" variant="inline" /></div>}
-              {i === 1 && <div className="mt-8"><VoiceQuote voiceKey="services.programmes" variant="inline" /></div>}
-              {i === 2 && <div className="mt-8"><VoiceQuote voiceKey="services.coaching" variant="inline" /></div>}
-              {i === 3 && <div className="mt-8"><VoiceQuote voiceKey="services.supervision" variant="inline" /></div>}
-              {i === 4 && <div className="mt-8"><VoiceQuote voiceKey="services.mediation" variant="inline" /></div>}
               {i === 0 && <FacilitationIllustration copy={c.facilitation} />}
               {i === 1 && <ProgrammeIllustration copy={c.programme} />}
               {i === 2 && <RegenLoop copy={c.regen} />}
               {i === 3 && <SupervisionIllustration copy={c.supervision} />}
               {i === 4 && <MediationIllustration copy={c.mediation} />}
-              {i === 3 && <div className="mt-10"><VoiceQuote voiceKey="services.cercle" variant="inline" /></div>}
               <dl className="mt-6 space-y-2 border-l-2 border-accent pl-4 text-[15px]">
                 <div><dt className="inline font-medium">{c.labels.format}{language === 'fr' ? ' : ' : ': '}</dt><dd className="inline">{s.format}</dd></div>
                 <div><dt className="inline font-medium">{c.labels.fees}{language === 'fr' ? ' : ' : ': '}</dt><dd className="inline">{s.fees}</dd></div>

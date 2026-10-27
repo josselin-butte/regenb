@@ -4,7 +4,6 @@ const RIDGE_FILL = 'M0 150 C160 146 300 128 420 118 C470 114 490 104 520 108 C60
 const RIDGE_LINE = 'M0 150 C160 146 300 128 420 118 C470 114 490 104 520 108 C600 118 700 122 820 104 C900 92 980 70 1060 34 C1080 26 1092 30 1104 44 C1140 84 1170 98 1205 92 C1230 88 1250 66 1276 60 C1290 57 1300 66 1312 78 C1380 124 1480 140 1584 142';
 
 import { Link } from 'react-router-dom';
-import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ElementIcon from '@/components/ElementIcon';
 import { Button } from '@/components/ui/button';
@@ -12,7 +11,6 @@ import dehors from '@/assets/home-dehors.webp.asset.json';
 
 const HeroSection = () => {
   const { t, language, lp } = useLanguage();
-  const en = language === 'en';
   const ridgeDesk = useRef<SVGPathElement>(null);
   const ridgeMob = useRef<SVGPathElement>(null);
 
@@ -27,7 +25,7 @@ const HeroSection = () => {
 
   return (
     <section className="relative px-5 pb-[96px] pt-[81px] sm:px-8 sm:pb-[118px] sm:pt-[89px] lg:px-12">
-      <div className={cn("-mx-5 mb-5 h-16 sm:-mx-8 sm:mb-7 sm:h-[110px] lg:-mx-12", en && "mb-3 sm:mb-7")} aria-hidden="true">
+      <div className="-mx-5 mb-5 h-16 sm:-mx-8 sm:mb-7 sm:h-[110px] lg:-mx-12" aria-hidden="true">
         <svg viewBox="0 20 1584 140" preserveAspectRatio="none" width="100%" height="100%" aria-hidden="true" focusable="false" className="hidden h-full w-full sm:block">
           <circle className="hero-sun" cx="1130" cy="74" r="44" fill="#D6A63E"/>
           <path d={RIDGE_FILL} fill="#F9F7F0"/>
@@ -42,21 +40,21 @@ const HeroSection = () => {
       <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-14">
         <div className="max-w-measure">
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('hero.eyebrow')}</p>
-        <h1 className={cn("mt-7 text-[2.4rem] leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl", en && "mt-5 sm:mt-7")}>
+        <h1 className="mt-7 text-[2.4rem] leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
           {t('tagline')}
         </h1>
-        <p className={cn("mt-8 text-xl leading-relaxed", en && "mt-6 sm:mt-8")}>{t('hero.sentence1')}</p>
-        <p className={cn("mt-4 text-lg leading-relaxed text-muted-foreground", en && "mt-2 sm:mt-4")}>{t('hero.sentence2')}</p>
-        <div className={cn("mt-8 flex items-center gap-7", en && "mt-4 sm:mt-8")}>
+        <p className="mt-8 text-xl leading-relaxed">{t('hero.sentence1')}</p>
+        <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{t('hero.sentence2')}</p>
+        <div className="mt-8 flex items-center gap-7">
           {(['earth', 'water', 'air', 'fire'] as const).map((el, i) => (
             <ElementIcon key={el} element={el} size={28} delay={i * 0.25} animated={el === 'water'} label={t(`element.${el}`)} />
           ))}
         </div>
-        <div className={cn("mt-10 flex flex-wrap items-center gap-4", en && "mt-5 sm:mt-10")}>
+        <div className="mt-10 flex flex-wrap items-center gap-4">
           <Button size="lg" asChild>
             <Link to={lp('/contact')}>{t('hero.ctaPrimary')}</Link>
           </Button>
-          <Button size="lg" variant="heroOutline" className="h-auto max-w-full whitespace-normal py-3 text-center" asChild>
+          <Button size="lg" variant="heroOutline" asChild>
             <Link to={lp('/boussole')}>{t('hero.cta')}</Link>
           </Button>
         </div>

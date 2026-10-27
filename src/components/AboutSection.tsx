@@ -1,9 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import VoiceQuote from '@/components/VoiceQuote';
 import portrait from '@/assets/home-portrait.webp.asset.json';
-
-// Ordre vérifié : guide.1 Co-créer, guide.2 Décisions claires, guide.3 Organisation vivante, guide.4 Apprendre en faisant.
-const guideVoices = ['home.cocreate', 'home.decisions', 'home.living', 'home.learn'];
 
 const AboutSection = () => {
   const { t } = useLanguage();
@@ -20,9 +16,6 @@ const AboutSection = () => {
                 <li key={n} className="py-5 first:pt-0 last:pb-0">
                   <p className="font-serif text-[20px] font-medium leading-snug text-primary">{t(`about.guide.${n}.title`)}</p>
                   <p className="mt-1 text-[15px] leading-relaxed text-muted-foreground">{t(`about.guide.${n}.text`)}</p>
-                  <div className="mt-3">
-                    <VoiceQuote voiceKey={guideVoices[n - 1]} variant="inline" size="sm" />
-                  </div>
                 </li>
               ))}
             </ul>
@@ -33,9 +26,6 @@ const AboutSection = () => {
           <p className="mt-6">{t('about.p1')}</p>
           <p className="mt-4">{t('about.p2')}</p>
           <p className="mt-4">{t('about.p3')}</p>
-          <div className="mt-8">
-            <VoiceQuote voiceKey="home.about" variant="inline" />
-          </div>
         </div>
       </div>
     </section>

@@ -6,7 +6,6 @@ fr: "le-feu-et-la-conversation"
 date: "2026-10-12"
 status: "exploring"
 lang: "en"
-voice: "notebook.fire"
 origin: "Born of a summer without fire"
 themes: ["Facilitation", "Anthropology", "Ecology"]
 summary: "This summer, in the Pyrenees, we weren't allowed to light a fire. Walking in the evenings without flames, I felt what was missing: not the warmth, but a certain way of talking to each other. I went to see what anthropologists say about fire, night and stories."

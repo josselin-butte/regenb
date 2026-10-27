@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CompassAudio from '@/components/compass/CompassAudio';
-import VoiceQuote from '@/components/VoiceQuote';
 import heroImg from '@/assets/boussole/boussole-hero.jpg.asset.json';
 import earthImg from '@/assets/boussole/boussole-earth.jpg.asset.json';
 import waterImg from '@/assets/boussole/boussole-water.jpg.asset.json';
@@ -56,7 +55,6 @@ const Compass = () => {
               <h2 className="mt-4 text-2xl sm:text-3xl">{t('compass.why.title')}</h2>
             </div>
             <div className="mt-6 lg:col-span-9 lg:mt-0">
-              <VoiceQuote voiceKey="compass.north" variant="inline" />
               <p className="max-w-measure">{t('compass.why.text1')}</p>
               <p className="mt-6 max-w-measure border-l-2 border-primary pl-5 text-primary">{t('compass.why.text2')}</p>
               <p className="mt-6 max-w-measure">{t('compass.why.text3')}</p>
