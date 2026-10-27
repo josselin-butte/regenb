@@ -1,5 +1,7 @@
 # Refonte Josselin Butté
 
+- [ ] Accueil : bande bilingue de douze voix après HeroSection, rotation douce contrôlable, sources, vérifications ordinateur/375px et mouvement réduit ; ne pas publier.
+
 - [x] SV-01 Facilitation illustration only (FR/EN, preview, not published).
 - [x] SV-03 Programme design illustration only (FR/EN, preview, not published).
 - [x] SV-04 Mediation illustration only (FR/EN, preview, not published).
