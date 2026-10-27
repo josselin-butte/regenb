@@ -42,7 +42,7 @@ const Footer = () => {
                 <a href="mailto:josselin@regenb.com" className="text-primary underline decoration-accent">josselin@regenb.com</a>
               </li>
               <li>
-                <address className="not-italic text-muted-foreground">8 route de Barat, 31160 Arbas{language === 'en' ? ', France' : ''}</address>
+                <address className="not-italic text-muted-foreground">Josselin Butté, 31160 Arbas{language === 'en' ? ', France' : ''}</address>
               </li>
               <li>
                 <button type="button" onClick={toggleLanguage} className="hover:text-primary">

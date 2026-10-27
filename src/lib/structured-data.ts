@@ -37,7 +37,7 @@ export const professionalService = () => ({
   founder: { '@id': PERSON_ID },
   email: 'josselin@regenb.com',
   address: {
-    '@type': 'PostalAddress', streetAddress: '8 route de Barat', postalCode: '31160',
+    '@type': 'PostalAddress', postalCode: '31160',
     addressLocality: 'Arbas', addressRegion: 'Haute-Garonne', addressCountry: 'FR',
   },
   areaServed: [

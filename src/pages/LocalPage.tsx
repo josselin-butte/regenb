@@ -30,7 +30,7 @@ type PageCopy = {
   topic?: 'coaching' | 'supervision' | 'etapes';
 };
 
-export const ADDRESS = { street: '8 route de Barat', postalCode: '31160', locality: 'Arbas', region: 'Haute-Garonne' };
+export const ADDRESS = { name: 'Josselin Butté', postalCode: '31160', locality: 'Arbas', region: 'Haute-Garonne' };
 
 export const localContent: Record<LocalKind, Record<'fr' | 'en', PageCopy>> = {
   coaching: {
@@ -242,7 +242,7 @@ export const localContent: Record<LocalKind, Record<'fr' | 'en', PageCopy>> = {
         {
           h2: 'Les lieux où nous pouvons travailler',
           subs: [
-            { h3: 'À Arbas, sur rendez-vous', text: `${ADDRESS.street}, ${ADDRESS.postalCode} ${ADDRESS.locality}. Pour un premier échange, une séance de coaching ou de supervision.` },
+            { h3: 'À Arbas, sur rendez-vous', text: `${ADDRESS.name}, ${ADDRESS.postalCode} ${ADDRESS.locality}. L’adresse précise vous est communiquée à la prise de rendez-vous. Pour un premier échange, une séance de coaching ou de supervision.` },
             { h3: 'Sur les sentiers de la vallée d’Arbas et du Cagire', text: 'Pour les séances en marchant, avec des parcours simples adaptés à chacun et à la météo.' },
             { h3: 'À la ferme d’Oulan Bât', text: 'Chez Nico et Céline Salviac, dans leur camp de yourtes, pour les étapes de quelques jours en petit groupe.' },
             { h3: 'Chez vous, dans les Pyrénées ou à Toulouse', text: 'Pour la facilitation de séminaires et la médiation, de préférence en présentiel.' },
@@ -275,7 +275,7 @@ export const localContent: Record<LocalKind, Record<'fr' | 'en', PageCopy>> = {
       subject: 'Pyrénées – prendre 30 minutes',
       faqTitle: 'Questions fréquentes',
       faq: [
-        { q: 'Recevez-vous à Arbas ?', a: `Oui, sur rendez-vous, au ${ADDRESS.street}, ${ADDRESS.postalCode} ${ADDRESS.locality}.` },
+        { q: 'Recevez-vous à Arbas ?', a: `Oui, sur rendez-vous, à ${ADDRESS.locality} (${ADDRESS.postalCode}). Je vous communique l’adresse précise à la prise de rendez-vous.` },
         { q: 'Vous déplacez-vous ?', a: 'Oui, en Comminges, dans le Couserans et l’Ariège, le Luchonnais, les Hautes-Pyrénées et à Toulouse, surtout pour la facilitation et la médiation.' },
         { q: 'Peut-on tout faire à distance ?', a: 'Le coaching et la supervision, oui, en français ou en anglais. La facilitation et la médiation se font de préférence en présentiel.' },
       ],
@@ -295,7 +295,7 @@ export const localContent: Record<LocalKind, Record<'fr' | 'en', PageCopy>> = {
         {
           h2: 'Where we can work',
           subs: [
-            { h3: 'In Arbas, by appointment', text: `${ADDRESS.street}, ${ADDRESS.postalCode} ${ADDRESS.locality}, France. For a first conversation, a coaching or supervision session.` },
+            { h3: 'In Arbas, by appointment', text: `${ADDRESS.name}, ${ADDRESS.postalCode} ${ADDRESS.locality}, France. The exact address is shared when we book. For a first conversation, a coaching or supervision session.` },
             { h3: 'On the trails of the Arbas valley and Mont Cagire', text: 'For walking sessions, on simple routes adapted to each person and to the weather.' },
             { h3: 'At the Oulan Bât farm', text: 'At Nico and Céline Salviac’s yurt camp, for small-group journeys of a few days.' },
             { h3: 'At your place, in the Pyrenees or Toulouse', text: 'For facilitated seminars and mediation, preferably in person.' },
@@ -328,7 +328,7 @@ export const localContent: Record<LocalKind, Record<'fr' | 'en', PageCopy>> = {
       subject: 'Pyrenees – 30 minutes to talk',
       faqTitle: 'Frequently asked questions',
       faq: [
-        { q: 'Can I meet you in Arbas?', a: `Yes, by appointment, at ${ADDRESS.street}, ${ADDRESS.postalCode} ${ADDRESS.locality}, France.` },
+        { q: 'Can I meet you in Arbas?', a: `Yes, by appointment, in ${ADDRESS.locality} (${ADDRESS.postalCode}), France. I share the exact address when we book.` },
         { q: 'Do you travel?', a: 'Yes, across the Comminges, the Couserans and Ariège, the Luchon area, the Hautes-Pyrénées and Toulouse, especially for facilitation and mediation.' },
         { q: 'Can everything be done online?', a: 'Coaching and supervision, yes, in English or French. Facilitation and mediation preferably in person.' },
       ],

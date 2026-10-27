@@ -30,8 +30,9 @@ describe('local SEO pages', () => {
     }
     expect(localContent.supervision.fr.blocks.map((b) => b.paragraphs?.join(' ')).join(' ')).toContain('680 € HT');
   });
-  it('publish the Arbas address in the business schema', () => {
-    const svc = professionalService() as { address: { streetAddress: string; postalCode: string; addressLocality: string } };
-    expect(svc.address).toMatchObject({ streetAddress: '8 route de Barat', postalCode: '31160', addressLocality: 'Arbas' });
+  it('publish Arbas without a street address in the business schema', () => {
+    const svc = professionalService() as { address: Record<string, string> };
+    expect(svc.address).toMatchObject({ postalCode: '31160', addressLocality: 'Arbas' });
+    expect(svc.address.streetAddress).toBeUndefined();
   });
 });
