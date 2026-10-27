@@ -25,6 +25,15 @@ const Carnet = () => {
             <p>{t('carnet.intro2')}</p>
             <p>{t('carnet.intro3')}</p>
           </div>
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {[
+              { path: '/carnet/ecoutes', title: language === 'fr' ? 'Écoutes' : 'Listening', description: language === 'fr' ? 'trois playlists commentées' : 'three annotated playlists' },
+              { path: '/carnet/bibliotheque', title: language === 'fr' ? 'Bibliothèque' : 'Library', description: language === 'fr' ? "dix livres qui m'accompagnent" : 'ten books that travel with me' },
+            ].map(item => <Link key={item.path} to={lp(item.path)} className="border border-border p-5 text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring">
+              <span className="block font-serif text-xl font-semibold underline decoration-accent underline-offset-4">{item.title}</span>
+              <span className="mt-2 block text-sm text-muted-foreground">{item.description}</span>
+            </Link>)}
+          </div>
           <p className="mt-10 text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('carnet.threads')}</p>
           <ul className="mt-4 flex flex-wrap gap-2">
             {t('carnet.threadList').split('|').map((tag) => (

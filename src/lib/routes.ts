@@ -9,6 +9,8 @@ const PAIRS: [string, string][] = [
   ['/accompagnement', '/en/services'],
   ['/etapes', '/en/journeys'],
   ['/boussole', '/en/compass'],
+  ['/carnet/ecoutes', '/en/notebook/listening'],
+  ['/carnet/bibliotheque', '/en/notebook/library'],
   ['/carnet', '/en/notebook'],
   ['/legal', '/en/legal'],
   ['/mentions-legales', '/en/legal-notice'],
@@ -39,6 +41,11 @@ export const localizePath = (path: string, lang: Lang): string => {
       if (lang === 'fr' && pair[to] === '/' ) out = '/';
       break;
     }
+  }
+  if (hash !== undefined && (base === '/carnet/ecoutes' || base === '/en/notebook/listening')) {
+    const anchors: [string, string][] = [['autour-du-feu', 'around-the-fire'], ['marcher', 'walking'], ['voix-et-souffle', 'voice-and-breath']];
+    const anchor = anchors.find(pair => pair[from] === hash);
+    return `${out}#${anchor?.[to] ?? hash}`;
   }
   return hash !== undefined ? `${out}#${hash}` : out;
 };
