@@ -43,6 +43,48 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/etapes"/>
   </url>
   <url>
+    <loc>https://www.regenb.fr/coaching</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/coaching"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/coaching"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/coaching"/>
+  </url>
+  <url>
+    <loc>https://www.regenb.fr/en/coaching</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/coaching"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/coaching"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/coaching"/>
+  </url>
+  <url>
+    <loc>https://www.regenb.fr/supervision</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/supervision"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/supervision"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/supervision"/>
+  </url>
+  <url>
+    <loc>https://www.regenb.fr/en/supervision</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/supervision"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/supervision"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/supervision"/>
+  </url>
+  <url>
+    <loc>https://www.regenb.fr/pyrenees</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/pyrenees"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/pyrenees"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/pyrenees"/>
+  </url>
+  <url>
+    <loc>https://www.regenb.fr/en/pyrenees</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/pyrenees"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/pyrenees"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/pyrenees"/>
+  </url>
+  <url>
     <loc>https://www.regenb.fr/boussole</loc>
     <lastmod>2026-10-27</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/boussole"/>
