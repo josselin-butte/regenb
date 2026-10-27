@@ -9,10 +9,13 @@ export const VOICE_INTERVAL_MS = 7000;
 export const VOICE_EXIT_MS = 600;
 export const VOICE_ENTER_MS = 800;
 
-export default function VoicesBand() {
+type VoicesBandProps = { compact?: boolean; initialVoice?: typeof voices[number]['name'] };
+
+export default function VoicesBand({ compact = false, initialVoice = 'Robin Wall Kimmerer' }: VoicesBandProps) {
   const { language } = useLanguage();
   const fr = language === 'fr';
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(() => Math.max(0, voices.findIndex(voice => voice.name === initialVoice)));
+  const interval = compact ? 9000 : VOICE_INTERVAL_MS;
   const [phase, setPhase] = useState('still');
   const [paused, setPaused] = useState(false);
   const [hovered, setHovered] = useState(false);
@@ -53,11 +56,11 @@ export default function VoicesBand() {
     const tick = (now: number) => {
       if (previous !== undefined) elapsed.current += now - previous;
       previous = now;
-      if (elapsed.current >= VOICE_INTERVAL_MS) {
+      if (elapsed.current >= interval) {
         elapsed.current = 0;
         setIndex(current => (current + 1) % voices.length);
         setPhase('enter');
-      } else if (elapsed.current >= VOICE_INTERVAL_MS - VOICE_EXIT_MS) {
+      } else if (elapsed.current >= interval - VOICE_EXIT_MS) {
         setPhase('exit');
       } else if (elapsed.current >= VOICE_ENTER_MS) {
         setPhase('still');
@@ -67,7 +70,7 @@ export default function VoicesBand() {
     };
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [running]);
+  }, [running, interval]);
 
   function select(next: number) {
     setIndex((next + voices.length) % voices.length);
@@ -79,7 +82,7 @@ export default function VoicesBand() {
   const voice = voices[index];
   return (
     <section ref={band} aria-roledescription="carousel" aria-label={fr ? 'Voix de femmes' : "Women's voices"}
-      className="voices-band bg-secondary text-foreground" data-running={running} data-reduced={reduced}
+      className={`voices-band bg-secondary text-foreground${compact ? ' voices-compact' : ''}`} data-running={running} data-reduced={reduced}
       onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
       onFocusCapture={() => setFocused(true)}
       onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false); }}
@@ -91,9 +94,12 @@ export default function VoicesBand() {
         if (Math.abs(delta) > 40 && Math.abs(delta) > Math.abs(end.clientY - start.y)) select(index + (delta < 0 ? 1 : -1));
       }}>
       <div className="voices-copy" aria-live="off">
-        <blockquote key={index} lang={language} className="voices-quote font-serif text-balance" data-phase={phase}>{voice[language]}</blockquote>
+        <blockquote key={index} lang={language} className="voices-quote font-serif text-balance" data-phase={phase}>
+          {voice[language]}
+          {compact && <span className="voices-inline-name font-sans"> — {voice.name}</span>}
+        </blockquote>
       </div>
-      <div className="voices-attribution font-sans text-xs">
+      {!compact && <><div className="voices-attribution font-sans text-xs">
         <span className="inline-flex items-center gap-2"><span aria-hidden="true" className="h-px w-5 bg-accent" />{voice.name} · {voice.year}</span>
         <Dialog open={sourcesOpen} onOpenChange={setSourcesOpen}>
           <DialogTrigger asChild><Button variant="link" className="min-h-11 px-2 text-xs underline decoration-accent">{fr ? 'Les voix · Sources' : 'The voices · Sources'}</Button></DialogTrigger>
@@ -124,7 +130,7 @@ export default function VoicesBand() {
             {position === index && <progress ref={progress} max={VOICE_INTERVAL_MS} value={elapsed.current} />}
           </span>
         </Button>)}
-      </div>
+      </div></>}
       <Button variant="link" className="voices-pause min-h-11" onClick={() => setPaused(current => !current)}
         aria-label={paused ? (fr ? 'Reprendre' : 'Play') : (fr ? 'Mettre en pause' : 'Pause')}>
         {paused ? (fr ? 'Reprendre' : 'Play') : (fr ? 'Pause' : 'Pause')}

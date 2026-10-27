@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import VoicesBand from '@/components/VoicesBand';
 import ElementIcon from '@/components/ElementIcon';
 import StatusChip from '@/components/carnet/StatusChip';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -62,6 +63,7 @@ const Carnet = () => {
           <p className="mt-10 max-w-measure text-[13px] leading-relaxed text-muted-foreground">{t('carnet.ai')}</p>
         </div>
       </main>
+      <VoicesBand compact initialVoice="Lynn Margulis" />
       <Footer />
     </div>
   );
