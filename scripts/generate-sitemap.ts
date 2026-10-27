@@ -10,6 +10,8 @@ const pairs: [string, string][] = [
   ["/etapes", "/en/journeys"],
   ["/boussole", "/en/compass"],
   ["/carnet", "/en/notebook"],
+  ["/carnet/ecoutes", "/en/notebook/listening"],
+  ["/carnet/bibliotheque", "/en/notebook/library"],
   ["/mentions-legales", "/en/legal-notice"],
   ["/confidentialite", "/en/privacy"],
   ["/cgv", "/en/terms"],
@@ -23,6 +25,8 @@ const PAGE_FILES: Record<string, string[]> = {
   "/etapes": ["src/pages/Etapes.tsx"],
   "/boussole": ["src/pages/Compass.tsx"],
   "/carnet": ["src/pages/Carnet.tsx"],
+  "/carnet/ecoutes": ["src/pages/Listening.tsx", "src/data/listening.ts"],
+  "/carnet/bibliotheque": ["src/pages/Library.tsx", "src/data/library.ts"],
   "/mentions-legales": ["src/pages/Legal.tsx", "src/lib/legal.ts"],
   "/confidentialite": ["src/pages/Legal.tsx", "src/lib/legal.ts"],
   "/cgv": ["src/pages/Legal.tsx", "src/lib/legal.ts"],
@@ -30,6 +34,7 @@ const PAGE_FILES: Record<string, string[]> = {
   "/contact": ["src/pages/Contact.tsx"],
 };
 const gitDate = (files: string[]) => {
+  if (!files.length) return undefined;
   try { return execSync(`git log -1 --format=%cs -- ${files.join(" ")}`, { stdio: ["ignore", "pipe", "ignore"] }).toString().trim() || undefined; }
   catch { return undefined; }
 };
