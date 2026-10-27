@@ -27,8 +27,8 @@ function advance(ms: number) {
     act(() => { const pending = [...callbacks.values()]; callbacks.clear(); pending.forEach(fn => fn(now)); });
   }
 }
-function start() {
-  const view = render(<VoicesBand />);
+function start(props: React.ComponentProps<typeof VoicesBand> = {}) {
+  const view = render(<VoicesBand {...props} />);
   act(() => intersect([{ isIntersecting: true }]));
   advance(10);
   return view;
@@ -36,6 +36,29 @@ function start() {
 const current = () => screen.getAllByRole('button').find(button => button.getAttribute('aria-pressed') === 'true')?.getAttribute('aria-label');
 
 describe('homepage voices controls', () => {
+  it('starts compact Services with Follett and changes only after 9000 ms', () => {
+    start({ compact: true, initialVoice: 'Mary Parker Follett' });
+    const band = screen.getByRole('region');
+    expect(band.textContent).toContain('Mary Parker Follett');
+    advance(8990); expect(band.textContent).toContain('Mary Parker Follett');
+    advance(10); expect(band.textContent).toContain('Audre Lorde');
+  });
+  it('starts compact Notebook with Margulis', () => {
+    start({ compact: true, initialVoice: 'Lynn Margulis' });
+    expect(screen.getByRole('region').textContent).toContain('Lynn Margulis');
+    advance(9000); expect(screen.getByRole('region').textContent).toContain('Donella Meadows');
+  });
+  it('retains compact explicit pause and remaining-time resume', () => {
+    start({ compact: true, initialVoice: 'Mary Parker Follett' }); advance(3000);
+    fireEvent.click(screen.getByRole('button', { name: 'Mettre en pause' }));
+    advance(12000); expect(screen.getByRole('region').textContent).toContain('Mary Parker Follett');
+    fireEvent.click(screen.getByRole('button', { name: 'Reprendre' }));
+    advance(6020); expect(screen.getByRole('region').textContent).toContain('Audre Lorde');
+  });
+  it('never rotates compact quotes with reduced motion', () => {
+    media.matches = true; start({ compact: true, initialVoice: 'Lynn Margulis' });
+    advance(27000); expect(screen.getByRole('region').textContent).toContain('Lynn Margulis');
+  });
   it('starts with Kimmerer and provides the same twelve selectable voices from bilingual data', () => {
     render(<VoicesBand />);
     expect(current()).toBe('Robin Wall Kimmerer');

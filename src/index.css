@@ -38,6 +38,16 @@
   .voices-band *, .voices-dialog * { animation: none !important; transition: none !important; }
 }
 
+.voices-band.voices-compact { height: 96px; padding: 8px 76px 8px 16px; }
+.voices-compact .voices-copy { height: 100%; max-width: 1200px; }
+.voices-compact .voices-quote { font-size: 14px; line-height: 1.35; }
+.voices-inline-name { font-size: 12px; white-space: nowrap; }
+.voices-compact .voices-pause { right: 8px; bottom: 50%; transform: translateY(50%); }
+@media (min-width: 768px) {
+  .voices-band.voices-compact { height: 64px; padding-left: 32px; }
+  .voices-compact .voices-quote { font-size: 16px; }
+}
+
 @layer base {
   :root {
     /* crème chaude */

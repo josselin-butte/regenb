@@ -8,6 +8,7 @@ import ProgrammeIllustration from '@/components/ProgrammeIllustration';
 import MediationIllustration from '@/components/MediationIllustration';
 import SupervisionIllustration from '@/components/SupervisionIllustration';
 import Footer from '@/components/Footer';
+import VoicesBand from '@/components/VoicesBand';
 import EnquiryForm from '@/components/EnquiryForm';
 import { Button } from '@/components/ui/button';
 
@@ -265,6 +266,7 @@ const Services = () => {
         </section>
         <EnquiryForm />
       </main>
+      <VoicesBand compact initialVoice="Mary Parker Follett" />
       <Footer />
     </div>
   );
