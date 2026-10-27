@@ -9,9 +9,9 @@
 .voices-copy { width: 100%; max-width: 1050px; height: 108px; display: flex; align-items: center; justify-content: center; text-align: center; }
 .voices-quote { font-size: 1.35rem; line-height: 1.2; letter-spacing: 0; }
 .voices-attribution { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; column-gap: 12px; line-height: 1.2; }
-.voices-attribution button { min-height: 28px; height: 28px; }
-.voices-dots { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); display: flex; }
-.voices-dot { width: 24px; min-width: 24px; height: 44px; padding: 0; background: transparent !important; }
+.voices-attribution button { min-height: 44px; height: 44px; }
+.voices-dots { position: absolute; bottom: 0; left: 8px; display: flex; }
+.voices-dot { width: 20px; min-width: 20px; height: 44px; padding: 0; background: transparent !important; }
 .voices-dot-mark { position: relative; display: block; width: 8px; height: 8px; border: 1px solid hsl(var(--foreground)); border-radius: 50%; overflow: hidden; }
 .voices-dot[aria-pressed=true] .voices-dot-mark { width: 12px; height: 12px; }
 .voices-dot progress { position: absolute; inset: 0; width: 100%; height: 100%; appearance: none; border: 0; background: transparent; }
@@ -19,7 +19,7 @@
 .voices-dot progress::-webkit-progress-value { background: hsl(var(--accent)); }
 .voices-dot progress::-moz-progress-bar { background: hsl(var(--accent)); }
 .voices-band[data-reduced=true] progress { background: hsl(var(--accent)); }
-.voices-pause { position: absolute; right: 4px; bottom: 36px; font-size: 11px; padding: 0 8px; }
+.voices-pause { position: absolute; right: 4px; bottom: 0; font-size: 11px; padding: 0 8px; }
 .voices-band button:focus-visible, .voices-dialog a:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
 .voices-quote[data-phase=exit] { animation: voices-out 600ms ease-out both; }
 .voices-quote[data-phase=enter] { animation: voices-in 800ms ease-out both; }
@@ -31,6 +31,7 @@
   .voices-copy { height: 80px; }
   .voices-quote { font-size: 1.75rem; }
   .voices-dot { width: 44px; }
+  .voices-dots { left: 50%; transform: translateX(-50%); }
   .voices-pause { bottom: 0; right: 20px; font-size: 12px; }
 }
 @media (prefers-reduced-motion: reduce) {
