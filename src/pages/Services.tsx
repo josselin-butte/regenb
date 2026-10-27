@@ -85,7 +85,7 @@ export const content = {
       { title: 'Facilitation', who: 'équipes de direction, comités, collectifs qui doivent décider ensemble.', desc: "Séminaires, ateliers de stratégie, moments de décision. Je conçois le déroulé, je tiens le cadre, et je rends visibles les voix qu'on n'entend pas d'habitude. Le groupe repart avec des décisions claires : qui contribue, qui décide, et comment.", format: "d'une demi-journée à trois jours, en salle ou en extérieur.", fees: 'sur devis, après un premier échange.' },
       { title: 'Conception de programmes', who: 'directions RH, responsables formation, organisations qui lancent un parcours.', desc: "Programmes de leadership, parcours de formation, séminaires en plusieurs temps. Je construis avec vous l'architecture, les séquences et les supports, en partant de comportements observables plutôt que d'intentions.", format: 'quelques jours de conception, puis animation ou transmission à vos équipes.', fees: 'sur devis.' },
       { title: 'Coaching', who: 'dirigeants et managers dans une transition de rôle, une prise de poste ou une décision difficile.', desc: 'Un espace pour clarifier ce qui compte, comprendre ce qui se joue et retrouver votre pouvoir d’agir. Nous partons de situations réelles, regardons les relations et les tensions qui les traversent, puis choisissons une suite adaptée : une décision, une expérimentation, une conversation ou un temps de recul.', format: 'un cycle de séances, à distance ou en marchant, rythme défini ensemble.', fees: 'sur devis.' },
-      { title: 'Supervision', who: 'facilitateurs, coachs, formateurs et accompagnants.', desc: 'Un temps pour regarder ce qui se passe en vous pendant que vous accompagnez les autres : ce qui vous a touché, ce que vous avez évité, ce que vous referiez autrement.', format: "quatre séances d'une heure sur quatre mois, à distance. En groupe : Le Cercle, huit places, de décembre à février.", fees: '680 € HT les quatre séances. Le Cercle : inscriptions début novembre.' },
+      { title: 'Supervision', who: 'facilitateurs, coachs, formateurs et accompagnants.', desc: 'Un temps pour regarder ce qui se passe en vous pendant que vous accompagnez les autres : ce qui vous a touché, ce que vous avez évité, ce que vous referiez autrement.', format: "quatre séances d'une heure sur quatre mois, à distance. Possible aussi en marchant, en Comminges. En groupe : Le Cercle, huit places, de décembre à février.", fees: '680 € HT les quatre séances. Le Cercle : inscriptions début novembre.' },
       { title: 'Médiation', who: 'équipes, binômes ou associés pris dans une tension qui dure.', desc: "Des entretiens individuels d'abord, puis un temps commun, pour que chacun puisse dire ce qu'il vit et entendre l'autre. Le cadre est confidentiel, et l'objectif est de pouvoir retravailler ensemble.", format: 'deux à quatre rencontres, en présentiel de préférence.', fees: 'sur devis.' },
     ] as Service[],
     closingTitle: 'Par où commencer',
@@ -97,7 +97,7 @@ export const content = {
     faqTitle: 'Questions fréquentes',
     faq: [
       { q: "Qu'est-ce que la supervision pour les coachs et les facilitateurs ?", a: "Un temps régulier pour regarder ce qui se passe en vous pendant que vous accompagnez les autres : ce qui vous a touché, ce que vous avez évité, ce que vous ramenez qui n'est pas à vous. Quatre séances d'une heure sur quatre mois, à distance, ou en groupe avec Le Cercle." },
-      { q: 'Travaillez-vous à distance ?', a: 'Oui. Le coaching et la supervision se font le plus souvent à distance, en français ou en anglais. La facilitation et la médiation, de préférence en présentiel.' },
+      { q: 'Travaillez-vous à distance ?', a: 'Oui. Le coaching et la supervision se font le plus souvent à distance, en français ou en anglais, ou en marchant dans les Pyrénées, depuis Arbas. La facilitation et la médiation, de préférence en présentiel.' },
       { q: 'Combien coûte un accompagnement ?', a: "La supervision individuelle coûte 680 € les quatre séances. Pour le reste, je fais un devis après un premier échange de 30 minutes, gratuit." },
       { q: "Par où commencer si je ne sais pas ce dont j'ai besoin ?", a: "Prenez 30 minutes avec moi. Vous me dites ce qui se passe, je vous dis honnêtement si je suis la bonne personne, et sinon vers qui aller." },
     ],
@@ -172,7 +172,7 @@ export const content = {
       { title: 'Facilitation', who: 'leadership teams, committees and groups that need to decide together.', desc: 'Off-sites, strategy workshops, decision points. I design the flow, hold the frame and bring out the voices that usually go unheard. The group leaves with clear decisions: who contributes, who decides, and how.', format: 'from half a day to three days, indoors or outdoors.', fees: 'on quotation, after a first conversation.' },
       { title: 'Programme design', who: 'HR and learning leaders, and organisations launching a programme.', desc: 'Leadership programmes, learning journeys, multi-part seminars. I build the architecture, sessions and materials with you, starting from observable behaviour rather than good intentions.', format: 'a few days of design, then delivery or handover to your teams.', fees: 'on quotation.' },
       { title: 'Coaching', who: 'leaders and managers in a role transition, a new position or a difficult decision.', desc: 'Space to clarify what matters, understand what is happening and reconnect with your capacity to act. We start with real situations, explore the relationships and tensions involved, and identify an appropriate next step: a decision, an experiment, a conversation or time to reflect.', format: 'a series of sessions, online or walking, at a pace we agree together.', fees: 'on quotation.' },
-      { title: 'Supervision', who: 'facilitators, coaches, trainers and practitioners.', desc: "Time to look at what happens in you while you support others: what touched you, what you avoided, what you'd do differently.", format: 'four one-hour sessions over four months, online. In a group: The Circle, eight places, December to February.', fees: '€680 excl. VAT for the four sessions. The Circle: registration opens in early November.' },
+      { title: 'Supervision', who: 'facilitators, coaches, trainers and practitioners.', desc: "Time to look at what happens in you while you support others: what touched you, what you avoided, what you'd do differently.", format: 'four one-hour sessions over four months, online. Also possible walking, in the Comminges. In a group: The Circle, eight places, December to February.', fees: '€680 excl. VAT for the four sessions. The Circle: registration opens in early November.' },
       { title: 'Mediation', who: 'teams, pairs or business partners caught in a lasting tension.', desc: "Individual conversations first, then a shared session, so that each person can say what they're living and hear the other. The frame is confidential, and the aim is to be able to work together again.", format: 'two to four meetings, preferably in person.', fees: 'on quotation.' },
     ] as Service[],
     closingTitle: 'Where to start',
@@ -184,7 +184,7 @@ export const content = {
     faqTitle: 'Frequently asked questions',
     faq: [
       { q: 'What is supervision for coaches and facilitators?', a: "A regular time to look at what happens in you while you support others: what touched you, what you avoided, what you bring back that isn't yours. Four one-hour sessions over four months, online, or in a group with The Circle." },
-      { q: 'Do you work online?', a: 'Yes. Coaching and supervision are most often online, in English or in French. Facilitation and mediation, preferably in person.' },
+      { q: 'Do you work online?', a: 'Yes. Coaching and supervision are most often online, in English or in French, or walking in the Pyrenees from Arbas. Facilitation and mediation, preferably in person.' },
       { q: 'How much does an engagement cost?', a: 'Individual supervision costs €680 for the four sessions. For everything else, I send a quotation after a first free 30-minute conversation.' },
       { q: "Where do I start if I don't know what I need?", a: "Take 30 minutes with me. You tell me what's going on, I tell you honestly whether I'm the right person, and if not, where to go instead." },
     ],
@@ -236,13 +236,22 @@ const Services = () => {
                 <div><dt className="inline font-medium">{c.labels.format}{language === 'fr' ? ' : ' : ': '}</dt><dd className="inline">{s.format}</dd></div>
                 <div><dt className="inline font-medium">{c.labels.fees}{language === 'fr' ? ' : ' : ': '}</dt><dd className="inline">{s.fees}</dd></div>
               </dl>
+              {(i === 2 || i === 3) && (
+                <p className="mt-4 text-[15px]">
+                  <Link to={lp(i === 2 ? '/coaching' : '/supervision')} className="text-primary underline decoration-accent underline-offset-4">
+                    {i === 2
+                      ? (language === 'fr' ? 'Le coaching en détail : en marchant dans les Pyrénées ou à distance' : 'Coaching in detail: walking in the Pyrenees or online')
+                      : (language === 'fr' ? 'La supervision en détail : à distance, en marchant ou en groupe' : 'Supervision in detail: online, walking or in a group')}
+                  </Link>
+                </p>
+              )}
             </div>
           </section>
         ))}
 
         <section className="bg-primary px-5 py-16 text-primary-foreground sm:px-8 sm:py-20 lg:px-12">
           <div className="measure mx-auto text-center">
-            <h2 className="text-2xl font-semibold sm:text-3xl">{c.closingTitle}</h2>
+            <h2 className="text-2xl font-semibold text-primary-foreground sm:text-3xl">{c.closingTitle}</h2>
             <p className="mt-4 opacity-90">{c.closingText}</p>
             <Button asChild size="lg" variant="secondary" className="mt-8 h-auto min-h-11 max-w-full whitespace-normal py-3 text-center">
               <a href={mailto}>{c.button}</a>

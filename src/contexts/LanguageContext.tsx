@@ -29,7 +29,7 @@ const translations: Translations = {
   'element.water': { fr: 'Eau', en: 'Water' },
   'element.air': { fr: 'Air', en: 'Air' },
   'element.fire': { fr: 'Feu', en: 'Fire' },
-  'hero.sentence2': { fr: 'Facilitation, coaching et supervision : partir de votre réalité, prendre soin des liens et trouver un prochain pas qui tienne dans la durée.', en: 'Facilitation, coaching and supervision grounded in your reality, attentive to relationships, and oriented towards a next step that can last.' },
+  'hero.sentence2': { fr: 'Facilitation, coaching et supervision depuis les Pyrénées, à Toulouse et à distance : partir de votre réalité, prendre soin des liens et trouver un prochain pas qui tienne dans la durée.', en: 'Facilitation, coaching and supervision from the French Pyrenees, in Toulouse and online, grounded in your reality, attentive to relationships, and oriented towards a next step that can last.' },
   'hero.ctaPrimary': { fr: 'Parlons de votre situation', en: 'Let’s discuss your situation' },
   'hero.cta': { fr: 'Trouver mon cap avec la Boussole', en: 'Find my bearings with the Values Compass' },
   'image.dehors': { fr: 'Josselin Butté marche sur un sentier de montagne', en: 'Josselin Butté walking a mountain path' },

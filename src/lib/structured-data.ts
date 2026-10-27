@@ -36,7 +36,18 @@ export const professionalService = () => ({
   name: 'RegenB France', url: SITE_ORIGIN, logo: `${SITE_ORIGIN}/favicon-v2-512.png`,
   founder: { '@id': PERSON_ID },
   email: 'josselin@regenb.com',
-  areaServed: { '@type': 'Country', name: 'France' },
+  address: {
+    '@type': 'PostalAddress', postalCode: '31160',
+    addressLocality: 'Arbas', addressRegion: 'Haute-Garonne', addressCountry: 'FR',
+  },
+  areaServed: [
+    { '@type': 'AdministrativeArea', name: 'Comminges' },
+    { '@type': 'AdministrativeArea', name: 'Haute-Garonne' },
+    { '@type': 'AdministrativeArea', name: 'Ariège' },
+    { '@type': 'AdministrativeArea', name: 'Hautes-Pyrénées' },
+    { '@type': 'City', name: 'Toulouse' },
+    { '@type': 'Country', name: 'France' },
+  ],
   availableLanguage: ['French', 'English'],
 });
 

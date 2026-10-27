@@ -20,6 +20,7 @@ import ConsentManager from '@/components/ConsentManager';
 import MetaPixel from '@/components/MetaPixel';
 import Listening from './pages/Listening';
 import Library from './pages/Library';
+import LocalPage from './pages/LocalPage';
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,9 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/accompagnement" element={<Services />} />
             <Route path="/etapes" element={<Etapes />} />
+            <Route path="/coaching" element={<LocalPage kind="coaching" />} />
+            <Route path="/supervision" element={<LocalPage kind="supervision" />} />
+            <Route path="/pyrenees" element={<LocalPage kind="pyrenees" />} />
             <Route path="/boussole" element={<Compass />} />
             <Route path="/carnet" element={<Carnet />} />
             <Route path="/carnet/ecoutes" element={<Listening />} />
@@ -52,6 +56,9 @@ const App = () => (
             <Route path="/en/contact" element={<Contact />} />
             <Route path="/en/services" element={<Services />} />
             <Route path="/en/journeys" element={<Etapes />} />
+            <Route path="/en/coaching" element={<LocalPage kind="coaching" />} />
+            <Route path="/en/supervision" element={<LocalPage kind="supervision" />} />
+            <Route path="/en/pyrenees" element={<LocalPage kind="pyrenees" />} />
             <Route path="/en/compass" element={<Compass />} />
             <Route path="/en/notebook" element={<Carnet />} />
             <Route path="/en/notebook/listening" element={<Listening />} />

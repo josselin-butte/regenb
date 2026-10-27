@@ -25,6 +25,9 @@ const Footer = () => {
             <ul className="mt-4 space-y-2">
               <li><a href={lp("/#about")} className="hover:text-primary">{t('nav.about')}</a></li>
               <li><a href={lp("/accompagnement")} className="hover:text-primary">{t('nav.offer')}</a></li>
+              <li><a href={lp("/coaching")} className="hover:text-primary">Coaching</a></li>
+              <li><a href={lp("/supervision")} className="hover:text-primary">Supervision</a></li>
+              <li><a href={lp("/pyrenees")} className="hover:text-primary">{language === 'fr' ? 'Dans les Pyrénées' : 'In the Pyrenees'}</a></li>
               <li><a href={lp("/#letter")} className="hover:text-primary">{t('nav.letter')}</a></li>
               <li><a href={lp("/boussole")} className="hover:text-primary">{t('nav.compass')}</a></li>
               <li><a href={lp("/carnet")} className="hover:text-primary">{t('nav.carnet')}</a></li>
@@ -37,6 +40,9 @@ const Footer = () => {
             <ul className="mt-4 space-y-2">
               <li>
                 <a href="mailto:josselin@regenb.com" className="text-primary underline decoration-accent">josselin@regenb.com</a>
+              </li>
+              <li>
+                <address className="not-italic text-muted-foreground">Josselin Butté, 31160 Arbas{language === 'en' ? ', France' : ''}</address>
               </li>
               <li>
                 <button type="button" onClick={toggleLanguage} className="hover:text-primary">

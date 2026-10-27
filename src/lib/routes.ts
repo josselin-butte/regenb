@@ -8,6 +8,9 @@ export const SITE_ORIGIN = 'https://www.regenb.fr';
 const PAIRS: [string, string][] = [
   ['/accompagnement', '/en/services'],
   ['/etapes', '/en/journeys'],
+  ['/coaching', '/en/coaching'],
+  ['/supervision', '/en/supervision'],
+  ['/pyrenees', '/en/pyrenees'],
   ['/boussole', '/en/compass'],
   ['/carnet/ecoutes', '/en/notebook/listening'],
   ['/carnet/bibliotheque', '/en/notebook/library'],
