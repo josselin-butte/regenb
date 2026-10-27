@@ -71,6 +71,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/carnet"/>
   </url>
   <url>
+    <loc>https://www.regenb.fr/carnet/ecoutes</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/carnet/ecoutes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/notebook/listening"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/carnet/ecoutes"/>
+  </url>
+  <url>
+    <loc>https://www.regenb.fr/en/notebook/listening</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/carnet/ecoutes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/notebook/listening"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/carnet/ecoutes"/>
+  </url>
+  <url>
+    <loc>https://www.regenb.fr/carnet/bibliotheque</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/carnet/bibliotheque"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/notebook/library"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/carnet/bibliotheque"/>
+  </url>
+  <url>
+    <loc>https://www.regenb.fr/en/notebook/library</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/carnet/bibliotheque"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/notebook/library"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/carnet/bibliotheque"/>
+  </url>
+  <url>
     <loc>https://www.regenb.fr/mentions-legales</loc>
     <lastmod>2026-10-21</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/mentions-legales"/>
