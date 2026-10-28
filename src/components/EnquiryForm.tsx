@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -38,7 +38,17 @@ const copy = {
   },
 };
 
-const EnquiryForm = ({ defaultTopic }: { defaultTopic?: (typeof TOPICS)[number] }) => {
+type EnquiryFormProps = {
+  defaultTopic?: (typeof TOPICS)[number];
+  /** Optional page-specific heading, intro and note; defaults keep every other page unchanged. */
+  title?: string;
+  intro?: string;
+  note?: string;
+  /** Prefills the message while the visitor has not typed in it yet. */
+  defaultMessage?: string;
+};
+
+const EnquiryForm = ({ defaultTopic, title, intro, note, defaultMessage }: EnquiryFormProps) => {
   const { language } = useLanguage();
   const c = copy[language];
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
@@ -57,6 +67,11 @@ const EnquiryForm = ({ defaultTopic }: { defaultTopic?: (typeof TOPICS)[number] 
     defaultValues: { firstName: '', email: '', topic: defaultTopic, message: '', programmesOptIn: false },
   });
 
+  useEffect(() => {
+    if (!defaultMessage || form.getFieldState('message').isDirty) return;
+    form.setValue('message', defaultMessage);
+  }, [defaultMessage, form]);
+
   const onSubmit = async (data: Data) => {
     setStatus('sending');
     const { error } = await supabase.functions.invoke('forward-to-crm', {
@@ -68,7 +83,9 @@ const EnquiryForm = ({ defaultTopic }: { defaultTopic?: (typeof TOPICS)[number] 
   return (
     <section className="border-t border-border px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
       <div className="mx-auto max-w-measure">
-        <h2 className="text-2xl font-semibold sm:text-3xl">{c.title}</h2>
+        <h2 className="text-2xl font-semibold sm:text-3xl">{title ?? c.title}</h2>
+        {intro && <p className="mt-4 text-muted-foreground">{intro}</p>}
+        {note && <p className="mt-4 border-l-2 border-accent pl-4 text-[15px]">{note}</p>}
         {status === 'sent' ? (
           <p className="mt-6 border-l-2 border-accent pl-4" role="status">{c.thanks}</p>
         ) : (
