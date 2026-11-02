@@ -30,7 +30,7 @@ const translations: Translations = {
   'hero.s1.support': { fr: 'celles et ceux qui accompagnent', en: 'people who support others' },
   'hero.s1.c': { fr: ', et ', en: ', and ' },
   'hero.s1.redefine': { fr: 'les personnes qui ont besoin de redéfinir ce qui compte vraiment pour se remettre en mouvement', en: 'anyone who needs to redefine what truly matters to get moving again' },
-  'hero.s1.d': { fr: '. Depuis la vallée d’Arbas, dans les Pyrénées, ailleurs et à distance.', en: '. From the Arbas Valley in the Pyrenees, elsewhere and online, in English and French.' },
+  'hero.s1.d': { fr: ' Depuis la vallée d’Arbas, dans les Pyrénées, ailleurs et à distance.', en: ' From the Arbas Valley in the Pyrenees, elsewhere and online, in English and French.' },
   'element.earth': { fr: 'Terre', en: 'Earth' },
   'element.water': { fr: 'Eau', en: 'Water' },
   'element.air': { fr: 'Air', en: 'Air' },

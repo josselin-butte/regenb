@@ -71,7 +71,9 @@ const HeroSection = () => {
             {t('hero.s1.b')}
             {phrase('hero.s1.support', 1, 2)}
             {t('hero.s1.c')}
-            {phrase('hero.s1.redefine', 2, 3)}
+            <button type="button" className="hero-link hero-link-3" onClick={() => goToDoor(2)}>
+              {t('hero.s1.redefine')}.
+            </button>
             {t('hero.s1.d')}
           </p>
           <div className="mt-8 flex items-start gap-7">
