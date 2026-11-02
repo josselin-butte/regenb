@@ -38,6 +38,7 @@ const translations: Translations = {
   'image.ecoute': { fr: 'Un moment d’écoute dans la nature', en: 'A moment of listening in nature' },
   'image.oulanbat': { fr: 'Les yourtes d’Oulan Bât, en vallée d’Arbas, vues à travers les feuilles d’automne', en: 'The Oulan Bât yurts in the Arbas valley, seen through autumn leaves' },
   'image.josselin': { fr: 'Josselin Butté en montagne, dans les Pyrénées', en: 'Josselin Butté in the mountains, in the Pyrenees' },
+  'image.randonnee': { fr: 'Josselin Butté en randonnée en montagne, sac au dos', en: 'Josselin Butté hiking in the mountains, backpack on' },
 
   // Three doors
   'doors.kicker': { fr: 'Par où commencer · 01', en: 'Where to start · 01' },
