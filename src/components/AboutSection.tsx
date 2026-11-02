@@ -1,32 +1,37 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import portrait from '@/assets/home-portrait.webp.asset.json';
+import ElementIcon from '@/components/ElementIcon';
+import { voices } from '@/content/voices';
 
 const AboutSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const kimmerer = voices[0];
+  const quote = language === 'fr' ? `« ${kimmerer.fr} »` : `“${kimmerer.en}”`;
+
+  const principles = [
+    { n: 1, element: 'earth' },
+    { n: 2, element: 'air' },
+    { n: 3, element: 'water' },
+    { n: 4, element: 'fire' },
+  ] as const;
 
   return (
     <section id="about" className="px-5 py-20 sm:px-8 sm:py-24 lg:px-12">
-      <div className="mx-auto grid max-w-6xl items-start gap-12 md:grid-cols-2 md:gap-16">
-        <div className="order-2 md:order-1">
-          <img src={`https://regenb.lovable.app${portrait.url}`} alt={t('image.portrait')} width={1200} height={900} loading="lazy" className="mb-6 aspect-square w-full object-cover" />
-          <div className="border border-border bg-secondary p-8 sm:p-12">
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('about.guide.kicker')}</p>
-            <ul className="mt-6 divide-y divide-border">
-              {[1, 2, 3, 4].map((n) => (
-                <li key={n} className="py-5 first:pt-0 last:pb-0">
-                  <p className="font-serif text-[20px] font-medium leading-snug text-primary">{t(`about.guide.${n}.title`)}</p>
-                  <p className="mt-1 text-[15px] leading-relaxed text-muted-foreground">{t(`about.guide.${n}.text`)}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className="order-1 max-w-[500px] md:order-2">
-          <h2 className="text-3xl sm:text-4xl">{t('nav.about')}</h2>
-          <p className="mt-6">{t('about.p1')}</p>
-          <p className="mt-4">{t('about.p2')}</p>
-          <p className="mt-4">{t('about.p3')}</p>
-        </div>
+      <div className="mx-auto max-w-measure">
+        <p className="text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('about.kicker')}</p>
+        <h2 className="mt-4 text-3xl sm:text-4xl">{t('nav.about')}</h2>
+        <p className="mt-6">{t('about.p1')}</p>
+        <blockquote className="mt-10 border-l-2 border-accent pl-6">
+          <p className="font-serif text-xl leading-snug text-primary">{quote}</p>
+          <footer className="mt-2 text-sm text-muted-foreground">{kimmerer.name}, {kimmerer.year}</footer>
+        </blockquote>
+        <ul className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-4">
+          {principles.map((p) => (
+            <li key={p.n} className="flex flex-col items-start gap-3">
+              <ElementIcon element={p.element} size={28} label={t(`element.${p.element}`)} />
+              <p className="font-serif text-[15px] font-medium leading-snug text-primary">{t(`about.guide.${p.n}.title`)}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
