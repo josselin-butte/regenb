@@ -441,3 +441,45 @@ svg.doors-panel-icon-on-ochre { stroke: #2D4333; }
   .doors-panel-in { animation: none; }
   .doors-progress { display: none; }
 }
+
+/* Home "How it starts": stream, stepping stones, hop line. */
+.how-stream { position: absolute; background: #C7CEC0; overflow: hidden; }
+.how-waves { animation: how-drift 16s linear infinite; }
+.how-waves-v { animation: how-drift-v 16s linear infinite; }
+@keyframes how-drift { to { transform: translateX(-100px); } }
+@keyframes how-drift-v { to { transform: translateY(-100px); } }
+.how-stone, .how-step-text { opacity: 0; }
+[data-phase=on] .how-stone { animation: how-rise .6s ease-out both; animation-delay: var(--d, 0s); }
+[data-phase=on] .how-step-text { animation: how-fade .6s ease-out both; animation-delay: calc(var(--d, 0s) + .2s); }
+@keyframes how-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes how-fade { from { opacity: 0; } to { opacity: 1; } }
+.how-hop { stroke-dasharray: 1; stroke-dashoffset: 1; }
+[data-phase=on] .how-hop { animation: how-draw 1.2s ease-in-out 2.2s forwards; }
+@keyframes how-draw { to { stroke-dashoffset: 0; } }
+.how-cta { transition: background-color .5s ease, color .5s ease, border-color .5s ease; }
+[data-phase=on] .how-cta { animation: how-cta-fill .6s ease 3.4s forwards; }
+@keyframes how-cta-fill { to { background-color: #395641; color: #F9F7F0; border-color: #395641; } }
+
+/* Home "Who I am": photo zoom and principle tiles. */
+.about-photo { transform: scale(1.06); }
+[data-phase=on] .about-photo { animation: about-zoom 2.5s ease-out forwards; }
+@keyframes about-zoom { from { transform: scale(1.06); } to { transform: scale(1); } }
+.about-tile[aria-selected=true] svg { stroke: #F9F7F0; }
+.about-desc { animation: about-desc-in .3s ease-out; }
+@keyframes about-desc-in { from { opacity: 0; } to { opacity: 1; } }
+
+/* Home notebook cards: staggered entrance (hover lift lives on the inner link). */
+.home-note-card { opacity: 0; transform: translateY(10px); }
+[data-phase=on] .home-note-card { animation: home-note-in .5s ease-out both; animation-delay: var(--d, 0s); }
+@keyframes home-note-in { to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .how-waves, .how-waves-v { animation: none; }
+  .how-stone, .how-step-text { opacity: 1; }
+  [data-phase=on] .how-stone, [data-phase=on] .how-step-text, [data-phase=on] .how-hop { animation: none; }
+  .how-hop { stroke-dashoffset: 0; }
+  .how-cta, [data-phase=on] .how-cta { animation: none; background-color: #395641; color: #F9F7F0; border-color: #395641; }
+  .about-photo, [data-phase=on] .about-photo { animation: none; transform: none; }
+  .about-desc { animation: none; }
+  .home-note-card, [data-phase=on] .home-note-card { animation: none; opacity: 1; transform: none; }
+}
