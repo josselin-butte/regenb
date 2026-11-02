@@ -1,7 +1,8 @@
-// Only app bundles can execute. Hosting-injected analytics and marketing loaders
-// (including /~flock.js) are intentionally excluded, even on our own origin.
+// Scripts from our own origin (app bundles and Lovable Analytics /~flock.js) plus the
+// exact Meta Pixel paths can execute; third-party loaders stay blocked.
 export function privacyPolicy(development = false): string {
   const scripts = [
+    "'self'",
     'https://www.regenb.fr/assets/',
     'https://regenb.fr/assets/',
     'https://*.lovable.app/assets/',

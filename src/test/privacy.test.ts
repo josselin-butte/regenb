@@ -5,8 +5,10 @@ import { privacyPolicy } from '../../scripts/privacy-policy';
 describe('consent-free public site', () => {
   const policy = privacyPolicy();
   const sources = policy.split('; ')[0].replace('script-src ', '').split(' ');
+  const SITE = 'https://www.regenb.fr';
   const allowed = (url: string) => sources.some(source => {
     const candidate = new URL(url);
+    if (source === "'self'") return candidate.origin === SITE;
     const rule = new URL(source.replace('*.', ''));
     const hostMatches = source.includes('*.')
       ? candidate.hostname.endsWith(`.${rule.hostname}`)
@@ -14,9 +16,10 @@ describe('consent-free public site', () => {
     return candidate.protocol === rule.protocol && hostMatches && candidate.pathname.startsWith(rule.pathname);
   });
 
-  it('blocks Lovable analytics before any visitor choice', () => {
-    expect(allowed('https://www.regenb.fr/~flock.js')).toBe(false);
-    expect(allowed('https://regenb.lovable.app/~flock.js')).toBe(false);
+  it('allows Lovable Analytics from our own origin only', () => {
+    expect(sources).toContain("'self'");
+    expect(allowed('https://www.regenb.fr/~flock.js')).toBe(true);
+    expect(allowed('https://example.com/~flock.js')).toBe(false);
   });
   it('blocks marketing, replay, pixels and A/B loaders', () => {
     for (const url of ['https://www.googletagmanager.com/gtag/js', 'https://static.hotjar.com/c/hotjar.js', 'https://www.clarity.ms/tag/site', 'https://cdn.optimizely.com/js/site.js']) {
