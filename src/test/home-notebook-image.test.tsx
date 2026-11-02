@@ -47,19 +47,21 @@ describe('home notebook card image rule', () => {
 
   it('shows the first image at the top of the card, 3:2, cover, lazy', () => {
     const { container } = renderHome();
-    const imgs = container.querySelectorAll('img');
-    expect(imgs).toHaveLength(1);
-    expect(imgs[0]).toHaveAttribute('src', IMAGE_SRC);
-    expect(imgs[0]).toHaveAttribute('alt', IMAGE_ALT);
-    expect(imgs[0]).toHaveAttribute('loading', 'lazy');
-    expect(imgs[0].className).toContain('aspect-[3/2]');
-    expect(imgs[0].className).toContain('object-cover');
+    const first = container.querySelectorAll('li > a')[0];
+    const img = first.querySelector('img');
+    expect(img).not.toBeNull();
+    expect(img).toHaveAttribute('src', IMAGE_SRC);
+    expect(img).toHaveAttribute('alt', IMAGE_ALT);
+    expect(img).toHaveAttribute('loading', 'lazy');
+    expect(img?.className).toContain('aspect-[3/2]');
+    expect(img?.className).toContain('object-cover');
+    expect(first.querySelector('svg')).toBeNull();
   });
 
   it('keeps the element icon when the note has no image', () => {
     const { container } = renderHome();
-    expect(container.querySelectorAll('img')).toHaveLength(0);
-    expect(screen.queryByText(IMAGE_ALT)).toBeNull();
-    expect(container.querySelectorAll('svg').length).toBeGreaterThan(0);
+    const second = container.querySelectorAll('li > a')[1];
+    expect(second.querySelector('img')).toBeNull();
+    expect(second.querySelector('svg')).not.toBeNull();
   });
 });
