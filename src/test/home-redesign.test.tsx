@@ -1,5 +1,5 @@
 import { cleanup, render, screen, within } from '@testing-library/react';
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { MemoryRouter } from 'react-router-dom';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import DoorsSection from '@/components/DoorsSection';
@@ -9,7 +9,11 @@ import HomeNotebookSection from '@/components/HomeNotebookSection';
 import WaitlistSection from '@/components/WaitlistSection';
 import { getEntries } from '@/lib/carnet';
 
-afterEach(cleanup);
+beforeEach(() => {
+  vi.stubGlobal('IntersectionObserver', class { constructor(_fn: unknown) {} observe() {} unobserve() {} disconnect() {} });
+  vi.stubGlobal('matchMedia', () => ({ matches: false, addEventListener: vi.fn(), removeEventListener: vi.fn() }));
+});
+afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 
 const renderAt = (ui: React.ReactElement, route = '/') =>
   render(
