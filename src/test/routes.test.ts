@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { localizePath, langFromPath } from '@/lib/routes';
+import { getEntry } from '@/lib/carnet';
 describe('localized routes', () => {
   it('maps fr to en', () => {
     expect(localizePath('/', 'en')).toBe('/en');
@@ -25,5 +26,9 @@ describe('bilingual notebook slugs', () => {
   it('maps thermiques <-> thermals', () => {
     expect(localizePath('/carnet/thermiques', 'en')).toBe('/en/notebook/thermals');
     expect(localizePath('/en/notebook/thermals', 'fr')).toBe('/carnet/thermiques');
+  });
+  it('redirects the old English URL to fire-and-conversation', () => {
+    expect(getEntry('le-feu-et-la-conversation', 'en')?.slug).toBe('fire-and-conversation');
+    expect(getEntry('le-feu-et-la-conversation', 'fr')?.slug).toBe('le-feu-et-la-conversation');
   });
 });
