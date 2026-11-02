@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { localizePath, langFromPath } from '@/lib/routes';
+import { getEntry } from '@/lib/carnet';
 describe('localized routes', () => {
   it('maps fr to en', () => {
     expect(localizePath('/', 'en')).toBe('/en');
