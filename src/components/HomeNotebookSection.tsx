@@ -35,13 +35,14 @@ const HomeNotebookSection = () => {
                   ) : note.element ? (
                     <ElementIcon element={note.element} size={32} label={t(`element.${note.element}`)} />
                   ) : null}
-                <p className="mt-4 text-sm text-muted-foreground">{formatDate(note.date, language)}</p>
-                <h3 className="mt-2 font-serif text-[20px] font-medium leading-snug text-primary transition-colors group-hover:text-accent">
-                  {note.title}
-                </h3>
-              </Link>
-            </li>
-          ))}
+                  <p className="mt-4 text-sm text-muted-foreground">{formatDate(note.date, language)}</p>
+                  <h3 className="mt-2 font-serif text-[20px] font-medium leading-snug text-primary transition-colors group-hover:text-accent">
+                    {note.title}
+                  </h3>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
         <Link
           to={lp('/carnet')}
