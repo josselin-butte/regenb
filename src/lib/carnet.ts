@@ -109,3 +109,9 @@ export const formatDate = (date: string, lang: CarnetLang) => {
   if (isNaN(d.getTime())) return date;
   return d.toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 };
+
+/** First Markdown image in a note body, if any. */
+export const firstNoteImage = (body: string): { alt: string; src: string } | undefined => {
+  const m = body.match(/!\[([^\]]*)\]\(([^)\s]+)/);
+  return m ? { alt: m[1], src: m[2] } : undefined;
+};
