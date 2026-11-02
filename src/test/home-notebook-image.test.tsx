@@ -15,12 +15,12 @@ vi.mock('@/lib/carnet', async (importOriginal) => {
   return { ...actual, getEntries: (lang: 'fr' | 'en') => (lang === 'fr' ? [withImage, ...real.slice(1)] : actual.getEntries(lang)) };
 });
 
-beforeEachStub();
-function beforeEachStub() {
+const stubMotion = () => {
   vi.stubGlobal('IntersectionObserver', class { constructor(_fn: unknown) {} observe() {} unobserve() {} disconnect() {} });
   vi.stubGlobal('matchMedia', () => ({ matches: false, addEventListener: vi.fn(), removeEventListener: vi.fn() }));
-}
-afterEach(() => { cleanup(); vi.unstubAllGlobals(); beforeEachStub(); });
+};
+stubMotion();
+afterEach(() => { cleanup(); vi.unstubAllGlobals(); stubMotion(); });
 
 const renderHome = () =>
   render(
