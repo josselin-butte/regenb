@@ -127,9 +127,13 @@ const DoorsSection = () => {
                   <ElementIcon element={d.element} size={26} animated={false} drawOnView={false} />
                 </span>
                 <span
-                  className={`absolute left-1/2 top-full mt-2 w-28 -translate-x-1/2 text-center text-xs leading-tight text-primary sm:text-sm ${
-                    active === i ? 'font-semibold' : ''
-                  }`}
+                  className={`absolute top-full mt-2 w-24 text-xs leading-tight text-primary sm:w-28 sm:text-sm ${
+                    i === 0
+                      ? 'left-0 text-left sm:left-1/2 sm:-translate-x-1/2 sm:text-center'
+                      : i === DOORS.length - 1
+                        ? 'right-0 text-right sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:text-center'
+                        : 'left-1/2 -translate-x-1/2 text-center'
+                  } ${active === i ? 'font-semibold' : ''}`}
                 >
                   {t(`doors.station.${i + 1}`)}
                 </span>
