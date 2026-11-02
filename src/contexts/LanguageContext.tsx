@@ -24,12 +24,11 @@ const translations: Translations = {
   // Hero
   'hero.eyebrow': { fr: 'Josselin Butté · RegenB France', en: 'Josselin Butté · RegenB France' },
   'hero.title': { fr: 'L’ère du vivant', en: 'The age of living systems' },
-  'hero.sentence1': { fr: 'J’accompagne les personnes et les collectifs à clarifier ce qui compte, décider ensemble et avancer dans les situations complexes.', en: 'I help people and groups clarify what matters, make decisions together and find a way forward through complexity.' },
+  'hero.sentence1': { fr: 'Bonjour, je suis Josselin. J’accompagne celles et ceux qui dirigent, celles et ceux qui accompagnent, et les personnes qui ont besoin de redéfinir ce qui compte vraiment. Depuis Arbas, dans les Pyrénées, à Toulouse et à distance.', en: 'Hello, I’m Josselin. I work with people who lead, people who support others, and anyone who needs to redefine what truly matters. From Arbas in the French Pyrenees, in Toulouse and online, in English and French.' },
   'element.earth': { fr: 'Terre', en: 'Earth' },
   'element.water': { fr: 'Eau', en: 'Water' },
   'element.air': { fr: 'Air', en: 'Air' },
   'element.fire': { fr: 'Feu', en: 'Fire' },
-  'hero.sentence2': { fr: 'Facilitation, coaching et supervision depuis les Pyrénées, à Toulouse et à distance : partir de votre réalité, prendre soin des liens et trouver un prochain pas qui tienne dans la durée.', en: 'Facilitation, coaching and supervision from the French Pyrenees, in Toulouse and online, grounded in your reality, attentive to relationships, and oriented towards a next step that can last.' },
   'hero.ctaPrimary': { fr: 'Parlons de votre situation', en: 'Let’s discuss your situation' },
   'hero.cta': { fr: 'Trouver mon cap avec la Boussole', en: 'Find my bearings with the Values Compass' },
   'image.dehors': { fr: 'Josselin Butté marche sur un sentier de montagne', en: 'Josselin Butté walking a mountain path' },
@@ -38,8 +37,40 @@ const translations: Translations = {
   'image.paysage': { fr: 'Crêtes des Pyrénées dans la brume du matin', en: 'Pyrenees ridges in the morning mist' },
   'image.ecoute': { fr: 'Un moment d’écoute dans la nature', en: 'A moment of listening in nature' },
   'image.oulanbat': { fr: 'Les yourtes d’Oulan Bât, en vallée d’Arbas, vues à travers les feuilles d’automne', en: 'The Oulan Bât yurts in the Arbas valley, seen through autumn leaves' },
+  'image.josselin': { fr: 'Josselin Butté en montagne, dans les Pyrénées', en: 'Josselin Butté in the mountains, in the Pyrenees' },
+
+  // Three doors
+  'doors.kicker': { fr: 'Par où commencer · 01', en: 'Where to start · 01' },
+  'doors.title': { fr: 'Par où voulez-vous commencer ?', en: 'Where would you like to start?' },
+  'doors.1.title': { fr: 'Je porte une équipe ou une organisation', en: 'I lead a team or an organisation' },
+  'doors.1.text': { fr: 'Une décision qui traîne, une coopération à trouver ou retrouver, un changement à rendre bien plus concret.', en: 'A decision that keeps dragging on, cooperation to find or rebuild, a change to make far more concrete.' },
+  'doors.1.cta': { fr: 'Parlons-en 30 minutes, gratuitement', en: 'Let’s talk for 30 minutes, free' },
+  'doors.2.title': { fr: 'J’accompagne les autres', en: 'I support others' },
+  'doors.2.text': { fr: 'Coach, consultant, formateur, manager : un espace pour relire votre pratique sans tout porter seul.', en: 'Coach, consultant, trainer, manager: a space to reflect on your practice without carrying it all alone.' },
+  'doors.2.line': { fr: 'Supervision 680 € HT · Le Cercle 350 €', en: 'Supervision €680 excl. VAT · Le Cercle €350' },
+  'doors.2.cta': { fr: 'Découvrir la supervision', en: 'Discover supervision' },
+  'doors.3.title': { fr: 'J’ai besoin de mieux prendre soin de moi', en: 'I need to take better care of myself' },
+  'doors.3.text': { fr: 'La Boussole des valeurs : six modules, à votre rythme, ma voix pour chaque leçon.', en: 'The Values Compass: six modules, at your own pace, my voice in every lesson.' },
+  'doors.3.line': { fr: '77 € TTC', en: '€77 incl. VAT' },
+  'doors.3.cta': { fr: 'Découvrir la Boussole', en: 'Discover the Compass' },
+  'doors.curious': { fr: 'Simplement curieux ? Le Carnet est ouvert : une question, et ce que le vivant en dit.', en: 'Just curious? The Notebook is open: a question, and what the living world has to say about it.' },
+  'doors.curious.link': { fr: 'Lire le Carnet', en: 'Read the Notebook' },
+
+  // How it starts
+  'how.kicker': { fr: 'Comment ça commence · 02', en: 'How it starts · 02' },
+  'how.title': { fr: 'Comment ça commence', en: 'How it starts' },
+  'how.1': { fr: 'Vous m’écrivez.', en: 'You write to me.' },
+  'how.2': { fr: 'On regarde ensemble votre situation.', en: 'We look at your situation together.' },
+  'how.3': { fr: 'Je vous propose un premier pas, ou je vous oriente vers quelqu’un de mieux placé.', en: 'I suggest a first step, or point you to someone better placed.' },
+  'how.cta': { fr: 'M’écrire', en: 'Write to me' },
+
+  // Home notebook
+  'homeNotes.kicker': { fr: 'Le Carnet · 04', en: 'The Notebook · 04' },
+  'homeNotes.title': { fr: 'Le Carnet', en: 'The Notebook' },
+  'homeNotes.cta': { fr: 'Tout le Carnet', en: 'The whole Notebook' },
   
   // About
+  'about.kicker': { fr: 'Qui je suis · 03', en: 'Who I am · 03' },
   'about.p1': { fr: 'Je m’appelle Josselin Butté. Avec RegenB France, je pars d’une conviction\u00A0: les réponses aux défis du leadership d’aujourd’hui ne viennent pas d’une seule personne. Elles émergent quand un groupe apprend à s’écouter, à décider ensemble et à renouer avec le vivant.', en: 'I’m Josselin Butté. Through RegenB France, I start from one conviction: the answers to today’s leadership challenges don’t come from one person. They emerge when a group learns to listen, to decide together and to reconnect with the living world.' },
   'about.p2': { fr: 'Je ne viens pas avec des réponses toutes faites. J’apporte un cadre, des questions et une attention à la manière dont le groupe travaille. Vous apportez votre expérience, vos tensions et ce qui cherche à émerger. Ce que nous construisons ensemble vous appartient.', en: 'I don’t arrive with ready-made answers. I bring a frame, questions and attention to how the group works. You bring your experience, your tensions and what is seeking to emerge. What we build together belongs to you.' },
   'about.p3': { fr: 'Je travaille rarement seul\u00A0: je conçois mes accompagnements avec des partenaires, des lieux d’accueil et des praticiens d’autres métiers. Mon approche relie les sagesses anciennes, les sciences du vivant et les pratiques d’accompagnement. Elle s’enrichit de chaque groupe que je rencontre.', en: 'I rarely work alone: I design my work with partners, host venues and practitioners from other fields. My approach connects ancestral wisdom, the life sciences and the practice of accompaniment, and it grows with every group I meet.' },
@@ -78,16 +109,16 @@ const translations: Translations = {
   'offer.seeAll': { fr: 'Voir l’accompagnement', en: 'See all services' },
 
   // Letter
-  'letter.kicker': { fr: 'La lettre · 03', en: 'The letter · 03' },
+  'letter.kicker': { fr: 'La lettre · 05', en: 'The letter · 05' },
   'letter.title': { fr: 'Continuo, ma lettre', en: 'Continuo, my letter' },
   'letter.text': { fr: 'Continuo, ma lettre, un mardi sur deux. Ce que je vois sur le terrain, ce qui m’a fait changer d’avis. Gratuite, et on peut me répondre.', en: "Continuo, my letter, every other Tuesday. What I see in the field, what's changed my mind. Free, and you can reply." },
   'letter.cta': { fr: 'Lire Continuo', en: 'Read Continuo' },
 
   // Waitlist
-  'waitlist.kicker': { fr: 'Prochaine étape · 04', en: 'Next step · 04' },
+  'waitlist.kicker': { fr: 'Les étapes · 06', en: 'Journeys · 06' },
   'waitlist.title': { fr: 'Les étapes', en: 'Journeys' },
-  'waitlist.text': { fr: 'Quelques jours dehors, en petit groupe, pour marcher et relire sa pratique. Le premier séjour aura lieu au printemps 2027.', en: 'A few days outdoors, in a small group, to walk and reflect on your practice. The first journey takes place in spring 2027.' },
-  'waitlist.cta': { fr: 'Découvrir les étapes', en: 'Discover the journeys' },
+  'waitlist.text': { fr: 'Quelques jours dehors, en petit groupe. Premier séjour au printemps 2027.', en: 'A few days outdoors, in a small group. First one in spring 2027.' },
+  'waitlist.cta': { fr: 'En savoir plus', en: 'Learn more' },
   
   // Footer
   'tagline': { fr: 'Accompagner au rythme du vivant', en: 'Guiding at the pace of the living world' },

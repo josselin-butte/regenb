@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ElementIcon from '@/components/ElementIcon';
 import { Button } from '@/components/ui/button';
-import dehors from '@/assets/home-dehors.webp.asset.json';
+import josselin from '@/assets/josselin-butte-pyrenees.webp.asset.json';
 
 const HeroSection = () => {
   const { t, language, lp } = useLanguage();
@@ -44,7 +44,6 @@ const HeroSection = () => {
           {t('tagline')}
         </h1>
         <p className="mt-8 text-xl leading-relaxed">{t('hero.sentence1')}</p>
-        <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{t('hero.sentence2')}</p>
         <div className="mt-8 flex items-center gap-7">
           {(['earth', 'water', 'air', 'fire'] as const).map((el, i) => (
             <ElementIcon key={el} element={el} size={28} delay={i * 0.25} animated={el === 'water'} label={t(`element.${el}`)} />
@@ -52,14 +51,14 @@ const HeroSection = () => {
         </div>
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <Button size="lg" asChild>
-            <Link to={lp('/contact')}>{t('hero.ctaPrimary')}</Link>
+            <Link to={lp('/contact')} className="!whitespace-normal text-center">{t('hero.ctaPrimary')}</Link>
           </Button>
           <Button size="lg" variant="heroOutline" asChild>
-            <Link to={lp('/boussole')}>{t('hero.cta')}</Link>
+            <Link to={lp('/boussole')} className="!whitespace-normal text-center">{t('hero.cta')}</Link>
           </Button>
         </div>
         </div>
-        <img src={`https://regenb.lovable.app${dehors.url}`} alt={t('image.dehors')} width={1280} height={853} loading="eager" fetchPriority="high" className="aspect-[4/3] w-full object-cover lg:aspect-[4/5] lg:max-h-[520px]" />
+        <img src={`https://regenb.lovable.app${josselin.url}`} alt={t('image.josselin')} width={1200} height={900} loading="eager" fetchPriority="high" className="order-first aspect-[4/3] w-full object-cover object-[50%_18%] lg:order-none lg:aspect-[4/5] lg:max-h-[520px]" />
       </div>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 sm:h-[70px]" aria-hidden="true">
         <svg viewBox="0 140 1584 50" preserveAspectRatio="none" aria-hidden="true" focusable="false" width="100%" height="100%" className="overflow-hidden">

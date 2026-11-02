@@ -43,22 +43,32 @@ const Header = () => {
           <button
             type="button"
             onClick={toggleLanguage}
-            className="text-sm text-foreground hover:text-primary"
+            className="border border-border px-3 py-1 text-sm font-medium text-foreground hover:border-accent hover:text-primary"
             aria-label={language === 'fr' ? 'Switch to English' : 'Passer en français'}
           >
-            {language === 'fr' ? 'EN' : 'FR'}
+            {language === 'fr' ? 'English' : 'Français'}
           </button>
         </nav>
 
-        <button
-          type="button"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="border border-border px-3 py-1 text-sm text-foreground md:hidden"
-          aria-label="Menu"
-          aria-expanded={isMenuOpen}
-        >
-          {isMenuOpen ? 'Fermer' : 'Menu'}
-        </button>
+        <div className="flex items-center gap-3 md:hidden">
+          <button
+            type="button"
+            onClick={toggleLanguage}
+            className="border border-border px-3 py-1 text-sm font-medium text-foreground hover:border-accent hover:text-primary"
+            aria-label={language === 'fr' ? 'Switch to English' : 'Passer en français'}
+          >
+            {language === 'fr' ? 'English' : 'Français'}
+          </button>
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="border border-border px-3 py-1 text-sm text-foreground"
+            aria-label="Menu"
+            aria-expanded={isMenuOpen}
+          >
+            {isMenuOpen ? 'Fermer' : 'Menu'}
+          </button>
+        </div>
       </div>
 
       {isMenuOpen && (
