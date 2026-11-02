@@ -24,7 +24,7 @@ describe('home hero', () => {
     renderAt(<HeroSection />);
     expect(screen.getByRole('button', { name: 'celles et ceux qui dirigent' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'celles et ceux qui accompagnent' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'les personnes qui ont besoin de redéfinir ce qui compte vraiment pour se remettre en mouvement' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'les personnes qui ont besoin de redéfinir ce qui compte vraiment pour se remettre en mouvement.' })).toBeInTheDocument();
     expect(screen.getByText(/Depuis la vallée d’Arbas, dans les Pyrénées, ailleurs et à distance\./)).toBeInTheDocument();
   });
 
@@ -32,7 +32,7 @@ describe('home hero', () => {
     renderAt(<HeroSection />, '/en');
     expect(screen.getByRole('button', { name: 'people who lead' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'people who support others' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'anyone who needs to redefine what truly matters to get moving again' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'anyone who needs to redefine what truly matters to get moving again.' })).toBeInTheDocument();
     expect(screen.getByText(/From the Arbas Valley in the Pyrenees, elsewhere and online, in English and French\./)).toBeInTheDocument();
   });
 
