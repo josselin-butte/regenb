@@ -1,4 +1,4 @@
-import { cleanup, render, screen, within } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { MemoryRouter } from 'react-router-dom';
 import { LanguageProvider } from '@/contexts/LanguageContext';
@@ -23,22 +23,43 @@ const renderAt = (ui: React.ReactElement, route = '/') =>
   );
 
 describe('home three doors', () => {
-  it('links the three French doors to contact, supervision and boussole', () => {
+  it('starts on the earth door and switches doors via the station tabs', () => {
     renderAt(<DoorsSection />);
-    expect(screen.getByRole('link', { name: /Je porte une équipe ou une organisation/ })).toHaveAttribute('href', '/contact');
-    expect(screen.getByRole('link', { name: /J’accompagne les autres/ })).toHaveAttribute('href', '/supervision');
-    expect(screen.getByRole('link', { name: /J’ai besoin de mieux prendre soin de moi/ })).toHaveAttribute('href', '/boussole');
+    const tabs = screen.getAllByRole('tab');
+    expect(tabs).toHaveLength(3);
+    expect(tabs[0]).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('link', { name: 'Parlons-en 30 minutes, gratuitement' })).toHaveAttribute('href', '/contact');
+    fireEvent.click(tabs[1]);
+    expect(tabs[1]).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByText('Supervision 680 € HT · Le Cercle 350 €')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Découvrir la supervision' })).toHaveAttribute('href', '/supervision');
+    fireEvent.click(tabs[2]);
+    expect(screen.getByText('77 € TTC')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Découvrir la Boussole' })).toHaveAttribute('href', '/boussole');
     expect(screen.getByRole('link', { name: 'Lire le Carnet' })).toHaveAttribute('href', '/carnet');
   });
 
-  it('shows the stated prices and English destinations', () => {
+  it('uses English station labels, eyebrows and destinations', () => {
     renderAt(<DoorsSection />, '/en');
-    expect(screen.getByText('Supervision €680 excl. VAT · Le Cercle €350')).toBeInTheDocument();
-    expect(screen.getByText('€77 incl. VAT')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /I lead a team or an organisation/ })).toHaveAttribute('href', '/en/contact');
-    expect(screen.getByRole('link', { name: /I support others/ })).toHaveAttribute('href', '/en/supervision');
-    expect(screen.getByRole('link', { name: /I need to take better care of myself/ })).toHaveAttribute('href', '/en/compass');
+    expect(screen.getByRole('tab', { name: 'I lead' })).toBeInTheDocument();
+    expect(screen.getByRole('tab', { name: 'I support others' })).toBeInTheDocument();
+    expect(screen.getByRole('tab', { name: 'I care for myself' })).toBeInTheDocument();
+    expect(screen.getByText('Earth · Teams & organisations')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('tab', { name: 'I support others' }));
+    expect(screen.getByText('Water · Those who support others')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Discover supervision' })).toHaveAttribute('href', '/en/supervision');
+    fireEvent.click(screen.getByRole('tab', { name: 'I care for myself' }));
+    expect(screen.getByRole('link', { name: 'Discover the Compass' })).toHaveAttribute('href', '/en/compass');
     expect(screen.getByRole('link', { name: 'Read the Notebook' })).toHaveAttribute('href', '/en/notebook');
+  });
+
+  it('moves between doors with the arrow keys', () => {
+    renderAt(<DoorsSection />);
+    const tabs = screen.getAllByRole('tab');
+    fireEvent.keyDown(tabs[0], { key: 'ArrowRight' });
+    expect(tabs[1]).toHaveAttribute('aria-selected', 'true');
+    fireEvent.keyDown(tabs[1], { key: 'ArrowLeft' });
+    expect(tabs[0]).toHaveAttribute('aria-selected', 'true');
   });
 });
 

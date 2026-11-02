@@ -56,6 +56,12 @@ const translations: Translations = {
   'doors.3.cta': { fr: 'Découvrir la Boussole', en: 'Discover the Compass' },
   'doors.curious': { fr: 'Simplement curieux ? Le Carnet est ouvert : une question, et ce que le vivant en dit.', en: 'Just curious? The Notebook is open: a question, and what the living world has to say about it.' },
   'doors.curious.link': { fr: 'Lire le Carnet', en: 'Read the Notebook' },
+  'doors.station.1': { fr: 'Je dirige', en: 'I lead' },
+  'doors.station.2': { fr: 'J’accompagne', en: 'I support others' },
+  'doors.station.3': { fr: 'Je prends soin de moi', en: 'I care for myself' },
+  'doors.panel.1.eyebrow': { fr: 'Terre · Équipes et organisations', en: 'Earth · Teams & organisations' },
+  'doors.panel.2.eyebrow': { fr: 'Eau · Celles et ceux qui accompagnent', en: 'Water · Those who support others' },
+  'doors.panel.3.eyebrow': { fr: 'Air · Pour soi', en: 'Air · For yourself' },
 
   // How it starts
   'how.kicker': { fr: 'Comment ça commence · 02', en: 'How it starts · 02' },
