@@ -74,7 +74,7 @@ describe('home how it starts', () => {
 });
 
 describe('home about section', () => {
-  it('keeps only the first paragraph, the Kimmerer quote and four principle titles', () => {
+  it('keeps only the first paragraph, the Kimmerer quote and four principle tiles', () => {
     renderAt(<AboutSection />);
     expect(screen.getByText(/Je m’appelle Josselin Butté/)).toBeInTheDocument();
     expect(screen.queryByText(/Je ne viens pas avec des réponses toutes faites/)).not.toBeInTheDocument();
@@ -83,7 +83,19 @@ describe('home about section', () => {
     expect(screen.getByText('Robin Wall Kimmerer, 2013')).toBeInTheDocument();
     expect(screen.getByText('Co-créer plutôt que prescrire')).toBeInTheDocument();
     expect(screen.getByText('Apprendre en faisant')).toBeInTheDocument();
+  });
+
+  it('shows the first principle description by default and switches via the tiles', () => {
+    renderAt(<AboutSection />);
+    const tiles = screen.getAllByRole('tab');
+    expect(tiles).toHaveLength(4);
+    expect(tiles[0]).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByText('Les solutions naissent du groupe, pas de l’expert.')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('tab', { name: /Apprendre en faisant/ }));
+    expect(screen.getByText('Essayer, observer, ajuster ensemble.')).toBeInTheDocument();
     expect(screen.queryByText('Les solutions naissent du groupe, pas de l’expert.')).not.toBeInTheDocument();
+    fireEvent.keyDown(tiles[3], { key: 'ArrowLeft' });
+    expect(screen.getByText('Prendre soin des liens autant que des résultats.')).toBeInTheDocument();
   });
 });
 
@@ -95,6 +107,11 @@ describe('home notebook section', () => {
     expect(cards).toHaveLength(3);
     expected.forEach((note, i) => expect(cards[i]).toHaveAttribute('href', `/carnet/${note.slug}`));
     expect(screen.getByRole('link', { name: 'Tout le Carnet' })).toHaveAttribute('href', '/carnet');
+    // element badges and reading-time lines on every card
+    expected.forEach((note) => {
+      if (note.element) expect(screen.getAllByText(['Terre', 'Eau', 'Air', 'Feu'][['earth', 'water', 'air', 'fire'].indexOf(note.element)]).length).toBeGreaterThan(0);
+    });
+    expect(screen.getAllByText(/^Lire · \d+ min$/)).toHaveLength(3);
   });
 
   it('uses English slugs under /en/notebook', () => {
