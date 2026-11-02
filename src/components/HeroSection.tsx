@@ -51,10 +51,10 @@ const HeroSection = () => {
         </div>
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <Button size="lg" asChild>
-            <Link to={lp('/contact')}>{t('hero.ctaPrimary')}</Link>
+            <Link to={lp('/contact')} className="whitespace-normal text-center">{t('hero.ctaPrimary')}</Link>
           </Button>
           <Button size="lg" variant="heroOutline" asChild>
-            <Link to={lp('/boussole')}>{t('hero.cta')}</Link>
+            <Link to={lp('/boussole')} className="whitespace-normal text-center">{t('hero.cta')}</Link>
           </Button>
         </div>
         </div>
