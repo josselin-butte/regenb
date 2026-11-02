@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { formatDate, getEntries } from '@/lib/carnet';
+import { formatDate, firstNoteImage, getEntries } from '@/lib/carnet';
 import ElementIcon from '@/components/ElementIcon';
 
 const HomeNotebookSection = () => {
@@ -14,13 +14,27 @@ const HomeNotebookSection = () => {
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('homeNotes.kicker')}</p>
         <h2 className="mt-4 text-3xl sm:text-4xl">{t('homeNotes.title')}</h2>
         <ul className="mt-10 grid gap-6 md:grid-cols-3">
-          {notes.map((note) => (
-            <li key={note.key}>
-              <Link
-                to={`${base}/${note.slug}`}
-                className="group flex h-full flex-col border border-border bg-background p-8 transition-colors hover:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
-              >
-                {note.element && <ElementIcon element={note.element} size={32} label={t(`element.${note.element}`)} />}
+          {notes.map((note) => {
+            const image = firstNoteImage(note.body);
+            return (
+              <li key={note.key}>
+                <Link
+                  to={`${base}/${note.slug}`}
+                  className="group flex h-full flex-col border border-border bg-background p-8 transition-colors hover:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+                >
+                  {image ? (
+                    <img
+                      src={image.src}
+                      alt={image.alt || note.title}
+                      width={600}
+                      height={400}
+                      loading="lazy"
+                      decoding="async"
+                      className="aspect-[3/2] w-full object-cover"
+                    />
+                  ) : note.element ? (
+                    <ElementIcon element={note.element} size={32} label={t(`element.${note.element}`)} />
+                  ) : null}
                 <p className="mt-4 text-sm text-muted-foreground">{formatDate(note.date, language)}</p>
                 <h3 className="mt-2 font-serif text-[20px] font-medium leading-snug text-primary transition-colors group-hover:text-accent">
                   {note.title}
