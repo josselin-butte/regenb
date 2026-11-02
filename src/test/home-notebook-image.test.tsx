@@ -5,8 +5,10 @@ import { LanguageProvider } from '@/contexts/LanguageContext';
 import HomeNotebookSection from '@/components/HomeNotebookSection';
 import { firstNoteImage } from '@/lib/carnet';
 
-const IMAGE_ALT = 'Josselin au col de la Hourquette';
-const IMAGE_SRC = 'https://www.regenb.fr/__l5e/assets-v1/00000000-0000-0000-0000-000000000000/photo.webp';
+const { IMAGE_ALT, IMAGE_SRC } = vi.hoisted(() => ({
+  IMAGE_ALT: 'Josselin au col de la Hourquette',
+  IMAGE_SRC: 'https://www.regenb.fr/__l5e/assets-v1/00000000-0000-0000-0000-000000000000/photo.webp',
+}));
 
 vi.mock('@/lib/carnet', async (importOriginal) => {
   const actual = await importOriginal<typeof import('@/lib/carnet')>();
