@@ -46,8 +46,8 @@ describe('home notebook card image rule', () => {
   });
 
   it('shows the first image at the top of the card, 3:2, cover, lazy', () => {
-    renderHome();
-    const imgs = screen.getAllByRole('img');
+    const { container } = renderHome();
+    const imgs = container.querySelectorAll('img');
     expect(imgs).toHaveLength(1);
     expect(imgs[0]).toHaveAttribute('src', IMAGE_SRC);
     expect(imgs[0]).toHaveAttribute('alt', IMAGE_ALT);
@@ -57,9 +57,9 @@ describe('home notebook card image rule', () => {
   });
 
   it('keeps the element icon when the note has no image', () => {
-    renderHome();
-    expect(screen.queryByRole('img')).toBeNull();
+    const { container } = renderHome();
+    expect(container.querySelectorAll('img')).toHaveLength(0);
     expect(screen.queryByText(IMAGE_ALT)).toBeNull();
-    expect(document.querySelectorAll('svg').length).toBeGreaterThan(0);
+    expect(container.querySelectorAll('svg').length).toBeGreaterThan(0);
   });
 });
