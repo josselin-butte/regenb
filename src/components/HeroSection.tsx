@@ -35,7 +35,7 @@ const HeroSection = () => {
 
   useEffect(() => {
     [ridgeDesk.current, ridgeMob.current].forEach((el) => {
-      if (!el) return;
+      if (!el || typeof el.getTotalLength !== 'function') return;
       el.style.setProperty('--ridge-len', String(el.getTotalLength()));
       el.classList.add('is-drawing');
     });
