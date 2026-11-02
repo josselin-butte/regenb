@@ -3,14 +3,12 @@ import { useEffect, useRef } from 'react';
 const RIDGE_FILL = 'M0 150 C160 146 300 128 420 118 C470 114 490 104 520 108 C600 118 700 122 820 104 C900 92 980 70 1060 34 C1080 26 1092 30 1104 44 C1140 84 1170 98 1205 92 C1230 88 1250 66 1276 60 C1290 57 1300 66 1312 78 C1380 124 1480 140 1584 142 L1584 190 L0 190 Z';
 const RIDGE_LINE = 'M0 150 C160 146 300 128 420 118 C470 114 490 104 520 108 C600 118 700 122 820 104 C900 92 980 70 1060 34 C1080 26 1092 30 1104 44 C1140 84 1170 98 1205 92 C1230 88 1250 66 1276 60 C1290 57 1300 66 1312 78 C1380 124 1480 140 1584 142';
 
-import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ElementIcon from '@/components/ElementIcon';
-import { Button } from '@/components/ui/button';
 import josselin from '@/assets/josselin-butte-pyrenees.webp.asset.json';
 
 const HeroSection = () => {
-  const { t, language, lp } = useLanguage();
+  const { t } = useLanguage();
   const ridgeDesk = useRef<SVGPathElement>(null);
   const ridgeMob = useRef<SVGPathElement>(null);
 
