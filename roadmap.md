@@ -68,3 +68,8 @@
 - [x] Redirection permanente de /en/notebook/le-feu-et-la-conversation vers /en/notebook/fire-and-conversation : comportement déjà en place dans CarnetEntry (remplacement d'URL côté client), vérifié en preview et verrouillé par un test ; aucune autre modification.
 - [x] Accueil, section « Qui je suis » : photo de randonnée ajoutée (src/assets/josselin-butte-randonnee.webp.asset.json, 62 Ko WebP), deux colonnes sur ordinateur (photo ~45 % à gauche, texte à droite), photo au-dessus du texte sur mobile ; coins carrés, sans bordure ni ombre, object-position 30 % centre, chargement différé et width/height ; alts FR/EN (image.randonnee) ; rien d'autre modifié, non publié.
 - [x] Accueil, section Carnet : si une note contient une image Markdown, sa première image s'affiche en haut de la carte (3:2, cover, chargement différé, width/height) et remplace l'icône d'élément ; sinon l'icône reste (aucune note n'a d'image aujourd'hui, aperçu inchangé). Helper firstNoteImage dans src/lib/carnet.ts ; 4 nouveaux tests (src/test/home-notebook-image.test.tsx), 11 tests passent, FR/EN vérifiés au navigateur sans erreur ; non publié.
+
+## 2026-11-02 — Sentier des portes (accueil) — fait
+- [x] Remplacer les trois cartes statiques par un sentier interactif (tablist, 3 stations éléments, point ocre voyageur 0,9 s, panneau fondu 0,4 s, autoplay 6 s arrêté au premier geste, pause hors écran, reduced-motion respecté)
+- [x] Textes, prix, liens et ligne Carnet inchangés ; 6 clés de traduction ajoutées (stations + sur-titres panneau)
+- [x] Vérifié FR/EN à 375/1280 px : autoplay, clavier, mobile, reduced motion ; 116 tests passent
