@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ElementIcon, { type Element } from '@/components/ElementIcon';
+import { SELECT_DOOR_EVENT } from '@/components/HeroSection';
 
 const TRAIL_PATH = 'M 40 84 C 280 30, 720 108, 960 52';
 const STATION_FRACTIONS = [0.06, 0.5, 0.94];
