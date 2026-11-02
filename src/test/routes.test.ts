@@ -27,4 +27,8 @@ describe('bilingual notebook slugs', () => {
     expect(localizePath('/carnet/thermiques', 'en')).toBe('/en/notebook/thermals');
     expect(localizePath('/en/notebook/thermals', 'fr')).toBe('/carnet/thermiques');
   });
+  it('redirects the old English URL to fire-and-conversation', () => {
+    expect(getEntry('le-feu-et-la-conversation', 'en')?.slug).toBe('fire-and-conversation');
+    expect(getEntry('le-feu-et-la-conversation', 'fr')?.slug).toBe('le-feu-et-la-conversation');
+  });
 });
