@@ -426,3 +426,18 @@
   .etape-drawing .ed-sun { animation: none !important; opacity: 1 !important; }
 }
 .etape-drawing .ed-fill { fill: hsl(var(--secondary)); }
+
+/* Home doors path: brand colours fixed by the brief. */
+svg.doors-panel-icon { stroke: #F9F7F0; width: 44px; height: 44px; }
+svg.doors-panel-icon-on-ochre { stroke: #2D4333; }
+@media (min-width: 768px) {
+  svg.doors-panel-icon { width: 96px; height: 96px; }
+}
+@keyframes doors-panel-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.doors-panel-in { animation: doors-panel-in 0.4s ease-out; }
+@keyframes doors-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.doors-progress { position: absolute; bottom: 0; left: 0; height: 2px; width: 100%; background: #D5B544; transform-origin: left; animation: doors-progress 6s linear forwards; }
+@media (prefers-reduced-motion: reduce) {
+  .doors-panel-in { animation: none; }
+  .doors-progress { display: none; }
+}
