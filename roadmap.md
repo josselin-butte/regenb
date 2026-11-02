@@ -73,3 +73,9 @@
 - [x] Remplacer les trois cartes statiques par un sentier interactif (tablist, 3 stations éléments, point ocre voyageur 0,9 s, panneau fondu 0,4 s, autoplay 6 s arrêté au premier geste, pause hors écran, reduced-motion respecté)
 - [x] Textes, prix, liens et ligne Carnet inchangés ; 6 clés de traduction ajoutées (stations + sur-titres panneau)
 - [x] Vérifié FR/EN à 375/1280 px : autoplay, clavier, mobile, reduced motion ; 116 tests passent
+
+## 2026-11-02 — Trois sections d'accueil animées — fait
+- [x] Comment ça commence : ruisseau sauge + vagues crème, trois pierres de gué (montée en cascade 0,6 s / 0,7 s), ligne ocre sautillante, bouton « M'écrire » devenant plein ; ruisseau vertical sur mobile
+- [x] Qui je suis : zoom photo 1,06→1 (2,5 s), quatre tuiles principes en tablist (survol/tap/clavier, description bordée ocre)
+- [x] Carnet : cartes avec image ou teinte d'élément + badge, survol -3 px / bordure forêt / image ×1,08, ligne « Lire · X min », entrée en cascade 0,15 s, défilement horizontal snap sur mobile
+- [x] Reduced motion : tout instantané ; vérifié FR/EN à 375 et 1280 px

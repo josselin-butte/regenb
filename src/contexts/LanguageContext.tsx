@@ -75,6 +75,7 @@ const translations: Translations = {
   'homeNotes.kicker': { fr: 'Le Carnet · 04', en: 'The Notebook · 04' },
   'homeNotes.title': { fr: 'Le Carnet', en: 'The Notebook' },
   'homeNotes.cta': { fr: 'Tout le Carnet', en: 'The whole Notebook' },
+  'homeNotes.read': { fr: 'Lire', en: 'Read' },
   
   // About
   'about.kicker': { fr: 'Qui je suis · 03', en: 'Who I am · 03' },

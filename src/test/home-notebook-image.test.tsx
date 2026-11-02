@@ -53,7 +53,7 @@ describe('home notebook card image rule', () => {
     expect(img).toHaveAttribute('src', IMAGE_SRC);
     expect(img).toHaveAttribute('alt', IMAGE_ALT);
     expect(img).toHaveAttribute('loading', 'lazy');
-    expect(img?.className).toContain('aspect-[3/2]');
+    expect(img?.parentElement?.className).toContain('aspect-[3/2]');
     expect(img?.className).toContain('object-cover');
     expect(first.querySelector('svg')).toBeNull();
   });
