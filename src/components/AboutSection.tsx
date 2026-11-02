@@ -19,7 +19,7 @@ const AboutSection = () => {
     <section id="about" className="px-5 py-20 sm:px-8 sm:py-24 lg:px-12">
       <div className="mx-auto grid max-w-6xl items-start gap-10 lg:grid-cols-[minmax(0,9fr)_minmax(0,11fr)] lg:gap-14">
         <img
-          src={randonneeAsset.url}
+          src={`https://regenb.lovable.app${randonneeAsset.url}`}
           alt={t('image.randonnee')}
           width={1000}
           height={666}
