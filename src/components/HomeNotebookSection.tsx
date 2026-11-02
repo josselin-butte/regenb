@@ -35,7 +35,7 @@ const HomeNotebookSection = () => {
   }, []);
 
   return (
-    <section ref={ref} data-phase={on ? 'on' : 'idle'} className="px-5 py-20 sm:px-8 sm:py-24 lg:px-12">
+    <section id="carnet" ref={ref} data-phase={on ? 'on' : 'idle'} className="scroll-mt-24 px-5 py-20 sm:px-8 sm:py-24 lg:px-12">
       <div className="mx-auto max-w-6xl">
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('homeNotes.kicker')}</p>
         <h2 className="mt-4 text-3xl sm:text-4xl">{t('homeNotes.title')}</h2>

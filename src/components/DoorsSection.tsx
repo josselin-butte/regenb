@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ElementIcon, { type Element } from '@/components/ElementIcon';
+import { SELECT_DOOR_EVENT } from '@/components/HeroSection';
 
 const TRAIL_PATH = 'M 40 84 C 280 30, 720 108, 960 52';
 const STATION_FRACTIONS = [0.06, 0.5, 0.94];
@@ -73,6 +74,16 @@ const DoorsSection = () => {
     stopAutoplay();
   };
 
+  // The hero links and element buttons ask for a specific door.
+  useEffect(() => {
+    const onSelect = (e: Event) => {
+      const i = (e as CustomEvent<number>).detail;
+      if (typeof i === 'number' && i >= 0 && i < DOORS.length) select(i);
+    };
+    window.addEventListener(SELECT_DOOR_EVENT, onSelect);
+    return () => window.removeEventListener(SELECT_DOOR_EVENT, onSelect);
+  }, []);
+
   const onTrailKeyDown = (e: React.KeyboardEvent) => {
     if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
     e.preventDefault();
@@ -84,7 +95,7 @@ const DoorsSection = () => {
   const door = DOORS[active];
 
   return (
-    <section ref={rootRef} className="px-5 py-20 sm:px-8 sm:py-24 lg:px-12">
+    <section id="doors" ref={rootRef} className="scroll-mt-24 px-5 py-20 sm:px-8 sm:py-24 lg:px-12">
       <div className="mx-auto max-w-6xl">
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-accent">{t('doors.kicker')}</p>
         <h2 className="mt-4 text-3xl sm:text-4xl">{t('doors.title')}</h2>

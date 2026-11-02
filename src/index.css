@@ -184,19 +184,53 @@
 
 /* Hero hills opening */
 .hero-ridge { stroke-dasharray: var(--ridge-len, 2000); stroke-dashoffset: var(--ridge-len, 2000); }
-.hero-ridge.is-drawing { animation: ridge-draw 3.2s cubic-bezier(.45,.05,.3,1) forwards; }
+.hero-ridge.is-drawing { animation: ridge-draw 1.8s cubic-bezier(.45,.05,.3,1) forwards; }
 .hero-sun { transform-box: fill-box; opacity: 0; transform: translateY(70px);
-  animation: sun-rise 2.6s cubic-bezier(.2,.7,.2,1) 2.2s forwards, sun-fade 2s ease 2.2s forwards; }
+  animation: sun-rise 1.6s cubic-bezier(.2,.7,.2,1) 0.9s forwards, sun-fade 1.2s ease 0.9s forwards; }
 .hero-hill-back { animation: hill-sway 26s ease-in-out infinite alternate; }
 .hero-hill-front { animation: hill-sway 34s ease-in-out infinite alternate-reverse; }
 @keyframes ridge-draw { to { stroke-dashoffset: 0; } }
 @keyframes sun-rise { to { transform: translateY(0); } }
 @keyframes sun-fade { to { opacity: 1; } }
 @keyframes hill-sway { from { transform: translateX(0); } to { transform: translateX(-24px); } }
+
+/* Hero portrait reveal */
+.hero-portrait { clip-path: inset(100% 0 0 0); animation: hero-portrait-reveal 1.2s cubic-bezier(.3,.6,.2,1) 0.3s forwards; }
+@keyframes hero-portrait-reveal { to { clip-path: inset(0 0 0 0); } }
+
+/* Hero audience links: ochre underline draws in one phrase after another */
+.hero-link { font: inherit; color: inherit; text-align: inherit; cursor: pointer;
+  background-image: linear-gradient(#D5B544, #D5B544); background-repeat: no-repeat; background-position: 0 100%;
+  background-size: 0% 2px; animation: hero-link-underline 0.8s ease-out forwards; }
+.hero-link-1 { animation-delay: 2.6s; }
+.hero-link-2 { animation-delay: 3.1s; }
+.hero-link-3 { animation-delay: 3.6s; }
+@keyframes hero-link-underline { to { background-size: 100% 2px; } }
+.hero-link:hover { color: #395641; background-color: #E0E7D9; }
+.hero-link:focus-visible { outline: 2px solid #395641; outline-offset: 2px; }
+
+/* Hero element buttons: gentle loops, earth stays still */
+.hero-el-icon { display: inline-flex; }
+.hero-el-water { animation: hero-el-ripple 3.2s ease-in-out infinite alternate; }
+.hero-el-air { animation: hero-el-breathe 4s ease-in-out infinite alternate; }
+.hero-el-fire { animation: hero-el-flicker 1.6s ease-in-out infinite alternate; }
+.hero-el-fire svg { stroke: #D5B544; }
+@keyframes hero-el-ripple { from { transform: translateX(-2px); } to { transform: translateX(2px); } }
+@keyframes hero-el-breathe { from { transform: scale(1); } to { transform: scale(1.1); } }
+@keyframes hero-el-flicker { from { transform: scale(1.08); } to { transform: scale(0.94); } }
+
+/* Hero scroll cue */
+.hero-cue-dot { animation: hero-cue-bob 1.8s ease-in-out infinite alternate; }
+@keyframes hero-cue-bob { from { transform: translateY(0); } to { transform: translateY(5px); } }
+
 @media (prefers-reduced-motion: reduce) {
   .hero-ridge, .hero-ridge.is-drawing { animation: none; stroke-dashoffset: 0; }
   .hero-sun { animation: none; opacity: 1; transform: none; }
   .hero-hill-back, .hero-hill-front { animation: none; }
+  .hero-portrait { animation: none; clip-path: inset(0 0 0 0); }
+  .hero-link { animation: none; background-size: 100% 2px; }
+  .hero-el-water, .hero-el-air, .hero-el-fire { animation: none; }
+  .hero-cue-dot { animation: none; }
 }
 
 /* Carnet print */
