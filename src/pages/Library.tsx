@@ -21,12 +21,18 @@ export default function Library() {
 
   useEffect(() => {
     if (!hash) return;
-    const frame = requestAnimationFrame(() => {
+    let cancelled = false;
+    let frame = 0;
+    const scroll = () => {
+      if (cancelled) return;
+      frame = requestAnimationFrame(() => {
       const id = decodeURIComponent(hash.slice(1));
       if (id.startsWith('library-book-')) setTheme('all');
       document.getElementById(id)?.scrollIntoView({ block: 'start', behavior: 'instant' });
-    });
-    return () => cancelAnimationFrame(frame);
+      });
+    };
+    void document.fonts.ready.then(scroll);
+    return () => { cancelled = true; cancelAnimationFrame(frame); };
   }, [hash, language, theme]);
 
   useEffect(() => {
