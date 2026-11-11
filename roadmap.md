@@ -83,3 +83,6 @@
 - [x] Qui je suis : zoom photo 1,06→1 (2,5 s), quatre tuiles principes en tablist (survol/tap/clavier, description bordée ocre)
 - [x] Carnet : cartes avec image ou teinte d'élément + badge, survol -3 px / bordure forêt / image ×1,08, ligne « Lire · X min », entrée en cascade 0,15 s, défilement horizontal snap sur mobile
 - [x] Reduced motion : tout instantané ; vérifié FR/EN à 375 et 1280 px
+
+## 2026-11-11 — Page Le Cercle
+- [x] Page FR/EN /le-cercle et /en/the-circle, liens depuis Supervision, Accompagnement et accueil, sitemap, tests ; non publié
