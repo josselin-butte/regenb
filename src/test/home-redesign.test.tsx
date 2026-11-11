@@ -31,7 +31,7 @@ describe('home three doors', () => {
     expect(screen.getByRole('link', { name: 'Parlons-en 30 minutes, gratuitement' })).toHaveAttribute('href', '/contact');
     fireEvent.click(tabs[1]);
     expect(tabs[1]).toHaveAttribute('aria-selected', 'true');
-    expect(screen.getByText('Supervision 680 € HT · Le Cercle 350 €')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Le Cercle' })).toHaveAttribute('href', '/le-cercle');
     expect(screen.getByRole('link', { name: 'Découvrir la supervision' })).toHaveAttribute('href', '/supervision');
     fireEvent.click(tabs[2]);
     expect(screen.getByText('77 € TTC')).toBeInTheDocument();

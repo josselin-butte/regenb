@@ -266,4 +266,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/notebook/thermals"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/carnet/thermiques"/>
   </url>
+  <url>
+    <loc>https://www.regenb.fr/le-cercle</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/le-cercle"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/the-circle"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/le-cercle"/>
+  </url>
+  <url>
+    <loc>https://www.regenb.fr/en/the-circle</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/le-cercle"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/the-circle"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/le-cercle"/>
+  </url>
 </urlset>

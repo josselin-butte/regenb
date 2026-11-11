@@ -46,9 +46,11 @@ type EnquiryFormProps = {
   note?: string;
   /** Prefills the message while the visitor has not typed in it yet. */
   defaultMessage?: string;
+  /** Message may be left empty; defaultMessage is then sent so the request keeps its subject. */
+  optionalMessage?: boolean;
 };
 
-const EnquiryForm = ({ defaultTopic, title, intro, note, defaultMessage }: EnquiryFormProps) => {
+const EnquiryForm = ({ defaultTopic, title, intro, note, defaultMessage, optionalMessage }: EnquiryFormProps) => {
   const { language } = useLanguage();
   const c = copy[language];
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
@@ -58,7 +60,7 @@ const EnquiryForm = ({ defaultTopic, title, intro, note, defaultMessage }: Enqui
     firstName: z.string().trim().min(1, c.errors.firstName).max(100),
     email: z.string().trim().email(c.errors.email).max(255),
     topic: z.enum(TOPICS, { errorMap: () => ({ message: c.errors.topic }) }),
-    message: z.string().trim().min(1, c.errors.message).max(3000),
+    message: optionalMessage ? z.string().trim().max(3000) : z.string().trim().min(1, c.errors.message).max(3000),
     programmesOptIn: z.boolean(),
   });
   type Data = z.infer<typeof schema>;
@@ -75,7 +77,7 @@ const EnquiryForm = ({ defaultTopic, title, intro, note, defaultMessage }: Enqui
   const onSubmit = async (data: Data) => {
     setStatus('sending');
     const { error } = await supabase.functions.invoke('forward-to-crm', {
-      body: { ...data, language, page: window.location.pathname, website: honeypot },
+      body: { ...data, message: data.message || defaultMessage || '', language, page: window.location.pathname, website: honeypot },
     });
     setStatus(error ? 'error' : 'sent');
   };

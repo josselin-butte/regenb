@@ -243,6 +243,14 @@ const Services = () => {
                       ? (language === 'fr' ? 'Le coaching en détail : en marchant dans les Pyrénées ou à distance' : 'Coaching in detail: walking in the Pyrenees or online')
                       : (language === 'fr' ? 'La supervision en détail : à distance, en marchant ou en groupe' : 'Supervision in detail: online, walking or in a group')}
                   </Link>
+                  {i === 3 && (
+                    <>
+                      <br />
+                      <Link to={lp('/le-cercle')} className="text-primary underline decoration-accent underline-offset-4">
+                        {language === 'fr' ? 'Le Cercle, en groupe' : 'Le Cercle, as a group'}
+                      </Link>
+                    </>
+                  )}
                 </p>
               )}
             </div>
