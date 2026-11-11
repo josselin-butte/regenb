@@ -20,7 +20,7 @@ describe('Le Cercle page', () => {
     expect(xml).toContain('<loc>https://www.regenb.fr/en/the-circle</loc>');
   });
   it('shows the three dates and price', () => {
-    expect(cercleContent.fr.facts).toEqual(expect.arrayContaining(['Jeudi 17 décembre 2026', 'Jeudi 21 janvier 2027', 'Jeudi 11 mars 2027', '350 € HT les trois rencontres']));
+    expect(cercleContent.fr.facts).toEqual(expect.arrayContaining(['Jeudi 17 décembre 2026', 'Jeudi 21 janvier 2027', 'Jeudi 18 mars 2027', '350 € HT les trois rencontres']));
     expect(cercleContent.en.facts).toContain('€350 excl. VAT for all three sessions');
   });
 });
