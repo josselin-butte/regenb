@@ -50,5 +50,11 @@ export const localizePath = (path: string, lang: Lang): string => {
     const anchor = anchors.find(pair => pair[from] === hash);
     return `${out}#${anchor?.[to] ?? hash}`;
   }
+  if (hash !== undefined && (base === '/carnet/bibliotheque' || base === '/en/notebook/library')) {
+    const anchors = ['a-ecouter-en-chemin', 'listen-on-the-way'];
+    if (hash === anchors[from] || hash.startsWith(`${anchors[from]}-`)) {
+      return `${out}#${anchors[to]}${hash.slice(anchors[from].length)}`;
+    }
+  }
   return hash !== undefined ? `${out}#${hash}` : out;
 };
