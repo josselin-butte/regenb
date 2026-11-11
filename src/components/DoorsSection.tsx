@@ -180,7 +180,21 @@ const DoorsSection = () => {
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">{t(`doors.panel.${active + 1}.eyebrow`)}</p>
               <h3 className="mt-3 font-serif text-2xl font-medium text-primary">{t(`doors.${active + 1}.title`)}</h3>
               <p className="mt-3 max-w-measure text-[15px] leading-relaxed text-muted-foreground">{t(`doors.${active + 1}.text`)}</p>
-              {door.lineKey && <p className="mt-3 text-sm text-muted-foreground">{t(door.lineKey)}</p>}
+              {door.lineKey && (() => {
+                const line = t(door.lineKey);
+                const at = door.element === 'water' ? line.indexOf('Le Cercle') : -1;
+                return (
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    {at < 0 ? line : (
+                      <>
+                        {line.slice(0, at)}
+                        <Link to={lp('/le-cercle')} className="text-primary underline decoration-accent underline-offset-4">Le Cercle</Link>
+                        {line.slice(at + 'Le Cercle'.length)}
+                      </>
+                    )}
+                  </p>
+                );
+              })()}
               <Link
                 to={lp(door.to)}
                 className="mt-6 inline-block border-b-2 border-accent pb-1 font-semibold text-primary transition-colors hover:text-accent"

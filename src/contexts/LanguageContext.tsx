@@ -54,7 +54,7 @@ const translations: Translations = {
   'doors.1.cta': { fr: 'Parlons-en 30 minutes, gratuitement', en: 'Let’s talk for 30 minutes, free' },
   'doors.2.title': { fr: 'J’accompagne les autres', en: 'I support others' },
   'doors.2.text': { fr: 'Coach, consultant, formateur, manager : un espace pour relire votre pratique sans tout porter seul.', en: 'Coach, consultant, trainer, manager: a space to reflect on your practice without carrying it all alone.' },
-  'doors.2.line': { fr: 'Supervision 680 € HT · Le Cercle 350 €', en: 'Supervision €680 excl. VAT · Le Cercle €350' },
+  'doors.2.line': { fr: 'Supervision 680 € HT · Le Cercle 350 € HT', en: 'Supervision €680 excl. VAT · Le Cercle €350 excl. VAT' },
   'doors.2.cta': { fr: 'Découvrir la supervision', en: 'Discover supervision' },
   'doors.3.title': { fr: 'J’ai besoin de mieux prendre soin de moi', en: 'I need to take better care of myself' },
   'doors.3.text': { fr: 'La Boussole des valeurs : six modules, à votre rythme, ma voix pour chaque leçon.', en: 'The Values Compass: six modules, at your own pace, my voice in every lesson.' },

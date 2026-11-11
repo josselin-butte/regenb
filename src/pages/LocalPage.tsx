@@ -162,7 +162,8 @@ export const localContent: Record<LocalKind, Record<'fr' | 'en', PageCopy>> = {
         },
         {
           h2: 'Supervision collective : Le Cercle',
-          paragraphs: ['Un groupe de huit personnes au plus, de décembre à février. Inscriptions début novembre.'],
+          paragraphs: ['Huit personnes au plus, trois jeudis soir en ligne cet hiver : 17 décembre, 21 janvier et 11 mars. 350 € HT les trois rencontres.'],
+          links: [{ label: 'Découvrir Le Cercle', to: '/le-cercle' }],
         },
         {
           h2: 'Pour qui',
@@ -180,7 +181,7 @@ export const localContent: Record<LocalKind, Record<'fr' | 'en', PageCopy>> = {
       faq: [
         { q: 'Qu’est-ce que la supervision pour les coachs et les facilitateurs ?', a: 'Un temps régulier pour regarder ce qui se passe en vous pendant que vous accompagnez les autres : ce qui vous a touché, ce que vous avez évité, ce que vous ramenez qui n’est pas à vous.' },
         { q: 'Faut-il venir à Arbas ?', a: 'Non. La supervision individuelle se fait à distance. La marche est une option pour qui le souhaite ; Arbas est à environ 1 h 15 de Toulouse.' },
-        { q: 'Combien coûte la supervision ?', a: 'La supervision individuelle coûte 680 € HT les quatre séances. Pour la supervision en marchant et Le Cercle, les modalités sont précisées lors du premier échange.' },
+        { q: 'Combien coûte la supervision ?', a: 'La supervision individuelle coûte 680 € HT les quatre séances. Le Cercle coûte 350 € HT les trois rencontres. Pour la supervision en marchant, les modalités sont précisées lors du premier échange.' },
         { q: 'La supervision est-elle possible en anglais ?', a: 'Oui, en français ou en anglais.' },
       ],
       topic: 'supervision',
@@ -205,7 +206,7 @@ export const localContent: Record<LocalKind, Record<'fr' | 'en', PageCopy>> = {
             'You can hold one or more sessions while walking from Arbas, on your own or in a small group of peers. Walking side by side often changes the way we talk about our practice: less face-to-face, more room for what emerges. Dates and fees agreed in the first conversation.',
           ],
         },
-        { h2: 'Group supervision: The Circle', paragraphs: ['A group of eight people at most, from December to February. Registration opens in early November.'] },
+        { h2: 'Group supervision: The Circle', paragraphs: ['Eight people at most, three Thursday evenings online this winter: 17 December, 21 January and 11 March. €350 excl. VAT for all three sessions.'], links: [{ label: 'Discover Le Cercle', to: '/en/the-circle' }] },
         {
           h2: 'Who it is for',
           paragraphs: ['Facilitators, coaches, trainers and practitioners, from the Pyrenees, Toulouse, the rest of Occitanie or further afield. In English or French.'],
@@ -220,7 +221,7 @@ export const localContent: Record<LocalKind, Record<'fr' | 'en', PageCopy>> = {
       faq: [
         { q: 'What is supervision for coaches and facilitators?', a: 'A regular time to look at what happens in you while you support others: what touched you, what you avoided, what you bring back that is not yours.' },
         { q: 'Do I have to come to Arbas?', a: 'No. Individual supervision takes place online. Walking is an option if you would like it; Arbas is about 1 h 15 from Toulouse.' },
-        { q: 'How much does supervision cost?', a: 'Individual supervision costs €680 excl. VAT for the four sessions. For walking supervision and The Circle, the details are set out in the first conversation.' },
+        { q: 'How much does supervision cost?', a: 'Individual supervision costs €680 excl. VAT for the four sessions. Le Cercle costs €350 excl. VAT for the three sessions. For walking supervision, the details are set out in the first conversation.' },
         { q: 'Is supervision available in English?', a: 'Yes, in English or French.' },
       ],
       topic: 'supervision',
