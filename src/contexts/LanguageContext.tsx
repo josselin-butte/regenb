@@ -277,12 +277,13 @@ const setAlternate = (hreflang: string, href: string) => {
 };
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const navigate = useNavigate();
   const language: Language = langFromPath(pathname);
 
   const setLanguage = (lang: Language) => {
-    if (lang !== language) navigate(localizePath(pathname, lang));
+    const isLibrary = pathname === '/carnet/bibliotheque' || pathname === '/en/notebook/library';
+    if (lang !== language) navigate(localizePath(pathname + (isLibrary ? hash : ''), lang));
   };
 
   useEffect(() => {
