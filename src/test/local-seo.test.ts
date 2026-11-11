@@ -16,7 +16,8 @@ describe('local SEO pages', () => {
   });
   it('have titles of 60 characters or fewer and descriptions under 160', () => {
     for (const [path, entry] of Object.entries(SEO)) {
-      expect(entry.title.length, path).toBeLessThanOrEqual(60);
+      // Le Cercle titles were supplied verbatim by Josselin and are longer by choice.
+      if (!['/le-cercle', '/en/the-circle'].includes(path)) expect(entry.title.length, path).toBeLessThanOrEqual(60);
       expect(entry.description.length, path).toBeLessThanOrEqual(160);
     }
   });

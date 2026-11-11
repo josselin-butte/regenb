@@ -45,7 +45,7 @@ describe('home hero', () => {
     );
     fireEvent.click(screen.getByRole('button', { name: 'celles et ceux qui accompagnent' }));
     expect(screen.getByRole('tab', { name: 'J’accompagne' })).toHaveAttribute('aria-selected', 'true');
-    expect(screen.getByText('Supervision 680 € HT · Le Cercle 350 €')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Le Cercle' })).toHaveAttribute('href', '/le-cercle');
     expect(Element.prototype.scrollIntoView).toHaveBeenCalled();
     fireEvent.click(screen.getByRole('button', { name: 'celles et ceux qui dirigent' }));
     expect(screen.getByRole('tab', { name: 'Je dirige' })).toHaveAttribute('aria-selected', 'true');
