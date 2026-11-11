@@ -162,7 +162,7 @@ export const localContent: Record<LocalKind, Record<'fr' | 'en', PageCopy>> = {
         },
         {
           h2: 'Supervision collective : Le Cercle',
-          paragraphs: ['Huit personnes au plus, trois jeudis soir en ligne cet hiver : 17 décembre, 21 janvier et 11 mars. 350 € HT les trois rencontres.'],
+          paragraphs: ['Huit personnes au plus, trois jeudis soir en ligne cet hiver : 17 décembre, 21 janvier et 18 mars. 350 € HT les trois rencontres.'],
           links: [{ label: 'Découvrir Le Cercle', to: '/le-cercle' }],
         },
         {
@@ -206,7 +206,7 @@ export const localContent: Record<LocalKind, Record<'fr' | 'en', PageCopy>> = {
             'You can hold one or more sessions while walking from Arbas, on your own or in a small group of peers. Walking side by side often changes the way we talk about our practice: less face-to-face, more room for what emerges. Dates and fees agreed in the first conversation.',
           ],
         },
-        { h2: 'Group supervision: The Circle', paragraphs: ['Eight people at most, three Thursday evenings online this winter: 17 December, 21 January and 11 March. €350 excl. VAT for all three sessions.'], links: [{ label: 'Discover Le Cercle', to: '/en/the-circle' }] },
+        { h2: 'Group supervision: The Circle', paragraphs: ['Eight people at most, three Thursday evenings online this winter: 17 December, 21 January and 18 March. €350 excl. VAT for all three sessions.'], links: [{ label: 'Discover Le Cercle', to: '/en/the-circle' }] },
         {
           h2: 'Who it is for',
           paragraphs: ['Facilitators, coaches, trainers and practitioners, from the Pyrenees, Toulouse, the rest of Occitanie or further afield. In English or French.'],

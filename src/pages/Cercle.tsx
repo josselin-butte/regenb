@@ -13,7 +13,7 @@ export const cercleContent = {
     h1: 'Le Cercle',
     lead: 'Huit personnes qui accompagnent les autres. Trois rencontres de deux heures, en ligne, cet hiver. Pour prendre soin de soi et de sa pratique.',
     factsLabel: 'L’essentiel',
-    facts: ['Jeudi 17 décembre 2026', 'Jeudi 21 janvier 2027', 'Jeudi 11 mars 2027', 'De 18 h à 20 h, heure de Paris', 'En ligne, en visio', '8 personnes au plus', '350 € HT les trois rencontres', 'En français'],
+    facts: ['Jeudi 17 décembre 2026', 'Jeudi 21 janvier 2027', 'Jeudi 18 mars 2027', 'De 18 h à 20 h, heure de Paris', 'En ligne, en visio', '8 personnes au plus', '350 € HT les trois rencontres', 'En français'],
     button: 'Réserver ma place',
     subject: 'Le Cercle – réserver ma place',
     sections: [
@@ -39,7 +39,7 @@ export const cercleContent = {
     h1: 'Le Cercle (The Circle)',
     lead: 'Eight people who support others. Three two-hour sessions, online, this winter. To take care of yourself and your practice.',
     factsLabel: 'Key facts',
-    facts: ['Thursday 17 December 2026', 'Thursday 21 January 2027', 'Thursday 11 March 2027', '6–8 pm Paris time', 'Online, by video call', '8 people at most', '€350 excl. VAT for all three sessions', 'In French'],
+    facts: ['Thursday 17 December 2026', 'Thursday 21 January 2027', 'Thursday 18 March 2027', '6–8 pm Paris time', 'Online, by video call', '8 people at most', '€350 excl. VAT for all three sessions', 'In French'],
     button: 'Book my place',
     subject: 'Le Cercle – book my place',
     sections: [
