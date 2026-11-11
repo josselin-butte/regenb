@@ -33,7 +33,7 @@ export default function Library() {
     };
     void document.fonts.ready.then(scroll);
     return () => { cancelled = true; cancelAnimationFrame(frame); };
-  }, [hash, language, theme]);
+  }, [hash, language]);
 
   useEffect(() => {
     const description = language === 'fr'
