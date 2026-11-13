@@ -40,6 +40,7 @@ const Header = () => {
           <Link to={lp('/carnet')} className={`text-sm ${carnetCls}`} aria-current={onCarnet ? 'page' : undefined}>
             {t('nav.carnet')}
           </Link>
+          <Link to={lp('/trouver-sa-place')} className="text-sm text-foreground hover:text-primary">{t('nav.place')}</Link>
           <button
             type="button"
             onClick={toggleLanguage}
@@ -90,6 +91,7 @@ const Header = () => {
             <Link to={lp('/carnet')} onClick={() => setIsMenuOpen(false)} className={carnetCls} aria-current={onCarnet ? 'page' : undefined}>
               {t('nav.carnet')}
             </Link>
+            <Link to={lp('/trouver-sa-place')} onClick={() => setIsMenuOpen(false)} className="text-foreground hover:text-primary">{t('nav.place')}</Link>
             <button
               type="button"
               onClick={toggleLanguage}

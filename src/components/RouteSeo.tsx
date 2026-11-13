@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 import Seo from '@/components/Seo';
 import { content } from '@/pages/Services';
 import { localContent } from '@/pages/LocalPage';
@@ -88,7 +89,9 @@ const NOINDEX = /^\/(en\/)?(cercle|circle|login|dashboard|lesson|lessons|learn|c
 /** Applies per-route metadata. Notebook entries set their own. */
 const RouteSeo = () => {
   const { pathname } = useLocation();
+  const { t } = useLanguage();
   const path = pathname !== '/' ? pathname.replace(/\/$/, '') : '/';
+  if (path === '/trouver-sa-place' || path === '/en/finding-your-place') return <Seo title={`${t('place.title')} | RegenB France`} description={t('place.description')} />;
   if (/^\/(carnet|en\/notebook)\/.+/.test(path)) return null;
   const entry = SEO[path];
   const lang = path === '/en' || path.startsWith('/en/') ? 'en' : 'fr';

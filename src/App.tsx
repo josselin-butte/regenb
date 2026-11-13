@@ -22,6 +22,8 @@ import Listening from './pages/Listening';
 import Library from './pages/Library';
 import LocalPage from './pages/LocalPage';
 import Cercle from './pages/Cercle';
+import { lazy, Suspense } from 'react';
+const FindingPlace = lazy(() => import('./pages/FindingPlace'));
 
 const queryClient = new QueryClient();
 
@@ -43,6 +45,7 @@ const App = () => (
             <Route path="/coaching" element={<LocalPage kind="coaching" />} />
             <Route path="/supervision" element={<LocalPage kind="supervision" />} />
             <Route path="/le-cercle" element={<Cercle />} />
+            <Route path="/trouver-sa-place" element={<Suspense fallback={null}><FindingPlace /></Suspense>} />
             <Route path="/pyrenees" element={<LocalPage kind="pyrenees" />} />
             <Route path="/boussole" element={<Compass />} />
             <Route path="/carnet" element={<Carnet />} />
@@ -61,6 +64,7 @@ const App = () => (
             <Route path="/en/coaching" element={<LocalPage kind="coaching" />} />
             <Route path="/en/supervision" element={<LocalPage kind="supervision" />} />
             <Route path="/en/the-circle" element={<Cercle />} />
+            <Route path="/en/finding-your-place" element={<Suspense fallback={null}><FindingPlace /></Suspense>} />
             <Route path="/en/pyrenees" element={<LocalPage kind="pyrenees" />} />
             <Route path="/en/compass" element={<Compass />} />
             <Route path="/en/notebook" element={<Carnet />} />

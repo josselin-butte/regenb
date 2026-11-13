@@ -22,6 +22,7 @@ const PAIRS: [string, string][] = [
   ['/cookies', '/en/cookies'],
   ['/contact', '/en/contact'],
   ['/le-cercle', '/en/the-circle'],
+  ['/trouver-sa-place', '/en/finding-your-place'],
   ['/', '/en'],
 ];
 
