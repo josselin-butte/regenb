@@ -280,4 +280,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/the-circle"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/le-cercle"/>
   </url>
+  <url>
+    <loc>https://www.regenb.fr/trouver-sa-place</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/trouver-sa-place"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/finding-your-place"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/trouver-sa-place"/>
+  </url>
+  <url>
+    <loc>https://www.regenb.fr/en/finding-your-place</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.regenb.fr/trouver-sa-place"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.regenb.fr/en/finding-your-place"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.regenb.fr/trouver-sa-place"/>
+  </url>
 </urlset>
