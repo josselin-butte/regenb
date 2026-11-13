@@ -20,6 +20,8 @@ const pairs: [string, string][] = [
   ["/cgv", "/en/terms"],
   ["/cookies", "/en/cookies"],
   ["/contact", "/en/contact"],
+  ["/le-cercle", "/en/the-circle"],
+  ["/trouver-sa-place", "/en/finding-your-place"],
 ];
 // lastmod = last git commit touching the page's own source files (shared header/footer/translations excluded).
 const PAGE_FILES: Record<string, string[]> = {
@@ -38,6 +40,8 @@ const PAGE_FILES: Record<string, string[]> = {
   "/cgv": ["src/pages/Legal.tsx", "src/lib/legal.ts"],
   "/cookies": ["src/pages/Cookies.tsx", "src/lib/trackers.ts"],
   "/contact": ["src/pages/Contact.tsx"],
+  "/le-cercle": ["src/pages/Cercle.tsx"],
+  "/trouver-sa-place": ["src/pages/FindingPlace.tsx"],
 };
 const gitDate = (files: string[]) => {
   if (!files.length) return undefined;

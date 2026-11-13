@@ -28,7 +28,7 @@ const Header = () => {
           <img src={logoHeader} alt="RegenB France" className="h-12 w-auto sm:h-14" />
         </a>
 
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {navItems.map((item) => (
             <a key={item.key} href={lp(item.href)} className="text-sm text-foreground hover:text-primary">
               {t(item.key)}
@@ -40,6 +40,7 @@ const Header = () => {
           <Link to={lp('/carnet')} className={`text-sm ${carnetCls}`} aria-current={onCarnet ? 'page' : undefined}>
             {t('nav.carnet')}
           </Link>
+          <Link to={lp('/trouver-sa-place')} className="text-sm text-foreground hover:text-primary">{t('nav.place')}</Link>
           <button
             type="button"
             onClick={toggleLanguage}
@@ -50,7 +51,7 @@ const Header = () => {
           </button>
         </nav>
 
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="flex items-center gap-3 lg:hidden">
           <button
             type="button"
             onClick={toggleLanguage}
@@ -72,7 +73,7 @@ const Header = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="border-t border-border md:hidden">
+        <div className="border-t border-border lg:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-5 sm:px-8">
             {navItems.map((item) => (
               <a
@@ -90,6 +91,7 @@ const Header = () => {
             <Link to={lp('/carnet')} onClick={() => setIsMenuOpen(false)} className={carnetCls} aria-current={onCarnet ? 'page' : undefined}>
               {t('nav.carnet')}
             </Link>
+            <Link to={lp('/trouver-sa-place')} onClick={() => setIsMenuOpen(false)} className="text-foreground hover:text-primary">{t('nav.place')}</Link>
             <button
               type="button"
               onClick={toggleLanguage}
