@@ -101,6 +101,23 @@ const translations: Translations = {
   'image.portrait': { fr: 'Portrait de Josselin Butté', en: 'Portrait of Josselin Butté' },
   'image.groupe': { fr: 'Josselin Butté avec un groupe en atelier', en: 'Josselin Butté with a group in a workshop' },
   'image.paysage': { fr: 'Crêtes des Pyrénées dans la brume du matin', en: 'Pyrenees ridges in the morning mist' },
+  'image.marche': { fr: 'Trois randonneurs, sac au dos, sur un sentier de montagne', en: 'Three hikers with backpacks on a mountain path' },
+  'listen.kicker': { fr: 'Écouter · 04', en: 'Listening · 04' },
+  'listen.title': { fr: 'Écouter, c’est là où le soin commence', en: 'Listening is where care begins' },
+  'listen.text': { fr: 'Musicien formé au conservatoire et ingénieur du son, j’ai appris très tôt qu’avant de jouer juste, il faut écouter. C’est vrai aussi pour les personnes, les équipes et les lieux. Chaque rencontre commence donc par un temps d’écoute : du lieu, des autres et de soi.', en: 'As a conservatoire-trained musician and sound engineer, I learnt early on that before you can play in tune, you have to listen. The same is true of people, teams and places. So every gathering begins with a moment of listening: to the place, to others and to yourself.' },
+  'listen.capacities': { fr: 'L’écoute à travers les cinq capacités', en: 'Listening through the five capacities' },
+  'listen.earth': { fr: 'Terre', en: 'Earth' },
+  'listen.earth.verb': { fr: 'le lieu', en: 'the place' },
+  'listen.water': { fr: 'Eau', en: 'Water' },
+  'listen.water.verb': { fr: 'chaque voix', en: 'every voice' },
+  'listen.fire': { fr: 'Feu', en: 'Fire' },
+  'listen.fire.verb': { fr: 'avant de décider', en: 'before deciding' },
+  'listen.air': { fr: 'Air', en: 'Air' },
+  'listen.air.verb': { fr: 'plusieurs voix', en: 'many voices' },
+  'listen.space': { fr: 'Espace', en: 'Space' },
+  'listen.space.verb': { fr: 'dans la durée', en: 'over time' },
+  'listen.audioFallback': { fr: 'Votre navigateur ne lit pas ce son.', en: 'Your browser cannot play this sound.' },
+  'listen.cta': { fr: 'Lire la note du Carnet', en: 'Read the Notebook note' },
   'image.ecoute': { fr: 'Un moment d’écoute dans la nature', en: 'A moment of listening in nature' },
   'image.oulanbat': { fr: 'Les yourtes d’Oulan Bât, en vallée d’Arbas, vues à travers les feuilles d’automne', en: 'The Oulan Bât yurts in the Arbas valley, seen through autumn leaves' },
   'image.josselin': { fr: 'Josselin Butté en montagne, dans les Pyrénées', en: 'Josselin Butté in the mountains, in the Pyrenees' },
@@ -138,7 +155,7 @@ const translations: Translations = {
   'how.cta': { fr: 'M’écrire', en: 'Write to me' },
 
   // Home notebook
-  'homeNotes.kicker': { fr: 'Le Carnet · 04', en: 'The Notebook · 04' },
+  'homeNotes.kicker': { fr: 'Le Carnet · 05', en: 'The Notebook · 05' },
   'homeNotes.title': { fr: 'Le Carnet', en: 'The Notebook' },
   'homeNotes.cta': { fr: 'Tout le Carnet', en: 'The whole Notebook' },
   'homeNotes.read': { fr: 'Lire', en: 'Read' },
@@ -183,13 +200,13 @@ const translations: Translations = {
   'offer.seeAll': { fr: 'Voir l’accompagnement', en: 'See all services' },
 
   // Letter
-  'letter.kicker': { fr: 'La lettre · 05', en: 'The letter · 05' },
+  'letter.kicker': { fr: 'La lettre · 06', en: 'The letter · 06' },
   'letter.title': { fr: 'Continuo, ma lettre', en: 'Continuo, my letter' },
   'letter.text': { fr: 'Continuo, ma lettre, un mardi sur deux. Ce que je vois sur le terrain, ce qui m’a fait changer d’avis. Gratuite, et on peut me répondre.', en: "Continuo, my letter, every other Tuesday. What I see in the field, what's changed my mind. Free, and you can reply." },
   'letter.cta': { fr: 'Lire Continuo', en: 'Read Continuo' },
 
   // Waitlist
-  'waitlist.kicker': { fr: 'Les étapes · 06', en: 'Journeys · 06' },
+  'waitlist.kicker': { fr: 'Les étapes · 07', en: 'Journeys · 07' },
   'waitlist.title': { fr: 'Les étapes', en: 'Journeys' },
   'waitlist.text': { fr: 'Quelques jours dehors, en petit groupe. Premier séjour au printemps 2027.', en: 'A few days outdoors, in a small group. First one in spring 2027.' },
   'waitlist.cta': { fr: 'En savoir plus', en: 'Learn more' },

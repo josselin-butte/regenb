@@ -34,6 +34,7 @@ const mdComponents: Components = {
   ),
   h3: ({ children }) => <h3 className="mt-10 text-xl text-primary">{children}</h3>,
   p: ({ children }) => <p className="mt-5">{children}</p>,
+  img: ({ src = '', alt = '' }) => <img src={src} alt={alt} loading="lazy" decoding="async" className="mt-8 w-full" />,
   strong: ({ children }) => <strong className="font-semibold text-primary">{children}</strong>,
   ul: ({ children }) => <ul className="mt-5 list-disc space-y-2 pl-6">{children}</ul>,
   ol: ({ children }) => <ol className="mt-5 list-decimal space-y-2 pl-6">{children}</ol>,
