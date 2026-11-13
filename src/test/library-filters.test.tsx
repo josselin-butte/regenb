@@ -32,4 +32,15 @@ describe('Library filters after fragment navigation', () => {
     expect(container.querySelector(`#${sectionId}`)?.querySelectorAll('article')).toHaveLength(audioCount);
     expect(screen.getByRole('button', { name: filter })).toHaveAttribute('aria-pressed', 'true');
   });
+  it.each([
+    ['fr', '/carnet/bibliotheque', 'Musique et écoute'],
+    ['en', '/en/notebook/library', 'Music and listening'],
+  ])('shows the eight music and listening books in %s', async (_lang, path, filter) => {
+    const { container } = render(<MemoryRouter initialEntries={[path]}>
+      <LanguageProvider><Library /></LanguageProvider>
+    </MemoryRouter>);
+    fireEvent.click(screen.getByRole('button', { name: filter }));
+    await waitFor(() => expect(container.querySelectorAll('article[id^="library-book-"]')).toHaveLength(8));
+    expect(screen.getByRole('button', { name: filter })).toHaveAttribute('aria-pressed', 'true');
+  });
 });

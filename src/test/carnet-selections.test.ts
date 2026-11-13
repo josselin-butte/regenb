@@ -5,9 +5,9 @@ import { bookLinks, filterBooks, librarySchema, playlistSchema, relatedEntry, sh
 import { localizePath } from '@/lib/routes';
 
 describe('notebook selection rules', () => {
-  it('contains three playlists of eight tracks and ten books', () => {
+  it('contains three playlists of eight tracks and eighteen books', () => {
     expect(listening.playlists.map(p => p.tracks.length)).toEqual([8, 8, 8]);
-    expect(library.books).toHaveLength(10);
+    expect(library.books).toHaveLength(18);
   });
   it('maps each selection page to its exact bilingual equivalent', () => {
     expect(localizePath('/carnet/ecoutes', 'en')).toBe('/en/notebook/listening');
@@ -43,12 +43,13 @@ describe('notebook selection rules', () => {
     expect(bookLinks(library.books[1], 'en').map(link => link.href)).toEqual(['https://openlibrary.org/isbn/9781847941398', 'https://www.librairiesindependantes.com/product/search/?query=9781847941398']);
   });
   it('filters each theme and restores all books', () => {
-    expect(filterBooks(library.books, 'all')).toHaveLength(10);
+    expect(filterBooks(library.books, 'all')).toHaveLength(18);
     expect(filterBooks(library.books, 'regeneration')).toHaveLength(3);
     expect(filterBooks(library.books, 'systemes')).toHaveLength(3);
     expect(filterBooks(library.books, 'organisations')).toHaveLength(2);
     expect(filterBooks(library.books, 'terre')).toHaveLength(1);
     expect(filterBooks(library.books, 'marche')).toHaveLength(1);
+    expect(filterBooks(library.books, 'musique')).toHaveLength(8);
   });
   it('resolves only existing related notes in the correct language', () => {
     expect(relatedEntry(listening.playlists[0].relatedNote, 'fr')?.slug).toBe('le-feu-et-la-conversation');

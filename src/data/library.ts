@@ -1,4 +1,4 @@
-export type BookTheme = 'regeneration' | 'systemes' | 'organisations' | 'terre' | 'marche';
+export type BookTheme = 'regeneration' | 'systemes' | 'organisations' | 'terre' | 'marche' | 'musique';
 export interface Book {
   author: string; theme: BookTheme; isbnFr: string; isbnEn: string; relatedNote?: string;
   fr: { title: string; edition: string; what: string; when: string };
@@ -42,6 +42,10 @@ export const library: LibraryData = {
     "marche": {
       "fr": "Marche",
       "en": "Walking"
+    },
+    "musique": {
+      "fr": "Musique et écoute",
+      "en": "Music and listening"
     }
   },
   "books": [
@@ -226,6 +230,150 @@ export const library: LibraryData = {
       "isbnFr": "9782081494022",
       "isbnEn": "9781781682708",
       "relatedNote": "Marche et montagne / Walking and mountains"
+    },
+    {
+      "author": "Bernie Krause",
+      "theme": "musique",
+      "fr": {
+        "title": "Le grand orchestre des animaux",
+        "edition": "Flammarion, coll. Champs sciences, 2018 (The Great Animal Orchestra, 2012)",
+        "what": "Un ancien musicien de studio qui a passé des décennies à enregistrer les lieux sauvages. Son idée clé, la « biophonie » : dans un milieu en bonne santé, chaque espèce trouve sa place dans le paysage sonore, comme les pupitres d'un orchestre.",
+        "when": "Quand on veut entendre la santé d'un lieu, ou d'un groupe, en écoutant qui a de la place pour se faire entendre."
+      },
+      "en": {
+        "title": "The Great Animal Orchestra",
+        "edition": "Little, Brown, 2012",
+        "what": "A former studio musician who spent decades recording wild places. His key idea, 'biophony': in a healthy habitat each species finds its own band in the soundscape, like players in an orchestra.",
+        "when": "When you want to hear the health of a place, or of a group, by listening to who has room to sound."
+      },
+      "isbnFr": "9782081445383",
+      "isbnEn": "9780316192392"
+    },
+    {
+      "author": "David George Haskell",
+      "theme": "musique",
+      "fr": {
+        "title": "Sounds Wild and Broken",
+        "edition": "Viking, 2022 (en anglais)",
+        "what": "L'histoire du son sur Terre, des premiers chants animaux à la musique humaine, et une alerte : quand des voix disparaissent, le monde s'appauvrit aussi à l'oreille. Finaliste du prix Pulitzer.",
+        "when": "Quand on veut comprendre pourquoi écouter, c'est déjà prendre soin du vivant."
+      },
+      "en": {
+        "title": "Sounds Wild and Broken",
+        "edition": "Viking, 2022",
+        "what": "The story of sound on Earth, from the first animal songs to human music, and a warning: as voices disappear, the world becomes poorer to the ear. A Pulitzer Prize finalist.",
+        "when": "When you want to understand why listening is already a way of caring for the living."
+      },
+      "isbnFr": "",
+      "isbnEn": "9781984881540"
+    },
+    {
+      "author": "R. Murray Schafer",
+      "theme": "musique",
+      "fr": {
+        "title": "Le Paysage sonore",
+        "edition": "Wildproject, 2010 ; poche, 2024 (The Tuning of the World, 1977)",
+        "what": "Le texte fondateur de l'écologie sonore, par le compositeur à l'origine du World Soundscape Project. Il propose d'écouter le monde comme une vaste composition musicale, dont nous serions en partie les auteurs.",
+        "when": "Quand on choisit un lieu pour un atelier, ou quand un endroit paraît bruyant et fatigant sans savoir pourquoi."
+      },
+      "en": {
+        "title": "The Soundscape",
+        "edition": "Destiny Books, 1994 (first published 1977)",
+        "what": "The founding text of acoustic ecology, by the composer behind the World Soundscape Project. He invites us to hear the world as a vast musical composition, one we are partly composing ourselves.",
+        "when": "When you choose a venue for a workshop, or when a place feels noisy and tiring without knowing why."
+      },
+      "isbnFr": "9782381140803",
+      "isbnEn": "9780892814558"
+    },
+    {
+      "author": "Pauline Oliveros",
+      "theme": "musique",
+      "fr": {
+        "title": "Deep Listening",
+        "edition": "iUniverse, 2005 (en anglais)",
+        "what": "Des exercices simples, proposés par une compositrice, pour élargir l'attention : écouter tous les sons alentour, et s'écouter écouter. Beaucoup se pratiquent en groupe.",
+        "when": "Quand on veut ouvrir une séance par l'écoute plutôt que par la parole."
+      },
+      "en": {
+        "title": "Deep Listening",
+        "edition": "iUniverse, 2005",
+        "what": "Simple exercises from a composer to widen attention: listening to every sound around you, and to yourself listening. Many can be done in a group.",
+        "when": "When you want to open a session with listening rather than with talking."
+      },
+      "isbnFr": "",
+      "isbnEn": "9780595343652"
+    },
+    {
+      "author": "Christopher Small",
+      "theme": "musique",
+      "fr": {
+        "title": "Musicking",
+        "edition": "Wesleyan University Press, 1998 (en anglais)",
+        "what": "La musique n'est pas un objet mais quelque chose que l'on fait ensemble. Toutes les personnes présentes y prennent part, et chaque concert met en jeu les relations que ses participants veulent vivre.",
+        "when": "Quand on se demande ce qu'une rencontre dit des relations qu'elle crée."
+      },
+      "en": {
+        "title": "Musicking",
+        "edition": "Wesleyan University Press, 1998",
+        "what": "Music is not a thing but something we do together. Everyone present takes part, and every performance acts out the relationships its participants want to live.",
+        "when": "When you are asking what a gathering says about the relationships it creates."
+      },
+      "isbnFr": "",
+      "isbnEn": "9780819522573"
+    },
+    {
+      "author": "Thomas Turino",
+      "theme": "musique",
+      "fr": {
+        "title": "Music as Social Life",
+        "edition": "University of Chicago Press, 2008 (en anglais)",
+        "what": "Un ethnomusicologue distingue la musique jouée devant un public et la musique participative, où chacun prend part, et montre ce que chacune apporte à une communauté.",
+        "when": "Quand on veut un atelier où personne n'est simple spectateur."
+      },
+      "en": {
+        "title": "Music as Social Life",
+        "edition": "University of Chicago Press, 2008",
+        "what": "An ethnomusicologist contrasts music performed for an audience with participatory music, where everyone joins in, and shows what each does for a community.",
+        "when": "When you want a workshop where nobody is just the audience."
+      },
+      "isbnFr": "",
+      "isbnEn": "9780226816982"
+    },
+    {
+      "author": "Stephen Nachmanovitch",
+      "theme": "musique",
+      "fr": {
+        "title": "Free Play",
+        "edition": "Tarcher / Penguin, 1990 (en anglais)",
+        "what": "Un violoniste sur l'improvisation comme source intérieure de la création : le jeu, la pratique, les limites, les erreurs, et la confiance qui laisse naître du nouveau.",
+        "when": "Quand le plan doit faire place à ce qui se passe vraiment dans la salle."
+      },
+      "en": {
+        "title": "Free Play",
+        "edition": "Tarcher / Penguin, 1990",
+        "what": "A violinist on improvisation as the inner source of creation: play, practice, limits, mistakes, and the trust that lets something new appear.",
+        "when": "When your plan needs to make room for what is really happening in the room."
+      },
+      "isbnFr": "",
+      "isbnEn": "9780874776317"
+    },
+    {
+      "author": "Frank J. Barrett",
+      "theme": "musique",
+      "fr": {
+        "title": "Yes to the Mess",
+        "edition": "Harvard Business Review Press, 2012 (en anglais)",
+        "what": "Un pianiste de jazz, professeur de management, tire du jazz des leçons pour diriger : dire oui au désordre, alterner solo et accompagnement, apprendre en faisant.",
+        "when": "Quand une équipe a tellement peur de l'erreur qu'elle n'essaie plus rien."
+      },
+      "en": {
+        "title": "Yes to the Mess",
+        "edition": "Harvard Business Review Press, 2012",
+        "what": "A jazz pianist and management professor draws lessons from jazz for leaders: say yes to the mess, take turns soloing and supporting, learn by doing.",
+        "when": "When a team is so afraid of mistakes that it no longer tries anything."
+      },
+      "isbnFr": "",
+      "isbnEn": "9781422161104"
     }
   ]
 };
