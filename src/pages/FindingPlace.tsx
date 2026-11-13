@@ -111,7 +111,7 @@ export default function FindingPlace() {
     <nav className="place-progress" aria-label={t('place.title')}>
       {Array.from({ length: 6 }, (_, i) => <Button key={i} variant="ghost" aria-label={t(`place.step.${i}`)} aria-current={i === step ? 'step' : undefined} disabled={i > step} onClick={() => go(i)}><span className="place-progress-mark" /></Button>)}
     </nav>
-    <section className="place-panel" key={step}
+    <section className="place-panel" key={step} data-step={step}
       onTouchStart={event => { const point = event.touches[0]; touch.current = { x: point.clientX, y: point.clientY }; }}
       onTouchEnd={event => {
         const point = event.changedTouches[0]; const origin = touch.current; touch.current = null;
